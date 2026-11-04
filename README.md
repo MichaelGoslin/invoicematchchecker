@@ -4,6 +4,14 @@ A review tool for accounts payable specialists. It checks each vendor invoice ag
 
 Built as a 7-day L2 final project, based on a high-volume AP Specialist role that processes about 180 invoices a day with 2-way and 3-way PO matching.
 
+## User stories
+
+1. As an AP specialist, I want to upload the morning batch all at once, so I don't match invoices to POs one at a time.
+2. As an AP specialist, I want uncertain readings sent to me instead of approved, so a misread number never becomes a wrong payment.
+3. As an AP specialist, I want to see exactly why a set was flagged (values, variance and tolerance), so I can decide quickly and defend the decision.
+4. As an AP specialist, I want to override a recommendation with a reason, so my judgment counts and the reason is recorded.
+5. As an AP specialist, I want to approve all clean sets in one click and export them, so they're ready for the ERP.
+
 ## How it works
 
 1. **Extract (Claude):** reads each document into structured JSON with a confidence score per field.
@@ -44,7 +52,7 @@ Nobody pushes directly to `main` or `dev`.
 
 ## Environment variables
 
-Set these in Vercel and in a local `.env.local` file. Never commit them.
+Set these in Vercel and in a local `.env.local` file. Never commit them. To start, copy `.env.example` to `.env.local` and fill in your own values; git ignores `.env.local`.
 
 | Variable | Purpose |
 | --- | --- |

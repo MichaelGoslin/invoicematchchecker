@@ -1,0 +1,30 @@
+# Secrets: never commit. Copy .env.example to .env.local instead.
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Next.js and Vercel build output
+.next/
+out/
+build/
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Test coverage
+coverage/
+
+# Python (sample-data generator)
+__pycache__/
+*.pyc
+.venv/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
