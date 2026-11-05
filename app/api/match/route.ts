@@ -14,39 +14,21 @@
  * nothing is saved and the duplicate check needs review.
  */
 import { randomUUID } from "node:crypto";
-import { type DocumentMediaType, ExtractionError, extractDocument } from "@/lib/extract/extract";
+import { ExtractionError, extractDocument } from "@/lib/extract/extract";
 import { SetAssemblyError, toMatchInput } from "@/lib/extract/toMatchInput";
 import { getDb } from "@/lib/db/client";
 import { matchAndSave } from "@/lib/db/sets";
 import type { PriorInvoice } from "@/lib/match/duplicate";
 import { runSet } from "@/lib/match/runSet";
+import { readUpload, UploadError } from "@/lib/upload";
 
 export const runtime = "nodejs";
 // Three documents are read in parallel; each read can take tens of seconds.
 export const maxDuration = 300;
 
-const MAX_BYTES = 20 * 1024 * 1024;
-const MEDIA_TYPES: Record<string, DocumentMediaType> = {
-  "application/pdf": "application/pdf",
-  "image/png": "image/png",
-  "image/jpeg": "image/jpeg",
-  "text/plain": "text/plain",
-};
-
-type Slot = "purchaseOrder" | "receivingReport" | "invoice";
-
 const badRequest = (error: string, status = 400) => Response.json({ error }, { status });
 
-async function readSlot(form: FormData, slot: Slot) {
-  const file = form.get(slot);
-  if (file === null) return null;
-  if (!(file instanceof File)) throw new SetAssemblyError(`${slot} must be a file.`);
-  const mediaType = MEDIA_TYPES[file.type] ?? (file.name.endsWith(".txt") ? "text/plain" : undefined);
-  if (!mediaType) throw new SetAssemblyError(`${file.name} is ${file.type || "an unknown type"}; upload a PDF, PNG, JPEG or .txt file.`);
-  if (file.size === 0) throw new SetAssemblyError(`${file.name} is empty.`);
-  if (file.size > MAX_BYTES) throw new SetAssemblyError(`${file.name} is over 20 MB.`);
-  return { name: file.name, mediaType, data: Buffer.from(await file.arrayBuffer()) };
-}
+const readSlot = (form: FormData, slot: "purchaseOrder" | "receivingReport" | "invoice") => readUpload(form.get(slot), slot);
 
 export async function POST(request: Request) {
   let form: FormData;
@@ -87,11 +69,13 @@ export async function POST(request: Request) {
       invoiceVendor: invoice.document.vendor.value,
       invoiceNumber: invoice.document.document_number.value,
       invoiceTotal: invoice.document.total.value,
+      invoiceDate: invoice.document.document_date.value,
+      poNumber: purchaseOrder?.document.document_number.value ?? invoice.document.po_reference.value,
       documents,
     });
     return Response.json({ setId, saved: true, decision, traces, documents });
   } catch (err) {
-    if (err instanceof SetAssemblyError) return badRequest(err.message, 422);
+    if (err instanceof SetAssemblyError || err instanceof UploadError) return badRequest(err.message, 422);
     if ((err as { code?: string }).code === "23505") return badRequest("A set with that id already exists.", 409);
     if (err instanceof ExtractionError) {
       // The set can't be read, so it goes to a person: say which document and why.

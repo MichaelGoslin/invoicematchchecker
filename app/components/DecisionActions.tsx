@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import type { Recommendation } from "@/lib/match/decision";
 import { isAgainstRecommendation, OVERRIDE_REASONS, overrideReasonText } from "@/lib/queue/overrideReasons";
 
-export const NAME_KEY = "imc-reviewer-name";
+const NAME_KEY = "imc-reviewer-name";
 
 /** Approve or reject one stored set. Going against the recommendation needs a reason code or a note. */
 export function DecisionActions({ setId, recommendation }: { setId: string; recommendation: Recommendation }) {

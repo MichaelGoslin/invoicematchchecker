@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { countReadyToExport, listCleanPending } from "@/lib/db/approvals";
 import { getDb } from "@/lib/db/client";
 import { listQueue, type StoredSet } from "@/lib/db/sets";
 import { sampleSets } from "@/lib/match/fixtures";
 import { groupByReason } from "@/lib/queue/groups";
-import { ApproveAllClean } from "./components/ApproveAllClean";
+import { BulkActions } from "./components/BulkActions";
 import { DecisionActions } from "./components/DecisionActions";
 import { DecisionRow } from "./components/DecisionRow";
 
@@ -13,13 +14,14 @@ export const dynamic = "force-dynamic";
 const statusText = (s: StoredSet) =>
   s.status === "pending"
     ? undefined
-    : `${s.status === "approved" ? "Approved" : "Rejected"} by ${s.decidedBy}${s.overridden ? " (override)" : ""}`;
+    : `${s.status === "approved" ? "Approved" : "Rejected"} by ${s.decidedBy}${s.overridden ? " (override)" : ""}${s.exportedAt ? " · exported" : ""}`;
 
 function Nav() {
   return (
     <nav>
       <strong>Invoice Match Checker</strong>
-      <Link href="/try">Check a set</Link>
+      <Link href="/batch">Upload a batch</Link>
+      <Link href="/try">Check one set</Link>
     </nav>
   );
 }
@@ -73,7 +75,7 @@ export default async function QueuePage() {
     );
   }
 
-  const sets = await listQueue(db);
+  const [sets, clean, exportCount] = await Promise.all([listQueue(db), listCleanPending(db), countReadyToExport(db)]);
   const pending = sets.filter((s) => s.status === "pending");
   const decided = sets.filter((s) => s.status !== "pending");
   const groups = groupByReason(pending);
@@ -103,13 +105,16 @@ export default async function QueuePage() {
       </p>
       {sets.length === 0 ? (
         <p>
-          No sets yet. <Link href="/try">Check a set</Link> to add one.
+          No sets yet. <Link href="/batch">Upload a batch</Link> to add some.
         </p>
       ) : (
-        <Summary
-          groups={groups.map((g) => ({ reason: g.reason, title: g.title, count: g.items.length }))}
-          decided={decided.length}
-        />
+        <>
+          <Summary
+            groups={groups.map((g) => ({ reason: g.reason, title: g.title, count: g.items.length }))}
+            decided={decided.length}
+          />
+          <BulkActions cleanCount={clean.length} exportCount={exportCount} />
+        </>
       )}
       {groups.map((g) => (
         <section key={g.reason} aria-labelledby={`g-${g.reason}`}>
@@ -117,7 +122,6 @@ export default async function QueuePage() {
             {g.title} <span className="count">{g.items.length}</span>
           </h2>
           <p className="muted">{g.blurb}</p>
-          {g.reason === "clean" ? <ApproveAllClean setIds={g.items.map((s) => s.id)} /> : null}
           <ul className="queue">{g.items.map(row)}</ul>
         </section>
       ))}
