@@ -3,6 +3,7 @@ import {
   formatPct,
   isUsableNumber,
   pctOf,
+  shown,
   toUnits,
   uncertainReading,
 } from "./shared";
@@ -38,7 +39,7 @@ function checkNotOver(
       ...base,
       variancePct: null,
       result: "needs_review",
-      reason: `Quantity could not be compared (${noun} ${limit.value}, invoiced ${invoiced.value}). A person needs to check the documents.`,
+      reason: `Quantity could not be compared (${noun} ${shown(limit.value)}, invoiced ${shown(invoiced.value)}). A person needs to check the documents.`,
     };
   }
 

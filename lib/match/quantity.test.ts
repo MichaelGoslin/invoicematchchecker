@@ -59,3 +59,11 @@ describe("quantity not over ordered", () => {
     expect(checkQuantityOrdered(po(10), inv(10)).result).toBe("pass");
   });
 });
+
+describe("quantity reasons", () => {
+  it('says "unreadable" instead of NaN', () => {
+    const t = checkQuantityReceived(rr(6), inv(Number.NaN));
+    expect(t.reason).toContain("invoiced unreadable");
+    expect(t.reason).not.toContain("NaN");
+  });
+});
