@@ -65,10 +65,11 @@ Set these in Vercel and in a local `.env.local` file. Never commit them. To star
 
 ```bash
 npm install
-npm test            # match-rule tests
-npm run demo:price  # prints sample unit-price traces as a reviewer would read them
+npm test            # match-rule tests, including sample sets checked against their answer key
+npm run demo:rules  # runs every rule over three sample invoice sets
+npm run demo:price  # unit-price cases only
 ```
 
 ## Status
 
-Engine: unit-price rule with a decision trace and the confidence fail-safe (tested). The trace shape the UI renders is `TraceEntry` in `lib/match/types.ts`; sample traces are in `lib/match/fixtures.ts`. The full requirements are in the team PRD.
+Engine: all match rules return a decision trace and share the confidence fail-safe (tested): vendor, PO number, duplicate, quantity vs ordered and received, unit price, line total and invoice total. The trace shape the UI renders is `TraceEntry` in `lib/match/types.ts`; sample sets with answer keys are in `lib/match/fixtures.ts`. Next: the set-level decision (Recommend approve / Needs review / Recommend reject). The full requirements are in the team PRD.

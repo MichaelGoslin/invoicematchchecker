@@ -7,7 +7,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "demo:price": "tsx scripts/demo-price.ts"
+    "demo:price": "tsx scripts/demo-price.ts",
+    "demo:rules": "tsx scripts/demo-rules.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
