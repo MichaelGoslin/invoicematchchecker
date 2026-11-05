@@ -68,3 +68,11 @@ button:disabled { opacity: 0.6; cursor: progress; }
 .check { margin: 8px 0 0; font-size: 14px; }
 .check code { font-size: 12px; color: var(--muted); }
 .notes { font-size: 13px; color: var(--muted); margin: 4px 0 0; padding-left: 18px; }
+
+.status { font-size: 13px; color: var(--muted); margin-left: auto; }
+.actions { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.actions input, .actions textarea {
+  font: inherit; padding: 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text);
+}
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+button.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
