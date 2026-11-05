@@ -1,0 +1,97 @@
+{
+  "setId": "S-027",
+  "invoice": {
+    "number": "TPG-5546",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-26",
+    "poReference": "PO-4967",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 29,
+        "unitPrice": "8.36",
+        "lineTotal": "242.44"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 77,
+        "unitPrice": "5.75",
+        "lineTotal": "442.75"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 35,
+        "unitPrice": "16.87",
+        "lineTotal": "590.45"
+      },
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 18,
+        "unitPrice": "9.17",
+        "lineTotal": "165.06"
+      }
+    ],
+    "subtotal": "1440.70",
+    "tax": "86.44",
+    "freight": "15.00",
+    "total": "1542.14"
+  },
+  "po": {
+    "number": "PO-4967",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 29,
+        "unitPrice": "8.36"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 77,
+        "unitPrice": "5.75"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 35,
+        "unitPrice": "17.20"
+      },
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 18,
+        "unitPrice": "9.17"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-128",
+    "poNumber": "PO-4967",
+    "date": "2026-10-23",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "quantityReceived": 29
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 77
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 35
+      },
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 18
+      }
+    ]
+  }
+}

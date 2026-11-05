@@ -1,0 +1,63 @@
+{
+  "setId": "S-059",
+  "invoice": {
+    "number": "CLP-8952",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-30",
+    "poReference": "PO-8947",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 15,
+        "unitPrice": "9.00",
+        "lineTotal": "135.00"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 114,
+        "unitPrice": "16.44",
+        "lineTotal": "1874.16"
+      }
+    ],
+    "subtotal": "2009.16",
+    "tax": "120.55",
+    "freight": "8.50",
+    "total": "2138.21"
+  },
+  "po": {
+    "number": "PO-8947",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 15,
+        "unitPrice": "9.17"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 114,
+        "unitPrice": "16.44"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-518",
+    "poNumber": "PO-8947",
+    "date": "2026-10-26",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "quantityReceived": 15
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 114
+      }
+    ]
+  }
+}

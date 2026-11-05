@@ -1,0 +1,97 @@
+{
+  "setId": "S-030",
+  "invoice": {
+    "number": "CLP-6092",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-25",
+    "poReference": "PO-8651",
+    "lines": [
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 116,
+        "unitPrice": "1.57",
+        "lineTotal": "182.12"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 80,
+        "unitPrice": "16.31",
+        "lineTotal": "1304.80"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 36,
+        "unitPrice": "35.74",
+        "lineTotal": "1286.64"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 21,
+        "unitPrice": "4.80",
+        "lineTotal": "100.80"
+      }
+    ],
+    "subtotal": "2874.36",
+    "tax": "172.46",
+    "freight": "12.00",
+    "total": "3058.82"
+  },
+  "po": {
+    "number": "PO-8651",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 116,
+        "unitPrice": "1.57"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 80,
+        "unitPrice": "16.31"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 36,
+        "unitPrice": "35.74"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 21,
+        "unitPrice": "4.80"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-366",
+    "poNumber": "PO-8651",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "BOX-415",
+        "quantityReceived": 116
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 80
+      },
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 36
+      },
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 21
+      }
+    ]
+  }
+}

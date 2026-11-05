@@ -1,0 +1,80 @@
+{
+  "setId": "S-020",
+  "invoice": {
+    "number": "CLP-5463",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-24",
+    "poReference": "PO-4432",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 52,
+        "unitPrice": "45.27",
+        "lineTotal": "2354.04"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 102,
+        "unitPrice": "3.68",
+        "lineTotal": "375.36"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 83,
+        "unitPrice": "13.89",
+        "lineTotal": "1152.87"
+      }
+    ],
+    "subtotal": "3882.27",
+    "tax": "232.94",
+    "freight": "0.00",
+    "total": "4115.21"
+  },
+  "po": {
+    "number": "PO-4432",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 52,
+        "unitPrice": "45.27"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 102,
+        "unitPrice": "3.68"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 83,
+        "unitPrice": "13.89"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-653",
+    "poNumber": "PO-4432",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 52
+      },
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 102
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 83
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "setId": "S-078",
+  "invoice": {
+    "number": "HPS-7409",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-16",
+    "poReference": "PO-1631",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 97,
+        "unitPrice": "5.29",
+        "lineTotal": "513.13"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 103,
+        "unitPrice": "59.76",
+        "lineTotal": "6155.28"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 84,
+        "unitPrice": "13.61",
+        "lineTotal": "1143.24"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 101,
+        "unitPrice": "7.85",
+        "lineTotal": "792.85"
+      }
+    ],
+    "subtotal": "8604.50",
+    "tax": "516.27",
+    "freight": "12.00",
+    "total": "9132.77"
+  },
+  "po": {
+    "number": "PO-1631",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-07",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 97,
+        "unitPrice": "5.29"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 103,
+        "unitPrice": "59.76"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 84,
+        "unitPrice": "13.61"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 101,
+        "unitPrice": "7.85"
+      }
+    ]
+  },
+  "receiving": null
+}

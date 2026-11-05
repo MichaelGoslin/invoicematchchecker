@@ -1,0 +1,97 @@
+{
+  "setId": "S-034",
+  "invoice": {
+    "number": "CLP-7063",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-24",
+    "poReference": "PO-8297",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 16,
+        "unitPrice": "17.87",
+        "lineTotal": "285.92"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 10,
+        "unitPrice": "64.87",
+        "lineTotal": "648.70"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 23,
+        "unitPrice": "4.46",
+        "lineTotal": "102.58"
+      },
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 79,
+        "unitPrice": "7.61",
+        "lineTotal": "601.19"
+      }
+    ],
+    "subtotal": "1638.39",
+    "tax": "98.30",
+    "freight": "12.00",
+    "total": "1748.69"
+  },
+  "po": {
+    "number": "PO-8297",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 16,
+        "unitPrice": "17.87"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 10,
+        "unitPrice": "64.87"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 23,
+        "unitPrice": "4.15"
+      },
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 79,
+        "unitPrice": "7.61"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-647",
+    "poNumber": "PO-8297",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 16
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 10
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 23
+      },
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 79
+      }
+    ]
+  }
+}

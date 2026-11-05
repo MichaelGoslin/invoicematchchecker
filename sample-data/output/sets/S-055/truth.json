@@ -1,0 +1,63 @@
+{
+  "setId": "S-055",
+  "invoice": {
+    "number": "ISS-5360",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-21",
+    "poReference": "PO-2524",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 7,
+        "unitPrice": "37.60",
+        "lineTotal": "263.20"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 30,
+        "unitPrice": "28.40",
+        "lineTotal": "852.00"
+      }
+    ],
+    "subtotal": "1115.20",
+    "tax": "66.91",
+    "freight": "0.00",
+    "total": "1182.11"
+  },
+  "po": {
+    "number": "PO-2524",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 7,
+        "unitPrice": "37.60"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 30,
+        "unitPrice": "28.40"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-747",
+    "poNumber": "PO-2524",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 7
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 30
+      }
+    ]
+  }
+}

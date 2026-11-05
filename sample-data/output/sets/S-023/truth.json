@@ -1,0 +1,80 @@
+{
+  "setId": "S-023",
+  "invoice": {
+    "number": "QSH-7505",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-28",
+    "poReference": "PO-8236",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 15,
+        "unitPrice": "29.71",
+        "lineTotal": "445.65"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 109,
+        "unitPrice": "4.97",
+        "lineTotal": "541.73"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 76,
+        "unitPrice": "5.21",
+        "lineTotal": "395.96"
+      }
+    ],
+    "subtotal": "1383.34",
+    "tax": "83.00",
+    "freight": "0.00",
+    "total": "1466.34"
+  },
+  "po": {
+    "number": "PO-8236",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 15,
+        "unitPrice": "29.71"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 109,
+        "unitPrice": "4.97"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 76,
+        "unitPrice": "5.29"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-740",
+    "poNumber": "PO-8236",
+    "date": "2026-10-22",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 15
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 109
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 76
+      }
+    ]
+  }
+}

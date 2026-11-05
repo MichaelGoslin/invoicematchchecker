@@ -1,0 +1,80 @@
+{
+  "setId": "S-099",
+  "invoice": {
+    "number": "HPS-5377",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-19",
+    "poReference": "PO-9168",
+    "lines": [
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 34,
+        "unitPrice": "5.91",
+        "lineTotal": "200.94"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 37,
+        "unitPrice": "18.07",
+        "lineTotal": "668.59"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 98,
+        "unitPrice": "13.00",
+        "lineTotal": "1274.00"
+      }
+    ],
+    "subtotal": "2143.53",
+    "tax": "128.61",
+    "freight": "0.00",
+    "total": "2272.14"
+  },
+  "po": {
+    "number": "PO-9168",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 34,
+        "unitPrice": "5.91"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 37,
+        "unitPrice": "17.98"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 98,
+        "unitPrice": "13.00"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-613",
+    "poNumber": "PO-9168",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 34
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 37
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 98
+      }
+    ]
+  }
+}

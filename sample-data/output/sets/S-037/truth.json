@@ -1,0 +1,97 @@
+{
+  "setId": "S-037",
+  "invoice": {
+    "number": "CFT-6058",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-25",
+    "poReference": "PO 1208",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 8,
+        "unitPrice": "14.35",
+        "lineTotal": "114.80"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 117,
+        "unitPrice": "14.09",
+        "lineTotal": "1648.53"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 77,
+        "unitPrice": "5.93",
+        "lineTotal": "456.61"
+      },
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 56,
+        "unitPrice": "10.83",
+        "lineTotal": "606.48"
+      }
+    ],
+    "subtotal": "2826.42",
+    "tax": "169.59",
+    "freight": "12.00",
+    "total": "3008.01"
+  },
+  "po": {
+    "number": "PO-1208",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 8,
+        "unitPrice": "14.35"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 117,
+        "unitPrice": "14.09"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 77,
+        "unitPrice": "5.93"
+      },
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 56,
+        "unitPrice": "10.83"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-690",
+    "poNumber": "PO-1208",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "quantityReceived": 8
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 117
+      },
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 77
+      },
+      {
+        "sku": "GLV-630",
+        "quantityReceived": 56
+      }
+    ]
+  }
+}

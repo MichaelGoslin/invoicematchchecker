@@ -1,0 +1,63 @@
+{
+  "setId": "S-072",
+  "invoice": {
+    "number": "NOP-6800",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-15",
+    "poReference": "PO-8377",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 76,
+        "unitPrice": "63.61",
+        "lineTotal": "4834.36"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 25,
+        "unitPrice": "21.26",
+        "lineTotal": "531.50"
+      }
+    ],
+    "subtotal": "5365.86",
+    "tax": "321.95",
+    "freight": "15.00",
+    "total": "5702.81"
+  },
+  "po": {
+    "number": "PO-8377",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 76,
+        "unitPrice": "63.61"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 25,
+        "unitPrice": "21.26"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-530",
+    "poNumber": "PO-8377",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "quantityReceived": 76
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 25
+      }
+    ]
+  }
+}

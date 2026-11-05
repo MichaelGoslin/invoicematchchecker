@@ -1,0 +1,63 @@
+{
+  "setId": "S-084",
+  "invoice": {
+    "number": "SRE-5891",
+    "vendor": "Summit Ridge Electrical",
+    "date": "2026-10-21",
+    "poReference": "PO-3087",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 113,
+        "unitPrice": "31.72",
+        "lineTotal": "3584.36"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 42,
+        "unitPrice": "85.79",
+        "lineTotal": "3603.18"
+      }
+    ],
+    "subtotal": "7187.54",
+    "tax": "431.25",
+    "freight": "12.00",
+    "total": "7630.79"
+  },
+  "po": {
+    "number": "PO-3087",
+    "vendor": "Summit Ridge Electrical",
+    "date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 113,
+        "unitPrice": "30.21"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 42,
+        "unitPrice": "85.79"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-335",
+    "poNumber": "PO-3087",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 113
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 42
+      }
+    ]
+  }
+}

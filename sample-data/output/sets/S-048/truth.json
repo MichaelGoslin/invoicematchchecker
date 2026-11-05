@@ -1,0 +1,80 @@
+{
+  "setId": "S-048",
+  "invoice": {
+    "number": "TPG-6263",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-26",
+    "poReference": "PO-8916",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 73,
+        "unitPrice": "13.52",
+        "lineTotal": "986.96"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 115,
+        "unitPrice": "32.23",
+        "lineTotal": "3706.45"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 91,
+        "unitPrice": "31.09",
+        "lineTotal": "2829.19"
+      }
+    ],
+    "subtotal": "7522.60",
+    "tax": "451.36",
+    "freight": "0.00",
+    "total": "7973.96"
+  },
+  "po": {
+    "number": "PO-8916",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 73,
+        "unitPrice": "13.52"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 115,
+        "unitPrice": "32.23"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 91,
+        "unitPrice": "31.09"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-147",
+    "poNumber": "PO-8916",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "quantityReceived": 73
+      },
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 115
+      },
+      {
+        "sku": "DRL-114",
+        "quantityReceived": 91
+      }
+    ]
+  }
+}

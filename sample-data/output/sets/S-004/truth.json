@@ -1,0 +1,80 @@
+{
+  "setId": "S-004",
+  "invoice": {
+    "number": "QSH-9400",
+    "vendor": "QUARRY STREET HARDWARE",
+    "date": "2026-10-18",
+    "poReference": "PO-8435",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 51,
+        "unitPrice": "13.77",
+        "lineTotal": "702.27"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 61,
+        "unitPrice": "68.52",
+        "lineTotal": "4179.72"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 99,
+        "unitPrice": "8.32",
+        "lineTotal": "823.68"
+      }
+    ],
+    "subtotal": "5705.67",
+    "tax": "342.34",
+    "freight": "0.00",
+    "total": "6048.01"
+  },
+  "po": {
+    "number": "PO-8435",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-08",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 51,
+        "unitPrice": "13.77"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 61,
+        "unitPrice": "68.52"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 99,
+        "unitPrice": "8.32"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-385",
+    "poNumber": "PO-8435",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "quantityReceived": 51
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 61
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 99
+      }
+    ]
+  }
+}

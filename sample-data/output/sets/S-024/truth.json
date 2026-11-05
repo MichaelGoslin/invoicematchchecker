@@ -1,0 +1,46 @@
+{
+  "setId": "S-024",
+  "invoice": {
+    "number": "MVJ-7740",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-20",
+    "poReference": "PO-5052",
+    "lines": [
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 74,
+        "unitPrice": "10.02",
+        "lineTotal": "741.48"
+      }
+    ],
+    "subtotal": "741.48",
+    "tax": "44.49",
+    "freight": "0.00",
+    "total": "785.97"
+  },
+  "po": {
+    "number": "PO-5052",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 59,
+        "unitPrice": "10.02"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-785",
+    "poNumber": "PO-5052",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 74
+      }
+    ]
+  }
+}

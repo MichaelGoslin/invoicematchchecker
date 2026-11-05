@@ -1,0 +1,80 @@
+{
+  "setId": "S-053",
+  "invoice": {
+    "number": "QSH-8721",
+    "vendor": "QUARRY STREET HARDWARE",
+    "date": "2026-10-27",
+    "poReference": "PO-8735",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 100,
+        "unitPrice": "13.72",
+        "lineTotal": "1372.00"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 74,
+        "unitPrice": "9.38",
+        "lineTotal": "694.12"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 68,
+        "unitPrice": "49.23",
+        "lineTotal": "3347.64"
+      }
+    ],
+    "subtotal": "5413.76",
+    "tax": "324.83",
+    "freight": "0.00",
+    "total": "5738.59"
+  },
+  "po": {
+    "number": "PO-8735",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 100,
+        "unitPrice": "13.72"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 74,
+        "unitPrice": "9.38"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 68,
+        "unitPrice": "49.23"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-895",
+    "poNumber": "PO-8735",
+    "date": "2026-10-25",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 100
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 74
+      },
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 68
+      }
+    ]
+  }
+}

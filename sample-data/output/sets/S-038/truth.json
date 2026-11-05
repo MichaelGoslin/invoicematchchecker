@@ -1,0 +1,97 @@
+{
+  "setId": "S-038",
+  "invoice": {
+    "number": "LLE-9042",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-30",
+    "poReference": "PO-4060",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 99,
+        "unitPrice": "5.66",
+        "lineTotal": "560.34"
+      },
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 79,
+        "unitPrice": "10.76",
+        "lineTotal": "850.04"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 27,
+        "unitPrice": "16.82",
+        "lineTotal": "454.14"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 98,
+        "unitPrice": "7.50",
+        "lineTotal": "735.00"
+      }
+    ],
+    "subtotal": "2599.52",
+    "tax": "155.97",
+    "freight": "12.00",
+    "total": "2767.49"
+  },
+  "po": {
+    "number": "PO-4060",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 99,
+        "unitPrice": "5.66"
+      },
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 79,
+        "unitPrice": "10.76"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 27,
+        "unitPrice": "16.82"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 98,
+        "unitPrice": "7.50"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-391",
+    "poNumber": "PO-4060",
+    "date": "2026-10-28",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 99
+      },
+      {
+        "sku": "GLV-630",
+        "quantityReceived": 79
+      },
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 27
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 98
+      }
+    ]
+  }
+}

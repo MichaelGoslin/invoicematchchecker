@@ -1,0 +1,97 @@
+{
+  "setId": "S-061",
+  "invoice": {
+    "number": "BFI-8309",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-25",
+    "poReference": "PO-7877",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 102,
+        "unitPrice": "8.78",
+        "lineTotal": "895.56"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 66,
+        "unitPrice": "21.12",
+        "lineTotal": "1393.92"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 97,
+        "unitPrice": "30.89",
+        "lineTotal": "2996.33"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 16,
+        "unitPrice": "84.55",
+        "lineTotal": "1352.80"
+      }
+    ],
+    "subtotal": "6638.61",
+    "tax": "398.32",
+    "freight": "0.00",
+    "total": "7036.93"
+  },
+  "po": {
+    "number": "PO-7877",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 102,
+        "unitPrice": "8.78"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 66,
+        "unitPrice": "21.12"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 97,
+        "unitPrice": "30.89"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 16,
+        "unitPrice": "84.55"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-214",
+    "poNumber": "PO-7877",
+    "date": "2026-10-22",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "quantityReceived": 102
+      },
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 66
+      },
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 97
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 16
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "setId": "S-009",
+  "invoice": {
+    "number": "CFT-8936",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-29",
+    "poReference": "PO-4987",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 33,
+        "unitPrice": "13.73",
+        "lineTotal": "453.09"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 13,
+        "unitPrice": "5.53",
+        "lineTotal": "71.89"
+      }
+    ],
+    "subtotal": "524.98",
+    "tax": "31.50",
+    "freight": "0.00",
+    "total": "556.48"
+  },
+  "po": {
+    "number": "PO-4987",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 33,
+        "unitPrice": "13.73"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 13,
+        "unitPrice": "5.56"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-371",
+    "poNumber": "PO-4987",
+    "date": "2026-10-23",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 33
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 13
+      }
+    ]
+  }
+}
