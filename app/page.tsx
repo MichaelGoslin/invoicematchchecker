@@ -22,6 +22,7 @@ function Nav() {
     <nav>
       <strong>Invoice Match Checker</strong>
       <Link href="/batch">Upload a batch</Link>
+      <Link href="/summary">Daily summary</Link>
       <Link href="/try">Check one set</Link>
     </nav>
   );
