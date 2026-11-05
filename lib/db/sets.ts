@@ -7,6 +7,7 @@ import type { PriorInvoice } from "../match/duplicate";
 import { type MatchSetInput, runSet } from "../match/runSet";
 import { normalizeInvoiceNumber, normalizeName } from "../match/shared";
 import type { TraceEntry } from "../match/types";
+import type { Explanation } from "../explain/explain";
 import type { Db } from "./db";
 
 export type SetStatus = "pending" | "approved" | "rejected";
@@ -31,6 +32,7 @@ export interface StoredSet {
   poNumber: string | null;
   batchId: string | null;
   exportedAt: Date | null;
+  explanation: Explanation | null;
 }
 
 export interface AuditEntry {
@@ -152,6 +154,7 @@ interface SetRow {
   po_number: string | null;
   batch_id: string | null;
   exported_at: Date | null;
+  explanation?: Explanation | string | null;
 }
 
 const json = <T>(v: T | string): T => (typeof v === "string" ? (JSON.parse(v) as T) : v);
@@ -175,6 +178,7 @@ const toStored = (r: SetRow): StoredSet => ({
   poNumber: r.po_number ?? null,
   batchId: r.batch_id ?? null,
   exportedAt: r.exported_at ? new Date(r.exported_at) : null,
+  explanation: r.explanation ? json(r.explanation) : null,
 });
 
 /** Pending sets in queue order (rejects, gated, exceptions, incomplete, clean), then decided sets, newest first. */
@@ -238,4 +242,14 @@ export async function recordDecision(
     ]);
     return toStored(updated!);
   });
+}
+
+/** Stores a set's explanation once; a second request keeps the first. Returns the stored one. */
+export async function saveExplanation(db: Db, setId: string, explanation: Explanation): Promise<Explanation> {
+  const [row] = await db.query<{ explanation: Explanation | string }>(
+    "update invoice_sets set explanation = coalesce(explanation, $2::jsonb) where id = $1 returning explanation",
+    [setId, explanation],
+  );
+  if (!row) throw new SetNotFoundError(`Set ${setId} was not found.`);
+  return json(row.explanation);
 }

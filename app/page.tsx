@@ -6,6 +6,7 @@ import { compareForQueue } from "@/lib/match/decision";
 import { sampleSets } from "@/lib/match/fixtures";
 import { BulkActions } from "./components/BulkActions";
 import { DecisionActions } from "./components/DecisionActions";
+import { ExplainButton } from "./components/ExplainButton";
 import { DecisionRow } from "./components/DecisionRow";
 
 // The queue reads live data on every request.
@@ -56,6 +57,7 @@ export default async function QueuePage() {
       title={[s.invoiceNumber, s.invoiceVendor].filter(Boolean).join(" · ") || "invoice details unreadable"}
       status={statusText(s)}
     >
+      {s.decision.reason !== "clean" ? <ExplainButton setId={s.id} initial={s.explanation} /> : null}
       {s.status === "pending" ? (
         <DecisionActions setId={s.id} recommendation={s.decision.recommendation} />
       ) : s.overrideReason ? (
