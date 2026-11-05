@@ -42,9 +42,24 @@ describe("extracted documents to a decision", () => {
     expect(runSet(toMatchInput("S-15b", fixed, [])).decision.recommendation).toBe("approve");
   });
 
-  it("runs a 2-way match when there is no receiving report", () => {
+  it("does not quietly downgrade to a 2-way match when the receiving report is missing", () => {
     const { traces } = runSet(toMatchInput("S-15", { purchaseOrder: s15.purchaseOrder, invoice: s15.invoice }, []));
+    expect(traces.find((x) => x.rule === "receiving_exists")).toMatchObject({ result: "fail" });
     expect(traces.some((x) => x.rule === "quantity_not_over_received")).toBe(false);
+  });
+
+  it("runs a 2-way match only when asked to", () => {
+    const { traces } = runSet(
+      toMatchInput("S-15", { purchaseOrder: s15.purchaseOrder, invoice: s15.invoice }, [], { matchType: "2-way" }),
+    );
+    expect(traces.some((x) => x.rule === "receiving_exists")).toBe(false);
+  });
+
+  it("recommends rejection when no PO was uploaded", () => {
+    const { decision, traces } = runSet(toMatchInput("S-x", { receivingReport: s15.receivingReport, invoice: s15.invoice }, []));
+    expect(decision.recommendation).not.toBe("approve");
+    expect(traces.find((x) => x.rule === "po_exists")).toMatchObject({ result: "fail" });
+    expect(traces.some((x) => x.rule === "unit_price_within_tolerance")).toBe(false);
   });
 
   it("sends an invoice line with no matching PO line to a person", () => {

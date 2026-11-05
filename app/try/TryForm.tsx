@@ -21,8 +21,10 @@ export function TryForm() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    const rr = form.get("receivingReport");
-    if (rr instanceof File && rr.size === 0) form.delete("receivingReport");
+    for (const slot of ["purchaseOrder", "receivingReport"]) {
+      const f = form.get(slot);
+      if (f instanceof File && f.size === 0) form.delete(slot);
+    }
 
     setBusy(true);
     setError(null);
@@ -43,11 +45,11 @@ export function TryForm() {
     <>
       <form onSubmit={onSubmit} className="stack">
         <label>
-          Purchase order
-          <input type="file" name="purchaseOrder" accept=".pdf,.png,.jpg,.jpeg,.txt" required />
+          Purchase order <span className="muted">(without one, the set is recommended for rejection)</span>
+          <input type="file" name="purchaseOrder" accept=".pdf,.png,.jpg,.jpeg,.txt" />
         </label>
         <label>
-          Receiving report <span className="muted">(optional: leave out for a 2-way match)</span>
+          Receiving report <span className="muted">(without one, the set needs review)</span>
           <input type="file" name="receivingReport" accept=".pdf,.png,.jpg,.jpeg,.txt" />
         </label>
         <label>

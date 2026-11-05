@@ -2,13 +2,14 @@
  * Turns one invoice set's traces into a single recommendation. Code decides;
  * Claude only explains. A person approves every payment.
  */
+import { PO_EXISTS_RULE, RECEIVING_EXISTS_RULE } from "./documents";
 import { DUPLICATE_RULE } from "./duplicate";
 import { PO_NUMBER_RULE, VENDOR_RULE } from "./identity";
 import { INVOICE_TOTAL_RULE } from "./totals";
 import type { TraceEntry } from "./types";
 import { UNIT_PRICE_RULE } from "./unitPrice";
 
-export const DECISION_VERSION = "1";
+export const DECISION_VERSION = "2";
 
 export type Recommendation = "approve" | "review" | "reject";
 
@@ -19,7 +20,7 @@ export type Recommendation = "approve" | "review" | "reject";
  * reject: a check failed that should stop payment (e.g. duplicate, wrong vendor).
  * gated: at least one value was read uncertainly. Never recommended for approval.
  * exception: values were trusted but a check failed (price, quantity, totals, PO number).
- * incomplete: a required check never ran, so the set can't be called clean.
+ * incomplete: a required document or check is missing (e.g. no receiving report), so the set can't be called clean.
  * clean: every required check ran and passed.
  */
 export type DecisionReason = "reject" | "gated" | "exception" | "incomplete" | "clean";
@@ -41,10 +42,14 @@ export interface SetDecision {
 }
 
 /** Failing any of these recommends rejection rather than review. */
-export const REJECT_RULES: readonly string[] = [DUPLICATE_RULE, VENDOR_RULE];
+export const REJECT_RULES: readonly string[] = [DUPLICATE_RULE, VENDOR_RULE, PO_EXISTS_RULE];
+
+/** Failing only these makes a set incomplete rather than an exception: something is missing, not wrong. */
+export const INCOMPLETE_RULES: readonly string[] = [RECEIVING_EXISTS_RULE];
 
 /** A set can't be approved unless each of these ran at least once. */
 export const REQUIRED_RULES: readonly string[] = [
+  PO_EXISTS_RULE,
   VENDOR_RULE,
   PO_NUMBER_RULE,
   DUPLICATE_RULE,
@@ -62,7 +67,10 @@ export function decideSet(setId: string, traces: TraceEntry[]): SetDecision {
   const missingRules = REQUIRED_RULES.filter((r) => !ran.has(r));
   const uncertain = traces.filter((t) => t.result === "needs_review");
   const rejects = traces.filter((t) => t.result === "fail" && REJECT_RULES.includes(t.rule));
-  const exceptions = traces.filter((t) => t.result === "fail" && !REJECT_RULES.includes(t.rule));
+  const incompletes = traces.filter((t) => t.result === "fail" && INCOMPLETE_RULES.includes(t.rule));
+  const exceptions = traces.filter(
+    (t) => t.result === "fail" && !REJECT_RULES.includes(t.rule) && !INCOMPLETE_RULES.includes(t.rule),
+  );
   const gated = uncertain.length > 0;
 
   const make = (
@@ -85,24 +93,28 @@ export function decideSet(setId: string, traces: TraceEntry[]): SetDecision {
   // Order matters. Uncertainty outranks everything: a rejection built on a
   // misread value is no more trustworthy than an approval built on one.
   if (gated) {
-    const extra = rejects.length + exceptions.length;
+    const extra = rejects.length + exceptions.length + incompletes.length;
     return make(
       "review",
       "gated",
-      [...uncertain, ...rejects, ...exceptions],
-      `Needs review: ${plural(uncertain.length, "check")} rely on uncertain or unreadable values${extra ? `, and ${plural(extra, "other check")} failed` : ""}.`,
+      [...uncertain, ...rejects, ...exceptions, ...incompletes],
+      `Needs review: ${plural(uncertain.length, "check")} ${uncertain.length === 1 ? "relies" : "rely"} on uncertain or unreadable values${extra ? `, and ${plural(extra, "other check")} failed` : ""}.`,
     );
   }
   if (rejects.length > 0) {
-    return make("reject", "reject", [...rejects, ...exceptions], `Recommend reject: ${rejects[0]!.reason}`);
+    return make("reject", "reject", [...rejects, ...exceptions, ...incompletes], `Recommend reject: ${rejects[0]!.reason}`);
   }
   if (exceptions.length > 0) {
+    const failedCount = exceptions.length + incompletes.length;
     return make(
       "review",
       "exception",
-      exceptions,
-      exceptions.length === 1 ? `Needs review: ${exceptions[0]!.reason}` : `Needs review: ${plural(exceptions.length, "check")} failed.`,
+      [...exceptions, ...incompletes],
+      failedCount === 1 ? `Needs review: ${exceptions[0]!.reason}` : `Needs review: ${plural(failedCount, "check")} failed.`,
     );
+  }
+  if (incompletes.length > 0) {
+    return make("review", "incomplete", incompletes, `Needs review: ${incompletes[0]!.reason}`);
   }
   if (missingRules.length > 0) {
     return make("review", "incomplete", [], `Needs review: required checks did not run (${missingRules.join(", ")}).`);

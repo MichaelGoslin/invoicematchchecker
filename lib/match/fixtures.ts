@@ -86,8 +86,11 @@ export function traceSet(set: InvoiceSet, priors: PriorInvoice[] = priorInvoices
 
   return runSetChecks({
     setId: set.id,
-    poVendor: text(set.poVendor, `${set.poNumber} header`, 1),
-    poNumber: text(set.poNumber, `${set.poNumber} header`, 1),
+    purchaseOrder: {
+      vendor: text(set.poVendor, `${set.poNumber} header`, 1),
+      number: text(set.poNumber, `${set.poNumber} header`, 1),
+    },
+    receivingReport: { number: text(set.receivingReport, `${set.receivingReport} header`, 1) },
     invoiceVendor: text(set.invoiceVendor, `${inv} header`),
     invoiceNumber: text(inv, `${inv} header`),
     invoicePoRef: text(set.invoicePoRef, `${inv} PO reference`),

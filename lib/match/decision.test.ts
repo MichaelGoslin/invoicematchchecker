@@ -25,7 +25,7 @@ describe("set-level decision", () => {
   it("recommends approval only when every required check ran and passed", () => {
     const d = decideSet("S-1", allPass());
     expect(d).toMatchObject({ recommendation: "approve", reason: "clean", gated: false, drivers: [] });
-    expect(d.summary).toBe("Recommend approve: all 5 checks passed.");
+    expect(d.summary).toBe("Recommend approve: all 6 checks passed.");
   });
 
   it("recommends rejection for a duplicate and names it", () => {
