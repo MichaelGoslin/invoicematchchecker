@@ -1,0 +1,46 @@
+{
+  "setId": "S-065",
+  "invoice": {
+    "number": "TPG-7009",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-29",
+    "poReference": "PO-7031",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 1000,
+        "unitPrice": "101.90",
+        "lineTotal": "101900.00"
+      }
+    ],
+    "subtotal": "101900.00",
+    "tax": "6114.00",
+    "freight": "15.00",
+    "total": "108029.00"
+  },
+  "po": {
+    "number": "PO-7031",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 1000,
+        "unitPrice": "100.00"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-217",
+    "poNumber": "PO-7031",
+    "date": "2026-10-26",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 1000
+      }
+    ]
+  }
+}

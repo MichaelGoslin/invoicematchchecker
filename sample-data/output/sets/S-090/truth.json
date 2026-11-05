@@ -1,0 +1,63 @@
+{
+  "setId": "S-090",
+  "invoice": {
+    "number": "TPG-5136",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-20",
+    "poReference": "PO-4275",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 38,
+        "unitPrice": "22.92",
+        "lineTotal": "870.96"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 69,
+        "unitPrice": "26.01",
+        "lineTotal": "1794.69"
+      }
+    ],
+    "subtotal": "2665.65",
+    "tax": "159.94",
+    "freight": "0.00",
+    "total": "2825.59"
+  },
+  "po": {
+    "number": "PO-4725",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-08",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 38,
+        "unitPrice": "22.92"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 69,
+        "unitPrice": "26.01"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-432",
+    "poNumber": "PO-4725",
+    "date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 38
+      },
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 69
+      }
+    ]
+  }
+}

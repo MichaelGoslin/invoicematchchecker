@@ -1,0 +1,63 @@
+{
+  "setId": "S-057",
+  "invoice": {
+    "number": "CFT-7571",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-29",
+    "poReference": "PO-5757",
+    "lines": [
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 42,
+        "unitPrice": "28.25",
+        "lineTotal": "1186.50"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 39,
+        "unitPrice": "8.77",
+        "lineTotal": "342.03"
+      }
+    ],
+    "subtotal": "1528.53",
+    "tax": "91.71",
+    "freight": "15.00",
+    "total": "1635.24"
+  },
+  "po": {
+    "number": "PO-5757",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 42,
+        "unitPrice": "28.25"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 39,
+        "unitPrice": "8.86"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-468",
+    "poNumber": "PO-5757",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "DRL-114",
+        "quantityReceived": 42
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 39
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "setId": "S-019",
+  "invoice": {
+    "number": "NOP-7180",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-19",
+    "poReference": "PO-3743",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 18,
+        "unitPrice": "51.21",
+        "lineTotal": "921.78"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 70,
+        "unitPrice": "7.26",
+        "lineTotal": "508.20"
+      }
+    ],
+    "subtotal": "1429.98",
+    "tax": "85.80",
+    "freight": "0.00",
+    "total": "1515.78"
+  },
+  "po": {
+    "number": "PO-3743",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-08",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 18,
+        "unitPrice": "51.21"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 70,
+        "unitPrice": "7.26"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-858",
+    "poNumber": "PO-3743",
+    "date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 18
+      },
+      {
+        "sku": "VST-133",
+        "quantityReceived": 70
+      }
+    ]
+  }
+}

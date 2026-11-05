@@ -1,0 +1,63 @@
+{
+  "setId": "S-089",
+  "invoice": {
+    "number": "QSH-9000",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-30",
+    "poReference": "PO-8584",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 54,
+        "unitPrice": "42.65",
+        "lineTotal": "2303.10"
+      },
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 36,
+        "unitPrice": "2.55",
+        "lineTotal": "91.80"
+      }
+    ],
+    "subtotal": "2394.90",
+    "tax": "143.69",
+    "freight": "8.50",
+    "total": "2547.09"
+  },
+  "po": {
+    "number": "PO-8584",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 54,
+        "unitPrice": "42.65"
+      },
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 36,
+        "unitPrice": "2.55"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-558",
+    "poNumber": "PO-8584",
+    "date": "2026-10-27",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 54
+      },
+      {
+        "sku": "BOX-415",
+        "quantityReceived": 36
+      }
+    ]
+  }
+}

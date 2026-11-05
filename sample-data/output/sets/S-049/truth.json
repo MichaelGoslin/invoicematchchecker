@@ -1,0 +1,97 @@
+{
+  "setId": "S-049",
+  "invoice": {
+    "number": "TPG-7662",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-18",
+    "poReference": "PO-9859",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 28,
+        "unitPrice": "10.85",
+        "lineTotal": "303.80"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 90,
+        "unitPrice": "58.14",
+        "lineTotal": "5232.60"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 117,
+        "unitPrice": "6.92",
+        "lineTotal": "809.64"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 11,
+        "unitPrice": "6.28",
+        "lineTotal": "69.08"
+      }
+    ],
+    "subtotal": "6415.12",
+    "tax": "384.91",
+    "freight": "0.00",
+    "total": "6800.03"
+  },
+  "po": {
+    "number": "PO-9859",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 28,
+        "unitPrice": "10.85"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 90,
+        "unitPrice": "58.14"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 117,
+        "unitPrice": "7.05"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 11,
+        "unitPrice": "6.28"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-345",
+    "poNumber": "PO-9859",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 28
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 90
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 117
+      },
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 11
+      }
+    ]
+  }
+}

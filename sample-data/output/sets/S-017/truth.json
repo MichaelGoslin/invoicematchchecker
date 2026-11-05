@@ -1,0 +1,97 @@
+{
+  "setId": "S-017",
+  "invoice": {
+    "number": "QSH-5887",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-26",
+    "poReference": "PO-5979",
+    "lines": [
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 78,
+        "unitPrice": "6.22",
+        "lineTotal": "485.16"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 8,
+        "unitPrice": "5.25",
+        "lineTotal": "42.00"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 86,
+        "unitPrice": "14.99",
+        "lineTotal": "1289.14"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 57,
+        "unitPrice": "37.50",
+        "lineTotal": "2137.50"
+      }
+    ],
+    "subtotal": "3953.80",
+    "tax": "237.23",
+    "freight": "8.50",
+    "total": "4199.53"
+  },
+  "po": {
+    "number": "PO-5979",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 78,
+        "unitPrice": "6.22"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 8,
+        "unitPrice": "5.20"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 86,
+        "unitPrice": "14.99"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 57,
+        "unitPrice": "37.50"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-116",
+    "poNumber": "PO-5979",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 78
+      },
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 8
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 86
+      },
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 57
+      }
+    ]
+  }
+}

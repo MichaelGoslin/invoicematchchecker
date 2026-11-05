@@ -1,0 +1,4176 @@
+set_id,document,field,line,correct_value
+S-001,invoice,invoice_number,,HPS-9126
+S-001,invoice,vendor,,Harbor Point Supply Co.
+S-001,invoice,invoice_date,,2026-10-29
+S-001,invoice,po_reference,,PO-7267
+S-001,invoice,sku,1,HLM-127
+S-001,invoice,description,1,"Safety helmet, white"
+S-001,invoice,quantity,1,47
+S-001,invoice,unit_price,1,21.08
+S-001,invoice,line_total,1,990.76
+S-001,invoice,sku,2,VST-133
+S-001,invoice,description,2,Hi-vis safety vest
+S-001,invoice,quantity,2,38
+S-001,invoice,unit_price,2,10.04
+S-001,invoice,line_total,2,381.52
+S-001,invoice,sku,3,BLT-903
+S-001,invoice,description,3,"Hex bolts, 1/2 in, box of 100"
+S-001,invoice,quantity,3,60
+S-001,invoice,unit_price,3,17.98
+S-001,invoice,line_total,3,1078.80
+S-001,invoice,subtotal,,2451.08
+S-001,invoice,tax,,147.06
+S-001,invoice,freight,,0.00
+S-001,invoice,total,,2598.14
+S-001,po,po_number,,PO-7267
+S-001,po,vendor,,Harbor Point Supply Co.
+S-001,po,po_date,,2026-10-19
+S-001,po,sku,1,HLM-127
+S-001,po,description,1,"Safety helmet, white"
+S-001,po,quantity,1,47
+S-001,po,unit_price,1,21.08
+S-001,po,sku,2,VST-133
+S-001,po,description,2,Hi-vis safety vest
+S-001,po,quantity,2,38
+S-001,po,unit_price,2,10.04
+S-001,po,sku,3,BLT-903
+S-001,po,description,3,"Hex bolts, 1/2 in, box of 100"
+S-001,po,quantity,3,60
+S-001,po,unit_price,3,17.98
+S-001,receiving,report_number,,RR-145
+S-001,receiving,po_number,,PO-7267
+S-001,receiving,report_date,,2026-10-23
+S-001,receiving,sku,1,HLM-127
+S-001,receiving,quantity_received,1,47
+S-001,receiving,sku,2,VST-133
+S-001,receiving,quantity_received,2,38
+S-001,receiving,sku,3,BLT-903
+S-001,receiving,quantity_received,3,56
+S-002,invoice,invoice_number,,NOP-8446
+S-002,invoice,vendor,,Northgate Office Products
+S-002,invoice,invoice_date,,2026-10-14
+S-002,invoice,po_reference,,PO-7607
+S-002,invoice,sku,1,CUP-496
+S-002,invoice,description,1,"Paper cups 12 oz, sleeve of 50"
+S-002,invoice,quantity,1,28
+S-002,invoice,unit_price,1,3.31
+S-002,invoice,line_total,1,92.68
+S-002,invoice,subtotal,,92.68
+S-002,invoice,tax,,5.56
+S-002,invoice,freight,,0.00
+S-002,invoice,total,,98.24
+S-002,po,po_number,,PO-7607
+S-002,po,vendor,,Northgate Office Products
+S-002,po,po_date,,2026-10-05
+S-002,po,sku,1,CUP-496
+S-002,po,description,1,"Paper cups 12 oz, sleeve of 50"
+S-002,po,quantity,1,28
+S-002,po,unit_price,1,3.31
+S-002,receiving,report_number,,RR-153
+S-002,receiving,po_number,,PO-7607
+S-002,receiving,report_date,,2026-10-09
+S-002,receiving,sku,1,CUP-496
+S-002,receiving,quantity_received,1,28
+S-003,invoice,invoice_number,,LLE-5427
+S-003,invoice,vendor,,LARKSPUR LAB EQUIPMENT
+S-003,invoice,invoice_date,,2026-10-17
+S-003,invoice,po_reference,,PO-6921
+S-003,invoice,sku,1,TON-310
+S-003,invoice,description,1,"Toner cartridge, black"
+S-003,invoice,quantity,1,62
+S-003,invoice,unit_price,1,57.43
+S-003,invoice,line_total,1,3560.66
+S-003,invoice,sku,2,TPE-520
+S-003,invoice,description,2,"Packing tape, 6 rolls"
+S-003,invoice,quantity,2,30
+S-003,invoice,unit_price,2,5.45
+S-003,invoice,line_total,2,163.50
+S-003,invoice,subtotal,,3724.16
+S-003,invoice,tax,,223.45
+S-003,invoice,freight,,12.00
+S-003,invoice,total,,3959.61
+S-003,po,po_number,,PO-6921
+S-003,po,vendor,,Larkspur Lab Equipment
+S-003,po,po_date,,2026-10-08
+S-003,po,sku,1,TON-310
+S-003,po,description,1,"Toner cartridge, black"
+S-003,po,quantity,1,62
+S-003,po,unit_price,1,57.43
+S-003,po,sku,2,TPE-520
+S-003,po,description,2,"Packing tape, 6 rolls"
+S-003,po,quantity,2,30
+S-003,po,unit_price,2,5.45
+S-003,receiving,report_number,,RR-672
+S-003,receiving,po_number,,PO-6921
+S-003,receiving,report_date,,2026-10-12
+S-003,receiving,sku,1,TON-310
+S-003,receiving,quantity_received,1,62
+S-003,receiving,sku,2,TPE-520
+S-003,receiving,quantity_received,2,30
+S-004,invoice,invoice_number,,QSH-9400
+S-004,invoice,vendor,,QUARRY STREET HARDWARE
+S-004,invoice,invoice_date,,2026-10-18
+S-004,invoice,po_reference,,PO-8435
+S-004,invoice,sku,1,GLV-630
+S-004,invoice,description,1,"Nitrile gloves, box of 100"
+S-004,invoice,quantity,1,51
+S-004,invoice,unit_price,1,13.77
+S-004,invoice,line_total,1,702.27
+S-004,invoice,sku,2,TON-310
+S-004,invoice,description,2,"Toner cartridge, black"
+S-004,invoice,quantity,2,61
+S-004,invoice,unit_price,2,68.52
+S-004,invoice,line_total,2,4179.72
+S-004,invoice,sku,3,CLN-812
+S-004,invoice,description,3,"All-purpose cleaner, 1 gal"
+S-004,invoice,quantity,3,99
+S-004,invoice,unit_price,3,8.32
+S-004,invoice,line_total,3,823.68
+S-004,invoice,subtotal,,5705.67
+S-004,invoice,tax,,342.34
+S-004,invoice,freight,,0.00
+S-004,invoice,total,,6048.01
+S-004,po,po_number,,PO-8435
+S-004,po,vendor,,Quarry Street Hardware
+S-004,po,po_date,,2026-10-08
+S-004,po,sku,1,GLV-630
+S-004,po,description,1,"Nitrile gloves, box of 100"
+S-004,po,quantity,1,51
+S-004,po,unit_price,1,13.77
+S-004,po,sku,2,TON-310
+S-004,po,description,2,"Toner cartridge, black"
+S-004,po,quantity,2,61
+S-004,po,unit_price,2,68.52
+S-004,po,sku,3,CLN-812
+S-004,po,description,3,"All-purpose cleaner, 1 gal"
+S-004,po,quantity,3,99
+S-004,po,unit_price,3,8.32
+S-004,receiving,report_number,,RR-385
+S-004,receiving,po_number,,PO-8435
+S-004,receiving,report_date,,2026-10-15
+S-004,receiving,sku,1,GLV-630
+S-004,receiving,quantity_received,1,51
+S-004,receiving,sku,2,TON-310
+S-004,receiving,quantity_received,2,61
+S-004,receiving,sku,3,CLN-812
+S-004,receiving,quantity_received,3,99
+S-005,invoice,invoice_number,,MVJ-5309
+S-005,invoice,vendor,,Maple & Vine Janitorial
+S-005,invoice,invoice_date,,2026-10-22
+S-005,invoice,po_reference,,PO-3633
+S-005,invoice,sku,1,PPR-101
+S-005,invoice,description,1,"Copy paper, case of 10 reams"
+S-005,invoice,quantity,1,42
+S-005,invoice,unit_price,1,41.58
+S-005,invoice,line_total,1,1746.36
+S-005,invoice,sku,2,PIP-245
+S-005,invoice,description,2,"Pipettes, pack of 200"
+S-005,invoice,quantity,2,29
+S-005,invoice,unit_price,2,21.20
+S-005,invoice,line_total,2,614.80
+S-005,invoice,sku,3,DRL-114
+S-005,invoice,description,3,Cordless drill bit set
+S-005,invoice,quantity,3,50
+S-005,invoice,unit_price,3,19.37
+S-005,invoice,line_total,3,968.50
+S-005,invoice,subtotal,,3329.66
+S-005,invoice,tax,,199.78
+S-005,invoice,freight,,12.00
+S-005,invoice,total,,3541.44
+S-005,po,po_number,,PO-3633
+S-005,po,vendor,,Maple & Vine Janitorial
+S-005,po,po_date,,2026-10-10
+S-005,po,sku,1,PPR-101
+S-005,po,description,1,"Copy paper, case of 10 reams"
+S-005,po,quantity,1,42
+S-005,po,unit_price,1,40.80
+S-005,po,sku,2,PIP-245
+S-005,po,description,2,"Pipettes, pack of 200"
+S-005,po,quantity,2,29
+S-005,po,unit_price,2,21.20
+S-005,po,sku,3,DRL-114
+S-005,po,description,3,Cordless drill bit set
+S-005,po,quantity,3,50
+S-005,po,unit_price,3,19.37
+S-005,receiving,report_number,,RR-706
+S-005,receiving,po_number,,PO-3633
+S-005,receiving,report_date,,2026-10-18
+S-005,receiving,sku,1,PPR-101
+S-005,receiving,quantity_received,1,42
+S-005,receiving,sku,2,PIP-245
+S-005,receiving,quantity_received,2,29
+S-005,receiving,sku,3,DRL-114
+S-005,receiving,quantity_received,3,50
+S-006,invoice,invoice_number,,QSH-9705
+S-006,invoice,vendor,,Quarry Street Hardware
+S-006,invoice,invoice_date,,2026-10-23
+S-006,invoice,po_reference,,PO-3030
+S-006,invoice,sku,1,CUP-496
+S-006,invoice,description,1,"Paper cups 12 oz, sleeve of 50"
+S-006,invoice,quantity,1,11
+S-006,invoice,unit_price,1,5.54
+S-006,invoice,line_total,1,60.94
+S-006,invoice,sku,2,BKR-252
+S-006,invoice,description,2,"Glass beaker, 500 ml"
+S-006,invoice,quantity,2,56
+S-006,invoice,unit_price,2,12.74
+S-006,invoice,line_total,2,713.44
+S-006,invoice,sku,3,CLN-812
+S-006,invoice,description,3,"All-purpose cleaner, 1 gal"
+S-006,invoice,quantity,3,120
+S-006,invoice,unit_price,3,9.11
+S-006,invoice,line_total,3,1093.20
+S-006,invoice,sku,4,LBL-518
+S-006,invoice,description,4,"Shipping labels, roll of 500"
+S-006,invoice,quantity,4,38
+S-006,invoice,unit_price,4,12.93
+S-006,invoice,line_total,4,491.34
+S-006,invoice,subtotal,,2358.92
+S-006,invoice,tax,,141.54
+S-006,invoice,freight,,15.00
+S-006,invoice,total,,2515.46
+S-006,po,po_number,,PO-3030
+S-006,po,vendor,,Quarry Street Hardware
+S-006,po,po_date,,2026-10-14
+S-006,po,sku,1,CUP-496
+S-006,po,description,1,"Paper cups 12 oz, sleeve of 50"
+S-006,po,quantity,1,11
+S-006,po,unit_price,1,5.54
+S-006,po,sku,2,BKR-252
+S-006,po,description,2,"Glass beaker, 500 ml"
+S-006,po,quantity,2,56
+S-006,po,unit_price,2,12.74
+S-006,po,sku,3,CLN-812
+S-006,po,description,3,"All-purpose cleaner, 1 gal"
+S-006,po,quantity,3,120
+S-006,po,unit_price,3,8.98
+S-006,po,sku,4,LBL-518
+S-006,po,description,4,"Shipping labels, roll of 500"
+S-006,po,quantity,4,38
+S-006,po,unit_price,4,12.93
+S-006,receiving,report_number,,RR-327
+S-006,receiving,po_number,,PO-3030
+S-006,receiving,report_date,,2026-10-18
+S-006,receiving,sku,1,CUP-496
+S-006,receiving,quantity_received,1,11
+S-006,receiving,sku,2,BKR-252
+S-006,receiving,quantity_received,2,56
+S-006,receiving,sku,3,CLN-812
+S-006,receiving,quantity_received,3,120
+S-006,receiving,sku,4,LBL-518
+S-006,receiving,quantity_received,4,38
+S-007,invoice,invoice_number,,BFI-5896
+S-007,invoice,vendor,,Brightfield Industrial
+S-007,invoice,invoice_date,,2026-10-20
+S-007,invoice,po_reference,,PO-8446
+S-007,invoice,sku,1,PPR-101
+S-007,invoice,description,1,"Copy paper, case of 10 reams"
+S-007,invoice,quantity,1,67
+S-007,invoice,unit_price,1,47.79
+S-007,invoice,line_total,1,3201.93
+S-007,invoice,sku,2,CUP-496
+S-007,invoice,description,2,"Paper cups 12 oz, sleeve of 50"
+S-007,invoice,quantity,2,35
+S-007,invoice,unit_price,2,5.46
+S-007,invoice,line_total,2,191.10
+S-007,invoice,sku,3,HLM-127
+S-007,invoice,description,3,"Safety helmet, white"
+S-007,invoice,quantity,3,79
+S-007,invoice,unit_price,3,16.34
+S-007,invoice,line_total,3,1290.86
+S-007,invoice,sku,4,BLT-903
+S-007,invoice,description,4,"Hex bolts, 1/2 in, box of 100"
+S-007,invoice,quantity,4,98
+S-007,invoice,unit_price,4,14.19
+S-007,invoice,line_total,4,1390.62
+S-007,invoice,subtotal,,6074.51
+S-007,invoice,tax,,364.47
+S-007,invoice,freight,,12.00
+S-007,invoice,total,,6450.98
+S-007,po,po_number,,PO-8446
+S-007,po,vendor,,Brightfield Industrial
+S-007,po,po_date,,2026-10-11
+S-007,po,sku,1,PPR-101
+S-007,po,description,1,"Copy paper, case of 10 reams"
+S-007,po,quantity,1,67
+S-007,po,unit_price,1,47.79
+S-007,po,sku,2,CUP-496
+S-007,po,description,2,"Paper cups 12 oz, sleeve of 50"
+S-007,po,quantity,2,35
+S-007,po,unit_price,2,5.46
+S-007,po,sku,3,HLM-127
+S-007,po,description,3,"Safety helmet, white"
+S-007,po,quantity,3,79
+S-007,po,unit_price,3,16.10
+S-007,po,sku,4,BLT-903
+S-007,po,description,4,"Hex bolts, 1/2 in, box of 100"
+S-007,po,quantity,4,98
+S-007,po,unit_price,4,14.19
+S-007,receiving,report_number,,RR-978
+S-007,receiving,po_number,,PO-8446
+S-007,receiving,report_date,,2026-10-16
+S-007,receiving,sku,1,PPR-101
+S-007,receiving,quantity_received,1,67
+S-007,receiving,sku,2,CUP-496
+S-007,receiving,quantity_received,2,35
+S-007,receiving,sku,3,HLM-127
+S-007,receiving,quantity_received,3,79
+S-007,receiving,sku,4,BLT-903
+S-007,receiving,quantity_received,4,98
+S-008,invoice,invoice_number,,TPG-8431
+S-008,invoice,vendor,,Tidewater Paper Group
+S-008,invoice,invoice_date,,2026-10-17
+S-008,invoice,po_reference,,PO-7311
+S-008,invoice,sku,1,SCR-502
+S-008,invoice,description,1,"Wood screws, box of 200"
+S-008,invoice,quantity,1,96
+S-008,invoice,unit_price,1,5.35
+S-008,invoice,line_total,1,513.60
+S-008,invoice,sku,2,LBL-518
+S-008,invoice,description,2,"Shipping labels, roll of 500"
+S-008,invoice,quantity,2,85
+S-008,invoice,unit_price,2,16.17
+S-008,invoice,line_total,2,1374.45
+S-008,invoice,subtotal,,1888.05
+S-008,invoice,tax,,113.28
+S-008,invoice,freight,,0.00
+S-008,invoice,total,,2001.33
+S-008,po,po_number,,PO-7311
+S-008,po,vendor,,Tidewater Paper Group
+S-008,po,po_date,,2026-10-06
+S-008,po,sku,1,SCR-502
+S-008,po,description,1,"Wood screws, box of 200"
+S-008,po,quantity,1,96
+S-008,po,unit_price,1,5.35
+S-008,po,sku,2,LBL-518
+S-008,po,description,2,"Shipping labels, roll of 500"
+S-008,po,quantity,2,85
+S-008,po,unit_price,2,16.17
+S-008,receiving,report_number,,RR-925
+S-008,receiving,po_number,,PO-7311
+S-008,receiving,report_date,,2026-10-09
+S-008,receiving,sku,1,SCR-502
+S-008,receiving,quantity_received,1,96
+S-008,receiving,sku,2,LBL-518
+S-008,receiving,quantity_received,2,85
+S-009,invoice,invoice_number,,CFT-8936
+S-009,invoice,vendor,,Copperfield Tools Inc.
+S-009,invoice,invoice_date,,2026-10-29
+S-009,invoice,po_reference,,PO-4987
+S-009,invoice,sku,1,HLM-127
+S-009,invoice,description,1,"Safety helmet, white"
+S-009,invoice,quantity,1,33
+S-009,invoice,unit_price,1,13.73
+S-009,invoice,line_total,1,453.09
+S-009,invoice,sku,2,TPE-520
+S-009,invoice,description,2,"Packing tape, 6 rolls"
+S-009,invoice,quantity,2,13
+S-009,invoice,unit_price,2,5.53
+S-009,invoice,line_total,2,71.89
+S-009,invoice,subtotal,,524.98
+S-009,invoice,tax,,31.50
+S-009,invoice,freight,,0.00
+S-009,invoice,total,,556.48
+S-009,po,po_number,,PO-4987
+S-009,po,vendor,,Copperfield Tools Inc.
+S-009,po,po_date,,2026-10-19
+S-009,po,sku,1,HLM-127
+S-009,po,description,1,"Safety helmet, white"
+S-009,po,quantity,1,33
+S-009,po,unit_price,1,13.73
+S-009,po,sku,2,TPE-520
+S-009,po,description,2,"Packing tape, 6 rolls"
+S-009,po,quantity,2,13
+S-009,po,unit_price,2,5.56
+S-009,receiving,report_number,,RR-371
+S-009,receiving,po_number,,PO-4987
+S-009,receiving,report_date,,2026-10-23
+S-009,receiving,sku,1,HLM-127
+S-009,receiving,quantity_received,1,33
+S-009,receiving,sku,2,TPE-520
+S-009,receiving,quantity_received,2,13
+S-010,invoice,invoice_number,,WFW-6178
+S-010,invoice,vendor,,Willowbrook Foods Wholesale
+S-010,invoice,invoice_date,,2026-10-18
+S-010,invoice,po_reference,,PO-7926
+S-010,invoice,sku,1,BLT-903
+S-010,invoice,description,1,"Hex bolts, 1/2 in, box of 100"
+S-010,invoice,quantity,1,92
+S-010,invoice,unit_price,1,13.47
+S-010,invoice,line_total,1,1239.24
+S-010,invoice,sku,2,LBL-518
+S-010,invoice,description,2,"Shipping labels, roll of 500"
+S-010,invoice,quantity,2,72
+S-010,invoice,unit_price,2,9.29
+S-010,invoice,line_total,2,668.88
+S-010,invoice,sku,3,PPR-101
+S-010,invoice,description,3,"Copy paper, case of 10 reams"
+S-010,invoice,quantity,3,106
+S-010,invoice,unit_price,3,32.43
+S-010,invoice,line_total,3,3437.58
+S-010,invoice,subtotal,,5345.70
+S-010,invoice,tax,,320.74
+S-010,invoice,freight,,0.00
+S-010,invoice,total,,5666.44
+S-010,po,po_number,,PO-7926
+S-010,po,vendor,,Willowbrook Foods Wholesale
+S-010,po,po_date,,2026-10-06
+S-010,po,sku,1,BLT-903
+S-010,po,description,1,"Hex bolts, 1/2 in, box of 100"
+S-010,po,quantity,1,92
+S-010,po,unit_price,1,13.47
+S-010,po,sku,2,LBL-518
+S-010,po,description,2,"Shipping labels, roll of 500"
+S-010,po,quantity,2,72
+S-010,po,unit_price,2,9.20
+S-010,po,sku,3,PPR-101
+S-010,po,description,3,"Copy paper, case of 10 reams"
+S-010,po,quantity,3,106
+S-010,po,unit_price,3,32.43
+S-010,receiving,report_number,,RR-801
+S-010,receiving,po_number,,PO-7926
+S-010,receiving,report_date,,2026-10-10
+S-010,receiving,sku,1,BLT-903
+S-010,receiving,quantity_received,1,92
+S-010,receiving,sku,2,LBL-518
+S-010,receiving,quantity_received,2,72
+S-010,receiving,sku,3,PPR-101
+S-010,receiving,quantity_received,3,106
+S-011,invoice,invoice_number,,HPS-1527
+S-011,invoice,vendor,,Harbor Point Supply Co.
+S-011,invoice,invoice_date,,2026-10-19
+S-011,invoice,po_reference,,PO-9960
+S-011,invoice,sku,1,WIR-364
+S-011,invoice,description,1,"Copper wire, 100 ft spool"
+S-011,invoice,quantity,1,103
+S-011,invoice,unit_price,1,38.79
+S-011,invoice,line_total,1,3995.37
+S-011,invoice,sku,2,TPE-520
+S-011,invoice,description,2,"Packing tape, 6 rolls"
+S-011,invoice,quantity,2,45
+S-011,invoice,unit_price,2,9.30
+S-011,invoice,line_total,2,418.50
+S-011,invoice,sku,3,TON-310
+S-011,invoice,description,3,"Toner cartridge, black"
+S-011,invoice,quantity,3,72
+S-011,invoice,unit_price,3,85.87
+S-011,invoice,line_total,3,6182.64
+S-011,invoice,sku,4,BLT-903
+S-011,invoice,description,4,"Hex bolts, 1/2 in, box of 100"
+S-011,invoice,quantity,4,7
+S-011,invoice,unit_price,4,13.85
+S-011,invoice,line_total,4,96.95
+S-011,invoice,subtotal,,10693.46
+S-011,invoice,tax,,641.61
+S-011,invoice,freight,,0.00
+S-011,invoice,total,,11335.07
+S-011,po,po_number,,PO-9960
+S-011,po,vendor,,Harbor Point Supply Co.
+S-011,po,po_date,,2026-10-09
+S-011,po,sku,1,WIR-364
+S-011,po,description,1,"Copper wire, 100 ft spool"
+S-011,po,quantity,1,103
+S-011,po,unit_price,1,38.79
+S-011,po,sku,2,TPE-520
+S-011,po,description,2,"Packing tape, 6 rolls"
+S-011,po,quantity,2,45
+S-011,po,unit_price,2,9.30
+S-011,po,sku,3,TON-310
+S-011,po,description,3,"Toner cartridge, black"
+S-011,po,quantity,3,72
+S-011,po,unit_price,3,85.87
+S-011,po,sku,4,BLT-903
+S-011,po,description,4,"Hex bolts, 1/2 in, box of 100"
+S-011,po,quantity,4,7
+S-011,po,unit_price,4,13.85
+S-011,receiving,report_number,,RR-286
+S-011,receiving,po_number,,PO-9960
+S-011,receiving,report_date,,2026-10-13
+S-011,receiving,sku,1,WIR-364
+S-011,receiving,quantity_received,1,103
+S-011,receiving,sku,2,TPE-520
+S-011,receiving,quantity_received,2,45
+S-011,receiving,sku,3,TON-310
+S-011,receiving,quantity_received,3,72
+S-011,receiving,sku,4,BLT-903
+S-011,receiving,quantity_received,4,7
+S-012,invoice,invoice_number,,ISS-7011
+S-012,invoice,vendor,,Ironwood Safety Supply
+S-012,invoice,invoice_date,,2026-10-20
+S-012,invoice,po_reference,,PO-4165
+S-012,invoice,sku,1,BKR-252
+S-012,invoice,description,1,"Glass beaker, 500 ml"
+S-012,invoice,quantity,1,98
+S-012,invoice,unit_price,1,10.94
+S-012,invoice,line_total,1,1072.12
+S-012,invoice,sku,2,WIR-364
+S-012,invoice,description,2,"Copper wire, 100 ft spool"
+S-012,invoice,quantity,2,39
+S-012,invoice,unit_price,2,38.12
+S-012,invoice,line_total,2,1486.68
+S-012,invoice,sku,3,NAP-488
+S-012,invoice,description,3,"Paper napkins, case of 3000"
+S-012,invoice,quantity,3,26
+S-012,invoice,unit_price,3,35.65
+S-012,invoice,line_total,3,926.90
+S-012,invoice,subtotal,,3485.70
+S-012,invoice,tax,,209.14
+S-012,invoice,freight,,0.00
+S-012,invoice,total,,3695.34
+S-012,po,po_number,,PO-4165
+S-012,po,vendor,,Ironwood Safety Supply
+S-012,po,po_date,,2026-10-10
+S-012,po,sku,1,BKR-252
+S-012,po,description,1,"Glass beaker, 500 ml"
+S-012,po,quantity,1,98
+S-012,po,unit_price,1,10.94
+S-012,po,sku,2,WIR-364
+S-012,po,description,2,"Copper wire, 100 ft spool"
+S-012,po,quantity,2,39
+S-012,po,unit_price,2,38.12
+S-012,po,sku,3,NAP-488
+S-012,po,description,3,"Paper napkins, case of 3000"
+S-012,po,quantity,3,26
+S-012,po,unit_price,3,35.65
+S-012,receiving,report_number,,RR-903
+S-012,receiving,po_number,,PO-4165
+S-012,receiving,report_date,,2026-10-16
+S-012,receiving,sku,1,BKR-252
+S-012,receiving,quantity_received,1,98
+S-012,receiving,sku,2,WIR-364
+S-012,receiving,quantity_received,2,39
+S-012,receiving,sku,3,NAP-488
+S-012,receiving,quantity_received,3,26
+S-013,invoice,invoice_number,,TPG-6724
+S-013,invoice,vendor,,Tidewater Paper Group
+S-013,invoice,invoice_date,,2026-10-26
+S-013,invoice,po_reference,,PO-7480
+S-013,invoice,sku,1,PPR-101
+S-013,invoice,description,1,"Copy paper, case of 10 reams"
+S-013,invoice,quantity,1,400
+S-013,invoice,unit_price,1,30.20
+S-013,invoice,line_total,1,12080.00
+S-013,invoice,subtotal,,12080.00
+S-013,invoice,tax,,724.80
+S-013,invoice,freight,,15.00
+S-013,invoice,total,,12819.80
+S-013,po,po_number,,PO-7480
+S-013,po,vendor,,Tidewater Paper Group
+S-013,po,po_date,,2026-10-15
+S-013,po,sku,1,PPR-101
+S-013,po,description,1,"Copy paper, case of 10 reams"
+S-013,po,quantity,1,400
+S-013,po,unit_price,1,30.00
+S-013,receiving,report_number,,RR-772
+S-013,receiving,po_number,,PO-7480
+S-013,receiving,report_date,,2026-10-23
+S-013,receiving,sku,1,PPR-101
+S-013,receiving,quantity_received,1,400
+S-014,invoice,invoice_number,,BFI-7215
+S-014,invoice,vendor,,Brightfield Industrial
+S-014,invoice,invoice_date,,2026-10-25
+S-014,invoice,po_reference,,PO-2176
+S-014,invoice,sku,1,WIR-364
+S-014,invoice,description,1,"Copper wire, 100 ft spool"
+S-014,invoice,quantity,1,13
+S-014,invoice,unit_price,1,40.23
+S-014,invoice,line_total,1,522.99
+S-014,invoice,sku,2,NAP-488
+S-014,invoice,description,2,"Paper napkins, case of 3000"
+S-014,invoice,quantity,2,65
+S-014,invoice,unit_price,2,24.40
+S-014,invoice,line_total,2,1586.00
+S-014,invoice,subtotal,,2108.99
+S-014,invoice,tax,,126.54
+S-014,invoice,freight,,8.50
+S-014,invoice,total,,2244.03
+S-014,po,po_number,,PO-2176
+S-014,po,vendor,,Brightfield Industrial
+S-014,po,po_date,,2026-10-16
+S-014,po,sku,1,WIR-364
+S-014,po,description,1,"Copper wire, 100 ft spool"
+S-014,po,quantity,1,13
+S-014,po,unit_price,1,40.23
+S-014,po,sku,2,NAP-488
+S-014,po,description,2,"Paper napkins, case of 3000"
+S-014,po,quantity,2,65
+S-014,po,unit_price,2,24.28
+S-014,receiving,report_number,,RR-140
+S-014,receiving,po_number,,PO-2176
+S-014,receiving,report_date,,2026-10-20
+S-014,receiving,sku,1,WIR-364
+S-014,receiving,quantity_received,1,13
+S-014,receiving,sku,2,NAP-488
+S-014,receiving,quantity_received,2,65
+S-015,invoice,invoice_number,,ISS-5969
+S-015,invoice,vendor,,Ironwood Safety Supply
+S-015,invoice,invoice_date,,2026-10-26
+S-015,invoice,po_reference,,PO-5200
+S-015,invoice,sku,1,PEN-220
+S-015,invoice,description,1,"Ballpoint pens, box of 50"
+S-015,invoice,quantity,1,10
+S-015,invoice,unit_price,1,5.28
+S-015,invoice,line_total,1,52.80
+S-015,invoice,sku,2,CUP-496
+S-015,invoice,description,2,"Paper cups 12 oz, sleeve of 50"
+S-015,invoice,quantity,2,88
+S-015,invoice,unit_price,2,6.32
+S-015,invoice,line_total,2,556.16
+S-015,invoice,subtotal,,608.96
+S-015,invoice,tax,,36.54
+S-015,invoice,freight,,8.50
+S-015,invoice,total,,654.00
+S-015,po,po_number,,PO-5200
+S-015,po,vendor,,Ironwood Safety Supply
+S-015,po,po_date,,2026-10-14
+S-015,po,sku,1,PEN-220
+S-015,po,description,1,"Ballpoint pens, box of 50"
+S-015,po,quantity,1,10
+S-015,po,unit_price,1,5.28
+S-015,po,sku,2,CUP-496
+S-015,po,description,2,"Paper cups 12 oz, sleeve of 50"
+S-015,po,quantity,2,88
+S-015,po,unit_price,2,6.32
+S-015,receiving,report_number,,RR-712
+S-015,receiving,po_number,,PO-5200
+S-015,receiving,report_date,,2026-10-18
+S-015,receiving,sku,1,PEN-220
+S-015,receiving,quantity_received,1,10
+S-015,receiving,sku,2,CUP-496
+S-015,receiving,quantity_received,2,88
+S-016,invoice,invoice_number,,CLP-7294
+S-016,invoice,vendor,,Cedar Lane Packaging
+S-016,invoice,invoice_date,,2026-10-26
+S-016,invoice,po_reference,,PO-7400
+S-016,invoice,sku,1,PPR-101
+S-016,invoice,description,1,"Copy paper, case of 10 reams"
+S-016,invoice,quantity,1,6
+S-016,invoice,unit_price,1,45.32
+S-016,invoice,line_total,1,271.92
+S-016,invoice,sku,2,PIP-245
+S-016,invoice,description,2,"Pipettes, pack of 200"
+S-016,invoice,quantity,2,73
+S-016,invoice,unit_price,2,20.37
+S-016,invoice,line_total,2,1487.01
+S-016,invoice,sku,3,MOP-705
+S-016,invoice,description,3,Cotton mop head
+S-016,invoice,quantity,3,95
+S-016,invoice,unit_price,3,4.77
+S-016,invoice,line_total,3,453.15
+S-016,invoice,subtotal,,2212.08
+S-016,invoice,tax,,132.72
+S-016,invoice,freight,,8.50
+S-016,invoice,total,,2353.30
+S-016,po,po_number,,PO-7400
+S-016,po,vendor,,Cedar Lane Packaging
+S-016,po,po_date,,2026-10-14
+S-016,po,sku,1,PPR-101
+S-016,po,description,1,"Copy paper, case of 10 reams"
+S-016,po,quantity,1,6
+S-016,po,unit_price,1,45.32
+S-016,po,sku,2,PIP-245
+S-016,po,description,2,"Pipettes, pack of 200"
+S-016,po,quantity,2,73
+S-016,po,unit_price,2,20.37
+S-016,po,sku,3,MOP-705
+S-016,po,description,3,Cotton mop head
+S-016,po,quantity,3,95
+S-016,po,unit_price,3,4.77
+S-016,receiving,report_number,,RR-570
+S-016,receiving,po_number,,PO-7400
+S-016,receiving,report_date,,2026-10-21
+S-016,receiving,sku,1,PPR-101
+S-016,receiving,quantity_received,1,6
+S-016,receiving,sku,2,PIP-245
+S-016,receiving,quantity_received,2,73
+S-016,receiving,sku,3,MOP-705
+S-016,receiving,quantity_received,3,95
+S-017,invoice,invoice_number,,QSH-5887
+S-017,invoice,vendor,,Quarry Street Hardware
+S-017,invoice,invoice_date,,2026-10-26
+S-017,invoice,po_reference,,PO-5979
+S-017,invoice,sku,1,CLN-812
+S-017,invoice,description,1,"All-purpose cleaner, 1 gal"
+S-017,invoice,quantity,1,78
+S-017,invoice,unit_price,1,6.22
+S-017,invoice,line_total,1,485.16
+S-017,invoice,sku,2,PEN-220
+S-017,invoice,description,2,"Ballpoint pens, box of 50"
+S-017,invoice,quantity,2,8
+S-017,invoice,unit_price,2,5.25
+S-017,invoice,line_total,2,42.00
+S-017,invoice,sku,3,PIP-245
+S-017,invoice,description,3,"Pipettes, pack of 200"
+S-017,invoice,quantity,3,86
+S-017,invoice,unit_price,3,14.99
+S-017,invoice,line_total,3,1289.14
+S-017,invoice,sku,4,NAP-488
+S-017,invoice,description,4,"Paper napkins, case of 3000"
+S-017,invoice,quantity,4,57
+S-017,invoice,unit_price,4,37.50
+S-017,invoice,line_total,4,2137.50
+S-017,invoice,subtotal,,3953.80
+S-017,invoice,tax,,237.23
+S-017,invoice,freight,,8.50
+S-017,invoice,total,,4199.53
+S-017,po,po_number,,PO-5979
+S-017,po,vendor,,Quarry Street Hardware
+S-017,po,po_date,,2026-10-14
+S-017,po,sku,1,CLN-812
+S-017,po,description,1,"All-purpose cleaner, 1 gal"
+S-017,po,quantity,1,78
+S-017,po,unit_price,1,6.22
+S-017,po,sku,2,PEN-220
+S-017,po,description,2,"Ballpoint pens, box of 50"
+S-017,po,quantity,2,8
+S-017,po,unit_price,2,5.20
+S-017,po,sku,3,PIP-245
+S-017,po,description,3,"Pipettes, pack of 200"
+S-017,po,quantity,3,86
+S-017,po,unit_price,3,14.99
+S-017,po,sku,4,NAP-488
+S-017,po,description,4,"Paper napkins, case of 3000"
+S-017,po,quantity,4,57
+S-017,po,unit_price,4,37.50
+S-017,receiving,report_number,,RR-116
+S-017,receiving,po_number,,PO-5979
+S-017,receiving,report_date,,2026-10-20
+S-017,receiving,sku,1,CLN-812
+S-017,receiving,quantity_received,1,78
+S-017,receiving,sku,2,PEN-220
+S-017,receiving,quantity_received,2,8
+S-017,receiving,sku,3,PIP-245
+S-017,receiving,quantity_received,3,86
+S-017,receiving,sku,4,NAP-488
+S-017,receiving,quantity_received,4,57
+S-018,invoice,invoice_number,,WFW-9579
+S-018,invoice,vendor,,Willowbrook Foods Wholesale
+S-018,invoice,invoice_date,,2026-10-28
+S-018,invoice,po_reference,,PO-4301
+S-018,invoice,sku,1,PEN-220
+S-018,invoice,description,1,"Ballpoint pens, box of 50"
+S-018,invoice,quantity,1,10
+S-018,invoice,unit_price,1,6.68
+S-018,invoice,line_total,1,66.80
+S-018,invoice,subtotal,,66.80
+S-018,invoice,tax,,4.01
+S-018,invoice,freight,,0.00
+S-018,invoice,total,,70.81
+S-018,po,po_number,,PO-4301
+S-018,po,vendor,,Willowbrook Foods Wholesale
+S-018,po,po_date,,2026-10-16
+S-018,po,sku,1,PEN-220
+S-018,po,description,1,"Ballpoint pens, box of 50"
+S-018,po,quantity,1,10
+S-018,po,unit_price,1,6.68
+S-018,receiving,report_number,,RR-411
+S-018,receiving,po_number,,PO-4301
+S-018,receiving,report_date,,2026-10-20
+S-018,receiving,sku,1,PEN-220
+S-018,receiving,quantity_received,1,10
+S-019,invoice,invoice_number,,NOP-7180
+S-019,invoice,vendor,,Brightfield Industrial
+S-019,invoice,invoice_date,,2026-10-19
+S-019,invoice,po_reference,,PO-3743
+S-019,invoice,sku,1,WIR-364
+S-019,invoice,description,1,"Copper wire, 100 ft spool"
+S-019,invoice,quantity,1,18
+S-019,invoice,unit_price,1,51.21
+S-019,invoice,line_total,1,921.78
+S-019,invoice,sku,2,VST-133
+S-019,invoice,description,2,Hi-vis safety vest
+S-019,invoice,quantity,2,70
+S-019,invoice,unit_price,2,7.26
+S-019,invoice,line_total,2,508.20
+S-019,invoice,subtotal,,1429.98
+S-019,invoice,tax,,85.80
+S-019,invoice,freight,,0.00
+S-019,invoice,total,,1515.78
+S-019,po,po_number,,PO-3743
+S-019,po,vendor,,Northgate Office Products
+S-019,po,po_date,,2026-10-08
+S-019,po,sku,1,WIR-364
+S-019,po,description,1,"Copper wire, 100 ft spool"
+S-019,po,quantity,1,18
+S-019,po,unit_price,1,51.21
+S-019,po,sku,2,VST-133
+S-019,po,description,2,Hi-vis safety vest
+S-019,po,quantity,2,70
+S-019,po,unit_price,2,7.26
+S-019,receiving,report_number,,RR-858
+S-019,receiving,po_number,,PO-3743
+S-019,receiving,report_date,,2026-10-12
+S-019,receiving,sku,1,WIR-364
+S-019,receiving,quantity_received,1,18
+S-019,receiving,sku,2,VST-133
+S-019,receiving,quantity_received,2,70
+S-020,invoice,invoice_number,,CLP-5463
+S-020,invoice,vendor,,Cedar Lane Packaging
+S-020,invoice,invoice_date,,2026-10-24
+S-020,invoice,po_reference,,PO-4432
+S-020,invoice,sku,1,WIR-364
+S-020,invoice,description,1,"Copper wire, 100 ft spool"
+S-020,invoice,quantity,1,52
+S-020,invoice,unit_price,1,45.27
+S-020,invoice,line_total,1,2354.04
+S-020,invoice,sku,2,CUP-496
+S-020,invoice,description,2,"Paper cups 12 oz, sleeve of 50"
+S-020,invoice,quantity,2,102
+S-020,invoice,unit_price,2,3.68
+S-020,invoice,line_total,2,375.36
+S-020,invoice,sku,3,LBL-518
+S-020,invoice,description,3,"Shipping labels, roll of 500"
+S-020,invoice,quantity,3,83
+S-020,invoice,unit_price,3,13.89
+S-020,invoice,line_total,3,1152.87
+S-020,invoice,subtotal,,3882.27
+S-020,invoice,tax,,232.94
+S-020,invoice,freight,,0.00
+S-020,invoice,total,,4115.21
+S-020,po,po_number,,PO-4432
+S-020,po,vendor,,Cedar Lane Packaging
+S-020,po,po_date,,2026-10-14
+S-020,po,sku,1,WIR-364
+S-020,po,description,1,"Copper wire, 100 ft spool"
+S-020,po,quantity,1,52
+S-020,po,unit_price,1,45.27
+S-020,po,sku,2,CUP-496
+S-020,po,description,2,"Paper cups 12 oz, sleeve of 50"
+S-020,po,quantity,2,102
+S-020,po,unit_price,2,3.68
+S-020,po,sku,3,LBL-518
+S-020,po,description,3,"Shipping labels, roll of 500"
+S-020,po,quantity,3,83
+S-020,po,unit_price,3,13.89
+S-020,receiving,report_number,,RR-653
+S-020,receiving,po_number,,PO-4432
+S-020,receiving,report_date,,2026-10-19
+S-020,receiving,sku,1,WIR-364
+S-020,receiving,quantity_received,1,52
+S-020,receiving,sku,2,CUP-496
+S-020,receiving,quantity_received,2,102
+S-020,receiving,sku,3,LBL-518
+S-020,receiving,quantity_received,3,83
+S-021,invoice,invoice_number,,LLE-7320
+S-021,invoice,vendor,,Larkspur Lab Equipment
+S-021,invoice,invoice_date,,2026-10-15
+S-021,invoice,po_reference,,PO-5125
+S-021,invoice,sku,1,MOP-705
+S-021,invoice,description,1,Cotton mop head
+S-021,invoice,quantity,1,109
+S-021,invoice,unit_price,1,5.43
+S-021,invoice,line_total,1,591.87
+S-021,invoice,sku,2,TPE-520
+S-021,invoice,description,2,"Packing tape, 6 rolls"
+S-021,invoice,quantity,2,44
+S-021,invoice,unit_price,2,8.10
+S-021,invoice,line_total,2,356.40
+S-021,invoice,sku,3,VST-133
+S-021,invoice,description,3,Hi-vis safety vest
+S-021,invoice,quantity,3,22
+S-021,invoice,unit_price,3,14.98
+S-021,invoice,line_total,3,329.56
+S-021,invoice,subtotal,,1277.83
+S-021,invoice,tax,,76.67
+S-021,invoice,freight,,0.00
+S-021,invoice,total,,1354.50
+S-021,po,po_number,,PO-5125
+S-021,po,vendor,,Larkspur Lab Equipment
+S-021,po,po_date,,2026-10-06
+S-021,po,sku,1,MOP-705
+S-021,po,description,1,Cotton mop head
+S-021,po,quantity,1,109
+S-021,po,unit_price,1,5.43
+S-021,po,sku,2,TPE-520
+S-021,po,description,2,"Packing tape, 6 rolls"
+S-021,po,quantity,2,44
+S-021,po,unit_price,2,8.10
+S-021,po,sku,3,VST-133
+S-021,po,description,3,Hi-vis safety vest
+S-021,po,quantity,3,22
+S-021,po,unit_price,3,14.98
+S-021,receiving,report_number,,RR-460
+S-021,receiving,po_number,,PO-5125
+S-021,receiving,report_date,,2026-10-12
+S-021,receiving,sku,1,MOP-705
+S-021,receiving,quantity_received,1,109
+S-021,receiving,sku,2,TPE-520
+S-021,receiving,quantity_received,2,44
+S-021,receiving,sku,3,VST-133
+S-021,receiving,quantity_received,3,22
+S-022,invoice,invoice_number,,BFI-7082
+S-022,invoice,vendor,,Brightfield Industrial
+S-022,invoice,invoice_date,,2026-10-20
+S-022,invoice,po_reference,,PO-5675
+S-022,invoice,sku,1,VST-133
+S-022,invoice,description,1,Hi-vis safety vest
+S-022,invoice,quantity,1,102
+S-022,invoice,unit_price,1,11.03
+S-022,invoice,line_total,1,1125.06
+S-022,invoice,sku,2,SCR-502
+S-022,invoice,description,2,"Wood screws, box of 200"
+S-022,invoice,quantity,2,19
+S-022,invoice,unit_price,2,7.96
+S-022,invoice,line_total,2,151.24
+S-022,invoice,subtotal,,1276.30
+S-022,invoice,tax,,76.58
+S-022,invoice,freight,,0.00
+S-022,invoice,total,,1352.88
+S-022,po,po_number,,PO-5675
+S-022,po,vendor,,Brightfield Industrial
+S-022,po,po_date,,2026-10-11
+S-022,po,sku,1,VST-133
+S-022,po,description,1,Hi-vis safety vest
+S-022,po,quantity,1,102
+S-022,po,unit_price,1,11.03
+S-022,po,sku,2,SCR-502
+S-022,po,description,2,"Wood screws, box of 200"
+S-022,po,quantity,2,19
+S-022,po,unit_price,2,8.00
+S-022,receiving,report_number,,RR-394
+S-022,receiving,po_number,,PO-5675
+S-022,receiving,report_date,,2026-10-19
+S-022,receiving,sku,1,VST-133
+S-022,receiving,quantity_received,1,102
+S-022,receiving,sku,2,SCR-502
+S-022,receiving,quantity_received,2,19
+S-023,invoice,invoice_number,,QSH-7505
+S-023,invoice,vendor,,Quarry Street Hardware
+S-023,invoice,invoice_date,,2026-10-28
+S-023,invoice,po_reference,,PO-8236
+S-023,invoice,sku,1,NAP-488
+S-023,invoice,description,1,"Paper napkins, case of 3000"
+S-023,invoice,quantity,1,15
+S-023,invoice,unit_price,1,29.71
+S-023,invoice,line_total,1,445.65
+S-023,invoice,sku,2,MOP-705
+S-023,invoice,description,2,Cotton mop head
+S-023,invoice,quantity,2,109
+S-023,invoice,unit_price,2,4.97
+S-023,invoice,line_total,2,541.73
+S-023,invoice,sku,3,TPE-520
+S-023,invoice,description,3,"Packing tape, 6 rolls"
+S-023,invoice,quantity,3,76
+S-023,invoice,unit_price,3,5.21
+S-023,invoice,line_total,3,395.96
+S-023,invoice,subtotal,,1383.34
+S-023,invoice,tax,,83.00
+S-023,invoice,freight,,0.00
+S-023,invoice,total,,1466.34
+S-023,po,po_number,,PO-8236
+S-023,po,vendor,,Quarry Street Hardware
+S-023,po,po_date,,2026-10-16
+S-023,po,sku,1,NAP-488
+S-023,po,description,1,"Paper napkins, case of 3000"
+S-023,po,quantity,1,15
+S-023,po,unit_price,1,29.71
+S-023,po,sku,2,MOP-705
+S-023,po,description,2,Cotton mop head
+S-023,po,quantity,2,109
+S-023,po,unit_price,2,4.97
+S-023,po,sku,3,TPE-520
+S-023,po,description,3,"Packing tape, 6 rolls"
+S-023,po,quantity,3,76
+S-023,po,unit_price,3,5.29
+S-023,receiving,report_number,,RR-740
+S-023,receiving,po_number,,PO-8236
+S-023,receiving,report_date,,2026-10-22
+S-023,receiving,sku,1,NAP-488
+S-023,receiving,quantity_received,1,15
+S-023,receiving,sku,2,MOP-705
+S-023,receiving,quantity_received,2,109
+S-023,receiving,sku,3,TPE-520
+S-023,receiving,quantity_received,3,76
+S-024,invoice,invoice_number,,MVJ-7740
+S-024,invoice,vendor,,Maple & Vine Janitorial
+S-024,invoice,invoice_date,,2026-10-20
+S-024,invoice,po_reference,,PO-5052
+S-024,invoice,sku,1,LBL-518
+S-024,invoice,description,1,"Shipping labels, roll of 500"
+S-024,invoice,quantity,1,74
+S-024,invoice,unit_price,1,10.02
+S-024,invoice,line_total,1,741.48
+S-024,invoice,subtotal,,741.48
+S-024,invoice,tax,,44.49
+S-024,invoice,freight,,0.00
+S-024,invoice,total,,785.97
+S-024,po,po_number,,PO-5052
+S-024,po,vendor,,Maple & Vine Janitorial
+S-024,po,po_date,,2026-10-11
+S-024,po,sku,1,LBL-518
+S-024,po,description,1,"Shipping labels, roll of 500"
+S-024,po,quantity,1,59
+S-024,po,unit_price,1,10.02
+S-024,receiving,report_number,,RR-785
+S-024,receiving,po_number,,PO-5052
+S-024,receiving,report_date,,2026-10-19
+S-024,receiving,sku,1,LBL-518
+S-024,receiving,quantity_received,1,74
+S-025,invoice,invoice_number,,CLP-8656
+S-025,invoice,vendor,,Cedar Lane Packaging
+S-025,invoice,invoice_date,,2026-10-19
+S-025,invoice,po_reference,,PO-5576
+S-025,invoice,sku,1,TON-310
+S-025,invoice,description,1,"Toner cartridge, black"
+S-025,invoice,quantity,1,40
+S-025,invoice,unit_price,1,12.75
+S-025,invoice,line_total,1,510.00
+S-025,invoice,subtotal,,510.00
+S-025,invoice,tax,,30.60
+S-025,invoice,freight,,12.00
+S-025,invoice,total,,552.60
+S-025,po,po_number,,PO-5576
+S-025,po,vendor,,Cedar Lane Packaging
+S-025,po,po_date,,2026-10-09
+S-025,po,sku,1,TON-310
+S-025,po,description,1,"Toner cartridge, black"
+S-025,po,quantity,1,40
+S-025,po,unit_price,1,12.50
+S-025,receiving,report_number,,RR-778
+S-025,receiving,po_number,,PO-5576
+S-025,receiving,report_date,,2026-10-16
+S-025,receiving,sku,1,TON-310
+S-025,receiving,quantity_received,1,40
+S-026,invoice,invoice_number,,SRE-9650
+S-026,invoice,vendor,,SUMMIT RIDGE ELECTRICAL
+S-026,invoice,invoice_date,,2026-10-22
+S-026,invoice,po_reference,,PO-9714
+S-026,invoice,sku,1,HLM-127
+S-026,invoice,description,1,"Safety helmet, white"
+S-026,invoice,quantity,1,46
+S-026,invoice,unit_price,1,15.58
+S-026,invoice,line_total,1,716.68
+S-026,invoice,sku,2,PEN-220
+S-026,invoice,description,2,"Ballpoint pens, box of 50"
+S-026,invoice,quantity,2,57
+S-026,invoice,unit_price,2,7.74
+S-026,invoice,line_total,2,441.18
+S-026,invoice,sku,3,TON-310
+S-026,invoice,description,3,"Toner cartridge, black"
+S-026,invoice,quantity,3,18
+S-026,invoice,unit_price,3,76.33
+S-026,invoice,line_total,3,1373.94
+S-026,invoice,subtotal,,2531.80
+S-026,invoice,tax,,151.91
+S-026,invoice,freight,,12.00
+S-026,invoice,total,,2695.71
+S-026,po,po_number,,PO-9714
+S-026,po,vendor,,Summit Ridge Electrical
+S-026,po,po_date,,2026-10-11
+S-026,po,sku,1,HLM-127
+S-026,po,description,1,"Safety helmet, white"
+S-026,po,quantity,1,46
+S-026,po,unit_price,1,15.58
+S-026,po,sku,2,PEN-220
+S-026,po,description,2,"Ballpoint pens, box of 50"
+S-026,po,quantity,2,57
+S-026,po,unit_price,2,7.74
+S-026,po,sku,3,TON-310
+S-026,po,description,3,"Toner cartridge, black"
+S-026,po,quantity,3,18
+S-026,po,unit_price,3,76.33
+S-026,receiving,report_number,,RR-662
+S-026,receiving,po_number,,PO-9714
+S-026,receiving,report_date,,2026-10-17
+S-026,receiving,sku,1,HLM-127
+S-026,receiving,quantity_received,1,46
+S-026,receiving,sku,2,PEN-220
+S-026,receiving,quantity_received,2,57
+S-026,receiving,sku,3,TON-310
+S-026,receiving,quantity_received,3,18
+S-027,invoice,invoice_number,,TPG-5546
+S-027,invoice,vendor,,Tidewater Paper Group
+S-027,invoice,invoice_date,,2026-10-26
+S-027,invoice,po_reference,,PO-4967
+S-027,invoice,sku,1,GLV-630
+S-027,invoice,description,1,"Nitrile gloves, box of 100"
+S-027,invoice,quantity,1,29
+S-027,invoice,unit_price,1,8.36
+S-027,invoice,line_total,1,242.44
+S-027,invoice,sku,2,TPE-520
+S-027,invoice,description,2,"Packing tape, 6 rolls"
+S-027,invoice,quantity,2,77
+S-027,invoice,unit_price,2,5.75
+S-027,invoice,line_total,2,442.75
+S-027,invoice,sku,3,PIP-245
+S-027,invoice,description,3,"Pipettes, pack of 200"
+S-027,invoice,quantity,3,35
+S-027,invoice,unit_price,3,16.87
+S-027,invoice,line_total,3,590.45
+S-027,invoice,sku,4,SCR-502
+S-027,invoice,description,4,"Wood screws, box of 200"
+S-027,invoice,quantity,4,18
+S-027,invoice,unit_price,4,9.17
+S-027,invoice,line_total,4,165.06
+S-027,invoice,subtotal,,1440.70
+S-027,invoice,tax,,86.44
+S-027,invoice,freight,,15.00
+S-027,invoice,total,,1542.14
+S-027,po,po_number,,PO-4967
+S-027,po,vendor,,Tidewater Paper Group
+S-027,po,po_date,,2026-10-15
+S-027,po,sku,1,GLV-630
+S-027,po,description,1,"Nitrile gloves, box of 100"
+S-027,po,quantity,1,29
+S-027,po,unit_price,1,8.36
+S-027,po,sku,2,TPE-520
+S-027,po,description,2,"Packing tape, 6 rolls"
+S-027,po,quantity,2,77
+S-027,po,unit_price,2,5.75
+S-027,po,sku,3,PIP-245
+S-027,po,description,3,"Pipettes, pack of 200"
+S-027,po,quantity,3,35
+S-027,po,unit_price,3,17.20
+S-027,po,sku,4,SCR-502
+S-027,po,description,4,"Wood screws, box of 200"
+S-027,po,quantity,4,18
+S-027,po,unit_price,4,9.17
+S-027,receiving,report_number,,RR-128
+S-027,receiving,po_number,,PO-4967
+S-027,receiving,report_date,,2026-10-23
+S-027,receiving,sku,1,GLV-630
+S-027,receiving,quantity_received,1,29
+S-027,receiving,sku,2,TPE-520
+S-027,receiving,quantity_received,2,77
+S-027,receiving,sku,3,PIP-245
+S-027,receiving,quantity_received,3,35
+S-027,receiving,sku,4,SCR-502
+S-027,receiving,quantity_received,4,18
+S-028,invoice,invoice_number,,MVJ-8790
+S-028,invoice,vendor,,MAPLE & VINE JANITORIAL
+S-028,invoice,invoice_date,,2026-10-24
+S-028,invoice,po_reference,,PO-1893
+S-028,invoice,sku,1,HLM-127
+S-028,invoice,description,1,"Safety helmet, white"
+S-028,invoice,quantity,1,33
+S-028,invoice,unit_price,1,18.21
+S-028,invoice,line_total,1,600.93
+S-028,invoice,subtotal,,600.93
+S-028,invoice,tax,,36.06
+S-028,invoice,freight,,8.50
+S-028,invoice,total,,645.49
+S-028,po,po_number,,PO-1893
+S-028,po,vendor,,Maple & Vine Janitorial
+S-028,po,po_date,,2026-10-15
+S-028,po,sku,1,HLM-127
+S-028,po,description,1,"Safety helmet, white"
+S-028,po,quantity,1,33
+S-028,po,unit_price,1,18.21
+S-028,receiving,report_number,,RR-519
+S-028,receiving,po_number,,PO-1893
+S-028,receiving,report_date,,2026-10-21
+S-028,receiving,sku,1,HLM-127
+S-028,receiving,quantity_received,1,33
+S-029,invoice,invoice_number,,CFT-8900
+S-029,invoice,vendor,,Copperfield Tools Inc.
+S-029,invoice,invoice_date,,2026-10-26
+S-029,invoice,po_reference,,PO-7227
+S-029,invoice,sku,1,TON-310
+S-029,invoice,description,1,"Toner cartridge, black"
+S-029,invoice,quantity,1,34
+S-029,invoice,unit_price,1,88.91
+S-029,invoice,line_total,1,3022.94
+S-029,invoice,sku,2,SCR-502
+S-029,invoice,description,2,"Wood screws, box of 200"
+S-029,invoice,quantity,2,109
+S-029,invoice,unit_price,2,10.51
+S-029,invoice,line_total,2,1145.59
+S-029,invoice,sku,3,PEN-220
+S-029,invoice,description,3,"Ballpoint pens, box of 50"
+S-029,invoice,quantity,3,43
+S-029,invoice,unit_price,3,5.45
+S-029,invoice,line_total,3,234.35
+S-029,invoice,sku,4,NAP-488
+S-029,invoice,description,4,"Paper napkins, case of 3000"
+S-029,invoice,quantity,4,103
+S-029,invoice,unit_price,4,37.57
+S-029,invoice,line_total,4,3869.71
+S-029,invoice,subtotal,,8272.59
+S-029,invoice,tax,,496.36
+S-029,invoice,freight,,15.00
+S-029,invoice,total,,8783.95
+S-029,po,po_number,,PO-7227
+S-029,po,vendor,,Copperfield Tools Inc.
+S-029,po,po_date,,2026-10-15
+S-029,po,sku,1,TON-310
+S-029,po,description,1,"Toner cartridge, black"
+S-029,po,quantity,1,34
+S-029,po,unit_price,1,88.91
+S-029,po,sku,2,SCR-502
+S-029,po,description,2,"Wood screws, box of 200"
+S-029,po,quantity,2,109
+S-029,po,unit_price,2,10.51
+S-029,po,sku,3,PEN-220
+S-029,po,description,3,"Ballpoint pens, box of 50"
+S-029,po,quantity,3,43
+S-029,po,unit_price,3,5.45
+S-029,po,sku,4,NAP-488
+S-029,po,description,4,"Paper napkins, case of 3000"
+S-029,po,quantity,4,103
+S-029,po,unit_price,4,37.57
+S-029,receiving,report_number,,RR-452
+S-029,receiving,po_number,,PO-7227
+S-029,receiving,report_date,,2026-10-18
+S-029,receiving,sku,1,TON-310
+S-029,receiving,quantity_received,1,34
+S-029,receiving,sku,2,SCR-502
+S-029,receiving,quantity_received,2,109
+S-029,receiving,sku,3,PEN-220
+S-029,receiving,quantity_received,3,43
+S-029,receiving,sku,4,NAP-488
+S-029,receiving,quantity_received,4,103
+S-030,invoice,invoice_number,,CLP-6092
+S-030,invoice,vendor,,Cedar Lane Packaging
+S-030,invoice,invoice_date,,2026-10-25
+S-030,invoice,po_reference,,PO-8651
+S-030,invoice,sku,1,BOX-415
+S-030,invoice,description,1,"Shipping carton, 12x12x12"
+S-030,invoice,quantity,1,116
+S-030,invoice,unit_price,1,1.57
+S-030,invoice,line_total,1,182.12
+S-030,invoice,sku,2,PIP-245
+S-030,invoice,description,2,"Pipettes, pack of 200"
+S-030,invoice,quantity,2,80
+S-030,invoice,unit_price,2,16.31
+S-030,invoice,line_total,2,1304.80
+S-030,invoice,sku,3,PPR-101
+S-030,invoice,description,3,"Copy paper, case of 10 reams"
+S-030,invoice,quantity,3,36
+S-030,invoice,unit_price,3,35.74
+S-030,invoice,line_total,3,1286.64
+S-030,invoice,sku,4,PEN-220
+S-030,invoice,description,4,"Ballpoint pens, box of 50"
+S-030,invoice,quantity,4,21
+S-030,invoice,unit_price,4,4.80
+S-030,invoice,line_total,4,100.80
+S-030,invoice,subtotal,,2874.36
+S-030,invoice,tax,,172.46
+S-030,invoice,freight,,12.00
+S-030,invoice,total,,3058.82
+S-030,po,po_number,,PO-8651
+S-030,po,vendor,,Cedar Lane Packaging
+S-030,po,po_date,,2026-10-14
+S-030,po,sku,1,BOX-415
+S-030,po,description,1,"Shipping carton, 12x12x12"
+S-030,po,quantity,1,116
+S-030,po,unit_price,1,1.57
+S-030,po,sku,2,PIP-245
+S-030,po,description,2,"Pipettes, pack of 200"
+S-030,po,quantity,2,80
+S-030,po,unit_price,2,16.31
+S-030,po,sku,3,PPR-101
+S-030,po,description,3,"Copy paper, case of 10 reams"
+S-030,po,quantity,3,36
+S-030,po,unit_price,3,35.74
+S-030,po,sku,4,PEN-220
+S-030,po,description,4,"Ballpoint pens, box of 50"
+S-030,po,quantity,4,21
+S-030,po,unit_price,4,4.80
+S-030,receiving,report_number,,RR-366
+S-030,receiving,po_number,,PO-8651
+S-030,receiving,report_date,,2026-10-18
+S-030,receiving,sku,1,BOX-415
+S-030,receiving,quantity_received,1,116
+S-030,receiving,sku,2,PIP-245
+S-030,receiving,quantity_received,2,80
+S-030,receiving,sku,3,PPR-101
+S-030,receiving,quantity_received,3,36
+S-030,receiving,sku,4,PEN-220
+S-030,receiving,quantity_received,4,21
+S-031,invoice,invoice_number,,MVJ-5293
+S-031,invoice,vendor,,Maple & Vine Janitorial
+S-031,invoice,invoice_date,,2026-10-22
+S-031,invoice,po_reference,,PO-6118
+S-031,invoice,sku,1,BLT-903
+S-031,invoice,description,1,"Hex bolts, 1/2 in, box of 100"
+S-031,invoice,quantity,1,82
+S-031,invoice,unit_price,1,17.65
+S-031,invoice,line_total,1,1447.30
+S-031,invoice,sku,2,VST-133
+S-031,invoice,description,2,Hi-vis safety vest
+S-031,invoice,quantity,2,30
+S-031,invoice,unit_price,2,9.81
+S-031,invoice,line_total,2,294.30
+S-031,invoice,sku,3,NAP-488
+S-031,invoice,description,3,"Paper napkins, case of 3000"
+S-031,invoice,quantity,3,68
+S-031,invoice,unit_price,3,30.70
+S-031,invoice,line_total,3,2087.60
+S-031,invoice,sku,4,TPE-520
+S-031,invoice,description,4,"Packing tape, 6 rolls"
+S-031,invoice,quantity,4,84
+S-031,invoice,unit_price,4,5.64
+S-031,invoice,line_total,4,473.76
+S-031,invoice,subtotal,,4302.96
+S-031,invoice,tax,,258.18
+S-031,invoice,freight,,0.00
+S-031,invoice,total,,4561.14
+S-031,po,po_number,,PO-6118
+S-031,po,vendor,,Maple & Vine Janitorial
+S-031,po,po_date,,2026-10-11
+S-031,po,sku,1,BLT-903
+S-031,po,description,1,"Hex bolts, 1/2 in, box of 100"
+S-031,po,quantity,1,82
+S-031,po,unit_price,1,17.65
+S-031,po,sku,2,VST-133
+S-031,po,description,2,Hi-vis safety vest
+S-031,po,quantity,2,30
+S-031,po,unit_price,2,9.81
+S-031,po,sku,3,NAP-488
+S-031,po,description,3,"Paper napkins, case of 3000"
+S-031,po,quantity,3,68
+S-031,po,unit_price,3,31.29
+S-031,po,sku,4,TPE-520
+S-031,po,description,4,"Packing tape, 6 rolls"
+S-031,po,quantity,4,84
+S-031,po,unit_price,4,5.64
+S-031,receiving,report_number,,RR-221
+S-031,receiving,po_number,,PO-6118
+S-031,receiving,report_date,,2026-10-14
+S-031,receiving,sku,1,BLT-903
+S-031,receiving,quantity_received,1,82
+S-031,receiving,sku,2,VST-133
+S-031,receiving,quantity_received,2,30
+S-031,receiving,sku,3,NAP-488
+S-031,receiving,quantity_received,3,68
+S-031,receiving,sku,4,TPE-520
+S-031,receiving,quantity_received,4,84
+S-032,invoice,invoice_number,,WFW-8249
+S-032,invoice,vendor,,Willowbrook Foods Wholesale
+S-032,invoice,invoice_date,,2026-10-25
+S-032,invoice,po_reference,,PO-9374
+S-032,invoice,sku,1,PEN-220
+S-032,invoice,description,1,"Ballpoint pens, box of 50"
+S-032,invoice,quantity,1,11
+S-032,invoice,unit_price,1,6.81
+S-032,invoice,line_total,1,86.91
+S-032,invoice,subtotal,,86.91
+S-032,invoice,tax,,5.21
+S-032,invoice,freight,,8.50
+S-032,invoice,total,,100.62
+S-032,po,po_number,,PO-9374
+S-032,po,vendor,,Willowbrook Foods Wholesale
+S-032,po,po_date,,2026-10-16
+S-032,po,sku,1,PEN-220
+S-032,po,description,1,"Ballpoint pens, box of 50"
+S-032,po,quantity,1,11
+S-032,po,unit_price,1,6.81
+S-032,receiving,report_number,,RR-337
+S-032,receiving,po_number,,PO-9374
+S-032,receiving,report_date,,2026-10-23
+S-032,receiving,sku,1,PEN-220
+S-032,receiving,quantity_received,1,11
+S-033,invoice,invoice_number,,QSH-7300
+S-033,invoice,vendor,,QUARRY STREET HARDWARE
+S-033,invoice,invoice_date,,2026-10-20
+S-033,invoice,po_reference,,PO-4908
+S-033,invoice,sku,1,PPR-101
+S-033,invoice,description,1,"Copy paper, case of 10 reams"
+S-033,invoice,quantity,1,40
+S-033,invoice,unit_price,1,37.75
+S-033,invoice,line_total,1,1510.00
+S-033,invoice,subtotal,,1510.00
+S-033,invoice,tax,,90.60
+S-033,invoice,freight,,0.00
+S-033,invoice,total,,1600.60
+S-033,po,po_number,,PO-4908
+S-033,po,vendor,,Quarry Street Hardware
+S-033,po,po_date,,2026-10-10
+S-033,po,sku,1,PPR-101
+S-033,po,description,1,"Copy paper, case of 10 reams"
+S-033,po,quantity,1,40
+S-033,po,unit_price,1,37.75
+S-033,receiving,report_number,,RR-131
+S-033,receiving,po_number,,PO-4908
+S-033,receiving,report_date,,2026-10-16
+S-033,receiving,sku,1,PPR-101
+S-033,receiving,quantity_received,1,40
+S-034,invoice,invoice_number,,CLP-7063
+S-034,invoice,vendor,,Cedar Lane Packaging
+S-034,invoice,invoice_date,,2026-10-24
+S-034,invoice,po_reference,,PO-8297
+S-034,invoice,sku,1,BLT-903
+S-034,invoice,description,1,"Hex bolts, 1/2 in, box of 100"
+S-034,invoice,quantity,1,16
+S-034,invoice,unit_price,1,17.87
+S-034,invoice,line_total,1,285.92
+S-034,invoice,sku,2,TON-310
+S-034,invoice,description,2,"Toner cartridge, black"
+S-034,invoice,quantity,2,10
+S-034,invoice,unit_price,2,64.87
+S-034,invoice,line_total,2,648.70
+S-034,invoice,sku,3,MOP-705
+S-034,invoice,description,3,Cotton mop head
+S-034,invoice,quantity,3,23
+S-034,invoice,unit_price,3,4.46
+S-034,invoice,line_total,3,102.58
+S-034,invoice,sku,4,SCR-502
+S-034,invoice,description,4,"Wood screws, box of 200"
+S-034,invoice,quantity,4,79
+S-034,invoice,unit_price,4,7.61
+S-034,invoice,line_total,4,601.19
+S-034,invoice,subtotal,,1638.39
+S-034,invoice,tax,,98.30
+S-034,invoice,freight,,12.00
+S-034,invoice,total,,1748.69
+S-034,po,po_number,,PO-8297
+S-034,po,vendor,,Cedar Lane Packaging
+S-034,po,po_date,,2026-10-13
+S-034,po,sku,1,BLT-903
+S-034,po,description,1,"Hex bolts, 1/2 in, box of 100"
+S-034,po,quantity,1,16
+S-034,po,unit_price,1,17.87
+S-034,po,sku,2,TON-310
+S-034,po,description,2,"Toner cartridge, black"
+S-034,po,quantity,2,10
+S-034,po,unit_price,2,64.87
+S-034,po,sku,3,MOP-705
+S-034,po,description,3,Cotton mop head
+S-034,po,quantity,3,23
+S-034,po,unit_price,3,4.15
+S-034,po,sku,4,SCR-502
+S-034,po,description,4,"Wood screws, box of 200"
+S-034,po,quantity,4,79
+S-034,po,unit_price,4,7.61
+S-034,receiving,report_number,,RR-647
+S-034,receiving,po_number,,PO-8297
+S-034,receiving,report_date,,2026-10-18
+S-034,receiving,sku,1,BLT-903
+S-034,receiving,quantity_received,1,16
+S-034,receiving,sku,2,TON-310
+S-034,receiving,quantity_received,2,10
+S-034,receiving,sku,3,MOP-705
+S-034,receiving,quantity_received,3,23
+S-034,receiving,sku,4,SCR-502
+S-034,receiving,quantity_received,4,79
+S-035,invoice,invoice_number,,HPS-5579
+S-035,invoice,vendor,,Harbor Point Supply Co.
+S-035,invoice,invoice_date,,2026-10-29
+S-035,invoice,po_reference,,PO-1257
+S-035,invoice,sku,1,TPE-520
+S-035,invoice,description,1,"Packing tape, 6 rolls"
+S-035,invoice,quantity,1,54
+S-035,invoice,unit_price,1,8.83
+S-035,invoice,line_total,1,476.82
+S-035,invoice,sku,2,NAP-488
+S-035,invoice,description,2,"Paper napkins, case of 3000"
+S-035,invoice,quantity,2,85
+S-035,invoice,unit_price,2,25.46
+S-035,invoice,line_total,2,2164.10
+S-035,invoice,sku,3,BLT-903
+S-035,invoice,description,3,"Hex bolts, 1/2 in, box of 100"
+S-035,invoice,quantity,3,101
+S-035,invoice,unit_price,3,13.17
+S-035,invoice,line_total,3,1330.17
+S-035,invoice,sku,4,BLB-371
+S-035,invoice,description,4,"LED bulb, pack of 12"
+S-035,invoice,quantity,4,58
+S-035,invoice,unit_price,4,25.32
+S-035,invoice,line_total,4,1468.56
+S-035,invoice,subtotal,,5439.65
+S-035,invoice,tax,,326.38
+S-035,invoice,freight,,0.00
+S-035,invoice,total,,5766.03
+S-035,po,po_number,,PO-1257
+S-035,po,vendor,,Harbor Point Supply Co.
+S-035,po,po_date,,2026-10-20
+S-035,po,sku,1,TPE-520
+S-035,po,description,1,"Packing tape, 6 rolls"
+S-035,po,quantity,1,54
+S-035,po,unit_price,1,8.74
+S-035,po,sku,2,NAP-488
+S-035,po,description,2,"Paper napkins, case of 3000"
+S-035,po,quantity,2,85
+S-035,po,unit_price,2,25.46
+S-035,po,sku,3,BLT-903
+S-035,po,description,3,"Hex bolts, 1/2 in, box of 100"
+S-035,po,quantity,3,101
+S-035,po,unit_price,3,13.17
+S-035,po,sku,4,BLB-371
+S-035,po,description,4,"LED bulb, pack of 12"
+S-035,po,quantity,4,58
+S-035,po,unit_price,4,25.32
+S-035,receiving,report_number,,RR-487
+S-035,receiving,po_number,,PO-1257
+S-035,receiving,report_date,,2026-10-27
+S-035,receiving,sku,1,TPE-520
+S-035,receiving,quantity_received,1,54
+S-035,receiving,sku,2,NAP-488
+S-035,receiving,quantity_received,2,85
+S-035,receiving,sku,3,BLT-903
+S-035,receiving,quantity_received,3,101
+S-035,receiving,sku,4,BLB-371
+S-035,receiving,quantity_received,4,58
+S-036,invoice,invoice_number,,MVJ-7592
+S-036,invoice,vendor,,Maple & Vine Janitorial
+S-036,invoice,invoice_date,,2026-10-25
+S-036,invoice,po_reference,,PO-3110
+S-036,invoice,sku,1,NAP-488
+S-036,invoice,description,1,"Paper napkins, case of 3000"
+S-036,invoice,quantity,1,34
+S-036,invoice,unit_price,1,28.91
+S-036,invoice,line_total,1,982.94
+S-036,invoice,subtotal,,982.94
+S-036,invoice,tax,,58.98
+S-036,invoice,freight,,15.00
+S-036,invoice,total,,1056.92
+S-036,po,po_number,,PO-3110
+S-036,po,vendor,,Maple & Vine Janitorial
+S-036,po,po_date,,2026-10-15
+S-036,po,sku,1,NAP-488
+S-036,po,description,1,"Paper napkins, case of 3000"
+S-036,po,quantity,1,34
+S-036,po,unit_price,1,29.47
+S-036,receiving,report_number,,RR-682
+S-036,receiving,po_number,,PO-3110
+S-036,receiving,report_date,,2026-10-22
+S-036,receiving,sku,1,NAP-488
+S-036,receiving,quantity_received,1,34
+S-037,invoice,invoice_number,,CFT-6058
+S-037,invoice,vendor,,Copperfield Tools Inc.
+S-037,invoice,invoice_date,,2026-10-25
+S-037,invoice,po_reference,,PO 1208
+S-037,invoice,sku,1,VST-133
+S-037,invoice,description,1,Hi-vis safety vest
+S-037,invoice,quantity,1,8
+S-037,invoice,unit_price,1,14.35
+S-037,invoice,line_total,1,114.80
+S-037,invoice,sku,2,LBL-518
+S-037,invoice,description,2,"Shipping labels, roll of 500"
+S-037,invoice,quantity,2,117
+S-037,invoice,unit_price,2,14.09
+S-037,invoice,line_total,2,1648.53
+S-037,invoice,sku,3,PEN-220
+S-037,invoice,description,3,"Ballpoint pens, box of 50"
+S-037,invoice,quantity,3,77
+S-037,invoice,unit_price,3,5.93
+S-037,invoice,line_total,3,456.61
+S-037,invoice,sku,4,GLV-630
+S-037,invoice,description,4,"Nitrile gloves, box of 100"
+S-037,invoice,quantity,4,56
+S-037,invoice,unit_price,4,10.83
+S-037,invoice,line_total,4,606.48
+S-037,invoice,subtotal,,2826.42
+S-037,invoice,tax,,169.59
+S-037,invoice,freight,,12.00
+S-037,invoice,total,,3008.01
+S-037,po,po_number,,PO-1208
+S-037,po,vendor,,Copperfield Tools Inc.
+S-037,po,po_date,,2026-10-14
+S-037,po,sku,1,VST-133
+S-037,po,description,1,Hi-vis safety vest
+S-037,po,quantity,1,8
+S-037,po,unit_price,1,14.35
+S-037,po,sku,2,LBL-518
+S-037,po,description,2,"Shipping labels, roll of 500"
+S-037,po,quantity,2,117
+S-037,po,unit_price,2,14.09
+S-037,po,sku,3,PEN-220
+S-037,po,description,3,"Ballpoint pens, box of 50"
+S-037,po,quantity,3,77
+S-037,po,unit_price,3,5.93
+S-037,po,sku,4,GLV-630
+S-037,po,description,4,"Nitrile gloves, box of 100"
+S-037,po,quantity,4,56
+S-037,po,unit_price,4,10.83
+S-037,receiving,report_number,,RR-690
+S-037,receiving,po_number,,PO-1208
+S-037,receiving,report_date,,2026-10-17
+S-037,receiving,sku,1,VST-133
+S-037,receiving,quantity_received,1,8
+S-037,receiving,sku,2,LBL-518
+S-037,receiving,quantity_received,2,117
+S-037,receiving,sku,3,PEN-220
+S-037,receiving,quantity_received,3,77
+S-037,receiving,sku,4,GLV-630
+S-037,receiving,quantity_received,4,56
+S-038,invoice,invoice_number,,LLE-9042
+S-038,invoice,vendor,,Larkspur Lab Equipment
+S-038,invoice,invoice_date,,2026-10-30
+S-038,invoice,po_reference,,PO-4060
+S-038,invoice,sku,1,CUP-496
+S-038,invoice,description,1,"Paper cups 12 oz, sleeve of 50"
+S-038,invoice,quantity,1,99
+S-038,invoice,unit_price,1,5.66
+S-038,invoice,line_total,1,560.34
+S-038,invoice,sku,2,GLV-630
+S-038,invoice,description,2,"Nitrile gloves, box of 100"
+S-038,invoice,quantity,2,79
+S-038,invoice,unit_price,2,10.76
+S-038,invoice,line_total,2,850.04
+S-038,invoice,sku,3,BLB-371
+S-038,invoice,description,3,"LED bulb, pack of 12"
+S-038,invoice,quantity,3,27
+S-038,invoice,unit_price,3,16.82
+S-038,invoice,line_total,3,454.14
+S-038,invoice,sku,4,CLN-812
+S-038,invoice,description,4,"All-purpose cleaner, 1 gal"
+S-038,invoice,quantity,4,98
+S-038,invoice,unit_price,4,7.50
+S-038,invoice,line_total,4,735.00
+S-038,invoice,subtotal,,2599.52
+S-038,invoice,tax,,155.97
+S-038,invoice,freight,,12.00
+S-038,invoice,total,,2767.49
+S-038,po,po_number,,PO-4060
+S-038,po,vendor,,Larkspur Lab Equipment
+S-038,po,po_date,,2026-10-20
+S-038,po,sku,1,CUP-496
+S-038,po,description,1,"Paper cups 12 oz, sleeve of 50"
+S-038,po,quantity,1,99
+S-038,po,unit_price,1,5.66
+S-038,po,sku,2,GLV-630
+S-038,po,description,2,"Nitrile gloves, box of 100"
+S-038,po,quantity,2,79
+S-038,po,unit_price,2,10.76
+S-038,po,sku,3,BLB-371
+S-038,po,description,3,"LED bulb, pack of 12"
+S-038,po,quantity,3,27
+S-038,po,unit_price,3,16.82
+S-038,po,sku,4,CLN-812
+S-038,po,description,4,"All-purpose cleaner, 1 gal"
+S-038,po,quantity,4,98
+S-038,po,unit_price,4,7.50
+S-038,receiving,report_number,,RR-391
+S-038,receiving,po_number,,PO-4060
+S-038,receiving,report_date,,2026-10-28
+S-038,receiving,sku,1,CUP-496
+S-038,receiving,quantity_received,1,99
+S-038,receiving,sku,2,GLV-630
+S-038,receiving,quantity_received,2,79
+S-038,receiving,sku,3,BLB-371
+S-038,receiving,quantity_received,3,27
+S-038,receiving,sku,4,CLN-812
+S-038,receiving,quantity_received,4,98
+S-039,invoice,invoice_number,,NOP-9478
+S-039,invoice,vendor,,Northgate Office Products
+S-039,invoice,invoice_date,,2026-10-30
+S-039,invoice,po_reference,,PO-9154
+S-039,invoice,sku,1,BLB-371
+S-039,invoice,description,1,"LED bulb, pack of 12"
+S-039,invoice,quantity,1,62
+S-039,invoice,unit_price,1,23.62
+S-039,invoice,line_total,1,1464.44
+S-039,invoice,subtotal,,1464.44
+S-039,invoice,tax,,87.87
+S-039,invoice,freight,,15.00
+S-039,invoice,total,,1567.31
+S-039,po,po_number,,PO-9154
+S-039,po,vendor,,Northgate Office Products
+S-039,po,po_date,,2026-10-18
+S-039,po,sku,1,BLB-371
+S-039,po,description,1,"LED bulb, pack of 12"
+S-039,po,quantity,1,62
+S-039,po,unit_price,1,22.93
+S-039,receiving,report_number,,RR-374
+S-039,receiving,po_number,,PO-9154
+S-039,receiving,report_date,,2026-10-21
+S-039,receiving,sku,1,BLB-371
+S-039,receiving,quantity_received,1,62
+S-040,invoice,invoice_number,,ISS-9724
+S-040,invoice,vendor,,Ironwood Safety Supply
+S-040,invoice,invoice_date,,2026-10-15
+S-040,invoice,po_reference,,PO-1883
+S-040,invoice,sku,1,PPR-101
+S-040,invoice,description,1,"Copy paper, case of 10 reams"
+S-040,invoice,quantity,1,32
+S-040,invoice,unit_price,1,34.51
+S-040,invoice,line_total,1,1104.32
+S-040,invoice,sku,2,BLT-903
+S-040,invoice,description,2,"Hex bolts, 1/2 in, box of 100"
+S-040,invoice,quantity,2,51
+S-040,invoice,unit_price,2,15.99
+S-040,invoice,line_total,2,815.49
+S-040,invoice,sku,3,TON-310
+S-040,invoice,description,3,"Toner cartridge, black"
+S-040,invoice,quantity,3,33
+S-040,invoice,unit_price,3,76.84
+S-040,invoice,line_total,3,2535.72
+S-040,invoice,sku,4,GLV-630
+S-040,invoice,description,4,"Nitrile gloves, box of 100"
+S-040,invoice,quantity,4,98
+S-040,invoice,unit_price,4,13.02
+S-040,invoice,line_total,4,1275.96
+S-040,invoice,subtotal,,5731.49
+S-040,invoice,tax,,343.89
+S-040,invoice,freight,,12.00
+S-040,invoice,total,,6087.38
+S-040,po,po_number,,PO-1883
+S-040,po,vendor,,Ironwood Safety Supply
+S-040,po,po_date,,2026-10-05
+S-040,po,sku,1,PPR-101
+S-040,po,description,1,"Copy paper, case of 10 reams"
+S-040,po,quantity,1,32
+S-040,po,unit_price,1,34.51
+S-040,po,sku,2,BLT-903
+S-040,po,description,2,"Hex bolts, 1/2 in, box of 100"
+S-040,po,quantity,2,51
+S-040,po,unit_price,2,15.99
+S-040,po,sku,3,TON-310
+S-040,po,description,3,"Toner cartridge, black"
+S-040,po,quantity,3,33
+S-040,po,unit_price,3,76.84
+S-040,po,sku,4,GLV-630
+S-040,po,description,4,"Nitrile gloves, box of 100"
+S-040,po,quantity,4,98
+S-040,po,unit_price,4,13.02
+S-040,receiving,report_number,,RR-656
+S-040,receiving,po_number,,PO-1883
+S-040,receiving,report_date,,2026-10-09
+S-040,receiving,sku,1,PPR-101
+S-040,receiving,quantity_received,1,32
+S-040,receiving,sku,2,BLT-903
+S-040,receiving,quantity_received,2,51
+S-040,receiving,sku,3,TON-310
+S-040,receiving,quantity_received,3,33
+S-040,receiving,sku,4,GLV-630
+S-040,receiving,quantity_received,4,98
+S-041,invoice,invoice_number,,QSH-7028
+S-041,invoice,vendor,,Quarry Street Hardware
+S-041,invoice,invoice_date,,2026-10-30
+S-041,invoice,po_reference,,PO-7771
+S-041,invoice,sku,1,PPR-101
+S-041,invoice,description,1,"Copy paper, case of 10 reams"
+S-041,invoice,quantity,1,63
+S-041,invoice,unit_price,1,46.19
+S-041,invoice,line_total,1,2909.97
+S-041,invoice,sku,2,BLB-371
+S-041,invoice,description,2,"LED bulb, pack of 12"
+S-041,invoice,quantity,2,91
+S-041,invoice,unit_price,2,26.83
+S-041,invoice,line_total,2,2441.53
+S-041,invoice,sku,3,BKR-252
+S-041,invoice,description,3,"Glass beaker, 500 ml"
+S-041,invoice,quantity,3,108
+S-041,invoice,unit_price,3,14.15
+S-041,invoice,line_total,3,1528.20
+S-041,invoice,subtotal,,6879.70
+S-041,invoice,tax,,412.78
+S-041,invoice,freight,,8.50
+S-041,invoice,total,,7300.98
+S-041,po,po_number,,PO-7771
+S-041,po,vendor,,Quarry Street Hardware
+S-041,po,po_date,,2026-10-18
+S-041,po,sku,1,PPR-101
+S-041,po,description,1,"Copy paper, case of 10 reams"
+S-041,po,quantity,1,63
+S-041,po,unit_price,1,46.19
+S-041,po,sku,2,BLB-371
+S-041,po,description,2,"LED bulb, pack of 12"
+S-041,po,quantity,2,91
+S-041,po,unit_price,2,26.83
+S-041,po,sku,3,BKR-252
+S-041,po,description,3,"Glass beaker, 500 ml"
+S-041,po,quantity,3,108
+S-041,po,unit_price,3,14.15
+S-041,receiving,report_number,,RR-415
+S-041,receiving,po_number,,PO-7771
+S-041,receiving,report_date,,2026-10-21
+S-041,receiving,sku,1,PPR-101
+S-041,receiving,quantity_received,1,63
+S-041,receiving,sku,2,BLB-371
+S-041,receiving,quantity_received,2,91
+S-041,receiving,sku,3,BKR-252
+S-041,receiving,quantity_received,3,108
+S-042,invoice,invoice_number,,NOP-9388
+S-042,invoice,vendor,,Northgate Office Products
+S-042,invoice,invoice_date,,2026-10-29
+S-042,invoice,po_reference,,PO-1454
+S-042,invoice,sku,1,CLN-812
+S-042,invoice,description,1,"All-purpose cleaner, 1 gal"
+S-042,invoice,quantity,1,7
+S-042,invoice,unit_price,1,7.68
+S-042,invoice,line_total,1,53.76
+S-042,invoice,sku,2,CUP-496
+S-042,invoice,description,2,"Paper cups 12 oz, sleeve of 50"
+S-042,invoice,quantity,2,120
+S-042,invoice,unit_price,2,5.48
+S-042,invoice,line_total,2,657.60
+S-042,invoice,sku,3,LBL-518
+S-042,invoice,description,3,"Shipping labels, roll of 500"
+S-042,invoice,quantity,3,107
+S-042,invoice,unit_price,3,11.16
+S-042,invoice,line_total,3,1194.12
+S-042,invoice,subtotal,,1905.48
+S-042,invoice,tax,,114.33
+S-042,invoice,freight,,0.00
+S-042,invoice,total,,2019.81
+S-042,po,po_number,,PO-1454
+S-042,po,vendor,,Northgate Office Products
+S-042,po,po_date,,2026-10-19
+S-042,po,sku,1,CLN-812
+S-042,po,description,1,"All-purpose cleaner, 1 gal"
+S-042,po,quantity,1,7
+S-042,po,unit_price,1,7.68
+S-042,po,sku,2,CUP-496
+S-042,po,description,2,"Paper cups 12 oz, sleeve of 50"
+S-042,po,quantity,2,120
+S-042,po,unit_price,2,5.48
+S-042,po,sku,3,LBL-518
+S-042,po,description,3,"Shipping labels, roll of 500"
+S-042,po,quantity,3,107
+S-042,po,unit_price,3,11.16
+S-042,receiving,report_number,,RR-341
+S-042,receiving,po_number,,PO-1454
+S-042,receiving,report_date,,2026-10-25
+S-042,receiving,sku,1,CLN-812
+S-042,receiving,quantity_received,1,7
+S-042,receiving,sku,2,CUP-496
+S-042,receiving,quantity_received,2,120
+S-042,receiving,sku,3,LBL-518
+S-042,receiving,quantity_received,3,107
+S-043,invoice,invoice_number,,TPG-7518
+S-043,invoice,vendor,,Tidewater Paper Group
+S-043,invoice,invoice_date,,2026-10-15
+S-043,invoice,po_reference,,PO-2585
+S-043,invoice,sku,1,PIP-245
+S-043,invoice,description,1,"Pipettes, pack of 200"
+S-043,invoice,quantity,1,14
+S-043,invoice,unit_price,1,23.86
+S-043,invoice,line_total,1,334.04
+S-043,invoice,sku,2,WIR-364
+S-043,invoice,description,2,"Copper wire, 100 ft spool"
+S-043,invoice,quantity,2,31
+S-043,invoice,unit_price,2,36.21
+S-043,invoice,line_total,2,1122.51
+S-043,invoice,sku,3,CUP-496
+S-043,invoice,description,3,"Paper cups 12 oz, sleeve of 50"
+S-043,invoice,quantity,3,50
+S-043,invoice,unit_price,3,3.88
+S-043,invoice,line_total,3,194.00
+S-043,invoice,sku,4,BLT-903
+S-043,invoice,description,4,"Hex bolts, 1/2 in, box of 100"
+S-043,invoice,quantity,4,112
+S-043,invoice,unit_price,4,15.21
+S-043,invoice,line_total,4,1703.52
+S-043,invoice,subtotal,,3354.07
+S-043,invoice,tax,,201.24
+S-043,invoice,freight,,0.00
+S-043,invoice,total,,3555.31
+S-043,po,po_number,,PO-2585
+S-043,po,vendor,,Tidewater Paper Group
+S-043,po,po_date,,2026-10-05
+S-043,po,sku,1,PIP-245
+S-043,po,description,1,"Pipettes, pack of 200"
+S-043,po,quantity,1,14
+S-043,po,unit_price,1,24.32
+S-043,po,sku,2,WIR-364
+S-043,po,description,2,"Copper wire, 100 ft spool"
+S-043,po,quantity,2,31
+S-043,po,unit_price,2,36.21
+S-043,po,sku,3,CUP-496
+S-043,po,description,3,"Paper cups 12 oz, sleeve of 50"
+S-043,po,quantity,3,50
+S-043,po,unit_price,3,3.88
+S-043,po,sku,4,BLT-903
+S-043,po,description,4,"Hex bolts, 1/2 in, box of 100"
+S-043,po,quantity,4,112
+S-043,po,unit_price,4,15.21
+S-043,receiving,report_number,,RR-476
+S-043,receiving,po_number,,PO-2585
+S-043,receiving,report_date,,2026-10-11
+S-043,receiving,sku,1,PIP-245
+S-043,receiving,quantity_received,1,14
+S-043,receiving,sku,2,WIR-364
+S-043,receiving,quantity_received,2,31
+S-043,receiving,sku,3,CUP-496
+S-043,receiving,quantity_received,3,50
+S-043,receiving,sku,4,BLT-903
+S-043,receiving,quantity_received,4,112
+S-044,invoice,invoice_number,,TPG-9854
+S-044,invoice,vendor,,TIDEWATER PAPER GROUP
+S-044,invoice,invoice_date,,2026-10-22
+S-044,invoice,po_reference,,PO-2537
+S-044,invoice,sku,1,LBL-518
+S-044,invoice,description,1,"Shipping labels, roll of 500"
+S-044,invoice,quantity,1,94
+S-044,invoice,unit_price,1,12.29
+S-044,invoice,line_total,1,1155.26
+S-044,invoice,sku,2,BKR-252
+S-044,invoice,description,2,"Glass beaker, 500 ml"
+S-044,invoice,quantity,2,62
+S-044,invoice,unit_price,2,7.37
+S-044,invoice,line_total,2,456.94
+S-044,invoice,sku,3,WIR-364
+S-044,invoice,description,3,"Copper wire, 100 ft spool"
+S-044,invoice,quantity,3,50
+S-044,invoice,unit_price,3,42.85
+S-044,invoice,line_total,3,2142.50
+S-044,invoice,subtotal,,3754.70
+S-044,invoice,tax,,225.28
+S-044,invoice,freight,,12.00
+S-044,invoice,total,,3991.98
+S-044,po,po_number,,PO-2537
+S-044,po,vendor,,Tidewater Paper Group
+S-044,po,po_date,,2026-10-13
+S-044,po,sku,1,LBL-518
+S-044,po,description,1,"Shipping labels, roll of 500"
+S-044,po,quantity,1,94
+S-044,po,unit_price,1,12.29
+S-044,po,sku,2,BKR-252
+S-044,po,description,2,"Glass beaker, 500 ml"
+S-044,po,quantity,2,62
+S-044,po,unit_price,2,7.37
+S-044,po,sku,3,WIR-364
+S-044,po,description,3,"Copper wire, 100 ft spool"
+S-044,po,quantity,3,50
+S-044,po,unit_price,3,42.85
+S-044,receiving,report_number,,RR-178
+S-044,receiving,po_number,,PO-2537
+S-044,receiving,report_date,,2026-10-16
+S-044,receiving,sku,1,LBL-518
+S-044,receiving,quantity_received,1,94
+S-044,receiving,sku,2,BKR-252
+S-044,receiving,quantity_received,2,62
+S-044,receiving,sku,3,WIR-364
+S-044,receiving,quantity_received,3,50
+S-045,invoice,invoice_number,,CFT-9777
+S-045,invoice,vendor,,Copperfield Tools Inc.
+S-045,invoice,invoice_date,,2026-10-16
+S-045,invoice,po_reference,,
+S-045,invoice,sku,1,PEN-220
+S-045,invoice,description,1,"Ballpoint pens, box of 50"
+S-045,invoice,quantity,1,106
+S-045,invoice,unit_price,1,7.65
+S-045,invoice,line_total,1,810.90
+S-045,invoice,sku,2,MOP-705
+S-045,invoice,description,2,Cotton mop head
+S-045,invoice,quantity,2,90
+S-045,invoice,unit_price,2,4.33
+S-045,invoice,line_total,2,389.70
+S-045,invoice,sku,3,BLB-371
+S-045,invoice,description,3,"LED bulb, pack of 12"
+S-045,invoice,quantity,3,50
+S-045,invoice,unit_price,3,25.98
+S-045,invoice,line_total,3,1299.00
+S-045,invoice,sku,4,TON-310
+S-045,invoice,description,4,"Toner cartridge, black"
+S-045,invoice,quantity,4,62
+S-045,invoice,unit_price,4,74.20
+S-045,invoice,line_total,4,4600.40
+S-045,invoice,subtotal,,7100.00
+S-045,invoice,tax,,426.00
+S-045,invoice,freight,,0.00
+S-045,invoice,total,,7526.00
+S-045,receiving,report_number,,RR-237
+S-045,receiving,po_number,,PO-7974
+S-045,receiving,report_date,,2026-10-12
+S-045,receiving,sku,1,PEN-220
+S-045,receiving,quantity_received,1,106
+S-045,receiving,sku,2,MOP-705
+S-045,receiving,quantity_received,2,90
+S-045,receiving,sku,3,BLB-371
+S-045,receiving,quantity_received,3,50
+S-045,receiving,sku,4,TON-310
+S-045,receiving,quantity_received,4,62
+S-046,invoice,invoice_number,,MVJ-8695
+S-046,invoice,vendor,,Maple & Vine Janitorial
+S-046,invoice,invoice_date,,2026-10-20
+S-046,invoice,po_reference,,PO-1746
+S-046,invoice,sku,1,HLM-127
+S-046,invoice,description,1,"Safety helmet, white"
+S-046,invoice,quantity,1,24
+S-046,invoice,unit_price,1,14.99
+S-046,invoice,line_total,1,359.76
+S-046,invoice,subtotal,,359.76
+S-046,invoice,tax,,21.59
+S-046,invoice,freight,,15.00
+S-046,invoice,total,,396.35
+S-046,po,po_number,,PO-1746
+S-046,po,vendor,,Maple & Vine Janitorial
+S-046,po,po_date,,2026-10-11
+S-046,po,sku,1,HLM-127
+S-046,po,description,1,"Safety helmet, white"
+S-046,po,quantity,1,24
+S-046,po,unit_price,1,14.92
+S-046,receiving,report_number,,RR-968
+S-046,receiving,po_number,,PO-1746
+S-046,receiving,report_date,,2026-10-17
+S-046,receiving,sku,1,HLM-127
+S-046,receiving,quantity_received,1,24
+S-047,invoice,invoice_number,,NOP 3791
+S-047,invoice,vendor,,Northgate Office Products
+S-047,invoice,invoice_date,,2026-10-17
+S-047,invoice,po_reference,,PO-5000
+S-047,invoice,sku,1,BLB-371
+S-047,invoice,description,1,"LED bulb, pack of 12"
+S-047,invoice,quantity,1,8
+S-047,invoice,unit_price,1,25.34
+S-047,invoice,line_total,1,202.72
+S-047,invoice,sku,2,CLN-812
+S-047,invoice,description,2,"All-purpose cleaner, 1 gal"
+S-047,invoice,quantity,2,33
+S-047,invoice,unit_price,2,9.26
+S-047,invoice,line_total,2,305.58
+S-047,invoice,sku,3,WIR-364
+S-047,invoice,description,3,"Copper wire, 100 ft spool"
+S-047,invoice,quantity,3,116
+S-047,invoice,unit_price,3,53.78
+S-047,invoice,line_total,3,6238.48
+S-047,invoice,subtotal,,6746.78
+S-047,invoice,tax,,404.81
+S-047,invoice,freight,,8.50
+S-047,invoice,total,,7160.09
+S-047,po,po_number,,PO-5000
+S-047,po,vendor,,Northgate Office Products
+S-047,po,po_date,,2026-10-07
+S-047,po,sku,1,BLB-371
+S-047,po,description,1,"LED bulb, pack of 12"
+S-047,po,quantity,1,8
+S-047,po,unit_price,1,25.34
+S-047,po,sku,2,CLN-812
+S-047,po,description,2,"All-purpose cleaner, 1 gal"
+S-047,po,quantity,2,33
+S-047,po,unit_price,2,9.26
+S-047,po,sku,3,WIR-364
+S-047,po,description,3,"Copper wire, 100 ft spool"
+S-047,po,quantity,3,116
+S-047,po,unit_price,3,53.78
+S-047,receiving,report_number,,RR-774
+S-047,receiving,po_number,,PO-5000
+S-047,receiving,report_date,,2026-10-15
+S-047,receiving,sku,1,BLB-371
+S-047,receiving,quantity_received,1,8
+S-047,receiving,sku,2,CLN-812
+S-047,receiving,quantity_received,2,33
+S-047,receiving,sku,3,WIR-364
+S-047,receiving,quantity_received,3,116
+S-048,invoice,invoice_number,,TPG-6263
+S-048,invoice,vendor,,Tidewater Paper Group
+S-048,invoice,invoice_date,,2026-10-26
+S-048,invoice,po_reference,,PO-8916
+S-048,invoice,sku,1,VST-133
+S-048,invoice,description,1,Hi-vis safety vest
+S-048,invoice,quantity,1,73
+S-048,invoice,unit_price,1,13.52
+S-048,invoice,line_total,1,986.96
+S-048,invoice,sku,2,PPR-101
+S-048,invoice,description,2,"Copy paper, case of 10 reams"
+S-048,invoice,quantity,2,115
+S-048,invoice,unit_price,2,32.23
+S-048,invoice,line_total,2,3706.45
+S-048,invoice,sku,3,DRL-114
+S-048,invoice,description,3,Cordless drill bit set
+S-048,invoice,quantity,3,91
+S-048,invoice,unit_price,3,31.09
+S-048,invoice,line_total,3,2829.19
+S-048,invoice,subtotal,,7522.60
+S-048,invoice,tax,,451.36
+S-048,invoice,freight,,0.00
+S-048,invoice,total,,7973.96
+S-048,po,po_number,,PO-8916
+S-048,po,vendor,,Tidewater Paper Group
+S-048,po,po_date,,2026-10-16
+S-048,po,sku,1,VST-133
+S-048,po,description,1,Hi-vis safety vest
+S-048,po,quantity,1,73
+S-048,po,unit_price,1,13.52
+S-048,po,sku,2,PPR-101
+S-048,po,description,2,"Copy paper, case of 10 reams"
+S-048,po,quantity,2,115
+S-048,po,unit_price,2,32.23
+S-048,po,sku,3,DRL-114
+S-048,po,description,3,Cordless drill bit set
+S-048,po,quantity,3,91
+S-048,po,unit_price,3,31.09
+S-048,receiving,report_number,,RR-147
+S-048,receiving,po_number,,PO-8916
+S-048,receiving,report_date,,2026-10-21
+S-048,receiving,sku,1,VST-133
+S-048,receiving,quantity_received,1,73
+S-048,receiving,sku,2,PPR-101
+S-048,receiving,quantity_received,2,115
+S-048,receiving,sku,3,DRL-114
+S-048,receiving,quantity_received,3,91
+S-049,invoice,invoice_number,,TPG-7662
+S-049,invoice,vendor,,Tidewater Paper Group
+S-049,invoice,invoice_date,,2026-10-18
+S-049,invoice,po_reference,,PO-9859
+S-049,invoice,sku,1,SCR-502
+S-049,invoice,description,1,"Wood screws, box of 200"
+S-049,invoice,quantity,1,28
+S-049,invoice,unit_price,1,10.85
+S-049,invoice,line_total,1,303.80
+S-049,invoice,sku,2,TON-310
+S-049,invoice,description,2,"Toner cartridge, black"
+S-049,invoice,quantity,2,90
+S-049,invoice,unit_price,2,58.14
+S-049,invoice,line_total,2,5232.60
+S-049,invoice,sku,3,CLN-812
+S-049,invoice,description,3,"All-purpose cleaner, 1 gal"
+S-049,invoice,quantity,3,117
+S-049,invoice,unit_price,3,6.92
+S-049,invoice,line_total,3,809.64
+S-049,invoice,sku,4,CUP-496
+S-049,invoice,description,4,"Paper cups 12 oz, sleeve of 50"
+S-049,invoice,quantity,4,11
+S-049,invoice,unit_price,4,6.28
+S-049,invoice,line_total,4,69.08
+S-049,invoice,subtotal,,6415.12
+S-049,invoice,tax,,384.91
+S-049,invoice,freight,,0.00
+S-049,invoice,total,,6800.03
+S-049,po,po_number,,PO-9859
+S-049,po,vendor,,Tidewater Paper Group
+S-049,po,po_date,,2026-10-09
+S-049,po,sku,1,SCR-502
+S-049,po,description,1,"Wood screws, box of 200"
+S-049,po,quantity,1,28
+S-049,po,unit_price,1,10.85
+S-049,po,sku,2,TON-310
+S-049,po,description,2,"Toner cartridge, black"
+S-049,po,quantity,2,90
+S-049,po,unit_price,2,58.14
+S-049,po,sku,3,CLN-812
+S-049,po,description,3,"All-purpose cleaner, 1 gal"
+S-049,po,quantity,3,117
+S-049,po,unit_price,3,7.05
+S-049,po,sku,4,CUP-496
+S-049,po,description,4,"Paper cups 12 oz, sleeve of 50"
+S-049,po,quantity,4,11
+S-049,po,unit_price,4,6.28
+S-049,receiving,report_number,,RR-345
+S-049,receiving,po_number,,PO-9859
+S-049,receiving,report_date,,2026-10-17
+S-049,receiving,sku,1,SCR-502
+S-049,receiving,quantity_received,1,28
+S-049,receiving,sku,2,TON-310
+S-049,receiving,quantity_received,2,90
+S-049,receiving,sku,3,CLN-812
+S-049,receiving,quantity_received,3,117
+S-049,receiving,sku,4,CUP-496
+S-049,receiving,quantity_received,4,11
+S-050,invoice,invoice_number,,NOP-5317
+S-050,invoice,vendor,,Northgate Office Products
+S-050,invoice,invoice_date,,2026-10-17
+S-050,invoice,po_reference,,PO-5111
+S-050,invoice,sku,1,HLM-127
+S-050,invoice,description,1,"Safety helmet, white"
+S-050,invoice,quantity,1,47
+S-050,invoice,unit_price,1,19.20
+S-050,invoice,line_total,1,902.40
+S-050,invoice,sku,2,VST-133
+S-050,invoice,description,2,Hi-vis safety vest
+S-050,invoice,quantity,2,77
+S-050,invoice,unit_price,2,14.20
+S-050,invoice,line_total,2,1093.40
+S-050,invoice,sku,3,TON-310
+S-050,invoice,description,3,"Toner cartridge, black"
+S-050,invoice,quantity,3,76
+S-050,invoice,unit_price,3,69.79
+S-050,invoice,line_total,3,5304.04
+S-050,invoice,sku,4,TPE-520
+S-050,invoice,description,4,"Packing tape, 6 rolls"
+S-050,invoice,quantity,4,9
+S-050,invoice,unit_price,4,8.00
+S-050,invoice,line_total,4,72.00
+S-050,invoice,subtotal,,7371.84
+S-050,invoice,tax,,442.31
+S-050,invoice,freight,,0.00
+S-050,invoice,total,,7814.15
+S-050,po,po_number,,PO-5111
+S-050,po,vendor,,Northgate Office Products
+S-050,po,po_date,,2026-10-06
+S-050,po,sku,1,HLM-127
+S-050,po,description,1,"Safety helmet, white"
+S-050,po,quantity,1,47
+S-050,po,unit_price,1,19.20
+S-050,po,sku,2,VST-133
+S-050,po,description,2,Hi-vis safety vest
+S-050,po,quantity,2,77
+S-050,po,unit_price,2,14.20
+S-050,po,sku,3,TON-310
+S-050,po,description,3,"Toner cartridge, black"
+S-050,po,quantity,3,76
+S-050,po,unit_price,3,69.79
+S-050,po,sku,4,TPE-520
+S-050,po,description,4,"Packing tape, 6 rolls"
+S-050,po,quantity,4,9
+S-050,po,unit_price,4,8.00
+S-050,receiving,report_number,,RR-715
+S-050,receiving,po_number,,PO-5111
+S-050,receiving,report_date,,2026-10-11
+S-050,receiving,sku,1,HLM-127
+S-050,receiving,quantity_received,1,47
+S-050,receiving,sku,2,VST-133
+S-050,receiving,quantity_received,2,77
+S-050,receiving,sku,3,TON-310
+S-050,receiving,quantity_received,3,76
+S-050,receiving,sku,4,TPE-520
+S-050,receiving,quantity_received,4,9
+S-051,invoice,invoice_number,,WFW-6756
+S-051,invoice,vendor,,Willowbrook Foods Wholesale
+S-051,invoice,invoice_date,,2026-10-29
+S-051,invoice,po_reference,,
+S-051,invoice,sku,1,TPE-520
+S-051,invoice,description,1,"Packing tape, 6 rolls"
+S-051,invoice,quantity,1,101
+S-051,invoice,unit_price,1,9.11
+S-051,invoice,line_total,1,920.11
+S-051,invoice,sku,2,BOX-415
+S-051,invoice,description,2,"Shipping carton, 12x12x12"
+S-051,invoice,quantity,2,8
+S-051,invoice,unit_price,2,1.35
+S-051,invoice,line_total,2,10.80
+S-051,invoice,subtotal,,930.91
+S-051,invoice,tax,,55.85
+S-051,invoice,freight,,15.00
+S-051,invoice,total,,1001.76
+S-051,receiving,report_number,,RR-256
+S-051,receiving,po_number,,PO-7700
+S-051,receiving,report_date,,2026-10-21
+S-051,receiving,sku,1,TPE-520
+S-051,receiving,quantity_received,1,101
+S-051,receiving,sku,2,BOX-415
+S-051,receiving,quantity_received,2,8
+S-052,invoice,invoice_number,,NOP-9599
+S-052,invoice,vendor,,Northgate Office Products
+S-052,invoice,invoice_date,,2026-10-21
+S-052,invoice,po_reference,,PO-7560
+S-052,invoice,sku,1,SCR-502
+S-052,invoice,description,1,"Wood screws, box of 200"
+S-052,invoice,quantity,1,83
+S-052,invoice,unit_price,1,10.36
+S-052,invoice,line_total,1,859.88
+S-052,invoice,sku,2,BOX-415
+S-052,invoice,description,2,"Shipping carton, 12x12x12"
+S-052,invoice,quantity,2,58
+S-052,invoice,unit_price,2,2.08
+S-052,invoice,line_total,2,120.64
+S-052,invoice,subtotal,,980.52
+S-052,invoice,tax,,58.83
+S-052,invoice,freight,,15.00
+S-052,invoice,total,,1054.35
+S-052,po,po_number,,PO-7560
+S-052,po,vendor,,Northgate Office Products
+S-052,po,po_date,,2026-10-11
+S-052,po,sku,1,SCR-502
+S-052,po,description,1,"Wood screws, box of 200"
+S-052,po,quantity,1,83
+S-052,po,unit_price,1,10.36
+S-052,po,sku,2,BOX-415
+S-052,po,description,2,"Shipping carton, 12x12x12"
+S-052,po,quantity,2,58
+S-052,po,unit_price,2,2.08
+S-052,receiving,report_number,,RR-498
+S-052,receiving,po_number,,PO-7560
+S-052,receiving,report_date,,2026-10-14
+S-052,receiving,sku,1,SCR-502
+S-052,receiving,quantity_received,1,83
+S-052,receiving,sku,2,BOX-415
+S-052,receiving,quantity_received,2,58
+S-053,invoice,invoice_number,,QSH-8721
+S-053,invoice,vendor,,QUARRY STREET HARDWARE
+S-053,invoice,invoice_date,,2026-10-27
+S-053,invoice,po_reference,,PO-8735
+S-053,invoice,sku,1,HLM-127
+S-053,invoice,description,1,"Safety helmet, white"
+S-053,invoice,quantity,1,100
+S-053,invoice,unit_price,1,13.72
+S-053,invoice,line_total,1,1372.00
+S-053,invoice,sku,2,CLN-812
+S-053,invoice,description,2,"All-purpose cleaner, 1 gal"
+S-053,invoice,quantity,2,74
+S-053,invoice,unit_price,2,9.38
+S-053,invoice,line_total,2,694.12
+S-053,invoice,sku,3,WIR-364
+S-053,invoice,description,3,"Copper wire, 100 ft spool"
+S-053,invoice,quantity,3,68
+S-053,invoice,unit_price,3,49.23
+S-053,invoice,line_total,3,3347.64
+S-053,invoice,subtotal,,5413.76
+S-053,invoice,tax,,324.83
+S-053,invoice,freight,,0.00
+S-053,invoice,total,,5738.59
+S-053,po,po_number,,PO-8735
+S-053,po,vendor,,Quarry Street Hardware
+S-053,po,po_date,,2026-10-18
+S-053,po,sku,1,HLM-127
+S-053,po,description,1,"Safety helmet, white"
+S-053,po,quantity,1,100
+S-053,po,unit_price,1,13.72
+S-053,po,sku,2,CLN-812
+S-053,po,description,2,"All-purpose cleaner, 1 gal"
+S-053,po,quantity,2,74
+S-053,po,unit_price,2,9.38
+S-053,po,sku,3,WIR-364
+S-053,po,description,3,"Copper wire, 100 ft spool"
+S-053,po,quantity,3,68
+S-053,po,unit_price,3,49.23
+S-053,receiving,report_number,,RR-895
+S-053,receiving,po_number,,PO-8735
+S-053,receiving,report_date,,2026-10-25
+S-053,receiving,sku,1,HLM-127
+S-053,receiving,quantity_received,1,100
+S-053,receiving,sku,2,CLN-812
+S-053,receiving,quantity_received,2,74
+S-053,receiving,sku,3,WIR-364
+S-053,receiving,quantity_received,3,68
+S-054,invoice,invoice_number,,MVJ-2680
+S-054,invoice,vendor,,Harbor Point Supply Co.
+S-054,invoice,invoice_date,,2026-10-25
+S-054,invoice,po_reference,,PO-6117
+S-054,invoice,sku,1,NAP-488
+S-054,invoice,description,1,"Paper napkins, case of 3000"
+S-054,invoice,quantity,1,78
+S-054,invoice,unit_price,1,24.87
+S-054,invoice,line_total,1,1939.86
+S-054,invoice,subtotal,,1939.86
+S-054,invoice,tax,,116.39
+S-054,invoice,freight,,0.00
+S-054,invoice,total,,2056.25
+S-054,po,po_number,,PO-6117
+S-054,po,vendor,,Harbor Point Supply Co.
+S-054,po,po_date,,2026-10-15
+S-054,po,sku,1,NAP-488
+S-054,po,description,1,"Paper napkins, case of 3000"
+S-054,po,quantity,1,78
+S-054,po,unit_price,1,24.87
+S-054,receiving,report_number,,RR-255
+S-054,receiving,po_number,,PO-6117
+S-054,receiving,report_date,,2026-10-20
+S-054,receiving,sku,1,NAP-488
+S-054,receiving,quantity_received,1,78
+S-055,invoice,invoice_number,,ISS-5360
+S-055,invoice,vendor,,Ironwood Safety Supply
+S-055,invoice,invoice_date,,2026-10-21
+S-055,invoice,po_reference,,PO-2524
+S-055,invoice,sku,1,NAP-488
+S-055,invoice,description,1,"Paper napkins, case of 3000"
+S-055,invoice,quantity,1,7
+S-055,invoice,unit_price,1,37.60
+S-055,invoice,line_total,1,263.20
+S-055,invoice,sku,2,PIP-245
+S-055,invoice,description,2,"Pipettes, pack of 200"
+S-055,invoice,quantity,2,30
+S-055,invoice,unit_price,2,28.40
+S-055,invoice,line_total,2,852.00
+S-055,invoice,subtotal,,1115.20
+S-055,invoice,tax,,66.91
+S-055,invoice,freight,,0.00
+S-055,invoice,total,,1182.11
+S-055,po,po_number,,PO-2524
+S-055,po,vendor,,Ironwood Safety Supply
+S-055,po,po_date,,2026-10-11
+S-055,po,sku,1,NAP-488
+S-055,po,description,1,"Paper napkins, case of 3000"
+S-055,po,quantity,1,7
+S-055,po,unit_price,1,37.60
+S-055,po,sku,2,PIP-245
+S-055,po,description,2,"Pipettes, pack of 200"
+S-055,po,quantity,2,30
+S-055,po,unit_price,2,28.40
+S-055,receiving,report_number,,RR-747
+S-055,receiving,po_number,,PO-2524
+S-055,receiving,report_date,,2026-10-17
+S-055,receiving,sku,1,NAP-488
+S-055,receiving,quantity_received,1,7
+S-055,receiving,sku,2,PIP-245
+S-055,receiving,quantity_received,2,30
+S-056,invoice,invoice_number,,LLE-7566
+S-056,invoice,vendor,,Larkspur Lab Equipment
+S-056,invoice,invoice_date,,2026-10-19
+S-056,invoice,po_reference,,PO-2600
+S-056,invoice,sku,1,MOP-705
+S-056,invoice,description,1,Cotton mop head
+S-056,invoice,quantity,1,67
+S-056,invoice,unit_price,1,4.90
+S-056,invoice,line_total,1,328.30
+S-056,invoice,sku,2,BOX-415
+S-056,invoice,description,2,"Shipping carton, 12x12x12"
+S-056,invoice,quantity,2,84
+S-056,invoice,unit_price,2,1.88
+S-056,invoice,line_total,2,157.92
+S-056,invoice,subtotal,,486.22
+S-056,invoice,tax,,29.17
+S-056,invoice,freight,,0.00
+S-056,invoice,total,,515.39
+S-056,po,po_number,,PO-2600
+S-056,po,vendor,,Larkspur Lab Equipment
+S-056,po,po_date,,2026-10-09
+S-056,po,sku,1,MOP-705
+S-056,po,description,1,Cotton mop head
+S-056,po,quantity,1,67
+S-056,po,unit_price,1,4.90
+S-056,po,sku,2,BOX-415
+S-056,po,description,2,"Shipping carton, 12x12x12"
+S-056,po,quantity,2,84
+S-056,po,unit_price,2,1.88
+S-056,receiving,report_number,,RR-494
+S-056,receiving,po_number,,PO-2600
+S-056,receiving,report_date,,2026-10-14
+S-056,receiving,sku,1,MOP-705
+S-056,receiving,quantity_received,1,67
+S-056,receiving,sku,2,BOX-415
+S-056,receiving,quantity_received,2,84
+S-057,invoice,invoice_number,,CFT-7571
+S-057,invoice,vendor,,Copperfield Tools Inc.
+S-057,invoice,invoice_date,,2026-10-29
+S-057,invoice,po_reference,,PO-5757
+S-057,invoice,sku,1,DRL-114
+S-057,invoice,description,1,Cordless drill bit set
+S-057,invoice,quantity,1,42
+S-057,invoice,unit_price,1,28.25
+S-057,invoice,line_total,1,1186.50
+S-057,invoice,sku,2,LBL-518
+S-057,invoice,description,2,"Shipping labels, roll of 500"
+S-057,invoice,quantity,2,39
+S-057,invoice,unit_price,2,8.77
+S-057,invoice,line_total,2,342.03
+S-057,invoice,subtotal,,1528.53
+S-057,invoice,tax,,91.71
+S-057,invoice,freight,,15.00
+S-057,invoice,total,,1635.24
+S-057,po,po_number,,PO-5757
+S-057,po,vendor,,Copperfield Tools Inc.
+S-057,po,po_date,,2026-10-17
+S-057,po,sku,1,DRL-114
+S-057,po,description,1,Cordless drill bit set
+S-057,po,quantity,1,42
+S-057,po,unit_price,1,28.25
+S-057,po,sku,2,LBL-518
+S-057,po,description,2,"Shipping labels, roll of 500"
+S-057,po,quantity,2,39
+S-057,po,unit_price,2,8.86
+S-057,receiving,report_number,,RR-468
+S-057,receiving,po_number,,PO-5757
+S-057,receiving,report_date,,2026-10-21
+S-057,receiving,sku,1,DRL-114
+S-057,receiving,quantity_received,1,42
+S-057,receiving,sku,2,LBL-518
+S-057,receiving,quantity_received,2,39
+S-058,invoice,invoice_number,,CLP-7383
+S-058,invoice,vendor,,Cedar Lane Packaging
+S-058,invoice,invoice_date,,2026-10-20
+S-058,invoice,po_reference,,PO-2730
+S-058,invoice,sku,1,WIR-364
+S-058,invoice,description,1,"Copper wire, 100 ft spool"
+S-058,invoice,quantity,1,42
+S-058,invoice,unit_price,1,30.64
+S-058,invoice,line_total,1,1286.88
+S-058,invoice,sku,2,MOP-705
+S-058,invoice,description,2,Cotton mop head
+S-058,invoice,quantity,2,10
+S-058,invoice,unit_price,2,6.83
+S-058,invoice,line_total,2,68.30
+S-058,invoice,subtotal,,1355.18
+S-058,invoice,tax,,81.31
+S-058,invoice,freight,,12.00
+S-058,invoice,total,,1448.49
+S-058,po,po_number,,PO-2730
+S-058,po,vendor,,Cedar Lane Packaging
+S-058,po,po_date,,2026-10-09
+S-058,po,sku,1,WIR-364
+S-058,po,description,1,"Copper wire, 100 ft spool"
+S-058,po,quantity,1,42
+S-058,po,unit_price,1,30.64
+S-058,po,sku,2,MOP-705
+S-058,po,description,2,Cotton mop head
+S-058,po,quantity,2,10
+S-058,po,unit_price,2,6.83
+S-058,receiving,report_number,,RR-189
+S-058,receiving,po_number,,PO-2730
+S-058,receiving,report_date,,2026-10-13
+S-058,receiving,sku,1,WIR-364
+S-058,receiving,quantity_received,1,42
+S-058,receiving,sku,2,MOP-705
+S-058,receiving,quantity_received,2,10
+S-059,invoice,invoice_number,,CLP-8952
+S-059,invoice,vendor,,Cedar Lane Packaging
+S-059,invoice,invoice_date,,2026-10-30
+S-059,invoice,po_reference,,PO-8947
+S-059,invoice,sku,1,GLV-630
+S-059,invoice,description,1,"Nitrile gloves, box of 100"
+S-059,invoice,quantity,1,15
+S-059,invoice,unit_price,1,9.00
+S-059,invoice,line_total,1,135.00
+S-059,invoice,sku,2,PIP-245
+S-059,invoice,description,2,"Pipettes, pack of 200"
+S-059,invoice,quantity,2,114
+S-059,invoice,unit_price,2,16.44
+S-059,invoice,line_total,2,1874.16
+S-059,invoice,subtotal,,2009.16
+S-059,invoice,tax,,120.55
+S-059,invoice,freight,,8.50
+S-059,invoice,total,,2138.21
+S-059,po,po_number,,PO-8947
+S-059,po,vendor,,Cedar Lane Packaging
+S-059,po,po_date,,2026-10-20
+S-059,po,sku,1,GLV-630
+S-059,po,description,1,"Nitrile gloves, box of 100"
+S-059,po,quantity,1,15
+S-059,po,unit_price,1,9.17
+S-059,po,sku,2,PIP-245
+S-059,po,description,2,"Pipettes, pack of 200"
+S-059,po,quantity,2,114
+S-059,po,unit_price,2,16.44
+S-059,receiving,report_number,,RR-518
+S-059,receiving,po_number,,PO-8947
+S-059,receiving,report_date,,2026-10-26
+S-059,receiving,sku,1,GLV-630
+S-059,receiving,quantity_received,1,15
+S-059,receiving,sku,2,PIP-245
+S-059,receiving,quantity_received,2,114
+S-060,invoice,invoice_number,,ISS-6733
+S-060,invoice,vendor,,Ironwood Safety Supply
+S-060,invoice,invoice_date,,2026-10-15
+S-060,invoice,po_reference,,PO-3897
+S-060,invoice,sku,1,HLM-127
+S-060,invoice,description,1,"Safety helmet, white"
+S-060,invoice,quantity,1,36
+S-060,invoice,unit_price,1,17.59
+S-060,invoice,line_total,1,633.24
+S-060,invoice,sku,2,MOP-705
+S-060,invoice,description,2,Cotton mop head
+S-060,invoice,quantity,2,68
+S-060,invoice,unit_price,2,5.22
+S-060,invoice,line_total,2,354.96
+S-060,invoice,sku,3,LBL-518
+S-060,invoice,description,3,"Shipping labels, roll of 500"
+S-060,invoice,quantity,3,33
+S-060,invoice,unit_price,3,14.03
+S-060,invoice,line_total,3,462.99
+S-060,invoice,subtotal,,1451.19
+S-060,invoice,tax,,87.07
+S-060,invoice,freight,,0.00
+S-060,invoice,total,,1538.26
+S-060,po,po_number,,PO-3897
+S-060,po,vendor,,Ironwood Safety Supply
+S-060,po,po_date,,2026-10-05
+S-060,po,sku,1,HLM-127
+S-060,po,description,1,"Safety helmet, white"
+S-060,po,quantity,1,36
+S-060,po,unit_price,1,17.59
+S-060,po,sku,2,MOP-705
+S-060,po,description,2,Cotton mop head
+S-060,po,quantity,2,68
+S-060,po,unit_price,2,5.22
+S-060,po,sku,3,LBL-518
+S-060,po,description,3,"Shipping labels, roll of 500"
+S-060,po,quantity,3,33
+S-060,po,unit_price,3,13.89
+S-060,receiving,report_number,,RR-886
+S-060,receiving,po_number,,PO-3897
+S-060,receiving,report_date,,2026-10-09
+S-060,receiving,sku,1,HLM-127
+S-060,receiving,quantity_received,1,36
+S-060,receiving,sku,2,MOP-705
+S-060,receiving,quantity_received,2,68
+S-060,receiving,sku,3,LBL-518
+S-060,receiving,quantity_received,3,33
+S-061,invoice,invoice_number,,BFI-8309
+S-061,invoice,vendor,,Brightfield Industrial
+S-061,invoice,invoice_date,,2026-10-25
+S-061,invoice,po_reference,,PO-7877
+S-061,invoice,sku,1,BKR-252
+S-061,invoice,description,1,"Glass beaker, 500 ml"
+S-061,invoice,quantity,1,102
+S-061,invoice,unit_price,1,8.78
+S-061,invoice,line_total,1,895.56
+S-061,invoice,sku,2,HLM-127
+S-061,invoice,description,2,"Safety helmet, white"
+S-061,invoice,quantity,2,66
+S-061,invoice,unit_price,2,21.12
+S-061,invoice,line_total,2,1393.92
+S-061,invoice,sku,3,NAP-488
+S-061,invoice,description,3,"Paper napkins, case of 3000"
+S-061,invoice,quantity,3,97
+S-061,invoice,unit_price,3,30.89
+S-061,invoice,line_total,3,2996.33
+S-061,invoice,sku,4,TON-310
+S-061,invoice,description,4,"Toner cartridge, black"
+S-061,invoice,quantity,4,16
+S-061,invoice,unit_price,4,84.55
+S-061,invoice,line_total,4,1352.80
+S-061,invoice,subtotal,,6638.61
+S-061,invoice,tax,,398.32
+S-061,invoice,freight,,0.00
+S-061,invoice,total,,7036.93
+S-061,po,po_number,,PO-7877
+S-061,po,vendor,,Brightfield Industrial
+S-061,po,po_date,,2026-10-15
+S-061,po,sku,1,BKR-252
+S-061,po,description,1,"Glass beaker, 500 ml"
+S-061,po,quantity,1,102
+S-061,po,unit_price,1,8.78
+S-061,po,sku,2,HLM-127
+S-061,po,description,2,"Safety helmet, white"
+S-061,po,quantity,2,66
+S-061,po,unit_price,2,21.12
+S-061,po,sku,3,NAP-488
+S-061,po,description,3,"Paper napkins, case of 3000"
+S-061,po,quantity,3,97
+S-061,po,unit_price,3,30.89
+S-061,po,sku,4,TON-310
+S-061,po,description,4,"Toner cartridge, black"
+S-061,po,quantity,4,16
+S-061,po,unit_price,4,84.55
+S-061,receiving,report_number,,RR-214
+S-061,receiving,po_number,,PO-7877
+S-061,receiving,report_date,,2026-10-22
+S-061,receiving,sku,1,BKR-252
+S-061,receiving,quantity_received,1,102
+S-061,receiving,sku,2,HLM-127
+S-061,receiving,quantity_received,2,66
+S-061,receiving,sku,3,NAP-488
+S-061,receiving,quantity_received,3,97
+S-061,receiving,sku,4,TON-310
+S-061,receiving,quantity_received,4,16
+S-062,invoice,invoice_number,,SRE-6280
+S-062,invoice,vendor,,Summit Ridge Electrical
+S-062,invoice,invoice_date,,2026-10-30
+S-062,invoice,po_reference,,PO-5320
+S-062,invoice,sku,1,PPR-101
+S-062,invoice,description,1,"Copy paper, case of 10 reams"
+S-062,invoice,quantity,1,800
+S-062,invoice,unit_price,1,40.75
+S-062,invoice,line_total,1,32600.00
+S-062,invoice,subtotal,,32600.00
+S-062,invoice,tax,,1956.00
+S-062,invoice,freight,,12.00
+S-062,invoice,total,,34568.00
+S-062,po,po_number,,PO-5320
+S-062,po,vendor,,Summit Ridge Electrical
+S-062,po,po_date,,2026-10-19
+S-062,po,sku,1,PPR-101
+S-062,po,description,1,"Copy paper, case of 10 reams"
+S-062,po,quantity,1,800
+S-062,po,unit_price,1,40.00
+S-062,receiving,report_number,,RR-912
+S-062,receiving,po_number,,PO-5320
+S-062,receiving,report_date,,2026-10-24
+S-062,receiving,sku,1,PPR-101
+S-062,receiving,quantity_received,1,800
+S-063,invoice,invoice_number,,HPS-5792
+S-063,invoice,vendor,,HARBOR POINT SUPPLY CO.
+S-063,invoice,invoice_date,,2026-10-20
+S-063,invoice,po_reference,,PO-5686
+S-063,invoice,sku,1,MOP-705
+S-063,invoice,description,1,Cotton mop head
+S-063,invoice,quantity,1,89
+S-063,invoice,unit_price,1,5.88
+S-063,invoice,line_total,1,523.32
+S-063,invoice,sku,2,WIR-364
+S-063,invoice,description,2,"Copper wire, 100 ft spool"
+S-063,invoice,quantity,2,41
+S-063,invoice,unit_price,2,48.59
+S-063,invoice,line_total,2,1992.19
+S-063,invoice,sku,3,PPR-101
+S-063,invoice,description,3,"Copy paper, case of 10 reams"
+S-063,invoice,quantity,3,84
+S-063,invoice,unit_price,3,35.74
+S-063,invoice,line_total,3,3002.16
+S-063,invoice,sku,4,TON-310
+S-063,invoice,description,4,"Toner cartridge, black"
+S-063,invoice,quantity,4,15
+S-063,invoice,unit_price,4,59.66
+S-063,invoice,line_total,4,894.90
+S-063,invoice,subtotal,,6412.57
+S-063,invoice,tax,,384.75
+S-063,invoice,freight,,0.00
+S-063,invoice,total,,6797.32
+S-063,po,po_number,,PO-5686
+S-063,po,vendor,,Harbor Point Supply Co.
+S-063,po,po_date,,2026-10-11
+S-063,po,sku,1,MOP-705
+S-063,po,description,1,Cotton mop head
+S-063,po,quantity,1,89
+S-063,po,unit_price,1,5.88
+S-063,po,sku,2,WIR-364
+S-063,po,description,2,"Copper wire, 100 ft spool"
+S-063,po,quantity,2,41
+S-063,po,unit_price,2,48.59
+S-063,po,sku,3,PPR-101
+S-063,po,description,3,"Copy paper, case of 10 reams"
+S-063,po,quantity,3,84
+S-063,po,unit_price,3,35.74
+S-063,po,sku,4,TON-310
+S-063,po,description,4,"Toner cartridge, black"
+S-063,po,quantity,4,15
+S-063,po,unit_price,4,59.66
+S-063,receiving,report_number,,RR-863
+S-063,receiving,po_number,,PO-5686
+S-063,receiving,report_date,,2026-10-15
+S-063,receiving,sku,1,MOP-705
+S-063,receiving,quantity_received,1,89
+S-063,receiving,sku,2,WIR-364
+S-063,receiving,quantity_received,2,41
+S-063,receiving,sku,3,PPR-101
+S-063,receiving,quantity_received,3,84
+S-063,receiving,sku,4,TON-310
+S-063,receiving,quantity_received,4,15
+S-064,invoice,invoice_number,,LLE-5321
+S-064,invoice,vendor,,Larkspur Lab Equipment
+S-064,invoice,invoice_date,,2026-10-30
+S-064,invoice,po_reference,,PO-4709
+S-064,invoice,sku,1,PPR-101
+S-064,invoice,description,1,"Copy paper, case of 10 reams"
+S-064,invoice,quantity,1,22
+S-064,invoice,unit_price,1,38.23
+S-064,invoice,line_total,1,841.06
+S-064,invoice,sku,2,MOP-705
+S-064,invoice,description,2,Cotton mop head
+S-064,invoice,quantity,2,35
+S-064,invoice,unit_price,2,4.65
+S-064,invoice,line_total,2,162.75
+S-064,invoice,subtotal,,1003.81
+S-064,invoice,tax,,60.23
+S-064,invoice,freight,,0.00
+S-064,invoice,total,,1064.04
+S-064,po,po_number,,PO-4079
+S-064,po,vendor,,Larkspur Lab Equipment
+S-064,po,po_date,,2026-10-19
+S-064,po,sku,1,PPR-101
+S-064,po,description,1,"Copy paper, case of 10 reams"
+S-064,po,quantity,1,22
+S-064,po,unit_price,1,38.23
+S-064,po,sku,2,MOP-705
+S-064,po,description,2,Cotton mop head
+S-064,po,quantity,2,35
+S-064,po,unit_price,2,4.65
+S-064,receiving,report_number,,RR-310
+S-064,receiving,po_number,,PO-4079
+S-064,receiving,report_date,,2026-10-24
+S-064,receiving,sku,1,PPR-101
+S-064,receiving,quantity_received,1,22
+S-064,receiving,sku,2,MOP-705
+S-064,receiving,quantity_received,2,35
+S-065,invoice,invoice_number,,TPG-7009
+S-065,invoice,vendor,,Tidewater Paper Group
+S-065,invoice,invoice_date,,2026-10-29
+S-065,invoice,po_reference,,PO-7031
+S-065,invoice,sku,1,PPR-101
+S-065,invoice,description,1,"Copy paper, case of 10 reams"
+S-065,invoice,quantity,1,1000
+S-065,invoice,unit_price,1,101.90
+S-065,invoice,line_total,1,101900.00
+S-065,invoice,subtotal,,101900.00
+S-065,invoice,tax,,6114.00
+S-065,invoice,freight,,15.00
+S-065,invoice,total,,108029.00
+S-065,po,po_number,,PO-7031
+S-065,po,vendor,,Tidewater Paper Group
+S-065,po,po_date,,2026-10-20
+S-065,po,sku,1,PPR-101
+S-065,po,description,1,"Copy paper, case of 10 reams"
+S-065,po,quantity,1,1000
+S-065,po,unit_price,1,100.00
+S-065,receiving,report_number,,RR-217
+S-065,receiving,po_number,,PO-7031
+S-065,receiving,report_date,,2026-10-26
+S-065,receiving,sku,1,PPR-101
+S-065,receiving,quantity_received,1,1000
+S-066,invoice,invoice_number,,BFI-5926
+S-066,invoice,vendor,,Brightfield Industrial
+S-066,invoice,invoice_date,,2026-10-15
+S-066,invoice,po_reference,,PO-9531
+S-066,invoice,sku,1,MOP-705
+S-066,invoice,description,1,Cotton mop head
+S-066,invoice,quantity,1,92
+S-066,invoice,unit_price,1,7.55
+S-066,invoice,line_total,1,694.60
+S-066,invoice,subtotal,,694.60
+S-066,invoice,tax,,41.68
+S-066,invoice,freight,,15.00
+S-066,invoice,total,,751.28
+S-066,po,po_number,,PO-9531
+S-066,po,vendor,,Brightfield Industrial
+S-066,po,po_date,,2026-10-06
+S-066,po,sku,1,MOP-705
+S-066,po,description,1,Cotton mop head
+S-066,po,quantity,1,92
+S-066,po,unit_price,1,7.55
+S-066,receiving,report_number,,RR-119
+S-066,receiving,po_number,,PO-9531
+S-066,receiving,report_date,,2026-10-13
+S-066,receiving,sku,1,MOP-705
+S-066,receiving,quantity_received,1,92
+S-067,invoice,invoice_number,,BFI-5660
+S-067,invoice,vendor,,Brightfield Industrial
+S-067,invoice,invoice_date,,2026-10-26
+S-067,invoice,po_reference,,PO-8585
+S-067,invoice,sku,1,WIR-364
+S-067,invoice,description,1,"Copper wire, 100 ft spool"
+S-067,invoice,quantity,1,49
+S-067,invoice,unit_price,1,37.93
+S-067,invoice,line_total,1,1858.57
+S-067,invoice,sku,2,CLN-812
+S-067,invoice,description,2,"All-purpose cleaner, 1 gal"
+S-067,invoice,quantity,2,50
+S-067,invoice,unit_price,2,8.57
+S-067,invoice,line_total,2,428.50
+S-067,invoice,subtotal,,2287.07
+S-067,invoice,tax,,137.22
+S-067,invoice,freight,,0.00
+S-067,invoice,total,,2424.29
+S-067,po,po_number,,PO-8585
+S-067,po,vendor,,Brightfield Industrial
+S-067,po,po_date,,2026-10-17
+S-067,po,sku,1,WIR-364
+S-067,po,description,1,"Copper wire, 100 ft spool"
+S-067,po,quantity,1,49
+S-067,po,unit_price,1,37.93
+S-067,po,sku,2,CLN-812
+S-067,po,description,2,"All-purpose cleaner, 1 gal"
+S-067,po,quantity,2,50
+S-067,po,unit_price,2,8.53
+S-067,receiving,report_number,,RR-372
+S-067,receiving,po_number,,PO-8585
+S-067,receiving,report_date,,2026-10-20
+S-067,receiving,sku,1,WIR-364
+S-067,receiving,quantity_received,1,49
+S-067,receiving,sku,2,CLN-812
+S-067,receiving,quantity_received,2,50
+S-068,invoice,invoice_number,,ISS-6393
+S-068,invoice,vendor,,Ironwood Safety Supply
+S-068,invoice,invoice_date,,2026-10-16
+S-068,invoice,po_reference,,PO-6120
+S-068,invoice,sku,1,PEN-220
+S-068,invoice,description,1,"Ballpoint pens, box of 50"
+S-068,invoice,quantity,1,66
+S-068,invoice,unit_price,1,7.38
+S-068,invoice,line_total,1,487.08
+S-068,invoice,sku,2,BLB-371
+S-068,invoice,description,2,"LED bulb, pack of 12"
+S-068,invoice,quantity,2,117
+S-068,invoice,unit_price,2,18.19
+S-068,invoice,line_total,2,2128.23
+S-068,invoice,sku,3,TON-310
+S-068,invoice,description,3,"Toner cartridge, black"
+S-068,invoice,quantity,3,66
+S-068,invoice,unit_price,3,61.67
+S-068,invoice,line_total,3,4070.22
+S-068,invoice,subtotal,,6685.53
+S-068,invoice,tax,,401.13
+S-068,invoice,freight,,15.00
+S-068,invoice,total,,7101.66
+S-068,po,po_number,,PO-6120
+S-068,po,vendor,,Ironwood Safety Supply
+S-068,po,po_date,,2026-10-05
+S-068,po,sku,1,PEN-220
+S-068,po,description,1,"Ballpoint pens, box of 50"
+S-068,po,quantity,1,66
+S-068,po,unit_price,1,7.38
+S-068,po,sku,2,BLB-371
+S-068,po,description,2,"LED bulb, pack of 12"
+S-068,po,quantity,2,117
+S-068,po,unit_price,2,17.80
+S-068,po,sku,3,TON-310
+S-068,po,description,3,"Toner cartridge, black"
+S-068,po,quantity,3,66
+S-068,po,unit_price,3,61.67
+S-068,receiving,report_number,,RR-288
+S-068,receiving,po_number,,PO-6120
+S-068,receiving,report_date,,2026-10-10
+S-068,receiving,sku,1,PEN-220
+S-068,receiving,quantity_received,1,66
+S-068,receiving,sku,2,BLB-371
+S-068,receiving,quantity_received,2,117
+S-068,receiving,sku,3,TON-310
+S-068,receiving,quantity_received,3,66
+S-069,invoice,invoice_number,,LLE-8922
+S-069,invoice,vendor,,Larkspur Lab Equipment
+S-069,invoice,invoice_date,,2026-10-18
+S-069,invoice,po_reference,,PO 2498
+S-069,invoice,sku,1,NAP-488
+S-069,invoice,description,1,"Paper napkins, case of 3000"
+S-069,invoice,quantity,1,43
+S-069,invoice,unit_price,1,32.37
+S-069,invoice,line_total,1,1391.91
+S-069,invoice,sku,2,TPE-520
+S-069,invoice,description,2,"Packing tape, 6 rolls"
+S-069,invoice,quantity,2,11
+S-069,invoice,unit_price,2,5.36
+S-069,invoice,line_total,2,58.96
+S-069,invoice,sku,3,HLM-127
+S-069,invoice,description,3,"Safety helmet, white"
+S-069,invoice,quantity,3,99
+S-069,invoice,unit_price,3,20.47
+S-069,invoice,line_total,3,2026.53
+S-069,invoice,sku,4,CUP-496
+S-069,invoice,description,4,"Paper cups 12 oz, sleeve of 50"
+S-069,invoice,quantity,4,9
+S-069,invoice,unit_price,4,4.22
+S-069,invoice,line_total,4,37.98
+S-069,invoice,subtotal,,3515.38
+S-069,invoice,tax,,210.92
+S-069,invoice,freight,,8.50
+S-069,invoice,total,,3734.80
+S-069,po,po_number,,PO-2498
+S-069,po,vendor,,Larkspur Lab Equipment
+S-069,po,po_date,,2026-10-09
+S-069,po,sku,1,NAP-488
+S-069,po,description,1,"Paper napkins, case of 3000"
+S-069,po,quantity,1,43
+S-069,po,unit_price,1,32.37
+S-069,po,sku,2,TPE-520
+S-069,po,description,2,"Packing tape, 6 rolls"
+S-069,po,quantity,2,11
+S-069,po,unit_price,2,5.36
+S-069,po,sku,3,HLM-127
+S-069,po,description,3,"Safety helmet, white"
+S-069,po,quantity,3,99
+S-069,po,unit_price,3,20.47
+S-069,po,sku,4,CUP-496
+S-069,po,description,4,"Paper cups 12 oz, sleeve of 50"
+S-069,po,quantity,4,9
+S-069,po,unit_price,4,4.22
+S-069,receiving,report_number,,RR-135
+S-069,receiving,po_number,,PO-2498
+S-069,receiving,report_date,,2026-10-16
+S-069,receiving,sku,1,NAP-488
+S-069,receiving,quantity_received,1,43
+S-069,receiving,sku,2,TPE-520
+S-069,receiving,quantity_received,2,11
+S-069,receiving,sku,3,HLM-127
+S-069,receiving,quantity_received,3,99
+S-069,receiving,sku,4,CUP-496
+S-069,receiving,quantity_received,4,9
+S-070,invoice,invoice_number,,TPG-6829
+S-070,invoice,vendor,,Tidewater Paper Group
+S-070,invoice,invoice_date,,2026-10-17
+S-070,invoice,po_reference,,PO-1741
+S-070,invoice,sku,1,CUP-496
+S-070,invoice,description,1,"Paper cups 12 oz, sleeve of 50"
+S-070,invoice,quantity,1,90
+S-070,invoice,unit_price,1,4.87
+S-070,invoice,line_total,1,438.30
+S-070,invoice,sku,2,VST-133
+S-070,invoice,description,2,Hi-vis safety vest
+S-070,invoice,quantity,2,72
+S-070,invoice,unit_price,2,8.01
+S-070,invoice,line_total,2,576.72
+S-070,invoice,sku,3,PEN-220
+S-070,invoice,description,3,"Ballpoint pens, box of 50"
+S-070,invoice,quantity,3,47
+S-070,invoice,unit_price,3,5.89
+S-070,invoice,line_total,3,276.83
+S-070,invoice,sku,4,BLB-371
+S-070,invoice,description,4,"LED bulb, pack of 12"
+S-070,invoice,quantity,4,19
+S-070,invoice,unit_price,4,21.75
+S-070,invoice,line_total,4,413.25
+S-070,invoice,subtotal,,1705.10
+S-070,invoice,tax,,102.31
+S-070,invoice,freight,,15.00
+S-070,invoice,total,,1822.41
+S-070,po,po_number,,PO-1741
+S-070,po,vendor,,Tidewater Paper Group
+S-070,po,po_date,,2026-10-06
+S-070,po,sku,1,CUP-496
+S-070,po,description,1,"Paper cups 12 oz, sleeve of 50"
+S-070,po,quantity,1,90
+S-070,po,unit_price,1,4.87
+S-070,po,sku,2,VST-133
+S-070,po,description,2,Hi-vis safety vest
+S-070,po,quantity,2,72
+S-070,po,unit_price,2,7.93
+S-070,po,sku,3,PEN-220
+S-070,po,description,3,"Ballpoint pens, box of 50"
+S-070,po,quantity,3,47
+S-070,po,unit_price,3,5.89
+S-070,po,sku,4,BLB-371
+S-070,po,description,4,"LED bulb, pack of 12"
+S-070,po,quantity,4,19
+S-070,po,unit_price,4,21.75
+S-070,receiving,report_number,,RR-534
+S-070,receiving,po_number,,PO-1741
+S-070,receiving,report_date,,2026-10-09
+S-070,receiving,sku,1,CUP-496
+S-070,receiving,quantity_received,1,90
+S-070,receiving,sku,2,VST-133
+S-070,receiving,quantity_received,2,72
+S-070,receiving,sku,3,PEN-220
+S-070,receiving,quantity_received,3,47
+S-070,receiving,sku,4,BLB-371
+S-070,receiving,quantity_received,4,19
+S-071,invoice,invoice_number,,ISS-5618
+S-071,invoice,vendor,,Ironwood Safety Supply
+S-071,invoice,invoice_date,,2026-10-18
+S-071,invoice,po_reference,,PO-3413
+S-071,invoice,sku,1,BOX-415
+S-071,invoice,description,1,"Shipping carton, 12x12x12"
+S-071,invoice,quantity,1,15
+S-071,invoice,unit_price,1,1.74
+S-071,invoice,line_total,1,26.10
+S-071,invoice,sku,2,WIR-364
+S-071,invoice,description,2,"Copper wire, 100 ft spool"
+S-071,invoice,quantity,2,97
+S-071,invoice,unit_price,2,43.38
+S-071,invoice,line_total,2,4207.86
+S-071,invoice,sku,3,TPE-520
+S-071,invoice,description,3,"Packing tape, 6 rolls"
+S-071,invoice,quantity,3,111
+S-071,invoice,unit_price,3,7.43
+S-071,invoice,line_total,3,824.73
+S-071,invoice,subtotal,,5058.69
+S-071,invoice,tax,,303.52
+S-071,invoice,freight,,0.00
+S-071,invoice,total,,5362.21
+S-071,po,po_number,,PO-3431
+S-071,po,vendor,,Ironwood Safety Supply
+S-071,po,po_date,,2026-10-09
+S-071,po,sku,1,BOX-415
+S-071,po,description,1,"Shipping carton, 12x12x12"
+S-071,po,quantity,1,15
+S-071,po,unit_price,1,1.74
+S-071,po,sku,2,WIR-364
+S-071,po,description,2,"Copper wire, 100 ft spool"
+S-071,po,quantity,2,97
+S-071,po,unit_price,2,43.38
+S-071,po,sku,3,TPE-520
+S-071,po,description,3,"Packing tape, 6 rolls"
+S-071,po,quantity,3,111
+S-071,po,unit_price,3,7.43
+S-071,receiving,report_number,,RR-615
+S-071,receiving,po_number,,PO-3431
+S-071,receiving,report_date,,2026-10-16
+S-071,receiving,sku,1,BOX-415
+S-071,receiving,quantity_received,1,15
+S-071,receiving,sku,2,WIR-364
+S-071,receiving,quantity_received,2,97
+S-071,receiving,sku,3,TPE-520
+S-071,receiving,quantity_received,3,111
+S-072,invoice,invoice_number,,NOP-6800
+S-072,invoice,vendor,,Northgate Office Products
+S-072,invoice,invoice_date,,2026-10-15
+S-072,invoice,po_reference,,PO-8377
+S-072,invoice,sku,1,TON-310
+S-072,invoice,description,1,"Toner cartridge, black"
+S-072,invoice,quantity,1,76
+S-072,invoice,unit_price,1,63.61
+S-072,invoice,line_total,1,4834.36
+S-072,invoice,sku,2,PIP-245
+S-072,invoice,description,2,"Pipettes, pack of 200"
+S-072,invoice,quantity,2,25
+S-072,invoice,unit_price,2,21.26
+S-072,invoice,line_total,2,531.50
+S-072,invoice,subtotal,,5365.86
+S-072,invoice,tax,,321.95
+S-072,invoice,freight,,15.00
+S-072,invoice,total,,5702.81
+S-072,po,po_number,,PO-8377
+S-072,po,vendor,,Northgate Office Products
+S-072,po,po_date,,2026-10-05
+S-072,po,sku,1,TON-310
+S-072,po,description,1,"Toner cartridge, black"
+S-072,po,quantity,1,76
+S-072,po,unit_price,1,63.61
+S-072,po,sku,2,PIP-245
+S-072,po,description,2,"Pipettes, pack of 200"
+S-072,po,quantity,2,25
+S-072,po,unit_price,2,21.26
+S-072,receiving,report_number,,RR-530
+S-072,receiving,po_number,,PO-8377
+S-072,receiving,report_date,,2026-10-11
+S-072,receiving,sku,1,TON-310
+S-072,receiving,quantity_received,1,76
+S-072,receiving,sku,2,PIP-245
+S-072,receiving,quantity_received,2,25
+S-073,invoice,invoice_number,,BFI-8605
+S-073,invoice,vendor,,Brightfield Industrial
+S-073,invoice,invoice_date,,2026-10-29
+S-073,invoice,po_reference,,PO-3954
+S-073,invoice,sku,1,BKR-252
+S-073,invoice,description,1,"Glass beaker, 500 ml"
+S-073,invoice,quantity,1,107
+S-073,invoice,unit_price,1,8.84
+S-073,invoice,line_total,1,945.88
+S-073,invoice,sku,2,MOP-705
+S-073,invoice,description,2,Cotton mop head
+S-073,invoice,quantity,2,107
+S-073,invoice,unit_price,2,5.67
+S-073,invoice,line_total,2,606.69
+S-073,invoice,sku,3,LBL-518
+S-073,invoice,description,3,"Shipping labels, roll of 500"
+S-073,invoice,quantity,3,117
+S-073,invoice,unit_price,3,12.40
+S-073,invoice,line_total,3,1450.80
+S-073,invoice,subtotal,,3003.37
+S-073,invoice,tax,,180.20
+S-073,invoice,freight,,0.00
+S-073,invoice,total,,3183.57
+S-073,po,po_number,,PO-3954
+S-073,po,vendor,,Brightfield Industrial
+S-073,po,po_date,,2026-10-18
+S-073,po,sku,1,BKR-252
+S-073,po,description,1,"Glass beaker, 500 ml"
+S-073,po,quantity,1,107
+S-073,po,unit_price,1,8.84
+S-073,po,sku,2,MOP-705
+S-073,po,description,2,Cotton mop head
+S-073,po,quantity,2,107
+S-073,po,unit_price,2,5.70
+S-073,po,sku,3,LBL-518
+S-073,po,description,3,"Shipping labels, roll of 500"
+S-073,po,quantity,3,117
+S-073,po,unit_price,3,12.40
+S-073,receiving,report_number,,RR-311
+S-073,receiving,po_number,,PO-3954
+S-073,receiving,report_date,,2026-10-23
+S-073,receiving,sku,1,BKR-252
+S-073,receiving,quantity_received,1,107
+S-073,receiving,sku,2,MOP-705
+S-073,receiving,quantity_received,2,107
+S-073,receiving,sku,3,LBL-518
+S-073,receiving,quantity_received,3,117
+S-074,invoice,invoice_number,,MVJ-9786
+S-074,invoice,vendor,,Maple & Vine Janitorial
+S-074,invoice,invoice_date,,2026-10-26
+S-074,invoice,po_reference,,PO-3198
+S-074,invoice,sku,1,PIP-245
+S-074,invoice,description,1,"Pipettes, pack of 200"
+S-074,invoice,quantity,1,83
+S-074,invoice,unit_price,1,21.33
+S-074,invoice,line_total,1,1770.39
+S-074,invoice,sku,2,TON-310
+S-074,invoice,description,2,"Toner cartridge, black"
+S-074,invoice,quantity,2,86
+S-074,invoice,unit_price,2,84.19
+S-074,invoice,line_total,2,7240.34
+S-074,invoice,subtotal,,9010.73
+S-074,invoice,tax,,540.64
+S-074,invoice,freight,,15.00
+S-074,invoice,total,,9566.37
+S-074,po,po_number,,PO-3198
+S-074,po,vendor,,Maple & Vine Janitorial
+S-074,po,po_date,,2026-10-14
+S-074,po,sku,1,PIP-245
+S-074,po,description,1,"Pipettes, pack of 200"
+S-074,po,quantity,1,83
+S-074,po,unit_price,1,21.33
+S-074,po,sku,2,TON-310
+S-074,po,description,2,"Toner cartridge, black"
+S-074,po,quantity,2,86
+S-074,po,unit_price,2,84.19
+S-074,receiving,report_number,,RR-414
+S-074,receiving,po_number,,PO-3198
+S-074,receiving,report_date,,2026-10-22
+S-074,receiving,sku,1,PIP-245
+S-074,receiving,quantity_received,1,71
+S-074,receiving,sku,2,TON-310
+S-074,receiving,quantity_received,2,86
+S-075,invoice,invoice_number,,HPS-6513
+S-075,invoice,vendor,,Harbor Point Supply Co.
+S-075,invoice,invoice_date,,2026-10-19
+S-075,invoice,po_reference,,PO-8457
+S-075,invoice,sku,1,PEN-220
+S-075,invoice,description,1,"Ballpoint pens, box of 50"
+S-075,invoice,quantity,1,61
+S-075,invoice,unit_price,1,7.92
+S-075,invoice,line_total,1,483.12
+S-075,invoice,subtotal,,483.12
+S-075,invoice,tax,,28.99
+S-075,invoice,freight,,12.00
+S-075,invoice,total,,534.11
+S-075,po,po_number,,PO-8457
+S-075,po,vendor,,Harbor Point Supply Co.
+S-075,po,po_date,,2026-10-09
+S-075,po,sku,1,PEN-220
+S-075,po,description,1,"Ballpoint pens, box of 50"
+S-075,po,quantity,1,61
+S-075,po,unit_price,1,7.92
+S-075,receiving,report_number,,RR-508
+S-075,receiving,po_number,,PO-8457
+S-075,receiving,report_date,,2026-10-15
+S-075,receiving,sku,1,PEN-220
+S-075,receiving,quantity_received,1,61
+S-076,invoice,invoice_number,,MVJ-5468
+S-076,invoice,vendor,,Maple & Vine Janitorial
+S-076,invoice,invoice_date,,2026-10-17
+S-076,invoice,po_reference,,PO-9783
+S-076,invoice,sku,1,HLM-127
+S-076,invoice,description,1,"Safety helmet, white"
+S-076,invoice,quantity,1,47
+S-076,invoice,unit_price,1,22.73
+S-076,invoice,line_total,1,1068.31
+S-076,invoice,sku,2,TPE-520
+S-076,invoice,description,2,"Packing tape, 6 rolls"
+S-076,invoice,quantity,2,117
+S-076,invoice,unit_price,2,9.04
+S-076,invoice,line_total,2,1057.68
+S-076,invoice,sku,3,LBL-518
+S-076,invoice,description,3,"Shipping labels, roll of 500"
+S-076,invoice,quantity,3,85
+S-076,invoice,unit_price,3,12.34
+S-076,invoice,line_total,3,1048.90
+S-076,invoice,subtotal,,3174.89
+S-076,invoice,tax,,190.49
+S-076,invoice,freight,,8.50
+S-076,invoice,total,,3373.88
+S-076,po,po_number,,PO-9783
+S-076,po,vendor,,Maple & Vine Janitorial
+S-076,po,po_date,,2026-10-05
+S-076,po,sku,1,HLM-127
+S-076,po,description,1,"Safety helmet, white"
+S-076,po,quantity,1,47
+S-076,po,unit_price,1,22.73
+S-076,po,sku,2,TPE-520
+S-076,po,description,2,"Packing tape, 6 rolls"
+S-076,po,quantity,2,117
+S-076,po,unit_price,2,9.04
+S-076,po,sku,3,LBL-518
+S-076,po,description,3,"Shipping labels, roll of 500"
+S-076,po,quantity,3,85
+S-076,po,unit_price,3,12.34
+S-076,receiving,report_number,,RR-698
+S-076,receiving,po_number,,PO-9783
+S-076,receiving,report_date,,2026-10-13
+S-076,receiving,sku,1,HLM-127
+S-076,receiving,quantity_received,1,47
+S-076,receiving,sku,2,TPE-520
+S-076,receiving,quantity_received,2,117
+S-076,receiving,sku,3,LBL-518
+S-076,receiving,quantity_received,3,85
+S-077,invoice,invoice_number,,CFT-8113
+S-077,invoice,vendor,,Copperfield Tools Inc.
+S-077,invoice,invoice_date,,2026-10-30
+S-077,invoice,po_reference,,PO-6645
+S-077,invoice,sku,1,DRL-114
+S-077,invoice,description,1,Cordless drill bit set
+S-077,invoice,quantity,1,92
+S-077,invoice,unit_price,1,25.16
+S-077,invoice,line_total,1,2314.72
+S-077,invoice,subtotal,,2314.72
+S-077,invoice,tax,,138.88
+S-077,invoice,freight,,0.00
+S-077,invoice,total,,2453.60
+S-077,po,po_number,,PO-6645
+S-077,po,vendor,,Copperfield Tools Inc.
+S-077,po,po_date,,2026-10-20
+S-077,po,sku,1,DRL-114
+S-077,po,description,1,Cordless drill bit set
+S-077,po,quantity,1,92
+S-077,po,unit_price,1,25.16
+S-077,receiving,report_number,,RR-705
+S-077,receiving,po_number,,PO-6645
+S-077,receiving,report_date,,2026-10-28
+S-077,receiving,sku,1,DRL-114
+S-077,receiving,quantity_received,1,92
+S-078,invoice,invoice_number,,HPS-7409
+S-078,invoice,vendor,,Harbor Point Supply Co.
+S-078,invoice,invoice_date,,2026-10-16
+S-078,invoice,po_reference,,PO-1631
+S-078,invoice,sku,1,PEN-220
+S-078,invoice,description,1,"Ballpoint pens, box of 50"
+S-078,invoice,quantity,1,97
+S-078,invoice,unit_price,1,5.29
+S-078,invoice,line_total,1,513.13
+S-078,invoice,sku,2,WIR-364
+S-078,invoice,description,2,"Copper wire, 100 ft spool"
+S-078,invoice,quantity,2,103
+S-078,invoice,unit_price,2,59.76
+S-078,invoice,line_total,2,6155.28
+S-078,invoice,sku,3,HLM-127
+S-078,invoice,description,3,"Safety helmet, white"
+S-078,invoice,quantity,3,84
+S-078,invoice,unit_price,3,13.61
+S-078,invoice,line_total,3,1143.24
+S-078,invoice,sku,4,TPE-520
+S-078,invoice,description,4,"Packing tape, 6 rolls"
+S-078,invoice,quantity,4,101
+S-078,invoice,unit_price,4,7.85
+S-078,invoice,line_total,4,792.85
+S-078,invoice,subtotal,,8604.50
+S-078,invoice,tax,,516.27
+S-078,invoice,freight,,12.00
+S-078,invoice,total,,9132.77
+S-078,po,po_number,,PO-1631
+S-078,po,vendor,,Harbor Point Supply Co.
+S-078,po,po_date,,2026-10-07
+S-078,po,sku,1,PEN-220
+S-078,po,description,1,"Ballpoint pens, box of 50"
+S-078,po,quantity,1,97
+S-078,po,unit_price,1,5.29
+S-078,po,sku,2,WIR-364
+S-078,po,description,2,"Copper wire, 100 ft spool"
+S-078,po,quantity,2,103
+S-078,po,unit_price,2,59.76
+S-078,po,sku,3,HLM-127
+S-078,po,description,3,"Safety helmet, white"
+S-078,po,quantity,3,84
+S-078,po,unit_price,3,13.61
+S-078,po,sku,4,TPE-520
+S-078,po,description,4,"Packing tape, 6 rolls"
+S-078,po,quantity,4,101
+S-078,po,unit_price,4,7.85
+S-079,invoice,invoice_number,,QSH-8447
+S-079,invoice,vendor,,Quarry Street Hardware
+S-079,invoice,invoice_date,,2026-10-22
+S-079,invoice,po_reference,,PO 8290
+S-079,invoice,sku,1,PIP-245
+S-079,invoice,description,1,"Pipettes, pack of 200"
+S-079,invoice,quantity,1,76
+S-079,invoice,unit_price,1,24.47
+S-079,invoice,line_total,1,1859.72
+S-079,invoice,subtotal,,1859.72
+S-079,invoice,tax,,111.58
+S-079,invoice,freight,,15.00
+S-079,invoice,total,,1986.30
+S-079,po,po_number,,PO-8290
+S-079,po,vendor,,Quarry Street Hardware
+S-079,po,po_date,,2026-10-11
+S-079,po,sku,1,PIP-245
+S-079,po,description,1,"Pipettes, pack of 200"
+S-079,po,quantity,1,76
+S-079,po,unit_price,1,24.47
+S-079,receiving,report_number,,RR-590
+S-079,receiving,po_number,,PO-8290
+S-079,receiving,report_date,,2026-10-15
+S-079,receiving,sku,1,PIP-245
+S-079,receiving,quantity_received,1,76
+S-080,invoice,invoice_number,,QSH-7337
+S-080,invoice,vendor,,Quarry Street Hardware
+S-080,invoice,invoice_date,,2026-10-23
+S-080,invoice,po_reference,,PO-4139
+S-080,invoice,sku,1,TPE-520
+S-080,invoice,description,1,"Packing tape, 6 rolls"
+S-080,invoice,quantity,1,104
+S-080,invoice,unit_price,1,5.72
+S-080,invoice,line_total,1,594.88
+S-080,invoice,sku,2,GLV-630
+S-080,invoice,description,2,"Nitrile gloves, box of 100"
+S-080,invoice,quantity,2,67
+S-080,invoice,unit_price,2,8.98
+S-080,invoice,line_total,2,601.66
+S-080,invoice,sku,3,MOP-705
+S-080,invoice,description,3,Cotton mop head
+S-080,invoice,quantity,3,76
+S-080,invoice,unit_price,3,6.45
+S-080,invoice,line_total,3,490.20
+S-080,invoice,sku,4,HLM-127
+S-080,invoice,description,4,"Safety helmet, white"
+S-080,invoice,quantity,4,62
+S-080,invoice,unit_price,4,18.81
+S-080,invoice,line_total,4,1166.22
+S-080,invoice,subtotal,,2852.96
+S-080,invoice,tax,,171.18
+S-080,invoice,freight,,15.00
+S-080,invoice,total,,3039.14
+S-080,po,po_number,,PO-4139
+S-080,po,vendor,,Quarry Street Hardware
+S-080,po,po_date,,2026-10-14
+S-080,po,sku,1,TPE-520
+S-080,po,description,1,"Packing tape, 6 rolls"
+S-080,po,quantity,1,104
+S-080,po,unit_price,1,5.72
+S-080,po,sku,2,GLV-630
+S-080,po,description,2,"Nitrile gloves, box of 100"
+S-080,po,quantity,2,67
+S-080,po,unit_price,2,8.98
+S-080,po,sku,3,MOP-705
+S-080,po,description,3,Cotton mop head
+S-080,po,quantity,3,76
+S-080,po,unit_price,3,6.33
+S-080,po,sku,4,HLM-127
+S-080,po,description,4,"Safety helmet, white"
+S-080,po,quantity,4,62
+S-080,po,unit_price,4,18.81
+S-080,receiving,report_number,,RR-470
+S-080,receiving,po_number,,PO-4139
+S-080,receiving,report_date,,2026-10-22
+S-080,receiving,sku,1,TPE-520
+S-080,receiving,quantity_received,1,104
+S-080,receiving,sku,2,GLV-630
+S-080,receiving,quantity_received,2,67
+S-080,receiving,sku,3,MOP-705
+S-080,receiving,quantity_received,3,76
+S-080,receiving,sku,4,HLM-127
+S-080,receiving,quantity_received,4,62
+S-081,invoice,invoice_number,,MVJ-7123
+S-081,invoice,vendor,,Maple & Vine Janitorial
+S-081,invoice,invoice_date,,2026-10-29
+S-081,invoice,po_reference,,PO-2269
+S-081,invoice,sku,1,WIR-364
+S-081,invoice,description,1,"Copper wire, 100 ft spool"
+S-081,invoice,quantity,1,66
+S-081,invoice,unit_price,1,24.83
+S-081,invoice,line_total,1,1638.78
+S-081,invoice,sku,2,HLM-127
+S-081,invoice,description,2,"Safety helmet, white"
+S-081,invoice,quantity,2,43
+S-081,invoice,unit_price,2,13.67
+S-081,invoice,line_total,2,587.81
+S-081,invoice,sku,3,CLN-812
+S-081,invoice,description,3,"All-purpose cleaner, 1 gal"
+S-081,invoice,quantity,3,40
+S-081,invoice,unit_price,3,7.92
+S-081,invoice,line_total,3,316.80
+S-081,invoice,sku,4,TON-310
+S-081,invoice,description,4,"Toner cartridge, black"
+S-081,invoice,quantity,4,80
+S-081,invoice,unit_price,4,84.36
+S-081,invoice,line_total,4,6748.80
+S-081,invoice,subtotal,,9292.19
+S-081,invoice,tax,,557.53
+S-081,invoice,freight,,0.00
+S-081,invoice,total,,9845.37
+S-081,po,po_number,,PO-2269
+S-081,po,vendor,,Maple & Vine Janitorial
+S-081,po,po_date,,2026-10-20
+S-081,po,sku,1,WIR-364
+S-081,po,description,1,"Copper wire, 100 ft spool"
+S-081,po,quantity,1,66
+S-081,po,unit_price,1,24.83
+S-081,po,sku,2,HLM-127
+S-081,po,description,2,"Safety helmet, white"
+S-081,po,quantity,2,43
+S-081,po,unit_price,2,13.67
+S-081,po,sku,3,CLN-812
+S-081,po,description,3,"All-purpose cleaner, 1 gal"
+S-081,po,quantity,3,40
+S-081,po,unit_price,3,7.92
+S-081,po,sku,4,TON-310
+S-081,po,description,4,"Toner cartridge, black"
+S-081,po,quantity,4,80
+S-081,po,unit_price,4,84.36
+S-081,receiving,report_number,,RR-861
+S-081,receiving,po_number,,PO-2269
+S-081,receiving,report_date,,2026-10-26
+S-081,receiving,sku,1,WIR-364
+S-081,receiving,quantity_received,1,66
+S-081,receiving,sku,2,HLM-127
+S-081,receiving,quantity_received,2,43
+S-081,receiving,sku,3,CLN-812
+S-081,receiving,quantity_received,3,40
+S-081,receiving,sku,4,TON-310
+S-081,receiving,quantity_received,4,80
+S-082,invoice,invoice_number,,CLP-5378
+S-082,invoice,vendor,,Cedar Lane Packaging
+S-082,invoice,invoice_date,,2026-10-18
+S-082,invoice,po_reference,,PO-8084
+S-082,invoice,sku,1,PEN-220
+S-082,invoice,description,1,"Ballpoint pens, box of 50"
+S-082,invoice,quantity,1,55
+S-082,invoice,unit_price,1,5.00
+S-082,invoice,line_total,1,275.00
+S-082,invoice,subtotal,,275.00
+S-082,invoice,tax,,16.50
+S-082,invoice,freight,,8.50
+S-082,invoice,total,,300.00
+S-082,po,po_number,,PO-8084
+S-082,po,vendor,,Cedar Lane Packaging
+S-082,po,po_date,,2026-10-07
+S-082,po,sku,1,PEN-220
+S-082,po,description,1,"Ballpoint pens, box of 50"
+S-082,po,quantity,1,55
+S-082,po,unit_price,1,4.59
+S-082,receiving,report_number,,RR-400
+S-082,receiving,po_number,,PO-8084
+S-082,receiving,report_date,,2026-10-11
+S-082,receiving,sku,1,PEN-220
+S-082,receiving,quantity_received,1,55
+S-083,invoice,invoice_number,,ISS-5177
+S-083,invoice,vendor,,IRONWOOD SAFETY SUPPLY
+S-083,invoice,invoice_date,,2026-10-26
+S-083,invoice,po_reference,,PO-7619
+S-083,invoice,sku,1,TON-310
+S-083,invoice,description,1,"Toner cartridge, black"
+S-083,invoice,quantity,1,77
+S-083,invoice,unit_price,1,56.17
+S-083,invoice,line_total,1,4325.09
+S-083,invoice,sku,2,WIR-364
+S-083,invoice,description,2,"Copper wire, 100 ft spool"
+S-083,invoice,quantity,2,74
+S-083,invoice,unit_price,2,60.00
+S-083,invoice,line_total,2,4440.00
+S-083,invoice,sku,3,BKR-252
+S-083,invoice,description,3,"Glass beaker, 500 ml"
+S-083,invoice,quantity,3,84
+S-083,invoice,unit_price,3,6.31
+S-083,invoice,line_total,3,530.04
+S-083,invoice,sku,4,VST-133
+S-083,invoice,description,4,Hi-vis safety vest
+S-083,invoice,quantity,4,42
+S-083,invoice,unit_price,4,12.45
+S-083,invoice,line_total,4,522.90
+S-083,invoice,subtotal,,9818.03
+S-083,invoice,tax,,589.08
+S-083,invoice,freight,,15.00
+S-083,invoice,total,,10422.11
+S-083,po,po_number,,PO-7619
+S-083,po,vendor,,Ironwood Safety Supply
+S-083,po,po_date,,2026-10-14
+S-083,po,sku,1,TON-310
+S-083,po,description,1,"Toner cartridge, black"
+S-083,po,quantity,1,77
+S-083,po,unit_price,1,56.17
+S-083,po,sku,2,WIR-364
+S-083,po,description,2,"Copper wire, 100 ft spool"
+S-083,po,quantity,2,74
+S-083,po,unit_price,2,60.00
+S-083,po,sku,3,BKR-252
+S-083,po,description,3,"Glass beaker, 500 ml"
+S-083,po,quantity,3,84
+S-083,po,unit_price,3,6.31
+S-083,po,sku,4,VST-133
+S-083,po,description,4,Hi-vis safety vest
+S-083,po,quantity,4,42
+S-083,po,unit_price,4,12.45
+S-083,receiving,report_number,,RR-857
+S-083,receiving,po_number,,PO-7619
+S-083,receiving,report_date,,2026-10-17
+S-083,receiving,sku,1,TON-310
+S-083,receiving,quantity_received,1,77
+S-083,receiving,sku,2,WIR-364
+S-083,receiving,quantity_received,2,74
+S-083,receiving,sku,3,BKR-252
+S-083,receiving,quantity_received,3,84
+S-083,receiving,sku,4,VST-133
+S-083,receiving,quantity_received,4,42
+S-084,invoice,invoice_number,,SRE-5891
+S-084,invoice,vendor,,Summit Ridge Electrical
+S-084,invoice,invoice_date,,2026-10-21
+S-084,invoice,po_reference,,PO-3087
+S-084,invoice,sku,1,NAP-488
+S-084,invoice,description,1,"Paper napkins, case of 3000"
+S-084,invoice,quantity,1,113
+S-084,invoice,unit_price,1,31.72
+S-084,invoice,line_total,1,3584.36
+S-084,invoice,sku,2,TON-310
+S-084,invoice,description,2,"Toner cartridge, black"
+S-084,invoice,quantity,2,42
+S-084,invoice,unit_price,2,85.79
+S-084,invoice,line_total,2,3603.18
+S-084,invoice,subtotal,,7187.54
+S-084,invoice,tax,,431.25
+S-084,invoice,freight,,12.00
+S-084,invoice,total,,7630.79
+S-084,po,po_number,,PO-3087
+S-084,po,vendor,,Summit Ridge Electrical
+S-084,po,po_date,,2026-10-12
+S-084,po,sku,1,NAP-488
+S-084,po,description,1,"Paper napkins, case of 3000"
+S-084,po,quantity,1,113
+S-084,po,unit_price,1,30.21
+S-084,po,sku,2,TON-310
+S-084,po,description,2,"Toner cartridge, black"
+S-084,po,quantity,2,42
+S-084,po,unit_price,2,85.79
+S-084,receiving,report_number,,RR-335
+S-084,receiving,po_number,,PO-3087
+S-084,receiving,report_date,,2026-10-15
+S-084,receiving,sku,1,NAP-488
+S-084,receiving,quantity_received,1,113
+S-084,receiving,sku,2,TON-310
+S-084,receiving,quantity_received,2,42
+S-085,invoice,invoice_number,,HPS-8060
+S-085,invoice,vendor,,Harbor Point Supply Co.
+S-085,invoice,invoice_date,,2026-10-28
+S-085,invoice,po_reference,,PO-4510
+S-085,invoice,sku,1,PPR-101
+S-085,invoice,description,1,"Copy paper, case of 10 reams"
+S-085,invoice,quantity,1,500
+S-085,invoice,unit_price,1,50.10
+S-085,invoice,line_total,1,25050.00
+S-085,invoice,subtotal,,25050.00
+S-085,invoice,tax,,1503.00
+S-085,invoice,freight,,8.50
+S-085,invoice,total,,26561.50
+S-085,po,po_number,,PO-4510
+S-085,po,vendor,,Harbor Point Supply Co.
+S-085,po,po_date,,2026-10-19
+S-085,po,sku,1,PPR-101
+S-085,po,description,1,"Copy paper, case of 10 reams"
+S-085,po,quantity,1,500
+S-085,po,unit_price,1,50.00
+S-085,receiving,report_number,,RR-694
+S-085,receiving,po_number,,PO-4510
+S-085,receiving,report_date,,2026-10-24
+S-085,receiving,sku,1,PPR-101
+S-085,receiving,quantity_received,1,500
+S-086,invoice,invoice_number,,HPS-9748
+S-086,invoice,vendor,,Harbor Point Supply Co.
+S-086,invoice,invoice_date,,2026-10-28
+S-086,invoice,po_reference,,PO-8182
+S-086,invoice,sku,1,CUP-496
+S-086,invoice,description,1,"Paper cups 12 oz, sleeve of 50"
+S-086,invoice,quantity,1,21
+S-086,invoice,unit_price,1,3.98
+S-086,invoice,line_total,1,83.58
+S-086,invoice,sku,2,PIP-245
+S-086,invoice,description,2,"Pipettes, pack of 200"
+S-086,invoice,quantity,2,13
+S-086,invoice,unit_price,2,13.67
+S-086,invoice,line_total,2,177.71
+S-086,invoice,sku,3,MOP-705
+S-086,invoice,description,3,Cotton mop head
+S-086,invoice,quantity,3,25
+S-086,invoice,unit_price,3,6.56
+S-086,invoice,line_total,3,164.00
+S-086,invoice,subtotal,,425.29
+S-086,invoice,tax,,25.52
+S-086,invoice,freight,,0.00
+S-086,invoice,total,,450.81
+S-086,po,po_number,,PO-8182
+S-086,po,vendor,,Harbor Point Supply Co.
+S-086,po,po_date,,2026-10-17
+S-086,po,sku,1,CUP-496
+S-086,po,description,1,"Paper cups 12 oz, sleeve of 50"
+S-086,po,quantity,1,21
+S-086,po,unit_price,1,4.04
+S-086,po,sku,2,PIP-245
+S-086,po,description,2,"Pipettes, pack of 200"
+S-086,po,quantity,2,13
+S-086,po,unit_price,2,13.67
+S-086,po,sku,3,MOP-705
+S-086,po,description,3,Cotton mop head
+S-086,po,quantity,3,25
+S-086,po,unit_price,3,6.56
+S-086,receiving,report_number,,RR-584
+S-086,receiving,po_number,,PO-8182
+S-086,receiving,report_date,,2026-10-21
+S-086,receiving,sku,1,CUP-496
+S-086,receiving,quantity_received,1,21
+S-086,receiving,sku,2,PIP-245
+S-086,receiving,quantity_received,2,13
+S-086,receiving,sku,3,MOP-705
+S-086,receiving,quantity_received,3,25
+S-087,invoice,invoice_number,,CFT-6867
+S-087,invoice,vendor,,Copperfield Tools Inc.
+S-087,invoice,invoice_date,,2026-10-18
+S-087,invoice,po_reference,,PO-7271
+S-087,invoice,sku,1,GLV-630
+S-087,invoice,description,1,"Nitrile gloves, box of 100"
+S-087,invoice,quantity,1,60
+S-087,invoice,unit_price,1,9.69
+S-087,invoice,line_total,1,581.40
+S-087,invoice,sku,2,PPR-101
+S-087,invoice,description,2,"Copy paper, case of 10 reams"
+S-087,invoice,quantity,2,117
+S-087,invoice,unit_price,2,36.52
+S-087,invoice,line_total,2,4272.84
+S-087,invoice,sku,3,LBL-518
+S-087,invoice,description,3,"Shipping labels, roll of 500"
+S-087,invoice,quantity,3,63
+S-087,invoice,unit_price,3,14.68
+S-087,invoice,line_total,3,924.84
+S-087,invoice,subtotal,,5779.08
+S-087,invoice,tax,,346.74
+S-087,invoice,freight,,0.00
+S-087,invoice,total,,6125.82
+S-087,po,po_number,,PO-7271
+S-087,po,vendor,,Copperfield Tools Inc.
+S-087,po,po_date,,2026-10-09
+S-087,po,sku,1,GLV-630
+S-087,po,description,1,"Nitrile gloves, box of 100"
+S-087,po,quantity,1,60
+S-087,po,unit_price,1,9.69
+S-087,po,sku,2,PPR-101
+S-087,po,description,2,"Copy paper, case of 10 reams"
+S-087,po,quantity,2,117
+S-087,po,unit_price,2,36.52
+S-087,po,sku,3,LBL-518
+S-087,po,description,3,"Shipping labels, roll of 500"
+S-087,po,quantity,3,63
+S-087,po,unit_price,3,14.68
+S-087,receiving,report_number,,RR-649
+S-087,receiving,po_number,,PO-7271
+S-087,receiving,report_date,,2026-10-16
+S-087,receiving,sku,1,GLV-630
+S-087,receiving,quantity_received,1,60
+S-087,receiving,sku,2,PPR-101
+S-087,receiving,quantity_received,2,117
+S-087,receiving,sku,3,LBL-518
+S-087,receiving,quantity_received,3,63
+S-088,invoice,invoice_number,,CLP-7178
+S-088,invoice,vendor,,Cedar Lane Packaging
+S-088,invoice,invoice_date,,2026-10-15
+S-088,invoice,po_reference,,PO-1528
+S-088,invoice,sku,1,PPR-101
+S-088,invoice,description,1,"Copy paper, case of 10 reams"
+S-088,invoice,quantity,1,48
+S-088,invoice,unit_price,1,47.65
+S-088,invoice,line_total,1,2287.20
+S-088,invoice,sku,2,VST-133
+S-088,invoice,description,2,Hi-vis safety vest
+S-088,invoice,quantity,2,16
+S-088,invoice,unit_price,2,13.34
+S-088,invoice,line_total,2,213.44
+S-088,invoice,subtotal,,2500.64
+S-088,invoice,tax,,150.04
+S-088,invoice,freight,,8.50
+S-088,invoice,total,,2659.18
+S-088,po,po_number,,PO-1528
+S-088,po,vendor,,Cedar Lane Packaging
+S-088,po,po_date,,2026-10-06
+S-088,po,sku,1,PPR-101
+S-088,po,description,1,"Copy paper, case of 10 reams"
+S-088,po,quantity,1,48
+S-088,po,unit_price,1,47.65
+S-088,po,sku,2,VST-133
+S-088,po,description,2,Hi-vis safety vest
+S-088,po,quantity,2,16
+S-088,po,unit_price,2,13.34
+S-088,receiving,report_number,,RR-624
+S-088,receiving,po_number,,PO-1528
+S-088,receiving,report_date,,2026-10-13
+S-088,receiving,sku,1,PPR-101
+S-088,receiving,quantity_received,1,48
+S-088,receiving,sku,2,VST-133
+S-088,receiving,quantity_received,2,16
+S-089,invoice,invoice_number,,QSH-9000
+S-089,invoice,vendor,,Quarry Street Hardware
+S-089,invoice,invoice_date,,2026-10-30
+S-089,invoice,po_reference,,PO-8584
+S-089,invoice,sku,1,PPR-101
+S-089,invoice,description,1,"Copy paper, case of 10 reams"
+S-089,invoice,quantity,1,54
+S-089,invoice,unit_price,1,42.65
+S-089,invoice,line_total,1,2303.10
+S-089,invoice,sku,2,BOX-415
+S-089,invoice,description,2,"Shipping carton, 12x12x12"
+S-089,invoice,quantity,2,36
+S-089,invoice,unit_price,2,2.55
+S-089,invoice,line_total,2,91.80
+S-089,invoice,subtotal,,2394.90
+S-089,invoice,tax,,143.69
+S-089,invoice,freight,,8.50
+S-089,invoice,total,,2547.09
+S-089,po,po_number,,PO-8584
+S-089,po,vendor,,Quarry Street Hardware
+S-089,po,po_date,,2026-10-20
+S-089,po,sku,1,PPR-101
+S-089,po,description,1,"Copy paper, case of 10 reams"
+S-089,po,quantity,1,54
+S-089,po,unit_price,1,42.65
+S-089,po,sku,2,BOX-415
+S-089,po,description,2,"Shipping carton, 12x12x12"
+S-089,po,quantity,2,36
+S-089,po,unit_price,2,2.55
+S-089,receiving,report_number,,RR-558
+S-089,receiving,po_number,,PO-8584
+S-089,receiving,report_date,,2026-10-27
+S-089,receiving,sku,1,PPR-101
+S-089,receiving,quantity_received,1,54
+S-089,receiving,sku,2,BOX-415
+S-089,receiving,quantity_received,2,36
+S-090,invoice,invoice_number,,TPG-5136
+S-090,invoice,vendor,,Tidewater Paper Group
+S-090,invoice,invoice_date,,2026-10-20
+S-090,invoice,po_reference,,PO-4275
+S-090,invoice,sku,1,PIP-245
+S-090,invoice,description,1,"Pipettes, pack of 200"
+S-090,invoice,quantity,1,38
+S-090,invoice,unit_price,1,22.92
+S-090,invoice,line_total,1,870.96
+S-090,invoice,sku,2,BLB-371
+S-090,invoice,description,2,"LED bulb, pack of 12"
+S-090,invoice,quantity,2,69
+S-090,invoice,unit_price,2,26.01
+S-090,invoice,line_total,2,1794.69
+S-090,invoice,subtotal,,2665.65
+S-090,invoice,tax,,159.94
+S-090,invoice,freight,,0.00
+S-090,invoice,total,,2825.59
+S-090,po,po_number,,PO-4725
+S-090,po,vendor,,Tidewater Paper Group
+S-090,po,po_date,,2026-10-08
+S-090,po,sku,1,PIP-245
+S-090,po,description,1,"Pipettes, pack of 200"
+S-090,po,quantity,1,38
+S-090,po,unit_price,1,22.92
+S-090,po,sku,2,BLB-371
+S-090,po,description,2,"LED bulb, pack of 12"
+S-090,po,quantity,2,69
+S-090,po,unit_price,2,26.01
+S-090,receiving,report_number,,RR-432
+S-090,receiving,po_number,,PO-4725
+S-090,receiving,report_date,,2026-10-12
+S-090,receiving,sku,1,PIP-245
+S-090,receiving,quantity_received,1,38
+S-090,receiving,sku,2,BLB-371
+S-090,receiving,quantity_received,2,69
+S-091,invoice,invoice_number,,QSH-7122
+S-091,invoice,vendor,,Brightfield Industrial
+S-091,invoice,invoice_date,,2026-10-30
+S-091,invoice,po_reference,,PO-3491
+S-091,invoice,sku,1,BKR-252
+S-091,invoice,description,1,"Glass beaker, 500 ml"
+S-091,invoice,quantity,1,44
+S-091,invoice,unit_price,1,12.12
+S-091,invoice,line_total,1,533.28
+S-091,invoice,sku,2,PIP-245
+S-091,invoice,description,2,"Pipettes, pack of 200"
+S-091,invoice,quantity,2,97
+S-091,invoice,unit_price,2,28.58
+S-091,invoice,line_total,2,2772.26
+S-091,invoice,sku,3,TPE-520
+S-091,invoice,description,3,"Packing tape, 6 rolls"
+S-091,invoice,quantity,3,116
+S-091,invoice,unit_price,3,6.15
+S-091,invoice,line_total,3,713.40
+S-091,invoice,subtotal,,4018.94
+S-091,invoice,tax,,241.14
+S-091,invoice,freight,,8.50
+S-091,invoice,total,,4268.58
+S-091,po,po_number,,PO-3491
+S-091,po,vendor,,Quarry Street Hardware
+S-091,po,po_date,,2026-10-19
+S-091,po,sku,1,BKR-252
+S-091,po,description,1,"Glass beaker, 500 ml"
+S-091,po,quantity,1,44
+S-091,po,unit_price,1,12.12
+S-091,po,sku,2,PIP-245
+S-091,po,description,2,"Pipettes, pack of 200"
+S-091,po,quantity,2,97
+S-091,po,unit_price,2,28.58
+S-091,po,sku,3,TPE-520
+S-091,po,description,3,"Packing tape, 6 rolls"
+S-091,po,quantity,3,116
+S-091,po,unit_price,3,6.15
+S-091,receiving,report_number,,RR-873
+S-091,receiving,po_number,,PO-3491
+S-091,receiving,report_date,,2026-10-25
+S-091,receiving,sku,1,BKR-252
+S-091,receiving,quantity_received,1,44
+S-091,receiving,sku,2,PIP-245
+S-091,receiving,quantity_received,2,97
+S-091,receiving,sku,3,TPE-520
+S-091,receiving,quantity_received,3,116
+S-092,invoice,invoice_number,,CLP-9636
+S-092,invoice,vendor,,Cedar Lane Packaging
+S-092,invoice,invoice_date,,2026-10-26
+S-092,invoice,po_reference,,PO-7998
+S-092,invoice,sku,1,HLM-127
+S-092,invoice,description,1,"Safety helmet, white"
+S-092,invoice,quantity,1,90
+S-092,invoice,unit_price,1,18.48
+S-092,invoice,line_total,1,1663.20
+S-092,invoice,sku,2,PPR-101
+S-092,invoice,description,2,"Copy paper, case of 10 reams"
+S-092,invoice,quantity,2,94
+S-092,invoice,unit_price,2,42.84
+S-092,invoice,line_total,2,4026.96
+S-092,invoice,sku,3,CLN-812
+S-092,invoice,description,3,"All-purpose cleaner, 1 gal"
+S-092,invoice,quantity,3,43
+S-092,invoice,unit_price,3,8.49
+S-092,invoice,line_total,3,365.07
+S-092,invoice,sku,4,NAP-488
+S-092,invoice,description,4,"Paper napkins, case of 3000"
+S-092,invoice,quantity,4,97
+S-092,invoice,unit_price,4,38.95
+S-092,invoice,line_total,4,3778.15
+S-092,invoice,subtotal,,9833.38
+S-092,invoice,tax,,590.00
+S-092,invoice,freight,,0.00
+S-092,invoice,total,,10423.38
+S-092,po,po_number,,PO-7998
+S-092,po,vendor,,Cedar Lane Packaging
+S-092,po,po_date,,2026-10-14
+S-092,po,sku,1,HLM-127
+S-092,po,description,1,"Safety helmet, white"
+S-092,po,quantity,1,84
+S-092,po,unit_price,1,18.48
+S-092,po,sku,2,PPR-101
+S-092,po,description,2,"Copy paper, case of 10 reams"
+S-092,po,quantity,2,94
+S-092,po,unit_price,2,42.84
+S-092,po,sku,3,CLN-812
+S-092,po,description,3,"All-purpose cleaner, 1 gal"
+S-092,po,quantity,3,43
+S-092,po,unit_price,3,8.49
+S-092,po,sku,4,NAP-488
+S-092,po,description,4,"Paper napkins, case of 3000"
+S-092,po,quantity,4,97
+S-092,po,unit_price,4,38.95
+S-092,receiving,report_number,,RR-630
+S-092,receiving,po_number,,PO-7998
+S-092,receiving,report_date,,2026-10-21
+S-092,receiving,sku,1,HLM-127
+S-092,receiving,quantity_received,1,90
+S-092,receiving,sku,2,PPR-101
+S-092,receiving,quantity_received,2,94
+S-092,receiving,sku,3,CLN-812
+S-092,receiving,quantity_received,3,43
+S-092,receiving,sku,4,NAP-488
+S-092,receiving,quantity_received,4,97
+S-093,invoice,invoice_number,,NOP-5061
+S-093,invoice,vendor,,Northgate Office Products
+S-093,invoice,invoice_date,,2026-10-20
+S-093,invoice,po_reference,,PO-6224
+S-093,invoice,sku,1,PEN-220
+S-093,invoice,description,1,"Ballpoint pens, box of 50"
+S-093,invoice,quantity,1,100
+S-093,invoice,unit_price,1,25.50
+S-093,invoice,line_total,1,2550.00
+S-093,invoice,subtotal,,2550.00
+S-093,invoice,tax,,153.00
+S-093,invoice,freight,,15.00
+S-093,invoice,total,,2718.00
+S-093,po,po_number,,PO-6224
+S-093,po,vendor,,Northgate Office Products
+S-093,po,po_date,,2026-10-11
+S-093,po,sku,1,PEN-220
+S-093,po,description,1,"Ballpoint pens, box of 50"
+S-093,po,quantity,1,100
+S-093,po,unit_price,1,25.00
+S-093,receiving,report_number,,RR-633
+S-093,receiving,po_number,,PO-6224
+S-093,receiving,report_date,,2026-10-17
+S-093,receiving,sku,1,PEN-220
+S-093,receiving,quantity_received,1,100
+S-094,invoice,invoice_number,,clp-1618
+S-094,invoice,vendor,,Cedar Lane Packaging
+S-094,invoice,invoice_date,,2026-10-21
+S-094,invoice,po_reference,,PO-4256
+S-094,invoice,sku,1,HLM-127
+S-094,invoice,description,1,"Safety helmet, white"
+S-094,invoice,quantity,1,105
+S-094,invoice,unit_price,1,22.38
+S-094,invoice,line_total,1,2349.90
+S-094,invoice,subtotal,,2349.90
+S-094,invoice,tax,,140.99
+S-094,invoice,freight,,0.00
+S-094,invoice,total,,2490.89
+S-094,po,po_number,,PO-4256
+S-094,po,vendor,,Cedar Lane Packaging
+S-094,po,po_date,,2026-10-11
+S-094,po,sku,1,HLM-127
+S-094,po,description,1,"Safety helmet, white"
+S-094,po,quantity,1,105
+S-094,po,unit_price,1,22.38
+S-094,receiving,report_number,,RR-831
+S-094,receiving,po_number,,PO-4256
+S-094,receiving,report_date,,2026-10-17
+S-094,receiving,sku,1,HLM-127
+S-094,receiving,quantity_received,1,105
+S-095,invoice,invoice_number,,MVJ-9495
+S-095,invoice,vendor,,Ironwood Safety Supply
+S-095,invoice,invoice_date,,2026-10-21
+S-095,invoice,po_reference,,PO-3772
+S-095,invoice,sku,1,SCR-502
+S-095,invoice,description,1,"Wood screws, box of 200"
+S-095,invoice,quantity,1,72
+S-095,invoice,unit_price,1,7.30
+S-095,invoice,line_total,1,525.60
+S-095,invoice,sku,2,LBL-518
+S-095,invoice,description,2,"Shipping labels, roll of 500"
+S-095,invoice,quantity,2,111
+S-095,invoice,unit_price,2,16.26
+S-095,invoice,line_total,2,1804.86
+S-095,invoice,subtotal,,2330.46
+S-095,invoice,tax,,139.83
+S-095,invoice,freight,,15.00
+S-095,invoice,total,,2485.29
+S-095,po,po_number,,PO-3772
+S-095,po,vendor,,Maple & Vine Janitorial
+S-095,po,po_date,,2026-10-11
+S-095,po,sku,1,SCR-502
+S-095,po,description,1,"Wood screws, box of 200"
+S-095,po,quantity,1,72
+S-095,po,unit_price,1,7.30
+S-095,po,sku,2,LBL-518
+S-095,po,description,2,"Shipping labels, roll of 500"
+S-095,po,quantity,2,111
+S-095,po,unit_price,2,16.26
+S-095,receiving,report_number,,RR-753
+S-095,receiving,po_number,,PO-3772
+S-095,receiving,report_date,,2026-10-15
+S-095,receiving,sku,1,SCR-502
+S-095,receiving,quantity_received,1,72
+S-095,receiving,sku,2,LBL-518
+S-095,receiving,quantity_received,2,111
+S-096,invoice,invoice_number,,CLP-8790
+S-096,invoice,vendor,,CEDAR LANE PACKAGING
+S-096,invoice,invoice_date,,2026-10-25
+S-096,invoice,po_reference,,PO-3618
+S-096,invoice,sku,1,SCR-502
+S-096,invoice,description,1,"Wood screws, box of 200"
+S-096,invoice,quantity,1,105
+S-096,invoice,unit_price,1,7.35
+S-096,invoice,line_total,1,771.75
+S-096,invoice,sku,2,DRL-114
+S-096,invoice,description,2,Cordless drill bit set
+S-096,invoice,quantity,2,120
+S-096,invoice,unit_price,2,35.79
+S-096,invoice,line_total,2,4294.80
+S-096,invoice,sku,3,BKR-252
+S-096,invoice,description,3,"Glass beaker, 500 ml"
+S-096,invoice,quantity,3,47
+S-096,invoice,unit_price,3,7.53
+S-096,invoice,line_total,3,353.91
+S-096,invoice,subtotal,,5420.46
+S-096,invoice,tax,,325.23
+S-096,invoice,freight,,0.00
+S-096,invoice,total,,5745.69
+S-096,po,po_number,,PO-3618
+S-096,po,vendor,,Cedar Lane Packaging
+S-096,po,po_date,,2026-10-16
+S-096,po,sku,1,SCR-502
+S-096,po,description,1,"Wood screws, box of 200"
+S-096,po,quantity,1,105
+S-096,po,unit_price,1,7.35
+S-096,po,sku,2,DRL-114
+S-096,po,description,2,Cordless drill bit set
+S-096,po,quantity,2,120
+S-096,po,unit_price,2,35.79
+S-096,po,sku,3,BKR-252
+S-096,po,description,3,"Glass beaker, 500 ml"
+S-096,po,quantity,3,47
+S-096,po,unit_price,3,7.53
+S-096,receiving,report_number,,RR-910
+S-096,receiving,po_number,,PO-3618
+S-096,receiving,report_date,,2026-10-21
+S-096,receiving,sku,1,SCR-502
+S-096,receiving,quantity_received,1,105
+S-096,receiving,sku,2,DRL-114
+S-096,receiving,quantity_received,2,120
+S-096,receiving,sku,3,BKR-252
+S-096,receiving,quantity_received,3,47
+S-097,invoice,invoice_number,,CFT-6520
+S-097,invoice,vendor,,Copperfield Tools Inc.
+S-097,invoice,invoice_date,,2026-10-21
+S-097,invoice,po_reference,,
+S-097,invoice,sku,1,TON-310
+S-097,invoice,description,1,"Toner cartridge, black"
+S-097,invoice,quantity,1,33
+S-097,invoice,unit_price,1,60.01
+S-097,invoice,line_total,1,1980.33
+S-097,invoice,sku,2,DRL-114
+S-097,invoice,description,2,Cordless drill bit set
+S-097,invoice,quantity,2,67
+S-097,invoice,unit_price,2,33.40
+S-097,invoice,line_total,2,2237.80
+S-097,invoice,subtotal,,4218.13
+S-097,invoice,tax,,253.09
+S-097,invoice,freight,,12.00
+S-097,invoice,total,,4483.22
+S-097,receiving,report_number,,RR-756
+S-097,receiving,po_number,,PO-8802
+S-097,receiving,report_date,,2026-10-20
+S-097,receiving,sku,1,TON-310
+S-097,receiving,quantity_received,1,33
+S-097,receiving,sku,2,DRL-114
+S-097,receiving,quantity_received,2,67
+S-098,invoice,invoice_number,,WFW-7906
+S-098,invoice,vendor,,Willowbrook Foods Wholesale
+S-098,invoice,invoice_date,,2026-10-30
+S-098,invoice,po_reference,,PO-6049
+S-098,invoice,sku,1,MOP-705
+S-098,invoice,description,1,Cotton mop head
+S-098,invoice,quantity,1,106
+S-098,invoice,unit_price,1,8.18
+S-098,invoice,line_total,1,867.08
+S-098,invoice,sku,2,PEN-220
+S-098,invoice,description,2,"Ballpoint pens, box of 50"
+S-098,invoice,quantity,2,91
+S-098,invoice,unit_price,2,7.52
+S-098,invoice,line_total,2,684.32
+S-098,invoice,sku,3,DRL-114
+S-098,invoice,description,3,Cordless drill bit set
+S-098,invoice,quantity,3,69
+S-098,invoice,unit_price,3,23.07
+S-098,invoice,line_total,3,1591.83
+S-098,invoice,sku,4,TPE-520
+S-098,invoice,description,4,"Packing tape, 6 rolls"
+S-098,invoice,quantity,4,92
+S-098,invoice,unit_price,4,6.76
+S-098,invoice,line_total,4,621.92
+S-098,invoice,subtotal,,3765.15
+S-098,invoice,tax,,225.91
+S-098,invoice,freight,,12.00
+S-098,invoice,total,,4003.06
+S-098,po,po_number,,PO-6049
+S-098,po,vendor,,Willowbrook Foods Wholesale
+S-098,po,po_date,,2026-10-18
+S-098,po,sku,1,MOP-705
+S-098,po,description,1,Cotton mop head
+S-098,po,quantity,1,106
+S-098,po,unit_price,1,8.18
+S-098,po,sku,2,PEN-220
+S-098,po,description,2,"Ballpoint pens, box of 50"
+S-098,po,quantity,2,91
+S-098,po,unit_price,2,7.52
+S-098,po,sku,3,DRL-114
+S-098,po,description,3,Cordless drill bit set
+S-098,po,quantity,3,69
+S-098,po,unit_price,3,23.07
+S-098,po,sku,4,TPE-520
+S-098,po,description,4,"Packing tape, 6 rolls"
+S-098,po,quantity,4,92
+S-098,po,unit_price,4,6.76
+S-099,invoice,invoice_number,,HPS-5377
+S-099,invoice,vendor,,Harbor Point Supply Co.
+S-099,invoice,invoice_date,,2026-10-19
+S-099,invoice,po_reference,,PO-9168
+S-099,invoice,sku,1,CLN-812
+S-099,invoice,description,1,"All-purpose cleaner, 1 gal"
+S-099,invoice,quantity,1,34
+S-099,invoice,unit_price,1,5.91
+S-099,invoice,line_total,1,200.94
+S-099,invoice,sku,2,PIP-245
+S-099,invoice,description,2,"Pipettes, pack of 200"
+S-099,invoice,quantity,2,37
+S-099,invoice,unit_price,2,18.07
+S-099,invoice,line_total,2,668.59
+S-099,invoice,sku,3,LBL-518
+S-099,invoice,description,3,"Shipping labels, roll of 500"
+S-099,invoice,quantity,3,98
+S-099,invoice,unit_price,3,13.00
+S-099,invoice,line_total,3,1274.00
+S-099,invoice,subtotal,,2143.53
+S-099,invoice,tax,,128.61
+S-099,invoice,freight,,0.00
+S-099,invoice,total,,2272.14
+S-099,po,po_number,,PO-9168
+S-099,po,vendor,,Harbor Point Supply Co.
+S-099,po,po_date,,2026-10-09
+S-099,po,sku,1,CLN-812
+S-099,po,description,1,"All-purpose cleaner, 1 gal"
+S-099,po,quantity,1,34
+S-099,po,unit_price,1,5.91
+S-099,po,sku,2,PIP-245
+S-099,po,description,2,"Pipettes, pack of 200"
+S-099,po,quantity,2,37
+S-099,po,unit_price,2,17.98
+S-099,po,sku,3,LBL-518
+S-099,po,description,3,"Shipping labels, roll of 500"
+S-099,po,quantity,3,98
+S-099,po,unit_price,3,13.00
+S-099,receiving,report_number,,RR-613
+S-099,receiving,po_number,,PO-9168
+S-099,receiving,report_date,,2026-10-16
+S-099,receiving,sku,1,CLN-812
+S-099,receiving,quantity_received,1,34
+S-099,receiving,sku,2,PIP-245
+S-099,receiving,quantity_received,2,37
+S-099,receiving,sku,3,LBL-518
+S-099,receiving,quantity_received,3,98
+S-100,invoice,invoice_number,,BFI-3476
+S-100,invoice,vendor,,Harbor Point Supply Co.
+S-100,invoice,invoice_date,,2026-10-14
+S-100,invoice,po_reference,,PO-2759
+S-100,invoice,sku,1,PEN-220
+S-100,invoice,description,1,"Ballpoint pens, box of 50"
+S-100,invoice,quantity,1,105
+S-100,invoice,unit_price,1,7.07
+S-100,invoice,line_total,1,742.35
+S-100,invoice,sku,2,PPR-101
+S-100,invoice,description,2,"Copy paper, case of 10 reams"
+S-100,invoice,quantity,2,10
+S-100,invoice,unit_price,2,37.20
+S-100,invoice,line_total,2,372.00
+S-100,invoice,subtotal,,1114.35
+S-100,invoice,tax,,66.86
+S-100,invoice,freight,,8.50
+S-100,invoice,total,,1189.71
+S-100,po,po_number,,PO-2759
+S-100,po,vendor,,Harbor Point Supply Co.
+S-100,po,po_date,,2026-10-05
+S-100,po,sku,1,PEN-220
+S-100,po,description,1,"Ballpoint pens, box of 50"
+S-100,po,quantity,1,105
+S-100,po,unit_price,1,7.07
+S-100,po,sku,2,PPR-101
+S-100,po,description,2,"Copy paper, case of 10 reams"
+S-100,po,quantity,2,10
+S-100,po,unit_price,2,37.20
+S-100,receiving,report_number,,RR-262
+S-100,receiving,po_number,,PO-2759
+S-100,receiving,report_date,,2026-10-08
+S-100,receiving,sku,1,PEN-220
+S-100,receiving,quantity_received,1,105
+S-100,receiving,sku,2,PPR-101
+S-100,receiving,quantity_received,2,10

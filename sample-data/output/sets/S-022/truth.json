@@ -1,0 +1,63 @@
+{
+  "setId": "S-022",
+  "invoice": {
+    "number": "BFI-7082",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-20",
+    "poReference": "PO-5675",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 102,
+        "unitPrice": "11.03",
+        "lineTotal": "1125.06"
+      },
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 19,
+        "unitPrice": "7.96",
+        "lineTotal": "151.24"
+      }
+    ],
+    "subtotal": "1276.30",
+    "tax": "76.58",
+    "freight": "0.00",
+    "total": "1352.88"
+  },
+  "po": {
+    "number": "PO-5675",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 102,
+        "unitPrice": "11.03"
+      },
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 19,
+        "unitPrice": "8.00"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-394",
+    "poNumber": "PO-5675",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "VST-133",
+        "quantityReceived": 102
+      },
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 19
+      }
+    ]
+  }
+}

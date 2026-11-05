@@ -1,0 +1,46 @@
+{
+  "setId": "S-093",
+  "invoice": {
+    "number": "NOP-5061",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-20",
+    "poReference": "PO-6224",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 100,
+        "unitPrice": "25.50",
+        "lineTotal": "2550.00"
+      }
+    ],
+    "subtotal": "2550.00",
+    "tax": "153.00",
+    "freight": "15.00",
+    "total": "2718.00"
+  },
+  "po": {
+    "number": "PO-6224",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 100,
+        "unitPrice": "25.00"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-633",
+    "poNumber": "PO-6224",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 100
+      }
+    ]
+  }
+}

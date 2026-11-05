@@ -1,0 +1,46 @@
+{
+  "setId": "S-075",
+  "invoice": {
+    "number": "HPS-6513",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-19",
+    "poReference": "PO-8457",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 61,
+        "unitPrice": "7.92",
+        "lineTotal": "483.12"
+      }
+    ],
+    "subtotal": "483.12",
+    "tax": "28.99",
+    "freight": "12.00",
+    "total": "534.11"
+  },
+  "po": {
+    "number": "PO-8457",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 61,
+        "unitPrice": "7.92"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-508",
+    "poNumber": "PO-8457",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 61
+      }
+    ]
+  }
+}

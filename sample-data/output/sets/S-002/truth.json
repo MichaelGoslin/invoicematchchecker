@@ -1,0 +1,46 @@
+{
+  "setId": "S-002",
+  "invoice": {
+    "number": "NOP-8446",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-14",
+    "poReference": "PO-7607",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 28,
+        "unitPrice": "3.31",
+        "lineTotal": "92.68"
+      }
+    ],
+    "subtotal": "92.68",
+    "tax": "5.56",
+    "freight": "0.00",
+    "total": "98.24"
+  },
+  "po": {
+    "number": "PO-7607",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 28,
+        "unitPrice": "3.31"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-153",
+    "poNumber": "PO-7607",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 28
+      }
+    ]
+  }
+}

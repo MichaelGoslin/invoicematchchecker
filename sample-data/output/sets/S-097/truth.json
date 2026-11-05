@@ -1,0 +1,45 @@
+{
+  "setId": "S-097",
+  "invoice": {
+    "number": "CFT-6520",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-21",
+    "poReference": "",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 33,
+        "unitPrice": "60.01",
+        "lineTotal": "1980.33"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 67,
+        "unitPrice": "33.40",
+        "lineTotal": "2237.80"
+      }
+    ],
+    "subtotal": "4218.13",
+    "tax": "253.09",
+    "freight": "12.00",
+    "total": "4483.22"
+  },
+  "po": null,
+  "receiving": {
+    "number": "RR-756",
+    "poNumber": "PO-8802",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "quantityReceived": 33
+      },
+      {
+        "sku": "DRL-114",
+        "quantityReceived": 67
+      }
+    ]
+  }
+}

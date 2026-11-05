@@ -1,0 +1,46 @@
+{
+  "setId": "S-062",
+  "invoice": {
+    "number": "SRE-6280",
+    "vendor": "Summit Ridge Electrical",
+    "date": "2026-10-30",
+    "poReference": "PO-5320",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 800,
+        "unitPrice": "40.75",
+        "lineTotal": "32600.00"
+      }
+    ],
+    "subtotal": "32600.00",
+    "tax": "1956.00",
+    "freight": "12.00",
+    "total": "34568.00"
+  },
+  "po": {
+    "number": "PO-5320",
+    "vendor": "Summit Ridge Electrical",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 800,
+        "unitPrice": "40.00"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-912",
+    "poNumber": "PO-5320",
+    "date": "2026-10-24",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 800
+      }
+    ]
+  }
+}

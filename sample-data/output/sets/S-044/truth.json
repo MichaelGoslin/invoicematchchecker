@@ -1,0 +1,80 @@
+{
+  "setId": "S-044",
+  "invoice": {
+    "number": "TPG-9854",
+    "vendor": "TIDEWATER PAPER GROUP",
+    "date": "2026-10-22",
+    "poReference": "PO-2537",
+    "lines": [
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 94,
+        "unitPrice": "12.29",
+        "lineTotal": "1155.26"
+      },
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 62,
+        "unitPrice": "7.37",
+        "lineTotal": "456.94"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 50,
+        "unitPrice": "42.85",
+        "lineTotal": "2142.50"
+      }
+    ],
+    "subtotal": "3754.70",
+    "tax": "225.28",
+    "freight": "12.00",
+    "total": "3991.98"
+  },
+  "po": {
+    "number": "PO-2537",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 94,
+        "unitPrice": "12.29"
+      },
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 62,
+        "unitPrice": "7.37"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 50,
+        "unitPrice": "42.85"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-178",
+    "poNumber": "PO-2537",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 94
+      },
+      {
+        "sku": "BKR-252",
+        "quantityReceived": 62
+      },
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 50
+      }
+    ]
+  }
+}

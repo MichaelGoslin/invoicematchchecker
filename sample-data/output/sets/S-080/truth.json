@@ -1,0 +1,97 @@
+{
+  "setId": "S-080",
+  "invoice": {
+    "number": "QSH-7337",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-23",
+    "poReference": "PO-4139",
+    "lines": [
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 104,
+        "unitPrice": "5.72",
+        "lineTotal": "594.88"
+      },
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 67,
+        "unitPrice": "8.98",
+        "lineTotal": "601.66"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 76,
+        "unitPrice": "6.45",
+        "lineTotal": "490.20"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 62,
+        "unitPrice": "18.81",
+        "lineTotal": "1166.22"
+      }
+    ],
+    "subtotal": "2852.96",
+    "tax": "171.18",
+    "freight": "15.00",
+    "total": "3039.14"
+  },
+  "po": {
+    "number": "PO-4139",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 104,
+        "unitPrice": "5.72"
+      },
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 67,
+        "unitPrice": "8.98"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 76,
+        "unitPrice": "6.33"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 62,
+        "unitPrice": "18.81"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-470",
+    "poNumber": "PO-4139",
+    "date": "2026-10-22",
+    "lines": [
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 104
+      },
+      {
+        "sku": "GLV-630",
+        "quantityReceived": 67
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 76
+      },
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 62
+      }
+    ]
+  }
+}

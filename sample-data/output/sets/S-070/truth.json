@@ -1,0 +1,97 @@
+{
+  "setId": "S-070",
+  "invoice": {
+    "number": "TPG-6829",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-17",
+    "poReference": "PO-1741",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 90,
+        "unitPrice": "4.87",
+        "lineTotal": "438.30"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 72,
+        "unitPrice": "8.01",
+        "lineTotal": "576.72"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 47,
+        "unitPrice": "5.89",
+        "lineTotal": "276.83"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 19,
+        "unitPrice": "21.75",
+        "lineTotal": "413.25"
+      }
+    ],
+    "subtotal": "1705.10",
+    "tax": "102.31",
+    "freight": "15.00",
+    "total": "1822.41"
+  },
+  "po": {
+    "number": "PO-1741",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 90,
+        "unitPrice": "4.87"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 72,
+        "unitPrice": "7.93"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 47,
+        "unitPrice": "5.89"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 19,
+        "unitPrice": "21.75"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-534",
+    "poNumber": "PO-1741",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 90
+      },
+      {
+        "sku": "VST-133",
+        "quantityReceived": 72
+      },
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 47
+      },
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 19
+      }
+    ]
+  }
+}

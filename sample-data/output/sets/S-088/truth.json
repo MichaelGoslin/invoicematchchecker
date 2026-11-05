@@ -1,0 +1,63 @@
+{
+  "setId": "S-088",
+  "invoice": {
+    "number": "CLP-7178",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-15",
+    "poReference": "PO-1528",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 48,
+        "unitPrice": "47.65",
+        "lineTotal": "2287.20"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 16,
+        "unitPrice": "13.34",
+        "lineTotal": "213.44"
+      }
+    ],
+    "subtotal": "2500.64",
+    "tax": "150.04",
+    "freight": "8.50",
+    "total": "2659.18"
+  },
+  "po": {
+    "number": "PO-1528",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 48,
+        "unitPrice": "47.65"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 16,
+        "unitPrice": "13.34"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-624",
+    "poNumber": "PO-1528",
+    "date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 48
+      },
+      {
+        "sku": "VST-133",
+        "quantityReceived": 16
+      }
+    ]
+  }
+}

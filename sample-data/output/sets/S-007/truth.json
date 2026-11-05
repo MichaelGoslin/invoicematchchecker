@@ -1,0 +1,97 @@
+{
+  "setId": "S-007",
+  "invoice": {
+    "number": "BFI-5896",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-20",
+    "poReference": "PO-8446",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 67,
+        "unitPrice": "47.79",
+        "lineTotal": "3201.93"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 35,
+        "unitPrice": "5.46",
+        "lineTotal": "191.10"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 79,
+        "unitPrice": "16.34",
+        "lineTotal": "1290.86"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 98,
+        "unitPrice": "14.19",
+        "lineTotal": "1390.62"
+      }
+    ],
+    "subtotal": "6074.51",
+    "tax": "364.47",
+    "freight": "12.00",
+    "total": "6450.98"
+  },
+  "po": {
+    "number": "PO-8446",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 67,
+        "unitPrice": "47.79"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 35,
+        "unitPrice": "5.46"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 79,
+        "unitPrice": "16.10"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 98,
+        "unitPrice": "14.19"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-978",
+    "poNumber": "PO-8446",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 67
+      },
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 35
+      },
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 79
+      },
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 98
+      }
+    ]
+  }
+}

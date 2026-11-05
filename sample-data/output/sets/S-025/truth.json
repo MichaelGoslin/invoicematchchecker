@@ -1,0 +1,46 @@
+{
+  "setId": "S-025",
+  "invoice": {
+    "number": "CLP-8656",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-19",
+    "poReference": "PO-5576",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 40,
+        "unitPrice": "12.75",
+        "lineTotal": "510.00"
+      }
+    ],
+    "subtotal": "510.00",
+    "tax": "30.60",
+    "freight": "12.00",
+    "total": "552.60"
+  },
+  "po": {
+    "number": "PO-5576",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 40,
+        "unitPrice": "12.50"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-778",
+    "poNumber": "PO-5576",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "quantityReceived": 40
+      }
+    ]
+  }
+}
