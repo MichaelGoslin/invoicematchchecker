@@ -1,4 +1,15 @@
+import {
+  DEFAULT_MIN_CONFIDENCE,
+  formatPct,
+  formatPrice,
+  isUsableNumber,
+  pctOf,
+  toUnits,
+  uncertainReading,
+} from "./shared";
 import type { SourcedValue, TraceEntry } from "./types";
+
+export { formatPrice } from "./shared";
 
 export const UNIT_PRICE_RULE = "unit_price_within_tolerance";
 export const UNIT_PRICE_RULE_VERSION = "1";
@@ -9,16 +20,6 @@ export interface UnitPriceOptions {
   /** Any value read below this confidence sends the check to a person. Default 0.9. */
   minConfidence?: number;
 }
-
-/** Work in ten-thousandths of a dollar so prices like 4.335 and the 2.00% boundary compare exactly. */
-const SCALE = 10_000;
-const toUnits = (n: number) => Math.round(n * SCALE);
-
-/** $4.25, or $4.335 when the price has sub-cent precision. */
-export const formatPrice = (n: number) => {
-  const cents = Math.round(n * 100) / 100;
-  return `$${cents === n ? n.toFixed(2) : n.toFixed(4).replace(/0+$/, "")}`;
-};
 
 /**
  * Compares the invoice unit price to the PO unit price and returns a trace entry
@@ -31,7 +32,7 @@ export function checkUnitPrice(
   options: UnitPriceOptions = {},
 ): TraceEntry {
   const tolerancePct = options.tolerancePct ?? 2;
-  const minConfidence = options.minConfidence ?? 0.9;
+  const minConfidence = options.minConfidence ?? DEFAULT_MIN_CONFIDENCE;
 
   const base = {
     rule: UNIT_PRICE_RULE,
@@ -42,8 +43,7 @@ export function checkUnitPrice(
     minConfidence,
   };
 
-  const usable = (v: SourcedValue) => Number.isFinite(v.value) && Number.isFinite(v.confidence);
-  if (!usable(expected) || !usable(actual) || expected.value <= 0 || actual.value < 0) {
+  if (!isUsableNumber(expected) || !isUsableNumber(actual) || expected.value === 0) {
     return {
       ...base,
       variancePct: null,
@@ -54,19 +54,16 @@ export function checkUnitPrice(
 
   const expectedUnits = toUnits(expected.value);
   const diffUnits = toUnits(actual.value) - expectedUnits;
-  const variancePct = Math.round((diffUnits / expectedUnits) * 100 * 100) / 100;
+  const variancePct = pctOf(diffUnits, expectedUnits) ?? 0;
 
   // Fail-safe: an uncertain read never produces pass or fail, whatever the math says.
-  const lowReads = [expected, actual].filter((v) => v.confidence < minConfidence);
-  if (lowReads.length > 0) {
-    const which = lowReads
-      .map((v) => `${v.source} read at confidence ${v.confidence.toFixed(2)}`)
-      .join(" and ");
+  const uncertain = uncertainReading([expected, actual], minConfidence);
+  if (uncertain) {
     return {
       ...base,
       variancePct,
       result: "needs_review",
-      reason: `Uncertain reading: ${which}, below the ${minConfidence.toFixed(2)} minimum. A person must confirm the price before it is trusted.`,
+      reason: `${uncertain} A person must confirm the price before it is trusted.`,
     };
   }
 
@@ -82,8 +79,7 @@ export function checkUnitPrice(
   // |diff| / expected <= tolerance%, written without division so the boundary is exact.
   const withinTolerance = Math.abs(diffUnits) * 100 <= tolerancePct * expectedUnits;
   const direction = diffUnits > 0 ? "over" : "under";
-  const pct = `${variancePct > 0 ? "+" : ""}${variancePct.toFixed(2)}%`;
-  const compared = `Unit price ${formatPrice(actual.value)} (${actual.source}) vs PO ${formatPrice(expected.value)} (${expected.source}) is ${pct}`;
+  const compared = `Unit price ${formatPrice(actual.value)} (${actual.source}) vs PO ${formatPrice(expected.value)} (${expected.source}) is ${formatPct(variancePct)}`;
 
   return {
     ...base,

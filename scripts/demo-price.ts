@@ -16,8 +16,8 @@ for (const c of Object.values(unitPriceCases)) {
   const t = checkUnitPrice(c.po, c.invoice);
   const pct = t.variancePct === null ? "n/a" : `${t.variancePct > 0 ? "+" : ""}${t.variancePct.toFixed(2)}%`;
   console.log(`${c.name}: ${t.actual.source} → ${label[t.result]}`);
-  console.log(`  PO price   ${formatPrice(t.expected.value)}  (${t.expected.source})`);
-  console.log(`  Invoice    ${formatPrice(t.actual.value)}  (${t.actual.source}, read confidence ${t.actual.confidence.toFixed(2)})`);
+  console.log(`  PO price   ${formatPrice(c.po.value)}  (${t.expected.source})`);
+  console.log(`  Invoice    ${formatPrice(c.invoice.value)}  (${t.actual.source}, read confidence ${t.actual.confidence.toFixed(2)})`);
   console.log(`  Variance   ${pct}  vs tolerance ${t.tolerancePct}%`);
   console.log(`  Reason     ${t.reason}`);
   console.log();

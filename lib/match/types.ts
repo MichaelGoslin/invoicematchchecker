@@ -4,11 +4,11 @@
  */
 
 /** A value read from a document, with where it came from and how sure the read was. */
-export interface SourcedValue {
-  value: number;
+export interface SourcedValue<T extends number | string = number> {
+  value: T;
   /** Human-readable location, e.g. "PO-1042 line 2". */
   source: string;
-  /** Extraction confidence from 0 to 1. Typed-in or system values use 1. */
+  /** Extraction confidence from 0 to 1. Typed-in, system or calculated-from-trusted values use 1. */
   confidence: number;
 }
 
@@ -24,12 +24,17 @@ export type CheckResult = "pass" | "fail" | "needs_review";
 export interface TraceEntry {
   rule: string;
   ruleVersion: string;
-  expected: SourcedValue;
-  actual: SourcedValue;
-  /** Signed percent difference of actual vs expected, rounded to 2 places. Null when it can't be computed. */
+  /** What the documents say it should be (PO, receiving report, or a calculation). */
+  expected: SourcedValue<number | string>;
+  /** What the invoice says. */
+  actual: SourcedValue<number | string>;
+  /** Signed percent difference of actual vs expected, rounded to 2 places. Null for text checks or when it can't be computed. */
   variancePct: number | null;
-  tolerancePct: number;
-  /** The confidence floor that was applied to both values. */
+  /** Allowed percent difference. Null for checks that use an absolute tolerance or exact text matching. */
+  tolerancePct: number | null;
+  /** Allowed absolute difference in dollars, for totals (rounding). Absent when not used. */
+  toleranceAbs?: number;
+  /** The confidence floor that was applied to every value read. */
   minConfidence: number;
   result: CheckResult;
   /** Plain-English reason built from the numbers above. */

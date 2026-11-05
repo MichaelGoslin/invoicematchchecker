@@ -1,8 +1,12 @@
 /**
- * Synthetic unit-price cases shared by the tests, the demo script and the UI.
- * All values are made up. Joan: import `sampleUnitPriceTraces` to render real
- * TraceEntry objects in the review queue before the rest of the engine exists.
+ * Synthetic cases shared by the tests, the demo scripts and the UI. All values
+ * are made up. Joan: import `sampleUnitPriceTraces` or `sampleSets` to render
+ * real TraceEntry objects in the review queue.
  */
+import { checkDuplicate, type PriorInvoice } from "./duplicate";
+import { checkPoNumber, checkVendor } from "./identity";
+import { checkQuantityOrdered, checkQuantityReceived } from "./quantity";
+import { checkInvoiceTotal, checkLineTotal } from "./totals";
 import type { SourcedValue, TraceEntry } from "./types";
 import { checkUnitPrice } from "./unitPrice";
 
@@ -33,9 +37,153 @@ export const unitPriceCases = {
   lowConfidence: { name: "Low-confidence read", po: po(4.25), invoice: inv(4.25, 0.62) },
 } satisfies Record<string, UnitPriceCase>;
 
-/** Ready-made traces for UI work: one of each outcome. */
+/** Ready-made unit-price traces for UI work: one of each outcome. */
 export const sampleUnitPriceTraces: TraceEntry[] = [
   unitPriceCases.exactMatch,
   unitPriceCases.overcharge,
   unitPriceCases.lowConfidence,
 ].map((c) => checkUnitPrice(c.po, c.invoice));
+
+// ---------------------------------------------------------------------------
+// Whole invoice sets: one PO, one receiving report, one invoice.
+// ---------------------------------------------------------------------------
+
+interface Line {
+  ordered: number;
+  received: number;
+  poPrice: number;
+  invoiced: number;
+  invoicePrice: number;
+  /** As printed on the invoice. */
+  lineTotal: number;
+  /** Confidence for each invoice read on this line. */
+  conf?: number;
+}
+
+interface InvoiceSet {
+  id: string;
+  poNumber: string;
+  poVendor: string;
+  invoiceNumber: string;
+  invoiceVendor: string;
+  invoicePoRef: string;
+  receivingReport: string;
+  lines: Line[];
+  tax: number;
+  /** As printed on the invoice. */
+  total: number;
+}
+
+const priorInvoices: PriorInvoice[] = [
+  { vendor: "Acme Supply Co.", invoiceNumber: "INV-0870", ref: "set S-09, approved 2026-11-02" },
+  { vendor: "Brightline Paper", invoiceNumber: "BP-2231", ref: "set S-11, approved 2026-11-03" },
+];
+
+/** Runs every rule over one set and returns the full trace, in review order. */
+export function traceSet(set: InvoiceSet, priors: PriorInvoice[] = priorInvoices): TraceEntry[] {
+  const inv = set.invoiceNumber;
+  const text = (value: string, source: string, confidence = 0.98): SourcedValue<string> => ({ value, source, confidence });
+  const num = (value: number, source: string, confidence = 0.98): SourcedValue => ({ value, source, confidence });
+
+  const header = [
+    checkVendor(text(set.poVendor, `${set.poNumber} header`, 1), text(set.invoiceVendor, `${inv} header`)),
+    checkPoNumber(text(set.poNumber, `${set.poNumber} header`, 1), text(set.invoicePoRef, `${inv} PO reference`)),
+    checkDuplicate(text(set.invoiceVendor, `${inv} header`), text(inv, `${inv} header`), priors),
+  ];
+
+  const lineTotals: SourcedValue[] = [];
+  const lines = set.lines.flatMap((l, i) => {
+    const n = i + 1;
+    const c = l.conf ?? 0.98;
+    const qty = num(l.invoiced, `${inv} line ${n} qty`, c);
+    const price = num(l.invoicePrice, `${inv} line ${n} price`, c);
+    const total = num(l.lineTotal, `${inv} line ${n} total`, c);
+    lineTotals.push(total);
+    return [
+      checkQuantityOrdered(num(l.ordered, `${set.poNumber} line ${n}`, 1), qty),
+      checkQuantityReceived(num(l.received, `${set.receivingReport} line ${n}`, 1), qty),
+      checkUnitPrice(num(l.poPrice, `${set.poNumber} line ${n}`, 1), price),
+      checkLineTotal(qty, price, total),
+    ];
+  });
+
+  const totals = checkInvoiceTotal(lineTotals, [num(set.tax, `${inv} tax`)], num(set.total, `${inv} total`));
+  return [...header, ...lines, totals];
+}
+
+const cleanSet: InvoiceSet = {
+  id: "S-14",
+  poNumber: "PO-1042",
+  poVendor: "Acme Supply Co.",
+  invoiceNumber: "INV-889",
+  invoiceVendor: "ACME SUPPLY CO",
+  invoicePoRef: "PO 1042",
+  receivingReport: "RR-551",
+  lines: [
+    { ordered: 10, received: 10, poPrice: 2.5, invoiced: 10, invoicePrice: 2.5, lineTotal: 25 },
+    { ordered: 3, received: 3, poPrice: 4.3, invoiced: 3, invoicePrice: 4.37, lineTotal: 13.11 },
+  ],
+  tax: 3.39,
+  total: 41.5,
+};
+
+const flaggedSet: InvoiceSet = {
+  id: "S-15",
+  poNumber: "PO-1077",
+  poVendor: "Brightline Paper",
+  invoiceNumber: "BP-2240",
+  invoiceVendor: "Brightline Paper",
+  invoicePoRef: "PO-1077",
+  receivingReport: "RR-560",
+  lines: [
+    // Billed 12 cases, but only 10 arrived.
+    { ordered: 12, received: 10, poPrice: 18, invoiced: 12, invoicePrice: 18, lineTotal: 216 },
+    // Price crept up 5%.
+    { ordered: 4, received: 4, poPrice: 9.5, invoiced: 4, invoicePrice: 9.98, lineTotal: 39.92 },
+    // Smudged scan: the reader wasn't sure of this line.
+    { ordered: 6, received: 6, poPrice: 3, invoiced: 6, invoicePrice: 3, lineTotal: 18, conf: 0.64 },
+  ],
+  tax: 24.31,
+  total: 298.23,
+};
+
+const duplicateSet: InvoiceSet = {
+  id: "S-16",
+  poNumber: "PO-1031",
+  poVendor: "Acme Supply Co.",
+  // Same bill as set S-09, resubmitted with a different zero format.
+  invoiceNumber: "INV 0870",
+  invoiceVendor: "Acme Supply Co.",
+  invoicePoRef: "PO-1031",
+  receivingReport: "RR-540",
+  lines: [{ ordered: 20, received: 20, poPrice: 1.75, invoiced: 20, invoicePrice: 1.75, lineTotal: 35 }],
+  tax: 3.11,
+  total: 38.11,
+};
+
+/**
+ * Complete sets for UI and demo work, each with its answer key: the rules
+ * expected to flag or need review. Every other check should pass.
+ */
+export const sampleSets = [
+  { set: cleanSet, label: "Clean set (line 2 price is 1.63% over, inside tolerance)", expectFail: [], expectReview: [] },
+  {
+    set: flaggedSet,
+    label: "Planted faults: overbilled quantity, 5% price increase, uncertain line 3",
+    expectFail: ["quantity_not_over_received", "unit_price_within_tolerance"],
+    expectReview: [
+      "quantity_not_over_ordered",
+      "quantity_not_over_received",
+      "unit_price_within_tolerance",
+      "line_total_equals_qty_times_price",
+      "invoice_total_equals_sum",
+    ],
+  },
+  { set: duplicateSet, label: "Planted fault: resubmitted invoice", expectFail: ["not_a_duplicate"], expectReview: [] },
+].map(({ set, label, expectFail, expectReview }) => ({
+  id: set.id,
+  label,
+  invoice: set.invoiceNumber,
+  answerKey: { fail: expectFail, needs_review: expectReview },
+  traces: traceSet(set),
+}));
