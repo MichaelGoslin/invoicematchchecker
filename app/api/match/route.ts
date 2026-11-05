@@ -2,9 +2,10 @@
  * POST /api/match: one invoice set in, one recommendation out.
  *
  * multipart/form-data fields:
- *   purchaseOrder    (required)  PDF, PNG, JPEG or .txt
- *   receivingReport  (optional)  same; leave out for a 2-way match
- *   invoice          (required)  same
+ *   invoice          (required)  PDF, PNG, JPEG or .txt
+ *   purchaseOrder    (optional)  same; without one the set is recommended for rejection
+ *   receivingReport  (optional)  same; without one a 3-way match is incomplete
+ *   matchType        (optional)  "3-way" (default) or "2-way" for purchases with nothing to receive
  *   setId            (optional)  defaults to a generated id
  *
  * Responds with the extracted documents (minus file bytes), every trace and the
@@ -52,17 +53,24 @@ export async function POST(request: Request) {
 
   try {
     const [po, rr, inv] = await Promise.all((["purchaseOrder", "receivingReport", "invoice"] as const).map((s) => readSlot(form, s)));
-    if (!po || !inv) return badRequest("A purchase order and an invoice are required.");
+    if (!inv) return badRequest("An invoice is required.");
+    const matchType = String(form.get("matchType") ?? "3-way");
+    if (matchType !== "3-way" && matchType !== "2-way") return badRequest('matchType must be "3-way" or "2-way".');
 
     const [purchaseOrder, receivingReport, invoice] = await Promise.all([
-      extractDocument(po),
+      po ? extractDocument(po) : Promise.resolve(undefined),
       rr ? extractDocument(rr) : Promise.resolve(undefined),
       extractDocument(inv),
     ]);
 
     const setId = String(form.get("setId") ?? "") || `S-${randomUUID().slice(0, 8)}`;
     // No processed-invoice history until the database lands: null makes the duplicate check need review.
-    const input = toMatchInput(setId, { purchaseOrder, invoice, ...(receivingReport ? { receivingReport } : {}) }, null);
+    const input = toMatchInput(
+      setId,
+      { invoice, ...(purchaseOrder ? { purchaseOrder } : {}), ...(receivingReport ? { receivingReport } : {}) },
+      null,
+      { matchType },
+    );
     const { traces, decision } = runSet(input);
 
     const documents = [purchaseOrder, receivingReport, invoice]

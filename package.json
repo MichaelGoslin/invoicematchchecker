@@ -12,7 +12,8 @@
     "demo:extract": "node --env-file-if-exists=.env.local --env-file-if-exists=.env.development.local --import tsx scripts/demo-extract.ts",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "score:truth": "tsx scripts/score-truth.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

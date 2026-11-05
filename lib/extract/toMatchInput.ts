@@ -10,7 +10,8 @@ import type { ExtractionResult } from "./extract";
 import type { ExtractedDocument, ExtractedLine, NumberField, TextField } from "./schema";
 
 export interface SetDocuments {
-  purchaseOrder: ExtractionResult;
+  /** Leave out when no PO is on file: the set is then recommended for rejection. */
+  purchaseOrder?: ExtractionResult;
   /** Leave out for a 2-way match. */
   receivingReport?: ExtractionResult;
   invoice: ExtractionResult;
@@ -49,29 +50,43 @@ function expectType(r: ExtractionResult | undefined, type: ExtractedDocument["do
 
 const byLineNumber = (lines: ExtractedLine[]) => new Map(lines.map((l) => [l.line_number, l]));
 
-export function toMatchInput(setId: string, docs: SetDocuments, priors: PriorInvoice[] | null): MatchSetInput {
+export interface ToMatchInputOptions {
+  /** "3-way" (default) treats a missing receiving report as incomplete. Use "2-way" only for purchases with nothing to receive. */
+  matchType?: "3-way" | "2-way";
+}
+
+export function toMatchInput(
+  setId: string,
+  docs: SetDocuments,
+  priors: PriorInvoice[] | null,
+  options: ToMatchInputOptions = {},
+): MatchSetInput {
   expectType(docs.purchaseOrder, "purchase_order", "purchase order");
   expectType(docs.receivingReport, "receiving_report", "receiving report");
   expectType(docs.invoice, "invoice", "invoice");
 
-  const po = docs.purchaseOrder.document;
+  const po = docs.purchaseOrder?.document;
   const rr = docs.receivingReport?.document;
   const inv = docs.invoice.document;
-  const poLabel = label(docs.purchaseOrder);
+  const poLabel = docs.purchaseOrder ? label(docs.purchaseOrder) : "";
   const rrLabel = docs.receivingReport ? label(docs.receivingReport) : "";
   const invLabel = label(docs.invoice);
 
-  const poLines = byLineNumber(po.lines);
+  const poLines = po ? byLineNumber(po.lines) : undefined;
   const rrLines = rr ? byLineNumber(rr.lines) : undefined;
 
   const lines: MatchLineInput[] = inv.lines.map((il) => {
     const n = il.line_number;
-    const pl = poLines.get(n);
+    const pl = poLines?.get(n);
     const rl = rrLines?.get(n);
     return {
-      ordered: pl ? num(pl.quantity, `${poLabel} line ${n}`) : missing(`${poLabel} has no line ${n}`),
+      ...(poLines
+        ? {
+            ordered: pl ? num(pl.quantity, `${poLabel} line ${n}`) : missing(`${poLabel} has no line ${n}`),
+            poPrice: pl ? num(pl.unit_price, `${poLabel} line ${n}`) : missing(`${poLabel} has no line ${n}`),
+          }
+        : {}),
       ...(rrLines ? { received: rl ? num(rl.quantity, `${rrLabel} line ${n}`) : missing(`${rrLabel} has no line ${n}`) } : {}),
-      poPrice: pl ? num(pl.unit_price, `${poLabel} line ${n}`) : missing(`${poLabel} has no line ${n}`),
       invoiced: num(il.quantity, `${invLabel} line ${n} qty`),
       invoicePrice: num(il.unit_price, `${invLabel} line ${n} price`),
       lineTotal: num(il.line_total, `${invLabel} line ${n} total`),
@@ -86,8 +101,14 @@ export function toMatchInput(setId: string, docs: SetDocuments, priors: PriorInv
 
   return {
     setId,
-    poVendor: text(po.vendor, `${poLabel} header`, docs.purchaseOrder.document.document_type_confidence),
-    poNumber: text(po.document_number, `${poLabel} header`, docs.purchaseOrder.document.document_type_confidence),
+    purchaseOrder: po
+      ? {
+          vendor: text(po.vendor, `${poLabel} header`, po.document_type_confidence),
+          number: text(po.document_number, `${poLabel} header`, po.document_type_confidence),
+        }
+      : null,
+    receivingReport: rr ? { number: text(rr.document_number, `${rrLabel} header`, rr.document_type_confidence) } : null,
+    ...(options.matchType ? { matchType: options.matchType } : {}),
     invoiceVendor: text(inv.vendor, `${invLabel} header`, docs.invoice.document.document_type_confidence),
     invoiceNumber: text(inv.document_number, `${invLabel} header`, docs.invoice.document.document_type_confidence),
     invoicePoRef: text(inv.po_reference, `${invLabel} PO reference`, docs.invoice.document.document_type_confidence),

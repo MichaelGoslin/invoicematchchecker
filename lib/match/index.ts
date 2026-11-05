@@ -7,3 +7,4 @@ export * from "./identity";
 export * from "./duplicate";
 export * from "./decision";
 export * from "./runSet";
+export * from "./documents";
