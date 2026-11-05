@@ -72,6 +72,18 @@ describe("number guard", () => {
     expect(unsupportedNumbers("$9.98 vs $9.50 is 5.05% over, 12 billed, 10 received", input)).toEqual([]);
   });
 
+  it("accepts totals of checks, which are facts rather than calculations", () => {
+    // S-15 ran 18 checks: 11 passed, 2 failed, 5 need review, so 7 didn't pass.
+    expect(unsupportedNumbers("Of the 18 checks, 11 passed and 7 did not: 2 failed and 5 need review.", input)).toEqual([]);
+    const s17 = explanationInput(sampleSets[3]!.decision, sampleSets[3]!.traces);
+    expect(unsupportedNumbers("1 of 10 checks failed.", s17)).toEqual([]);
+  });
+
+  it("still refuses other sums of counts", () => {
+    // 11 passed + 2 failed = 13 is not a count anyone reported.
+    expect(unsupportedNumbers("13 checks were conclusive.", input)).toEqual([13]);
+  });
+
   it("flags calculated or invented numbers", () => {
     expect(unsupportedNumbers("Together that's $77.92 too much, about 31%", input)).toEqual([77.92, 31]);
   });
