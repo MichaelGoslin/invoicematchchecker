@@ -7,6 +7,7 @@ import { DecisionRow } from "../components/DecisionRow";
 
 interface MatchResponse {
   setId: string;
+  saved: boolean;
   decision: SetDecision;
   traces: TraceEntry[];
   documents: { name: string; model: string; guardNotes: string[]; document: { document_type: string; reading_problems: string[] } }[];
@@ -64,6 +65,9 @@ export function TryForm() {
       {result ? (
         <>
           <h2>Result</h2>
+          <p className="muted">
+            {result.saved ? <>Saved. It is waiting in the <a href="/">review queue</a> for a decision.</> : "Not saved: no database is configured."}
+          </p>
           <ul className="queue">
             <DecisionRow decision={result.decision} traces={result.traces} title="uploaded set" />
           </ul>

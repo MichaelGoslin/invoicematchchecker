@@ -4,7 +4,21 @@ import type { TraceEntry } from "@/lib/match/types";
 const LABEL = { approve: "Recommend approve", review: "Needs review", reject: "Recommend reject" } as const;
 
 /** One queue row: the recommendation, its summary, and the checks that drove it. Placeholder for Joan's design. */
-export function DecisionRow({ decision, traces, title }: { decision: SetDecision; traces: TraceEntry[]; title: string }) {
+export function DecisionRow({
+  decision,
+  traces,
+  title,
+  status,
+  children,
+}: {
+  decision: SetDecision;
+  traces: TraceEntry[];
+  title: string;
+  /** Shown after the title when a person has acted, e.g. "Approved by Joan (override)". */
+  status?: string;
+  /** Actions or extra detail, shown below the checks. */
+  children?: React.ReactNode;
+}) {
   const shown = traces.filter((t) => t.result !== "pass");
   return (
     <li>
@@ -13,6 +27,7 @@ export function DecisionRow({ decision, traces, title }: { decision: SetDecision
           <span className={`badge ${decision.recommendation}`}>{LABEL[decision.recommendation]}</span>
           <strong>{decision.setId}</strong>
           <span className="muted">{title}</span>
+          {status ? <span className="status">{status}</span> : null}
         </summary>
         <div className="body">
           <p>{decision.summary}</p>
@@ -28,6 +43,7 @@ export function DecisionRow({ decision, traces, title }: { decision: SetDecision
               {t.reason} <code>{t.rule}</code>
             </p>
           ))}
+          {children}
         </div>
       </details>
     </li>

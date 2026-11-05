@@ -9,11 +9,16 @@
  *   setId            (optional)  defaults to a generated id
  *
  * Responds with the extracted documents (minus file bytes), every trace and the
- * set decision. Nothing is stored yet, so the duplicate check needs review.
+ * set decision. With a database (POSTGRES_URL) the set, its recommendation and an
+ * audit entry are saved, and stored invoices feed the duplicate check. Without one,
+ * nothing is saved and the duplicate check needs review.
  */
 import { randomUUID } from "node:crypto";
 import { type DocumentMediaType, ExtractionError, extractDocument } from "@/lib/extract/extract";
 import { SetAssemblyError, toMatchInput } from "@/lib/extract/toMatchInput";
+import { getDb } from "@/lib/db/client";
+import { matchAndSave } from "@/lib/db/sets";
+import type { PriorInvoice } from "@/lib/match/duplicate";
 import { runSet } from "@/lib/match/runSet";
 
 export const runtime = "nodejs";
@@ -64,22 +69,30 @@ export async function POST(request: Request) {
     ]);
 
     const setId = String(form.get("setId") ?? "") || `S-${randomUUID().slice(0, 8)}`;
-    // No processed-invoice history until the database lands: null makes the duplicate check need review.
-    const input = toMatchInput(
-      setId,
-      { invoice, ...(purchaseOrder ? { purchaseOrder } : {}), ...(receivingReport ? { receivingReport } : {}) },
-      null,
-      { matchType },
-    );
-    const { traces, decision } = runSet(input);
+    const docs = { invoice, ...(purchaseOrder ? { purchaseOrder } : {}), ...(receivingReport ? { receivingReport } : {}) };
+    const build = (priors: PriorInvoice[] | null) => toMatchInput(setId, docs, priors, { matchType });
 
     const documents = [purchaseOrder, receivingReport, invoice]
       .filter((d) => d !== undefined)
       .map(({ name, document, guardNotes, model, promptVersion, usage }) => ({ name, document, guardNotes, model, promptVersion, usage }));
 
-    return Response.json({ setId, decision, traces, documents });
+    const db = getDb();
+    if (!db) {
+      // No database: nothing is saved, and null history makes the duplicate check need review.
+      const { traces, decision } = runSet(build(null));
+      return Response.json({ setId, saved: false, decision, traces, documents });
+    }
+    const { traces, decision } = await matchAndSave(db, {
+      build,
+      invoiceVendor: invoice.document.vendor.value,
+      invoiceNumber: invoice.document.document_number.value,
+      invoiceTotal: invoice.document.total.value,
+      documents,
+    });
+    return Response.json({ setId, saved: true, decision, traces, documents });
   } catch (err) {
     if (err instanceof SetAssemblyError) return badRequest(err.message, 422);
+    if ((err as { code?: string }).code === "23505") return badRequest("A set with that id already exists.", 409);
     if (err instanceof ExtractionError) {
       // The set can't be read, so it goes to a person: say which document and why.
       return Response.json({ error: err.message, reason: err.reason, document: err.documentName }, { status: 422 });
