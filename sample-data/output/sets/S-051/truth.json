@@ -1,0 +1,45 @@
+{
+  "setId": "S-051",
+  "invoice": {
+    "number": "WFW-6756",
+    "vendor": "Willowbrook Foods Wholesale",
+    "date": "2026-10-29",
+    "poReference": "",
+    "lines": [
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 101,
+        "unitPrice": "9.11",
+        "lineTotal": "920.11"
+      },
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 8,
+        "unitPrice": "1.35",
+        "lineTotal": "10.80"
+      }
+    ],
+    "subtotal": "930.91",
+    "tax": "55.85",
+    "freight": "15.00",
+    "total": "1001.76"
+  },
+  "po": null,
+  "receiving": {
+    "number": "RR-256",
+    "poNumber": "PO-7700",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 101
+      },
+      {
+        "sku": "BOX-415",
+        "quantityReceived": 8
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "setId": "S-073",
+  "invoice": {
+    "number": "BFI-8605",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-29",
+    "poReference": "PO-3954",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 107,
+        "unitPrice": "8.84",
+        "lineTotal": "945.88"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 107,
+        "unitPrice": "5.67",
+        "lineTotal": "606.69"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 117,
+        "unitPrice": "12.40",
+        "lineTotal": "1450.80"
+      }
+    ],
+    "subtotal": "3003.37",
+    "tax": "180.20",
+    "freight": "0.00",
+    "total": "3183.57"
+  },
+  "po": {
+    "number": "PO-3954",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 107,
+        "unitPrice": "8.84"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 107,
+        "unitPrice": "5.70"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 117,
+        "unitPrice": "12.40"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-311",
+    "poNumber": "PO-3954",
+    "date": "2026-10-23",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "quantityReceived": 107
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 107
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 117
+      }
+    ]
+  }
+}

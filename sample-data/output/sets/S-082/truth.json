@@ -1,0 +1,46 @@
+{
+  "setId": "S-082",
+  "invoice": {
+    "number": "CLP-5378",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-18",
+    "poReference": "PO-8084",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 55,
+        "unitPrice": "5.00",
+        "lineTotal": "275.00"
+      }
+    ],
+    "subtotal": "275.00",
+    "tax": "16.50",
+    "freight": "8.50",
+    "total": "300.00"
+  },
+  "po": {
+    "number": "PO-8084",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-07",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 55,
+        "unitPrice": "4.59"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-400",
+    "poNumber": "PO-8084",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 55
+      }
+    ]
+  }
+}

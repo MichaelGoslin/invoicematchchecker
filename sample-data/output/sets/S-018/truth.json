@@ -1,0 +1,46 @@
+{
+  "setId": "S-018",
+  "invoice": {
+    "number": "WFW-9579",
+    "vendor": "Willowbrook Foods Wholesale",
+    "date": "2026-10-28",
+    "poReference": "PO-4301",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 10,
+        "unitPrice": "6.68",
+        "lineTotal": "66.80"
+      }
+    ],
+    "subtotal": "66.80",
+    "tax": "4.01",
+    "freight": "0.00",
+    "total": "70.81"
+  },
+  "po": {
+    "number": "PO-4301",
+    "vendor": "Willowbrook Foods Wholesale",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 10,
+        "unitPrice": "6.68"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-411",
+    "poNumber": "PO-4301",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 10
+      }
+    ]
+  }
+}

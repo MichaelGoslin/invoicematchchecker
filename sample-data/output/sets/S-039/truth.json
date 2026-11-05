@@ -1,0 +1,46 @@
+{
+  "setId": "S-039",
+  "invoice": {
+    "number": "NOP-9478",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-30",
+    "poReference": "PO-9154",
+    "lines": [
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 62,
+        "unitPrice": "23.62",
+        "lineTotal": "1464.44"
+      }
+    ],
+    "subtotal": "1464.44",
+    "tax": "87.87",
+    "freight": "15.00",
+    "total": "1567.31"
+  },
+  "po": {
+    "number": "PO-9154",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 62,
+        "unitPrice": "22.93"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-374",
+    "poNumber": "PO-9154",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 62
+      }
+    ]
+  }
+}

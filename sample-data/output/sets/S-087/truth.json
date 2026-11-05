@@ -1,0 +1,80 @@
+{
+  "setId": "S-087",
+  "invoice": {
+    "number": "CFT-6867",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-18",
+    "poReference": "PO-7271",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 60,
+        "unitPrice": "9.69",
+        "lineTotal": "581.40"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 117,
+        "unitPrice": "36.52",
+        "lineTotal": "4272.84"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 63,
+        "unitPrice": "14.68",
+        "lineTotal": "924.84"
+      }
+    ],
+    "subtotal": "5779.08",
+    "tax": "346.74",
+    "freight": "0.00",
+    "total": "6125.82"
+  },
+  "po": {
+    "number": "PO-7271",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 60,
+        "unitPrice": "9.69"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 117,
+        "unitPrice": "36.52"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 63,
+        "unitPrice": "14.68"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-649",
+    "poNumber": "PO-7271",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "GLV-630",
+        "quantityReceived": 60
+      },
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 117
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 63
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "setId": "S-071",
+  "invoice": {
+    "number": "ISS-5618",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-18",
+    "poReference": "PO-3413",
+    "lines": [
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 15,
+        "unitPrice": "1.74",
+        "lineTotal": "26.10"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 97,
+        "unitPrice": "43.38",
+        "lineTotal": "4207.86"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 111,
+        "unitPrice": "7.43",
+        "lineTotal": "824.73"
+      }
+    ],
+    "subtotal": "5058.69",
+    "tax": "303.52",
+    "freight": "0.00",
+    "total": "5362.21"
+  },
+  "po": {
+    "number": "PO-3431",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 15,
+        "unitPrice": "1.74"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 97,
+        "unitPrice": "43.38"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 111,
+        "unitPrice": "7.43"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-615",
+    "poNumber": "PO-3431",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "BOX-415",
+        "quantityReceived": 15
+      },
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 97
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 111
+      }
+    ]
+  }
+}

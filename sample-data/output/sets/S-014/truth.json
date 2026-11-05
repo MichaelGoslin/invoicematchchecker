@@ -1,0 +1,63 @@
+{
+  "setId": "S-014",
+  "invoice": {
+    "number": "BFI-7215",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-25",
+    "poReference": "PO-2176",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 13,
+        "unitPrice": "40.23",
+        "lineTotal": "522.99"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 65,
+        "unitPrice": "24.40",
+        "lineTotal": "1586.00"
+      }
+    ],
+    "subtotal": "2108.99",
+    "tax": "126.54",
+    "freight": "8.50",
+    "total": "2244.03"
+  },
+  "po": {
+    "number": "PO-2176",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 13,
+        "unitPrice": "40.23"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 65,
+        "unitPrice": "24.28"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-140",
+    "poNumber": "PO-2176",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 13
+      },
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 65
+      }
+    ]
+  }
+}

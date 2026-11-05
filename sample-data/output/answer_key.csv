@@ -1,0 +1,101 @@
+set_id,expected_outcome,expected_reason,seeded_problem,expected_failed_rules,has_po,has_receiving_report,is_scan,max_price_variance_pct,max_extended_diff_usd,qty_over_ordered,qty_over_received,max_line_total_diff_usd,total_diff_usd,note
+S-001,review,exception,quantity_billed_over_received,quantity_not_over_received,yes,yes,no,0.00,0.00,0,4,0.00,0.00,"Billed for 60, only 56 arrived."
+S-002,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-003,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-004,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-005,approve,clean,clean_price_drift_within_limits,,yes,yes,no,1.91,32.76,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-006,approve,clean,clean_price_drift_within_limits,,yes,yes,no,1.45,15.60,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-007,approve,clean,clean_price_drift_within_limits,,yes,yes,no,1.49,18.96,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-008,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-009,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-0.54,0.39,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-010,approve,clean,clean_price_drift_within_limits,,yes,yes,no,0.98,6.48,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-011,reject,reject,duplicate_invoice,not_a_duplicate,yes,yes,no,0.00,0.00,0,0,0.00,0.00,"Same vendor and invoice number as already-approved history H-01, approved 2026-10-26."
+S-012,review,exception,invoice_total_does_not_add_up,invoice_total_equals_sum,yes,yes,no,0.00,0.00,0,0,0.00,0.50,Printed total is 0.50 over lines + tax + freight.
+S-013,review,exception,price_within_2pct_but_over_50_extended,unit_price_within_tolerance,yes,yes,no,0.67,80.00,0,0,0.00,0.00,"400 units, 30.00 vs 30.20: inside 2% but $80.00 extended."
+S-014,approve,clean,clean_price_drift_within_limits,,yes,yes,no,0.49,7.80,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-015,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-016,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-017,approve,clean,clean_price_drift_within_limits,,yes,yes,no,0.96,0.40,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-018,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-019,reject,reject,vendor_mismatch,vendor_matches_po,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Invoice is from Brightfield Industrial; the PO was issued to Northgate Office Products.
+S-020,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-021,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-022,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-0.50,0.76,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-023,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.51,6.08,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-024,review,exception,quantity_over_ordered,quantity_not_over_ordered,yes,yes,no,0.00,0.00,15,0,0.00,0.00,Billed 15 more units than ordered (and all were received).
+S-025,approve,clean,clean_exactly_at_limit,,yes,yes,no,2.00,10.00,0,0,0.00,0.00,"40 units, $12.50 vs $12.75: exactly 2.0%, $10.00 extended. Passes."
+S-026,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-027,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.92,11.55,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-028,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-029,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-030,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-031,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.89,40.12,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-032,review,exception,line_total_not_qty_times_price,line_total_equals_qty_times_price,yes,yes,no,0.00,0.00,0,0,12.00,0.00,A line total is 12.00 over quantity x unit price.
+S-033,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-034,review,exception,price_over_2pct,unit_price_within_tolerance,yes,yes,no,7.47,7.13,0,0,0.00,0.00,Unit price about 7.5% over the PO price.
+S-035,approve,clean,clean_price_drift_within_limits,,yes,yes,no,1.03,4.86,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-036,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.90,19.04,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-037,approve,clean,clean_po_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,PO number printed as 'PO 1042' instead of 'PO-1042'; same PO.
+S-038,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-039,review,exception,price_over_2pct,unit_price_within_tolerance,yes,yes,no,3.01,42.78,0,0,0.00,0.00,Unit price about 3.0% over the PO price.
+S-040,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-041,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-042,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-043,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.89,6.44,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-044,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-045,reject,reject,missing_po,po_exists,no,yes,no,0.00,0.00,0,0,0.00,0.00,No PO on file and none cited on the invoice. Recommend reject.
+S-046,approve,clean,clean_price_drift_within_limits,,yes,yes,no,0.47,1.68,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-047,reject,reject,duplicate_invoice,not_a_duplicate,yes,yes,no,0.00,0.00,0,0,0.00,0.00,"Same vendor and invoice number as already-approved history H-02, approved 2026-10-26."
+S-048,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-049,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.84,15.21,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-050,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-051,reject,reject,missing_po,po_exists,no,yes,no,0.00,0.00,0,0,0.00,0.00,No PO on file and none cited on the invoice. Recommend reject.
+S-052,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-053,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-054,approve,clean,clean_number_reused_by_other_vendor,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,"Invoice number matches an approved invoice, but the vendor is different."
+S-055,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-056,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-057,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.02,3.51,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-058,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-059,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.85,2.55,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-060,approve,clean,clean_price_drift_within_limits,,yes,yes,no,1.01,4.62,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-061,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-062,review,exception,price_within_2pct_but_over_50_extended,unit_price_within_tolerance,yes,yes,no,1.88,600.00,0,0,0.00,0.00,"800 units, 40.00 vs 40.75: inside 2% but $600.00 extended."
+S-063,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-064,review,exception,wrong_po_number,po_number_matches,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Invoice cites PO-4709; the PO is PO-4079.
+S-065,review,exception,price_within_2pct_but_over_50_extended,unit_price_within_tolerance,yes,yes,no,1.90,1900.00,0,0,0.00,0.00,"1000 units, 100.00 vs 101.90: inside 2% but $1,900.00 extended."
+S-066,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-067,approve,clean,clean_price_drift_within_limits,,yes,yes,no,0.47,2.00,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-068,review,exception,price_over_2pct,unit_price_within_tolerance,yes,yes,no,2.19,45.63,0,0,0.00,0.00,Unit price about 2.2% over the PO price.
+S-069,approve,clean,clean_po_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,PO number printed as 'PO 1042' instead of 'PO-1042'; same PO.
+S-070,approve,clean,clean_price_drift_within_limits,,yes,yes,no,1.01,5.76,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-071,review,exception,wrong_po_number,po_number_matches,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Invoice cites PO-3413; the PO is PO-3431.
+S-072,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-073,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-0.53,3.21,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-074,review,exception,quantity_billed_over_received,quantity_not_over_received,yes,yes,no,0.00,0.00,0,12,0.00,0.00,"Billed for 83, only 71 arrived."
+S-075,review,exception,invoice_total_does_not_add_up,invoice_total_equals_sum,yes,yes,no,0.00,0.00,0,0,0.00,10.00,Printed total is 10.00 over lines + tax + freight.
+S-076,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-077,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-078,review,incomplete,missing_receiving_report,receiving_exists,yes,no,no,0.00,0.00,0,0,0.00,0.00,No receiving report on file. Three-way match cannot be completed.
+S-079,approve,clean,clean_po_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,PO number printed as 'PO 1042' instead of 'PO-1042'; same PO.
+S-080,approve,clean,clean_price_drift_within_limits,,yes,yes,no,1.90,9.12,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-081,review,exception,invoice_total_does_not_add_up,invoice_total_equals_sum,yes,yes,no,0.00,0.00,0,0,0.00,-4.35,Printed total is 4.35 under lines + tax + freight.
+S-082,review,exception,price_over_2pct,unit_price_within_tolerance,yes,yes,no,8.93,22.55,0,0,0.00,0.00,Unit price about 9.0% over the PO price.
+S-083,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-084,review,exception,price_over_2pct,unit_price_within_tolerance,yes,yes,no,5.00,170.63,0,0,0.00,0.00,Unit price about 5.0% over the PO price.
+S-085,approve,clean,clean_exactly_at_limit,,yes,yes,no,0.20,50.00,0,0,0.00,0.00,"500 units, $50.00 vs $50.10: extended difference exactly $50.00 (0.2%). Passes."
+S-086,approve,clean,clean_price_drift_within_limits,,yes,yes,no,-1.49,1.26,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-087,review,gated,mild_scan,,yes,yes,yes,0.00,0.00,0,0,0.00,0.00,Invoice is a mildly degraded scanned image. Underlying set is clean. Expected: gated for review if any field reads below the confidence floor; extraction accuracy is scored either way.
+S-088,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-089,approve,clean,clean,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,
+S-090,review,exception,wrong_po_number,po_number_matches,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Invoice cites PO-4275; the PO is PO-4725.
+S-091,reject,reject,vendor_mismatch,vendor_matches_po,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Invoice is from Brightfield Industrial; the PO was issued to Quarry Street Hardware.
+S-092,review,exception,quantity_over_ordered,quantity_not_over_ordered,yes,yes,no,0.00,0.00,6,0,0.00,0.00,Billed 6 more units than ordered (and all were received).
+S-093,approve,clean,clean_exactly_at_limit,,yes,yes,no,2.00,50.00,0,0,0.00,0.00,"100 units, $25.00 vs $25.50: exactly 2.0% and exactly $50.00 extended. Passes."
+S-094,reject,reject,duplicate_invoice,not_a_duplicate,yes,yes,no,0.00,0.00,0,0,0.00,0.00,"Same vendor and invoice number as already-approved history H-03, approved 2026-10-27."
+S-095,reject,reject,vendor_mismatch,vendor_matches_po,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Invoice is from Ironwood Safety Supply; the PO was issued to Maple & Vine Janitorial.
+S-096,approve,clean,clean_vendor_format_variant,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,Vendor name printed differently (case or punctuation); same vendor.
+S-097,reject,reject,missing_po,po_exists,no,yes,no,0.00,0.00,0,0,0.00,0.00,No PO on file and none cited on the invoice. Recommend reject.
+S-098,review,incomplete,missing_receiving_report,receiving_exists,yes,no,no,0.00,0.00,0,0,0.00,0.00,No receiving report on file. Three-way match cannot be completed.
+S-099,approve,clean,clean_price_drift_within_limits,,yes,yes,no,0.50,3.33,0,0,0.00,0.00,Price differs but inside 2% and under the $50 extended cap.
+S-100,approve,clean,clean_number_reused_by_other_vendor,,yes,yes,no,0.00,0.00,0,0,0.00,0.00,"Invoice number matches an approved invoice, but the vendor is different."

@@ -1,0 +1,80 @@
+{
+  "setId": "S-041",
+  "invoice": {
+    "number": "QSH-7028",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-30",
+    "poReference": "PO-7771",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 63,
+        "unitPrice": "46.19",
+        "lineTotal": "2909.97"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 91,
+        "unitPrice": "26.83",
+        "lineTotal": "2441.53"
+      },
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 108,
+        "unitPrice": "14.15",
+        "lineTotal": "1528.20"
+      }
+    ],
+    "subtotal": "6879.70",
+    "tax": "412.78",
+    "freight": "8.50",
+    "total": "7300.98"
+  },
+  "po": {
+    "number": "PO-7771",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 63,
+        "unitPrice": "46.19"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 91,
+        "unitPrice": "26.83"
+      },
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 108,
+        "unitPrice": "14.15"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-415",
+    "poNumber": "PO-7771",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 63
+      },
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 91
+      },
+      {
+        "sku": "BKR-252",
+        "quantityReceived": 108
+      }
+    ]
+  }
+}

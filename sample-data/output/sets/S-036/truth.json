@@ -1,0 +1,46 @@
+{
+  "setId": "S-036",
+  "invoice": {
+    "number": "MVJ-7592",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-25",
+    "poReference": "PO-3110",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 34,
+        "unitPrice": "28.91",
+        "lineTotal": "982.94"
+      }
+    ],
+    "subtotal": "982.94",
+    "tax": "58.98",
+    "freight": "15.00",
+    "total": "1056.92"
+  },
+  "po": {
+    "number": "PO-3110",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 34,
+        "unitPrice": "29.47"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-682",
+    "poNumber": "PO-3110",
+    "date": "2026-10-22",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 34
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "setId": "S-095",
+  "invoice": {
+    "number": "MVJ-9495",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-21",
+    "poReference": "PO-3772",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 72,
+        "unitPrice": "7.30",
+        "lineTotal": "525.60"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 111,
+        "unitPrice": "16.26",
+        "lineTotal": "1804.86"
+      }
+    ],
+    "subtotal": "2330.46",
+    "tax": "139.83",
+    "freight": "15.00",
+    "total": "2485.29"
+  },
+  "po": {
+    "number": "PO-3772",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 72,
+        "unitPrice": "7.30"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 111,
+        "unitPrice": "16.26"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-753",
+    "poNumber": "PO-3772",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 72
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 111
+      }
+    ]
+  }
+}

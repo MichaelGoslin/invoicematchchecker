@@ -1,0 +1,97 @@
+{
+  "setId": "S-035",
+  "invoice": {
+    "number": "HPS-5579",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-29",
+    "poReference": "PO-1257",
+    "lines": [
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 54,
+        "unitPrice": "8.83",
+        "lineTotal": "476.82"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 85,
+        "unitPrice": "25.46",
+        "lineTotal": "2164.10"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 101,
+        "unitPrice": "13.17",
+        "lineTotal": "1330.17"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 58,
+        "unitPrice": "25.32",
+        "lineTotal": "1468.56"
+      }
+    ],
+    "subtotal": "5439.65",
+    "tax": "326.38",
+    "freight": "0.00",
+    "total": "5766.03"
+  },
+  "po": {
+    "number": "PO-1257",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 54,
+        "unitPrice": "8.74"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 85,
+        "unitPrice": "25.46"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 101,
+        "unitPrice": "13.17"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 58,
+        "unitPrice": "25.32"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-487",
+    "poNumber": "PO-1257",
+    "date": "2026-10-27",
+    "lines": [
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 54
+      },
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 85
+      },
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 101
+      },
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 58
+      }
+    ]
+  }
+}

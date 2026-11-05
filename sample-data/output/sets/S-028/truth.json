@@ -1,0 +1,46 @@
+{
+  "setId": "S-028",
+  "invoice": {
+    "number": "MVJ-8790",
+    "vendor": "MAPLE & VINE JANITORIAL",
+    "date": "2026-10-24",
+    "poReference": "PO-1893",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 33,
+        "unitPrice": "18.21",
+        "lineTotal": "600.93"
+      }
+    ],
+    "subtotal": "600.93",
+    "tax": "36.06",
+    "freight": "8.50",
+    "total": "645.49"
+  },
+  "po": {
+    "number": "PO-1893",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 33,
+        "unitPrice": "18.21"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-519",
+    "poNumber": "PO-1893",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 33
+      }
+    ]
+  }
+}

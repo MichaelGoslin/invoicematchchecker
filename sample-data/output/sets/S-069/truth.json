@@ -1,0 +1,97 @@
+{
+  "setId": "S-069",
+  "invoice": {
+    "number": "LLE-8922",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-18",
+    "poReference": "PO 2498",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 43,
+        "unitPrice": "32.37",
+        "lineTotal": "1391.91"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 11,
+        "unitPrice": "5.36",
+        "lineTotal": "58.96"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 99,
+        "unitPrice": "20.47",
+        "lineTotal": "2026.53"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 9,
+        "unitPrice": "4.22",
+        "lineTotal": "37.98"
+      }
+    ],
+    "subtotal": "3515.38",
+    "tax": "210.92",
+    "freight": "8.50",
+    "total": "3734.80"
+  },
+  "po": {
+    "number": "PO-2498",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 43,
+        "unitPrice": "32.37"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 11,
+        "unitPrice": "5.36"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 99,
+        "unitPrice": "20.47"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 9,
+        "unitPrice": "4.22"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-135",
+    "poNumber": "PO-2498",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 43
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 11
+      },
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 99
+      },
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 9
+      }
+    ]
+  }
+}

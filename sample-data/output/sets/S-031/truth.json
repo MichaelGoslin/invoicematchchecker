@@ -1,0 +1,97 @@
+{
+  "setId": "S-031",
+  "invoice": {
+    "number": "MVJ-5293",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-22",
+    "poReference": "PO-6118",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 82,
+        "unitPrice": "17.65",
+        "lineTotal": "1447.30"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 30,
+        "unitPrice": "9.81",
+        "lineTotal": "294.30"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 68,
+        "unitPrice": "30.70",
+        "lineTotal": "2087.60"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 84,
+        "unitPrice": "5.64",
+        "lineTotal": "473.76"
+      }
+    ],
+    "subtotal": "4302.96",
+    "tax": "258.18",
+    "freight": "0.00",
+    "total": "4561.14"
+  },
+  "po": {
+    "number": "PO-6118",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 82,
+        "unitPrice": "17.65"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 30,
+        "unitPrice": "9.81"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 68,
+        "unitPrice": "31.29"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 84,
+        "unitPrice": "5.64"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-221",
+    "poNumber": "PO-6118",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 82
+      },
+      {
+        "sku": "VST-133",
+        "quantityReceived": 30
+      },
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 68
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 84
+      }
+    ]
+  }
+}

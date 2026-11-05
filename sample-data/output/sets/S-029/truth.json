@@ -1,0 +1,97 @@
+{
+  "setId": "S-029",
+  "invoice": {
+    "number": "CFT-8900",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-26",
+    "poReference": "PO-7227",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 34,
+        "unitPrice": "88.91",
+        "lineTotal": "3022.94"
+      },
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 109,
+        "unitPrice": "10.51",
+        "lineTotal": "1145.59"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 43,
+        "unitPrice": "5.45",
+        "lineTotal": "234.35"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 103,
+        "unitPrice": "37.57",
+        "lineTotal": "3869.71"
+      }
+    ],
+    "subtotal": "8272.59",
+    "tax": "496.36",
+    "freight": "15.00",
+    "total": "8783.95"
+  },
+  "po": {
+    "number": "PO-7227",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 34,
+        "unitPrice": "88.91"
+      },
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 109,
+        "unitPrice": "10.51"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 43,
+        "unitPrice": "5.45"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 103,
+        "unitPrice": "37.57"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-452",
+    "poNumber": "PO-7227",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "quantityReceived": 34
+      },
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 109
+      },
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 43
+      },
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 103
+      }
+    ]
+  }
+}
