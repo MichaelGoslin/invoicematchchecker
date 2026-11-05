@@ -6,13 +6,13 @@ import {
   toUnits,
   uncertainReading,
 } from "./shared";
-import type { SourcedValue, TraceEntry } from "./types";
+import type { LineOptions, SourcedValue, TraceEntry } from "./types";
 
 export const QTY_RECEIVED_RULE = "quantity_not_over_received";
 export const QTY_ORDERED_RULE = "quantity_not_over_ordered";
 export const QUANTITY_RULE_VERSION = "1";
 
-export interface QuantityOptions {
+export interface QuantityOptions extends LineOptions {
   /** Allowed overbill as a percent of the limit. Default 0: billing for more than arrived is flagged. */
   tolerancePct?: number;
   minConfidence?: number;
@@ -31,7 +31,7 @@ function checkNotOver(
 ): TraceEntry {
   const tolerancePct = options.tolerancePct ?? 0;
   const minConfidence = options.minConfidence ?? DEFAULT_MIN_CONFIDENCE;
-  const base = { rule, ruleVersion: QUANTITY_RULE_VERSION, expected: limit, actual: invoiced, tolerancePct, minConfidence };
+  const base = { rule, ruleVersion: QUANTITY_RULE_VERSION, scope: "line" as const, lineIndex: options.lineIndex ?? null, expected: limit, actual: invoiced, tolerancePct, minConfidence };
 
   if (!isUsableNumber(limit) || !isUsableNumber(invoiced)) {
     return {

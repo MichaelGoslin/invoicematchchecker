@@ -20,10 +20,22 @@ export interface SourcedValue<T extends number | string = number> {
  */
 export type CheckResult = "pass" | "fail" | "needs_review";
 
+/** Which part of the invoice a check is about, so the UI can group rows without parsing text. */
+export type TraceScope = "header" | "line" | "totals";
+
+/** Options every line-level rule accepts. */
+export interface LineOptions {
+  /** 0-based index of the invoice line. Source strings use 1-based "line N" for people. */
+  lineIndex?: number;
+}
+
 /** One check's full record: values, sources, math, rule and outcome. */
 export interface TraceEntry {
   rule: string;
   ruleVersion: string;
+  scope: TraceScope;
+  /** 0-based invoice line for scope "line"; null for header and totals checks. */
+  lineIndex: number | null;
   /** What the documents say it should be (PO, receiving report, or a calculation). */
   expected: SourcedValue<number | string>;
   /** What the invoice says. */
@@ -34,6 +46,10 @@ export interface TraceEntry {
   tolerancePct: number | null;
   /** Allowed absolute difference in dollars, for totals (rounding). Absent when not used. */
   toleranceAbs?: number;
+  /** Unit price only: price difference × invoiced quantity, in dollars (always positive). Absent when no quantity was given. */
+  extendedDiff?: number;
+  /** Unit price only: the most the extended difference may be, in dollars. */
+  extendedCap?: number;
   /** The confidence floor that was applied to every value read. */
   minConfidence: number;
   result: CheckResult;

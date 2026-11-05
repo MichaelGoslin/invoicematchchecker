@@ -18,3 +18,24 @@ describe("sample sets against their answer key", () => {
     }
   });
 });
+
+describe("sample sets: recommendation and trace location", () => {
+  for (const s of sampleSets) {
+    it(`${s.id}: recommends ${s.answerKey.recommendation}`, () => {
+      expect(s.decision.recommendation).toBe(s.answerKey.recommendation);
+    });
+  }
+
+  it("never recommends approval for a set with a planted fault", () => {
+    for (const s of sampleSets.filter((x) => x.answerKey.fail.length + x.answerKey.needs_review.length > 0)) {
+      expect(s.decision.recommendation).not.toBe("approve");
+    }
+  });
+
+  it("tags every trace with its scope, and line checks with a line index", () => {
+    for (const t of sampleSets.flatMap((s) => s.traces)) {
+      if (t.scope === "line") expect(t.lineIndex).toEqual(expect.any(Number));
+      else expect(t.lineIndex).toBeNull();
+    }
+  });
+});

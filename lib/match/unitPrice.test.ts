@@ -24,7 +24,7 @@ describe("unit price within tolerance", () => {
     const t = checkUnitPrice(cases.overcharge.po, cases.overcharge.invoice);
     expect(t).toMatchObject({
       rule: UNIT_PRICE_RULE,
-      ruleVersion: "1",
+      ruleVersion: "2",
       result: "fail",
       variancePct: 2.82,
       tolerancePct: 2,
@@ -70,5 +70,37 @@ describe("unit price within tolerance", () => {
     const t = checkUnitPrice(cases.overcharge.po, cases.overcharge.invoice, { tolerancePct: 3 });
     expect(t.result).toBe("pass");
     expect(t.tolerancePct).toBe(3);
+  });
+});
+
+describe("unit price extended-cost cap ($50)", () => {
+  // Boundary cases from Joan's review: 500 units at a $50.00 PO price.
+  const po = { value: 50, source: "PO-1090 line 1", confidence: 1 };
+  const price = (value: number) => ({ value, source: "NWF-5512 line 1 price", confidence: 0.98 });
+  const qty = (value: number, confidence = 0.98) => ({ value, source: "NWF-5512 line 1 qty", confidence });
+
+  it("passes $50.10 × 500 units: exactly $50.00 extra, at the cap", () => {
+    const t = checkUnitPrice(po, price(50.1), { quantity: qty(500) });
+    expect(t).toMatchObject({ result: "pass", extendedDiff: 50, extendedCap: 50 });
+    expect(t.reason).toContain("× 500 units = $50.00 over, within the $50.00 cap");
+  });
+
+  it("flags $50.11 × 500 units: $55.00 extra, over the cap though only 0.22% over", () => {
+    const t = checkUnitPrice(po, price(50.11), { quantity: qty(500) });
+    expect(t).toMatchObject({ result: "fail", variancePct: 0.22, extendedDiff: 55 });
+    expect(t.reason).toContain("within the 2% tolerance, but × 500 units = $55.00 over, beyond the $50.00 cap");
+  });
+
+  it("applies the cap to undercharges too", () => {
+    expect(checkUnitPrice(po, price(49.89), { quantity: qty(500) }).result).toBe("fail");
+  });
+
+  it("sends an uncertain quantity read to a person, since it drives the cap", () => {
+    expect(checkUnitPrice(po, price(50.1), { quantity: qty(500, 0.5) }).result).toBe("needs_review");
+  });
+
+  it("records the line it belongs to", () => {
+    const t = checkUnitPrice(po, price(50), { quantity: qty(500), lineIndex: 0 });
+    expect(t).toMatchObject({ scope: "line", lineIndex: 0 });
   });
 });

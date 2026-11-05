@@ -43,6 +43,8 @@ export function checkDuplicate(
   const base = {
     rule: DUPLICATE_RULE,
     ruleVersion: DUPLICATE_RULE_VERSION,
+    scope: "header" as const,
+    lineIndex: null,
     expected,
     variancePct: null,
     tolerancePct: null,
