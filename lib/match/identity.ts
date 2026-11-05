@@ -29,6 +29,8 @@ function checkText(
   const base = {
     rule,
     ruleVersion: IDENTITY_RULE_VERSION,
+    scope: "header" as const,
+    lineIndex: null,
     expected,
     actual,
     variancePct: null,

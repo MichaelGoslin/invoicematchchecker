@@ -1,8 +1,9 @@
 /**
  * Synthetic cases shared by the tests, the demo scripts and the UI. All values
- * are made up. Joan: import `sampleUnitPriceTraces` or `sampleSets` to render
+ * are made up. Joan: import `sampleUnitPriceTraces` or `sampleSets` (traces plus a decision) to render
  * real TraceEntry objects in the review queue.
  */
+import { decideSet, type Recommendation } from "./decision";
 import { checkDuplicate, type PriorInvoice } from "./duplicate";
 import { checkPoNumber, checkVendor } from "./identity";
 import { checkQuantityOrdered, checkQuantityReceived } from "./quantity";
@@ -99,11 +100,12 @@ export function traceSet(set: InvoiceSet, priors: PriorInvoice[] = priorInvoices
     const price = num(l.invoicePrice, `${inv} line ${n} price`, c);
     const total = num(l.lineTotal, `${inv} line ${n} total`, c);
     lineTotals.push(total);
+    const at = { lineIndex: i };
     return [
-      checkQuantityOrdered(num(l.ordered, `${set.poNumber} line ${n}`, 1), qty),
-      checkQuantityReceived(num(l.received, `${set.receivingReport} line ${n}`, 1), qty),
-      checkUnitPrice(num(l.poPrice, `${set.poNumber} line ${n}`, 1), price),
-      checkLineTotal(qty, price, total),
+      checkQuantityOrdered(num(l.ordered, `${set.poNumber} line ${n}`, 1), qty, at),
+      checkQuantityReceived(num(l.received, `${set.receivingReport} line ${n}`, 1), qty, at),
+      checkUnitPrice(num(l.poPrice, `${set.poNumber} line ${n}`, 1), price, { ...at, quantity: qty }),
+      checkLineTotal(qty, price, total, at),
     ];
   });
 
@@ -161,12 +163,35 @@ const duplicateSet: InvoiceSet = {
   total: 38.11,
 };
 
+const bigLineSet: InvoiceSet = {
+  id: "S-17",
+  poNumber: "PO-1090",
+  poVendor: "Northwind Fasteners",
+  invoiceNumber: "NWF-5512",
+  invoiceVendor: "Northwind Fasteners",
+  invoicePoRef: "PO-1090",
+  receivingReport: "RR-571",
+  lines: [
+    // Only 0.22% over, inside 2%, but 500 units × $0.11 = $55.00 extra, over the $50 cap.
+    { ordered: 500, received: 500, poPrice: 50, invoiced: 500, invoicePrice: 50.11, lineTotal: 25055 },
+  ],
+  tax: 2223.63,
+  total: 27278.63,
+};
+
 /**
  * Complete sets for UI and demo work, each with its answer key: the rules
- * expected to flag or need review. Every other check should pass.
+ * expected to flag or need review (every other check should pass), and the
+ * set-level recommendation.
  */
 export const sampleSets = [
-  { set: cleanSet, label: "Clean set (line 2 price is 1.63% over, inside tolerance)", expectFail: [], expectReview: [] },
+  {
+    set: cleanSet,
+    label: "Clean set (line 2 price is 1.63% over, inside tolerance)",
+    expectFail: [],
+    expectReview: [],
+    expectRecommendation: "approve",
+  },
   {
     set: flaggedSet,
     label: "Planted faults: overbilled quantity, 5% price increase, uncertain line 3",
@@ -178,12 +203,30 @@ export const sampleSets = [
       "line_total_equals_qty_times_price",
       "invoice_total_equals_sum",
     ],
+    expectRecommendation: "review",
   },
-  { set: duplicateSet, label: "Planted fault: resubmitted invoice", expectFail: ["not_a_duplicate"], expectReview: [] },
-].map(({ set, label, expectFail, expectReview }) => ({
-  id: set.id,
-  label,
-  invoice: set.invoiceNumber,
-  answerKey: { fail: expectFail, needs_review: expectReview },
-  traces: traceSet(set),
-}));
+  {
+    set: duplicateSet,
+    label: "Planted fault: resubmitted invoice",
+    expectFail: ["not_a_duplicate"],
+    expectReview: [],
+    expectRecommendation: "reject",
+  },
+  {
+    set: bigLineSet,
+    label: "Planted fault: 0.22% price increase on 500 units, over the $50 cap",
+    expectFail: ["unit_price_within_tolerance"],
+    expectReview: [],
+    expectRecommendation: "review",
+  },
+].map(({ set, label, expectFail, expectReview, expectRecommendation }) => {
+  const traces = traceSet(set);
+  return {
+    id: set.id,
+    label,
+    invoice: set.invoiceNumber,
+    answerKey: { fail: expectFail, needs_review: expectReview, recommendation: expectRecommendation as Recommendation },
+    traces,
+    decision: decideSet(set.id, traces),
+  };
+});

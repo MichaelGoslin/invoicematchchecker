@@ -8,13 +8,13 @@ import {
   uncertainReading,
   weakest,
 } from "./shared";
-import type { SourcedValue, TraceEntry } from "./types";
+import type { LineOptions, SourcedValue, TraceEntry, TraceScope } from "./types";
 
 export const LINE_TOTAL_RULE = "line_total_equals_qty_times_price";
 export const INVOICE_TOTAL_RULE = "invoice_total_equals_sum";
 export const TOTALS_RULE_VERSION = "1";
 
-export interface TotalsOptions {
+export interface TotalsOptions extends LineOptions {
   /** Allowed rounding difference in dollars. Default 0.01. */
   toleranceAbs?: number;
   minConfidence?: number;
@@ -23,6 +23,7 @@ export interface TotalsOptions {
 /** Compares a stated total to one the engine calculated, in whole cents. */
 function compareTotal(
   rule: string,
+  scope: TraceScope,
   label: string,
   inputs: SourcedValue[],
   calculated: SourcedValue,
@@ -34,6 +35,8 @@ function compareTotal(
   const base = {
     rule,
     ruleVersion: TOTALS_RULE_VERSION,
+    scope,
+    lineIndex: scope === "line" ? (options.lineIndex ?? null) : null,
     expected: calculated,
     actual: stated,
     tolerancePct: null,
@@ -66,9 +69,11 @@ function compareTotal(
   };
 }
 
-const unusable = (rule: string, label: string, stated: SourcedValue, options: TotalsOptions): TraceEntry => ({
+const unusable = (rule: string, scope: TraceScope, label: string, stated: SourcedValue, options: TotalsOptions): TraceEntry => ({
   rule,
   ruleVersion: TOTALS_RULE_VERSION,
+  scope,
+  lineIndex: scope === "line" ? (options.lineIndex ?? null) : null,
   expected: { value: Number.NaN, source: "could not calculate", confidence: 0 },
   actual: stated,
   variancePct: null,
@@ -87,14 +92,14 @@ export function checkLineTotal(
   options: TotalsOptions = {},
 ): TraceEntry {
   if (![quantity, unitPrice, stated].every(isUsableNumber)) {
-    return unusable(LINE_TOTAL_RULE, "line total", stated, options);
+    return unusable(LINE_TOTAL_RULE, "line", "line total", stated, options);
   }
   const calculated: SourcedValue = {
     value: toCents(quantity.value * unitPrice.value) / 100,
     source: `${quantity.value} × ${formatPrice(unitPrice.value)} from ${quantity.source}`,
     confidence: weakest([quantity, unitPrice]),
   };
-  return compareTotal(LINE_TOTAL_RULE, "line total", [quantity, unitPrice], calculated, stated, options);
+  return compareTotal(LINE_TOTAL_RULE, "line", "line total", [quantity, unitPrice], calculated, stated, options);
 }
 
 /** Line totals plus any charges (tax, shipping) should equal the invoice total. */
@@ -106,7 +111,7 @@ export function checkInvoiceTotal(
 ): TraceEntry {
   const inputs = [...lineTotals, ...charges];
   if (lineTotals.length === 0 || ![...inputs, stated].every(isUsableNumber)) {
-    return unusable(INVOICE_TOTAL_RULE, "invoice total", stated, options);
+    return unusable(INVOICE_TOTAL_RULE, "totals", "invoice total", stated, options);
   }
   const cents = inputs.reduce((sum, v) => sum + toCents(v.value), 0);
   const parts = [`${lineTotals.length} line total${lineTotals.length === 1 ? "" : "s"}`, ...charges.map((c) => c.source)];
@@ -115,5 +120,5 @@ export function checkInvoiceTotal(
     source: `sum of ${parts.join(" + ")}`,
     confidence: weakest(inputs),
   };
-  return compareTotal(INVOICE_TOTAL_RULE, "invoice total", inputs, calculated, stated, options);
+  return compareTotal(INVOICE_TOTAL_RULE, "totals", "invoice total", inputs, calculated, stated, options);
 }
