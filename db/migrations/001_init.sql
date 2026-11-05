@@ -63,3 +63,10 @@ $$;
 
 create trigger audit_log_no_update before update or delete on audit_log
   for each row execute function audit_log_is_append_only();
+
+-- Supabase exposes the public schema through its REST API to anyone holding the
+-- anon key. Row-level security with no policies blocks that; the app connects
+-- as the database owner, which bypasses RLS.
+alter table invoice_sets enable row level security;
+alter table processed_invoices enable row level security;
+alter table audit_log enable row level security;

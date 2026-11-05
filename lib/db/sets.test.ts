@@ -156,3 +156,17 @@ describe("stored JSON", () => {
     expect(types.map((r) => r.k)).toEqual(["object", "object"]);
   });
 });
+
+describe("row-level security", () => {
+  it("is on for every table, so Supabase's public API can't read or write them", async () => {
+    const rows = await db.query<{ relname: string; relrowsecurity: boolean }>(
+      "select relname, relrowsecurity from pg_class where relname in ('invoice_sets','processed_invoices','audit_log','schema_migrations') order by relname",
+    );
+    expect(rows).toEqual([
+      { relname: "audit_log", relrowsecurity: true },
+      { relname: "invoice_sets", relrowsecurity: true },
+      { relname: "processed_invoices", relrowsecurity: true },
+      { relname: "schema_migrations", relrowsecurity: true },
+    ]);
+  });
+});
