@@ -38,3 +38,11 @@ describe("not a duplicate", () => {
     expect(checkDuplicate(vendor, s("", "INV header"), priors).result).toBe("needs_review");
   });
 });
+
+describe("duplicate check without history", () => {
+  it("never passes when the processed-invoice history is unavailable", () => {
+    const t = checkDuplicate(vendor, s("INV-889", "INV-889 header"), null);
+    expect(t.result).toBe("needs_review");
+    expect(t.reason).toContain("history of processed invoices was not available");
+  });
+});

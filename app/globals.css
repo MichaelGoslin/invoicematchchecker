@@ -1,0 +1,70 @@
+/* Placeholder styles for the app shell. Joan owns the real review-queue design. */
+:root {
+  --bg: #ffffff;
+  --surface: #f6f7f9;
+  --text: #16181d;
+  --muted: #5b616e;
+  --border: #dde1e7;
+  --accent: #2f5bd3;
+  --approve: #1f7a4d;
+  --review: #9a6300;
+  --reject: #b3261e;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111317;
+    --surface: #1a1d23;
+    --text: #e8eaef;
+    --muted: #a2a8b5;
+    --border: #2c313a;
+    --accent: #8aa8ff;
+    --approve: #5fcf95;
+    --review: #f0b14a;
+    --reject: #ff8a80;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+main.narrow { max-width: 420px; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 16px; margin: 32px 0 8px; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+.error { color: var(--reject); }
+
+nav { display: flex; gap: 16px; margin-bottom: 24px; font-size: 14px; }
+
+.stack { display: grid; gap: 12px; }
+label { display: grid; gap: 4px; font-size: 14px; font-weight: 500; }
+input[type="password"], input[type="file"] {
+  font: inherit; padding: 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text);
+}
+button {
+  font: inherit; font-weight: 600; padding: 9px 16px; border: 0; border-radius: 6px;
+  background: var(--accent); color: var(--bg); cursor: pointer; justify-self: start;
+}
+button:disabled { opacity: 0.6; cursor: progress; }
+
+.queue { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.row { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.row summary { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: baseline; padding: 12px 14px; cursor: pointer; }
+.row .body { padding: 0 14px 12px; }
+.badge { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+.badge.approve { color: var(--approve); }
+.badge.review { color: var(--review); }
+.badge.reject { color: var(--reject); }
+.check { margin: 8px 0 0; font-size: 14px; }
+.check code { font-size: 12px; color: var(--muted); }
+.notes { font-size: 13px; color: var(--muted); margin: 4px 0 0; padding-left: 18px; }

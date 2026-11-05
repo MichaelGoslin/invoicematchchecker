@@ -35,7 +35,8 @@ export interface MatchSetInput {
   /** Tax, shipping and other charges on the invoice. */
   charges: SourcedValue[];
   invoiceTotal: SourcedValue;
-  priors: PriorInvoice[];
+  /** Null when the history of processed invoices is unavailable; the duplicate check then needs review. */
+  priors: PriorInvoice[] | null;
 }
 
 export function runSetChecks(input: MatchSetInput): TraceEntry[] {

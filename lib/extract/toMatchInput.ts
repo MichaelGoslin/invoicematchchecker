@@ -49,7 +49,7 @@ function expectType(r: ExtractionResult | undefined, type: ExtractedDocument["do
 
 const byLineNumber = (lines: ExtractedLine[]) => new Map(lines.map((l) => [l.line_number, l]));
 
-export function toMatchInput(setId: string, docs: SetDocuments, priors: PriorInvoice[]): MatchSetInput {
+export function toMatchInput(setId: string, docs: SetDocuments, priors: PriorInvoice[] | null): MatchSetInput {
   expectType(docs.purchaseOrder, "purchase_order", "purchase order");
   expectType(docs.receivingReport, "receiving_report", "receiving report");
   expectType(docs.invoice, "invoice", "invoice");
