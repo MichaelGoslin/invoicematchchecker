@@ -1,0 +1,80 @@
+{
+  "setId": "S-091",
+  "invoice": {
+    "number": "QSH-7122",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-30",
+    "poReference": "PO-3491",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 44,
+        "unitPrice": "12.12",
+        "lineTotal": "533.28"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 97,
+        "unitPrice": "28.58",
+        "lineTotal": "2772.26"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 116,
+        "unitPrice": "6.15",
+        "lineTotal": "713.40"
+      }
+    ],
+    "subtotal": "4018.94",
+    "tax": "241.14",
+    "freight": "8.50",
+    "total": "4268.58"
+  },
+  "po": {
+    "number": "PO-3491",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 44,
+        "unitPrice": "12.12"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 97,
+        "unitPrice": "28.58"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 116,
+        "unitPrice": "6.15"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-873",
+    "poNumber": "PO-3491",
+    "date": "2026-10-25",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "quantityReceived": 44
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 97
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 116
+      }
+    ]
+  }
+}

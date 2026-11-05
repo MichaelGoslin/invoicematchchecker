@@ -1,0 +1,97 @@
+{
+  "setId": "S-040",
+  "invoice": {
+    "number": "ISS-9724",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-15",
+    "poReference": "PO-1883",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 32,
+        "unitPrice": "34.51",
+        "lineTotal": "1104.32"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 51,
+        "unitPrice": "15.99",
+        "lineTotal": "815.49"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 33,
+        "unitPrice": "76.84",
+        "lineTotal": "2535.72"
+      },
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 98,
+        "unitPrice": "13.02",
+        "lineTotal": "1275.96"
+      }
+    ],
+    "subtotal": "5731.49",
+    "tax": "343.89",
+    "freight": "12.00",
+    "total": "6087.38"
+  },
+  "po": {
+    "number": "PO-1883",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 32,
+        "unitPrice": "34.51"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 51,
+        "unitPrice": "15.99"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 33,
+        "unitPrice": "76.84"
+      },
+      {
+        "sku": "GLV-630",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": 98,
+        "unitPrice": "13.02"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-656",
+    "poNumber": "PO-1883",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 32
+      },
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 51
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 33
+      },
+      {
+        "sku": "GLV-630",
+        "quantityReceived": 98
+      }
+    ]
+  }
+}

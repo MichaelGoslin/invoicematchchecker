@@ -1,0 +1,46 @@
+{
+  "setId": "S-066",
+  "invoice": {
+    "number": "BFI-5926",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-15",
+    "poReference": "PO-9531",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 92,
+        "unitPrice": "7.55",
+        "lineTotal": "694.60"
+      }
+    ],
+    "subtotal": "694.60",
+    "tax": "41.68",
+    "freight": "15.00",
+    "total": "751.28"
+  },
+  "po": {
+    "number": "PO-9531",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 92,
+        "unitPrice": "7.55"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-119",
+    "poNumber": "PO-9531",
+    "date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 92
+      }
+    ]
+  }
+}

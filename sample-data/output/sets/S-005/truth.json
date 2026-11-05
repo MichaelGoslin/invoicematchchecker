@@ -1,0 +1,80 @@
+{
+  "setId": "S-005",
+  "invoice": {
+    "number": "MVJ-5309",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-22",
+    "poReference": "PO-3633",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 42,
+        "unitPrice": "41.58",
+        "lineTotal": "1746.36"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 29,
+        "unitPrice": "21.20",
+        "lineTotal": "614.80"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 50,
+        "unitPrice": "19.37",
+        "lineTotal": "968.50"
+      }
+    ],
+    "subtotal": "3329.66",
+    "tax": "199.78",
+    "freight": "12.00",
+    "total": "3541.44"
+  },
+  "po": {
+    "number": "PO-3633",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 42,
+        "unitPrice": "40.80"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 29,
+        "unitPrice": "21.20"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 50,
+        "unitPrice": "19.37"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-706",
+    "poNumber": "PO-3633",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 42
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 29
+      },
+      {
+        "sku": "DRL-114",
+        "quantityReceived": 50
+      }
+    ]
+  }
+}

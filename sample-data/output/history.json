@@ -1,0 +1,52 @@
+[
+  {
+    "vendor": "Harbor Point Supply Co.",
+    "invoiceNumber": "HPS-1527",
+    "ref": "history H-01, approved 2026-10-26"
+  },
+  {
+    "vendor": "Northgate Office Products",
+    "invoiceNumber": "NOP-3791",
+    "ref": "history H-02, approved 2026-10-26"
+  },
+  {
+    "vendor": "Cedar Lane Packaging",
+    "invoiceNumber": "CLP-1618",
+    "ref": "history H-03, approved 2026-10-27"
+  },
+  {
+    "vendor": "Brightfield Industrial",
+    "invoiceNumber": "BFI-3476",
+    "ref": "history H-04, approved 2026-10-04"
+  },
+  {
+    "vendor": "Maple & Vine Janitorial",
+    "invoiceNumber": "MVJ-2680",
+    "ref": "history H-05, approved 2026-10-20"
+  },
+  {
+    "vendor": "Quarry Street Hardware",
+    "invoiceNumber": "QSH-3593",
+    "ref": "history H-06, approved 2026-10-06"
+  },
+  {
+    "vendor": "Tidewater Paper Group",
+    "invoiceNumber": "TPG-2735",
+    "ref": "history H-07, approved 2026-10-28"
+  },
+  {
+    "vendor": "Ironwood Safety Supply",
+    "invoiceNumber": "ISS-2216",
+    "ref": "history H-08, approved 2026-10-06"
+  },
+  {
+    "vendor": "Larkspur Lab Equipment",
+    "invoiceNumber": "LLE-4860",
+    "ref": "history H-09, approved 2026-10-22"
+  },
+  {
+    "vendor": "Summit Ridge Electrical",
+    "invoiceNumber": "SRE-4071",
+    "ref": "history H-10, approved 2026-10-24"
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "setId": "S-016",
+  "invoice": {
+    "number": "CLP-7294",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-26",
+    "poReference": "PO-7400",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 6,
+        "unitPrice": "45.32",
+        "lineTotal": "271.92"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 73,
+        "unitPrice": "20.37",
+        "lineTotal": "1487.01"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 95,
+        "unitPrice": "4.77",
+        "lineTotal": "453.15"
+      }
+    ],
+    "subtotal": "2212.08",
+    "tax": "132.72",
+    "freight": "8.50",
+    "total": "2353.30"
+  },
+  "po": {
+    "number": "PO-7400",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 6,
+        "unitPrice": "45.32"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 73,
+        "unitPrice": "20.37"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 95,
+        "unitPrice": "4.77"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-570",
+    "poNumber": "PO-7400",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 6
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 73
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 95
+      }
+    ]
+  }
+}

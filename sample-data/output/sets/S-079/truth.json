@@ -1,0 +1,46 @@
+{
+  "setId": "S-079",
+  "invoice": {
+    "number": "QSH-8447",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-22",
+    "poReference": "PO 8290",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 76,
+        "unitPrice": "24.47",
+        "lineTotal": "1859.72"
+      }
+    ],
+    "subtotal": "1859.72",
+    "tax": "111.58",
+    "freight": "15.00",
+    "total": "1986.30"
+  },
+  "po": {
+    "number": "PO-8290",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 76,
+        "unitPrice": "24.47"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-590",
+    "poNumber": "PO-8290",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 76
+      }
+    ]
+  }
+}

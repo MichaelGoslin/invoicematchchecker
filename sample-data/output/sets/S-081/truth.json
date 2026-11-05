@@ -1,0 +1,97 @@
+{
+  "setId": "S-081",
+  "invoice": {
+    "number": "MVJ-7123",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-29",
+    "poReference": "PO-2269",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 66,
+        "unitPrice": "24.83",
+        "lineTotal": "1638.78"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 43,
+        "unitPrice": "13.67",
+        "lineTotal": "587.81"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 40,
+        "unitPrice": "7.92",
+        "lineTotal": "316.80"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 80,
+        "unitPrice": "84.36",
+        "lineTotal": "6748.80"
+      }
+    ],
+    "subtotal": "9292.19",
+    "tax": "557.53",
+    "freight": "0.00",
+    "total": "9845.37"
+  },
+  "po": {
+    "number": "PO-2269",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 66,
+        "unitPrice": "24.83"
+      },
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 43,
+        "unitPrice": "13.67"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 40,
+        "unitPrice": "7.92"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 80,
+        "unitPrice": "84.36"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-861",
+    "poNumber": "PO-2269",
+    "date": "2026-10-26",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 66
+      },
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 43
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 40
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 80
+      }
+    ]
+  }
+}

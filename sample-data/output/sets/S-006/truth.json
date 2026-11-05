@@ -1,0 +1,97 @@
+{
+  "setId": "S-006",
+  "invoice": {
+    "number": "QSH-9705",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-23",
+    "poReference": "PO-3030",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 11,
+        "unitPrice": "5.54",
+        "lineTotal": "60.94"
+      },
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 56,
+        "unitPrice": "12.74",
+        "lineTotal": "713.44"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 120,
+        "unitPrice": "9.11",
+        "lineTotal": "1093.20"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 38,
+        "unitPrice": "12.93",
+        "lineTotal": "491.34"
+      }
+    ],
+    "subtotal": "2358.92",
+    "tax": "141.54",
+    "freight": "15.00",
+    "total": "2515.46"
+  },
+  "po": {
+    "number": "PO-3030",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 11,
+        "unitPrice": "5.54"
+      },
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 56,
+        "unitPrice": "12.74"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 120,
+        "unitPrice": "8.98"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 38,
+        "unitPrice": "12.93"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-327",
+    "poNumber": "PO-3030",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 11
+      },
+      {
+        "sku": "BKR-252",
+        "quantityReceived": 56
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 120
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 38
+      }
+    ]
+  }
+}

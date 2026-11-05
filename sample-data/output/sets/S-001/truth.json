@@ -1,0 +1,80 @@
+{
+  "setId": "S-001",
+  "invoice": {
+    "number": "HPS-9126",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-29",
+    "poReference": "PO-7267",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 47,
+        "unitPrice": "21.08",
+        "lineTotal": "990.76"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 38,
+        "unitPrice": "10.04",
+        "lineTotal": "381.52"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 60,
+        "unitPrice": "17.98",
+        "lineTotal": "1078.80"
+      }
+    ],
+    "subtotal": "2451.08",
+    "tax": "147.06",
+    "freight": "0.00",
+    "total": "2598.14"
+  },
+  "po": {
+    "number": "PO-7267",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 47,
+        "unitPrice": "21.08"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 38,
+        "unitPrice": "10.04"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 60,
+        "unitPrice": "17.98"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-145",
+    "poNumber": "PO-7267",
+    "date": "2026-10-23",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 47
+      },
+      {
+        "sku": "VST-133",
+        "quantityReceived": 38
+      },
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 56
+      }
+    ]
+  }
+}

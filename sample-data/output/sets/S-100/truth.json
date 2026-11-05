@@ -1,0 +1,63 @@
+{
+  "setId": "S-100",
+  "invoice": {
+    "number": "BFI-3476",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-14",
+    "poReference": "PO-2759",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 105,
+        "unitPrice": "7.07",
+        "lineTotal": "742.35"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 10,
+        "unitPrice": "37.20",
+        "lineTotal": "372.00"
+      }
+    ],
+    "subtotal": "1114.35",
+    "tax": "66.86",
+    "freight": "8.50",
+    "total": "1189.71"
+  },
+  "po": {
+    "number": "PO-2759",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 105,
+        "unitPrice": "7.07"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 10,
+        "unitPrice": "37.20"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-262",
+    "poNumber": "PO-2759",
+    "date": "2026-10-08",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 105
+      },
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 10
+      }
+    ]
+  }
+}

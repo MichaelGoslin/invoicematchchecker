@@ -1,0 +1,63 @@
+{
+  "setId": "S-008",
+  "invoice": {
+    "number": "TPG-8431",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-17",
+    "poReference": "PO-7311",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 96,
+        "unitPrice": "5.35",
+        "lineTotal": "513.60"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 85,
+        "unitPrice": "16.17",
+        "lineTotal": "1374.45"
+      }
+    ],
+    "subtotal": "1888.05",
+    "tax": "113.28",
+    "freight": "0.00",
+    "total": "2001.33"
+  },
+  "po": {
+    "number": "PO-7311",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 96,
+        "unitPrice": "5.35"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 85,
+        "unitPrice": "16.17"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-925",
+    "poNumber": "PO-7311",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 96
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 85
+      }
+    ]
+  }
+}

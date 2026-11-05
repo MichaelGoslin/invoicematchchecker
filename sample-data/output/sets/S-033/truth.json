@@ -1,0 +1,46 @@
+{
+  "setId": "S-033",
+  "invoice": {
+    "number": "QSH-7300",
+    "vendor": "QUARRY STREET HARDWARE",
+    "date": "2026-10-20",
+    "poReference": "PO-4908",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 40,
+        "unitPrice": "37.75",
+        "lineTotal": "1510.00"
+      }
+    ],
+    "subtotal": "1510.00",
+    "tax": "90.60",
+    "freight": "0.00",
+    "total": "1600.60"
+  },
+  "po": {
+    "number": "PO-4908",
+    "vendor": "Quarry Street Hardware",
+    "date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 40,
+        "unitPrice": "37.75"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-131",
+    "poNumber": "PO-4908",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 40
+      }
+    ]
+  }
+}

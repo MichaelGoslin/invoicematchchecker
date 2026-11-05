@@ -1,0 +1,97 @@
+{
+  "setId": "S-063",
+  "invoice": {
+    "number": "HPS-5792",
+    "vendor": "HARBOR POINT SUPPLY CO.",
+    "date": "2026-10-20",
+    "poReference": "PO-5686",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 89,
+        "unitPrice": "5.88",
+        "lineTotal": "523.32"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 41,
+        "unitPrice": "48.59",
+        "lineTotal": "1992.19"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 84,
+        "unitPrice": "35.74",
+        "lineTotal": "3002.16"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 15,
+        "unitPrice": "59.66",
+        "lineTotal": "894.90"
+      }
+    ],
+    "subtotal": "6412.57",
+    "tax": "384.75",
+    "freight": "0.00",
+    "total": "6797.32"
+  },
+  "po": {
+    "number": "PO-5686",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 89,
+        "unitPrice": "5.88"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 41,
+        "unitPrice": "48.59"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 84,
+        "unitPrice": "35.74"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 15,
+        "unitPrice": "59.66"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-863",
+    "poNumber": "PO-5686",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 89
+      },
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 41
+      },
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 84
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 15
+      }
+    ]
+  }
+}

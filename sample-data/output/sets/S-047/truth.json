@@ -1,0 +1,80 @@
+{
+  "setId": "S-047",
+  "invoice": {
+    "number": "NOP 3791",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-17",
+    "poReference": "PO-5000",
+    "lines": [
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 8,
+        "unitPrice": "25.34",
+        "lineTotal": "202.72"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 33,
+        "unitPrice": "9.26",
+        "lineTotal": "305.58"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 116,
+        "unitPrice": "53.78",
+        "lineTotal": "6238.48"
+      }
+    ],
+    "subtotal": "6746.78",
+    "tax": "404.81",
+    "freight": "8.50",
+    "total": "7160.09"
+  },
+  "po": {
+    "number": "PO-5000",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-07",
+    "lines": [
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 8,
+        "unitPrice": "25.34"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 33,
+        "unitPrice": "9.26"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 116,
+        "unitPrice": "53.78"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-774",
+    "poNumber": "PO-5000",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 8
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 33
+      },
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 116
+      }
+    ]
+  }
+}

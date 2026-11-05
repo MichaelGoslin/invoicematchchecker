@@ -1,0 +1,46 @@
+{
+  "setId": "S-054",
+  "invoice": {
+    "number": "MVJ-2680",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-25",
+    "poReference": "PO-6117",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 78,
+        "unitPrice": "24.87",
+        "lineTotal": "1939.86"
+      }
+    ],
+    "subtotal": "1939.86",
+    "tax": "116.39",
+    "freight": "0.00",
+    "total": "2056.25"
+  },
+  "po": {
+    "number": "PO-6117",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-15",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 78,
+        "unitPrice": "24.87"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-255",
+    "poNumber": "PO-6117",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 78
+      }
+    ]
+  }
+}

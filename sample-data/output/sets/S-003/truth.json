@@ -1,0 +1,63 @@
+{
+  "setId": "S-003",
+  "invoice": {
+    "number": "LLE-5427",
+    "vendor": "LARKSPUR LAB EQUIPMENT",
+    "date": "2026-10-17",
+    "poReference": "PO-6921",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 62,
+        "unitPrice": "57.43",
+        "lineTotal": "3560.66"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 30,
+        "unitPrice": "5.45",
+        "lineTotal": "163.50"
+      }
+    ],
+    "subtotal": "3724.16",
+    "tax": "223.45",
+    "freight": "12.00",
+    "total": "3959.61"
+  },
+  "po": {
+    "number": "PO-6921",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-08",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 62,
+        "unitPrice": "57.43"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 30,
+        "unitPrice": "5.45"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-672",
+    "poNumber": "PO-6921",
+    "date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "TON-310",
+        "quantityReceived": 62
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 30
+      }
+    ]
+  }
+}

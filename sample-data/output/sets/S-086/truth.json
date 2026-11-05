@@ -1,0 +1,80 @@
+{
+  "setId": "S-086",
+  "invoice": {
+    "number": "HPS-9748",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-28",
+    "poReference": "PO-8182",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 21,
+        "unitPrice": "3.98",
+        "lineTotal": "83.58"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 13,
+        "unitPrice": "13.67",
+        "lineTotal": "177.71"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 25,
+        "unitPrice": "6.56",
+        "lineTotal": "164.00"
+      }
+    ],
+    "subtotal": "425.29",
+    "tax": "25.52",
+    "freight": "0.00",
+    "total": "450.81"
+  },
+  "po": {
+    "number": "PO-8182",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 21,
+        "unitPrice": "4.04"
+      },
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 13,
+        "unitPrice": "13.67"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 25,
+        "unitPrice": "6.56"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-584",
+    "poNumber": "PO-8182",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 21
+      },
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 13
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 25
+      }
+    ]
+  }
+}

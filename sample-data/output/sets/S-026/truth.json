@@ -1,0 +1,80 @@
+{
+  "setId": "S-026",
+  "invoice": {
+    "number": "SRE-9650",
+    "vendor": "SUMMIT RIDGE ELECTRICAL",
+    "date": "2026-10-22",
+    "poReference": "PO-9714",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 46,
+        "unitPrice": "15.58",
+        "lineTotal": "716.68"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 57,
+        "unitPrice": "7.74",
+        "lineTotal": "441.18"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 18,
+        "unitPrice": "76.33",
+        "lineTotal": "1373.94"
+      }
+    ],
+    "subtotal": "2531.80",
+    "tax": "151.91",
+    "freight": "12.00",
+    "total": "2695.71"
+  },
+  "po": {
+    "number": "PO-9714",
+    "vendor": "Summit Ridge Electrical",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 46,
+        "unitPrice": "15.58"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 57,
+        "unitPrice": "7.74"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 18,
+        "unitPrice": "76.33"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-662",
+    "poNumber": "PO-9714",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 46
+      },
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 57
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 18
+      }
+    ]
+  }
+}

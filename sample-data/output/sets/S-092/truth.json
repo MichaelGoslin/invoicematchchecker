@@ -1,0 +1,97 @@
+{
+  "setId": "S-092",
+  "invoice": {
+    "number": "CLP-9636",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-26",
+    "poReference": "PO-7998",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 90,
+        "unitPrice": "18.48",
+        "lineTotal": "1663.20"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 94,
+        "unitPrice": "42.84",
+        "lineTotal": "4026.96"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 43,
+        "unitPrice": "8.49",
+        "lineTotal": "365.07"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 97,
+        "unitPrice": "38.95",
+        "lineTotal": "3778.15"
+      }
+    ],
+    "subtotal": "9833.38",
+    "tax": "590.00",
+    "freight": "0.00",
+    "total": "10423.38"
+  },
+  "po": {
+    "number": "PO-7998",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 84,
+        "unitPrice": "18.48"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 94,
+        "unitPrice": "42.84"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 43,
+        "unitPrice": "8.49"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 97,
+        "unitPrice": "38.95"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-630",
+    "poNumber": "PO-7998",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 90
+      },
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 94
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 43
+      },
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 97
+      }
+    ]
+  }
+}

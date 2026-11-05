@@ -1,0 +1,63 @@
+{
+  "setId": "S-015",
+  "invoice": {
+    "number": "ISS-5969",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-26",
+    "poReference": "PO-5200",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 10,
+        "unitPrice": "5.28",
+        "lineTotal": "52.80"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 88,
+        "unitPrice": "6.32",
+        "lineTotal": "556.16"
+      }
+    ],
+    "subtotal": "608.96",
+    "tax": "36.54",
+    "freight": "8.50",
+    "total": "654.00"
+  },
+  "po": {
+    "number": "PO-5200",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 10,
+        "unitPrice": "5.28"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 88,
+        "unitPrice": "6.32"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-712",
+    "poNumber": "PO-5200",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 10
+      },
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 88
+      }
+    ]
+  }
+}

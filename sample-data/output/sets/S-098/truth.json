@@ -1,0 +1,75 @@
+{
+  "setId": "S-098",
+  "invoice": {
+    "number": "WFW-7906",
+    "vendor": "Willowbrook Foods Wholesale",
+    "date": "2026-10-30",
+    "poReference": "PO-6049",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 106,
+        "unitPrice": "8.18",
+        "lineTotal": "867.08"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 91,
+        "unitPrice": "7.52",
+        "lineTotal": "684.32"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 69,
+        "unitPrice": "23.07",
+        "lineTotal": "1591.83"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 92,
+        "unitPrice": "6.76",
+        "lineTotal": "621.92"
+      }
+    ],
+    "subtotal": "3765.15",
+    "tax": "225.91",
+    "freight": "12.00",
+    "total": "4003.06"
+  },
+  "po": {
+    "number": "PO-6049",
+    "vendor": "Willowbrook Foods Wholesale",
+    "date": "2026-10-18",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 106,
+        "unitPrice": "8.18"
+      },
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 91,
+        "unitPrice": "7.52"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 69,
+        "unitPrice": "23.07"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 92,
+        "unitPrice": "6.76"
+      }
+    ]
+  },
+  "receiving": null
+}

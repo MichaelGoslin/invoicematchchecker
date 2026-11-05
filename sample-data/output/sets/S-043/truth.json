@@ -1,0 +1,97 @@
+{
+  "setId": "S-043",
+  "invoice": {
+    "number": "TPG-7518",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-15",
+    "poReference": "PO-2585",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 14,
+        "unitPrice": "23.86",
+        "lineTotal": "334.04"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 31,
+        "unitPrice": "36.21",
+        "lineTotal": "1122.51"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 50,
+        "unitPrice": "3.88",
+        "lineTotal": "194.00"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 112,
+        "unitPrice": "15.21",
+        "lineTotal": "1703.52"
+      }
+    ],
+    "subtotal": "3354.07",
+    "tax": "201.24",
+    "freight": "0.00",
+    "total": "3555.31"
+  },
+  "po": {
+    "number": "PO-2585",
+    "vendor": "Tidewater Paper Group",
+    "date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 14,
+        "unitPrice": "24.32"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 31,
+        "unitPrice": "36.21"
+      },
+      {
+        "sku": "CUP-496",
+        "description": "Paper cups 12 oz, sleeve of 50",
+        "quantity": 50,
+        "unitPrice": "3.88"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 112,
+        "unitPrice": "15.21"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-476",
+    "poNumber": "PO-2585",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 14
+      },
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 31
+      },
+      {
+        "sku": "CUP-496",
+        "quantityReceived": 50
+      },
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 112
+      }
+    ]
+  }
+}

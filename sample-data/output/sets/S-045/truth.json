@@ -1,0 +1,67 @@
+{
+  "setId": "S-045",
+  "invoice": {
+    "number": "CFT-9777",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-16",
+    "poReference": "",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 106,
+        "unitPrice": "7.65",
+        "lineTotal": "810.90"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 90,
+        "unitPrice": "4.33",
+        "lineTotal": "389.70"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 50,
+        "unitPrice": "25.98",
+        "lineTotal": "1299.00"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 62,
+        "unitPrice": "74.20",
+        "lineTotal": "4600.40"
+      }
+    ],
+    "subtotal": "7100.00",
+    "tax": "426.00",
+    "freight": "0.00",
+    "total": "7526.00"
+  },
+  "po": null,
+  "receiving": {
+    "number": "RR-237",
+    "poNumber": "PO-7974",
+    "date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 106
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 90
+      },
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 50
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 62
+      }
+    ]
+  }
+}

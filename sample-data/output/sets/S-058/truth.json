@@ -1,0 +1,63 @@
+{
+  "setId": "S-058",
+  "invoice": {
+    "number": "CLP-7383",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-20",
+    "poReference": "PO-2730",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 42,
+        "unitPrice": "30.64",
+        "lineTotal": "1286.88"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 10,
+        "unitPrice": "6.83",
+        "lineTotal": "68.30"
+      }
+    ],
+    "subtotal": "1355.18",
+    "tax": "81.31",
+    "freight": "12.00",
+    "total": "1448.49"
+  },
+  "po": {
+    "number": "PO-2730",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 42,
+        "unitPrice": "30.64"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 10,
+        "unitPrice": "6.83"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-189",
+    "poNumber": "PO-2730",
+    "date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 42
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 10
+      }
+    ]
+  }
+}
