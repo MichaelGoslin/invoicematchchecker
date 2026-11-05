@@ -90,7 +90,7 @@ export function decideSet(setId: string, traces: TraceEntry[]): SetDecision {
       "review",
       "gated",
       [...uncertain, ...rejects, ...exceptions],
-      `Needs review: ${plural(uncertain.length, "check")} rely on uncertain readings${extra ? `, and ${plural(extra, "other check")} failed` : ""}.`,
+      `Needs review: ${plural(uncertain.length, "check")} rely on uncertain or unreadable values${extra ? `, and ${plural(extra, "other check")} failed` : ""}.`,
     );
   }
   if (rejects.length > 0) {

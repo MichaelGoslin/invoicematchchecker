@@ -4,6 +4,7 @@ import {
   formatPrice,
   isUsableNumber,
   pctOf,
+  shown,
   toUnits,
   uncertainReading,
 } from "./shared";
@@ -62,7 +63,7 @@ export function checkUnitPrice(
       ...base,
       variancePct: null,
       result: "needs_review",
-      reason: `Unit price could not be compared (PO ${expected.value}, invoice ${actual.value}${quantity ? `, quantity ${quantity.value}` : ""}). A person needs to check the documents.`,
+      reason: `Unit price could not be compared (PO ${shown(expected.value)}, invoice ${shown(actual.value)}${quantity ? `, quantity ${shown(quantity.value)}` : ""}). A person needs to check the documents.`,
     };
   }
 

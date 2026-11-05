@@ -60,3 +60,6 @@ export const normalizePoNumber = (s: string) =>
 
 /** "INV-0889" and "inv 0889" match; "INV-889" does not, since leading zeros can be meaningful. */
 export const normalizeInvoiceNumber = (s: string) => s.toUpperCase().replace(/[^A-Z0-9]+/g, "");
+
+/** A number for a reason string: the value, or "unreadable" when it can't be used. */
+export const shown = (n: number) => (Number.isFinite(n) && n >= 0 ? String(n) : "unreadable");

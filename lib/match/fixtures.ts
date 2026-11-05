@@ -4,10 +4,8 @@
  * real TraceEntry objects in the review queue.
  */
 import { decideSet, type Recommendation } from "./decision";
-import { checkDuplicate, type PriorInvoice } from "./duplicate";
-import { checkPoNumber, checkVendor } from "./identity";
-import { checkQuantityOrdered, checkQuantityReceived } from "./quantity";
-import { checkInvoiceTotal, checkLineTotal } from "./totals";
+import type { PriorInvoice } from "./duplicate";
+import { runSetChecks } from "./runSet";
 import type { SourcedValue, TraceEntry } from "./types";
 import { checkUnitPrice } from "./unitPrice";
 
@@ -86,31 +84,29 @@ export function traceSet(set: InvoiceSet, priors: PriorInvoice[] = priorInvoices
   const text = (value: string, source: string, confidence = 0.98): SourcedValue<string> => ({ value, source, confidence });
   const num = (value: number, source: string, confidence = 0.98): SourcedValue => ({ value, source, confidence });
 
-  const header = [
-    checkVendor(text(set.poVendor, `${set.poNumber} header`, 1), text(set.invoiceVendor, `${inv} header`)),
-    checkPoNumber(text(set.poNumber, `${set.poNumber} header`, 1), text(set.invoicePoRef, `${inv} PO reference`)),
-    checkDuplicate(text(set.invoiceVendor, `${inv} header`), text(inv, `${inv} header`), priors),
-  ];
-
-  const lineTotals: SourcedValue[] = [];
-  const lines = set.lines.flatMap((l, i) => {
-    const n = i + 1;
-    const c = l.conf ?? 0.98;
-    const qty = num(l.invoiced, `${inv} line ${n} qty`, c);
-    const price = num(l.invoicePrice, `${inv} line ${n} price`, c);
-    const total = num(l.lineTotal, `${inv} line ${n} total`, c);
-    lineTotals.push(total);
-    const at = { lineIndex: i };
-    return [
-      checkQuantityOrdered(num(l.ordered, `${set.poNumber} line ${n}`, 1), qty, at),
-      checkQuantityReceived(num(l.received, `${set.receivingReport} line ${n}`, 1), qty, at),
-      checkUnitPrice(num(l.poPrice, `${set.poNumber} line ${n}`, 1), price, { ...at, quantity: qty }),
-      checkLineTotal(qty, price, total, at),
-    ];
+  return runSetChecks({
+    setId: set.id,
+    poVendor: text(set.poVendor, `${set.poNumber} header`, 1),
+    poNumber: text(set.poNumber, `${set.poNumber} header`, 1),
+    invoiceVendor: text(set.invoiceVendor, `${inv} header`),
+    invoiceNumber: text(inv, `${inv} header`),
+    invoicePoRef: text(set.invoicePoRef, `${inv} PO reference`),
+    lines: set.lines.map((l, i) => {
+      const n = i + 1;
+      const c = l.conf ?? 0.98;
+      return {
+        ordered: num(l.ordered, `${set.poNumber} line ${n}`, 1),
+        received: num(l.received, `${set.receivingReport} line ${n}`, 1),
+        poPrice: num(l.poPrice, `${set.poNumber} line ${n}`, 1),
+        invoiced: num(l.invoiced, `${inv} line ${n} qty`, c),
+        invoicePrice: num(l.invoicePrice, `${inv} line ${n} price`, c),
+        lineTotal: num(l.lineTotal, `${inv} line ${n} total`, c),
+      };
+    }),
+    charges: [num(set.tax, `${inv} tax`)],
+    invoiceTotal: num(set.total, `${inv} total`),
+    priors,
   });
-
-  const totals = checkInvoiceTotal(lineTotals, [num(set.tax, `${inv} tax`)], num(set.total, `${inv} total`));
-  return [...header, ...lines, totals];
 }
 
 const cleanSet: InvoiceSet = {

@@ -1,0 +1,14 @@
+PURCHASE ORDER                                   PO-1077
+Buyer: Harbor Street Clinics, Accounts Payable
+Vendor: Brightline Paper
+Date: 2026-10-28
+
+Line  Item     Description                    Qty   Unit Price   Amount
+1     BP-CS10  Copy paper, case of 10 reams    12      18.00     216.00
+2     BP-TN04  Thermal label rolls, 4"          4       9.50      38.00
+3     BP-EN50  Envelopes #10, box of 500        6       3.00      18.00
+
+                                         Subtotal              272.00
+                                         PO Total              272.00
+
+SYNTHETIC SAMPLE. Not a real company or order.
