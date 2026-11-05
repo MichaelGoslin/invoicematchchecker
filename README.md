@@ -61,6 +61,14 @@ Set these in Vercel and in a local `.env.local` file. Never commit them. To star
 | `BLOB_READ_WRITE_TOKEN` | Vercel Blob storage |
 | `APP_PASSCODE` | Shared passcode for the deployed app |
 
+## Running the engine locally
+
+```bash
+npm install
+npm test            # match-rule tests
+npm run demo:price  # prints sample unit-price traces as a reviewer would read them
+```
+
 ## Status
 
-Project setup. The full requirements are in the team PRD.
+Engine: unit-price rule with a decision trace and the confidence fail-safe (tested). The trace shape the UI renders is `TraceEntry` in `lib/match/types.ts`; sample traces are in `lib/match/fixtures.ts`. The full requirements are in the team PRD.
