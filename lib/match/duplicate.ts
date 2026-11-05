@@ -30,7 +30,8 @@ export interface DuplicateOptions {
 export function checkDuplicate(
   vendor: SourcedValue<string>,
   invoiceNumber: SourcedValue<string>,
-  priors: PriorInvoice[],
+  /** Invoices already processed. Null when the history couldn't be loaded: that is never "no duplicates". */
+  priors: PriorInvoice[] | null,
   options: DuplicateOptions = {},
 ): TraceEntry {
   const minConfidence = options.minConfidence ?? DEFAULT_MIN_CONFIDENCE;
@@ -39,6 +40,21 @@ export function checkDuplicate(
     source: invoiceNumber.source,
     confidence: weakest([vendor, invoiceNumber]),
   };
+  if (priors === null) {
+    return {
+      rule: DUPLICATE_RULE,
+      ruleVersion: DUPLICATE_RULE_VERSION,
+      scope: "header",
+      lineIndex: null,
+      expected,
+      actual: { value: "not checked", source: "processed-invoice history unavailable", confidence: 0 },
+      variancePct: null,
+      tolerancePct: null,
+      minConfidence,
+      result: "needs_review",
+      reason: "Duplicates could not be ruled out because the history of processed invoices was not available. A person needs to check.",
+    };
+  }
   const searched = `${priors.length} processed invoice${priors.length === 1 ? "" : "s"}`;
   const base = {
     rule: DUPLICATE_RULE,

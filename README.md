@@ -61,10 +61,11 @@ Set these in Vercel and in a local `.env.local` file. Never commit them. To star
 | `BLOB_READ_WRITE_TOKEN` | Vercel Blob storage |
 | `APP_PASSCODE` | Shared passcode for the deployed app |
 
-## Running the engine locally
+## Running locally
 
 ```bash
 npm install
+npm run dev         # app at http://localhost:3000 (no passcode needed locally unless APP_PASSCODE is set)
 npm test            # match-rule tests, including sample sets checked against their answer key
 npm run demo:rules  # runs every rule over four sample invoice sets, then shows each decision and the queue order
 npm run demo:price  # unit-price cases only
@@ -73,6 +74,8 @@ npm run demo:extract  # live: Claude reads the S-15 sample documents, then the r
 
 ## Status
 
+App (Next.js 16): `/` is the review queue over the sample sets, and `/try` uploads one set (PO, optional receiving report, invoice) to `POST /api/match`, which reads the documents with Claude, runs the rules and returns the traces and decision. `proxy.ts` gates every page and API route behind `APP_PASSCODE`; a production deploy without it returns 503. Results are not saved yet, so the duplicate check returns Needs review until processed-invoice history is in Postgres. Both pages are placeholders for the experience Joan owns.
+
 Extraction: `extractDocument` in `lib/extract` reads a PDF, image or text document with Claude (`claude-opus-5-5`, structured output) into fields that each carry a value, confidence, quoted evidence and page. Code then checks each value against its quoted text and lowers confidence when they disagree; it never raises it. `toMatchInput` maps a PO, an optional receiving report and an invoice into the engine's input, and `runSet` runs every rule and decides. Tests use a fake client and make no API calls.
 
-Engine: all match rules return a decision trace and share the confidence fail-safe (tested): vendor, PO number, duplicate, quantity vs ordered and received, unit price (2% and a $50 extended-cost cap), line total and invoice total. `decideSet` turns a set's traces into Recommend approve / Needs review / Recommend reject, and `compareForQueue` sorts the review queue. Tests run in GitHub Actions on every PR. The UI contract is `TraceEntry` and `SetDecision` in `lib/match`; sample sets with answer keys are in `lib/match/fixtures.ts`. Next: the Next.js upload and review screens. The full requirements are in the team PRD.
+Engine: all match rules return a decision trace and share the confidence fail-safe (tested): vendor, PO number, duplicate, quantity vs ordered and received, unit price (2% and a $50 extended-cost cap), line total and invoice total. `decideSet` turns a set's traces into Recommend approve / Needs review / Recommend reject, and `compareForQueue` sorts the review queue. Tests run in GitHub Actions on every PR. The UI contract is `TraceEntry` and `SetDecision` in `lib/match`; sample sets with answer keys are in `lib/match/fixtures.ts`. Next: saving sets, decisions and overrides to Postgres (the audit log), which also gives the duplicate check its history. The full requirements are in the team PRD.
