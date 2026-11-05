@@ -1,0 +1,80 @@
+{
+  "setId": "S-021",
+  "invoice": {
+    "number": "LLE-7320",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-15",
+    "poReference": "PO-5125",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 109,
+        "unitPrice": "5.43",
+        "lineTotal": "591.87"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 44,
+        "unitPrice": "8.10",
+        "lineTotal": "356.40"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 22,
+        "unitPrice": "14.98",
+        "lineTotal": "329.56"
+      }
+    ],
+    "subtotal": "1277.83",
+    "tax": "76.67",
+    "freight": "0.00",
+    "total": "1354.50"
+  },
+  "po": {
+    "number": "PO-5125",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 109,
+        "unitPrice": "5.43"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 44,
+        "unitPrice": "8.10"
+      },
+      {
+        "sku": "VST-133",
+        "description": "Hi-vis safety vest",
+        "quantity": 22,
+        "unitPrice": "14.98"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-460",
+    "poNumber": "PO-5125",
+    "date": "2026-10-12",
+    "lines": [
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 109
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 44
+      },
+      {
+        "sku": "VST-133",
+        "quantityReceived": 22
+      }
+    ]
+  }
+}

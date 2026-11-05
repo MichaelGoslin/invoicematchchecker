@@ -1,0 +1,46 @@
+{
+  "setId": "S-094",
+  "invoice": {
+    "number": "clp-1618",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-21",
+    "poReference": "PO-4256",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 105,
+        "unitPrice": "22.38",
+        "lineTotal": "2349.90"
+      }
+    ],
+    "subtotal": "2349.90",
+    "tax": "140.99",
+    "freight": "0.00",
+    "total": "2490.89"
+  },
+  "po": {
+    "number": "PO-4256",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 105,
+        "unitPrice": "22.38"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-831",
+    "poNumber": "PO-4256",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 105
+      }
+    ]
+  }
+}

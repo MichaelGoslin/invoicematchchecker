@@ -1,0 +1,80 @@
+{
+  "setId": "S-076",
+  "invoice": {
+    "number": "MVJ-5468",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-17",
+    "poReference": "PO-9783",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 47,
+        "unitPrice": "22.73",
+        "lineTotal": "1068.31"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 117,
+        "unitPrice": "9.04",
+        "lineTotal": "1057.68"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 85,
+        "unitPrice": "12.34",
+        "lineTotal": "1048.90"
+      }
+    ],
+    "subtotal": "3174.89",
+    "tax": "190.49",
+    "freight": "8.50",
+    "total": "3373.88"
+  },
+  "po": {
+    "number": "PO-9783",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 47,
+        "unitPrice": "22.73"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 117,
+        "unitPrice": "9.04"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 85,
+        "unitPrice": "12.34"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-698",
+    "poNumber": "PO-9783",
+    "date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 47
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 117
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 85
+      }
+    ]
+  }
+}

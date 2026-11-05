@@ -1,0 +1,63 @@
+{
+  "setId": "S-067",
+  "invoice": {
+    "number": "BFI-5660",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-26",
+    "poReference": "PO-8585",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 49,
+        "unitPrice": "37.93",
+        "lineTotal": "1858.57"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 50,
+        "unitPrice": "8.57",
+        "lineTotal": "428.50"
+      }
+    ],
+    "subtotal": "2287.07",
+    "tax": "137.22",
+    "freight": "0.00",
+    "total": "2424.29"
+  },
+  "po": {
+    "number": "PO-8585",
+    "vendor": "Brightfield Industrial",
+    "date": "2026-10-17",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 49,
+        "unitPrice": "37.93"
+      },
+      {
+        "sku": "CLN-812",
+        "description": "All-purpose cleaner, 1 gal",
+        "quantity": 50,
+        "unitPrice": "8.53"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-372",
+    "poNumber": "PO-8585",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 49
+      },
+      {
+        "sku": "CLN-812",
+        "quantityReceived": 50
+      }
+    ]
+  }
+}

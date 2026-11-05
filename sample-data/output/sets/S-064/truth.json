@@ -1,0 +1,63 @@
+{
+  "setId": "S-064",
+  "invoice": {
+    "number": "LLE-5321",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-30",
+    "poReference": "PO-4709",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 22,
+        "unitPrice": "38.23",
+        "lineTotal": "841.06"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 35,
+        "unitPrice": "4.65",
+        "lineTotal": "162.75"
+      }
+    ],
+    "subtotal": "1003.81",
+    "tax": "60.23",
+    "freight": "0.00",
+    "total": "1064.04"
+  },
+  "po": {
+    "number": "PO-4079",
+    "vendor": "Larkspur Lab Equipment",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 22,
+        "unitPrice": "38.23"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 35,
+        "unitPrice": "4.65"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-310",
+    "poNumber": "PO-4079",
+    "date": "2026-10-24",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 22
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 35
+      }
+    ]
+  }
+}

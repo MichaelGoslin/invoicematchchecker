@@ -1,0 +1,14 @@
+RECEIVING REPORT                                 RR-560
+Received at: Harbor Street Clinics, Dock B
+Vendor: Brightline Paper
+PO: PO-1077
+Received: 2026-11-03     Checked by: D. Ruiz
+
+Line  Item     Description                    Qty Received
+1     BP-CS10  Copy paper, case of 10 reams        10
+2     BP-TN04  Thermal label rolls, 4"              4
+3     BP-EN50  Envelopes #10, box of 500            6
+
+Note: 2 cases of copy paper back-ordered.
+
+SYNTHETIC SAMPLE. Not a real company or order.

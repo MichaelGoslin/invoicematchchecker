@@ -1,0 +1,80 @@
+{
+  "setId": "S-060",
+  "invoice": {
+    "number": "ISS-6733",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-15",
+    "poReference": "PO-3897",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 36,
+        "unitPrice": "17.59",
+        "lineTotal": "633.24"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 68,
+        "unitPrice": "5.22",
+        "lineTotal": "354.96"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 33,
+        "unitPrice": "14.03",
+        "lineTotal": "462.99"
+      }
+    ],
+    "subtotal": "1451.19",
+    "tax": "87.07",
+    "freight": "0.00",
+    "total": "1538.26"
+  },
+  "po": {
+    "number": "PO-3897",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "description": "Safety helmet, white",
+        "quantity": 36,
+        "unitPrice": "17.59"
+      },
+      {
+        "sku": "MOP-705",
+        "description": "Cotton mop head",
+        "quantity": 68,
+        "unitPrice": "5.22"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 33,
+        "unitPrice": "13.89"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-886",
+    "poNumber": "PO-3897",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "HLM-127",
+        "quantityReceived": 36
+      },
+      {
+        "sku": "MOP-705",
+        "quantityReceived": 68
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 33
+      }
+    ]
+  }
+}

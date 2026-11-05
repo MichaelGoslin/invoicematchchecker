@@ -1,0 +1,80 @@
+{
+  "setId": "S-012",
+  "invoice": {
+    "number": "ISS-7011",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-20",
+    "poReference": "PO-4165",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 98,
+        "unitPrice": "10.94",
+        "lineTotal": "1072.12"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 39,
+        "unitPrice": "38.12",
+        "lineTotal": "1486.68"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 26,
+        "unitPrice": "35.65",
+        "lineTotal": "926.90"
+      }
+    ],
+    "subtotal": "3485.70",
+    "tax": "209.14",
+    "freight": "0.00",
+    "total": "3695.34"
+  },
+  "po": {
+    "number": "PO-4165",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 98,
+        "unitPrice": "10.94"
+      },
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 39,
+        "unitPrice": "38.12"
+      },
+      {
+        "sku": "NAP-488",
+        "description": "Paper napkins, case of 3000",
+        "quantity": 26,
+        "unitPrice": "35.65"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-903",
+    "poNumber": "PO-4165",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "BKR-252",
+        "quantityReceived": 98
+      },
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 39
+      },
+      {
+        "sku": "NAP-488",
+        "quantityReceived": 26
+      }
+    ]
+  }
+}

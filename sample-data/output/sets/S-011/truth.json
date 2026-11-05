@@ -1,0 +1,97 @@
+{
+  "setId": "S-011",
+  "invoice": {
+    "number": "HPS-1527",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-19",
+    "poReference": "PO-9960",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 103,
+        "unitPrice": "38.79",
+        "lineTotal": "3995.37"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 45,
+        "unitPrice": "9.30",
+        "lineTotal": "418.50"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 72,
+        "unitPrice": "85.87",
+        "lineTotal": "6182.64"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 7,
+        "unitPrice": "13.85",
+        "lineTotal": "96.95"
+      }
+    ],
+    "subtotal": "10693.46",
+    "tax": "641.61",
+    "freight": "0.00",
+    "total": "11335.07"
+  },
+  "po": {
+    "number": "PO-9960",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-09",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "description": "Copper wire, 100 ft spool",
+        "quantity": 103,
+        "unitPrice": "38.79"
+      },
+      {
+        "sku": "TPE-520",
+        "description": "Packing tape, 6 rolls",
+        "quantity": 45,
+        "unitPrice": "9.30"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 72,
+        "unitPrice": "85.87"
+      },
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 7,
+        "unitPrice": "13.85"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-286",
+    "poNumber": "PO-9960",
+    "date": "2026-10-13",
+    "lines": [
+      {
+        "sku": "WIR-364",
+        "quantityReceived": 103
+      },
+      {
+        "sku": "TPE-520",
+        "quantityReceived": 45
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 72
+      },
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 7
+      }
+    ]
+  }
+}

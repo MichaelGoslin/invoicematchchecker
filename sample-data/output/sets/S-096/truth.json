@@ -1,0 +1,80 @@
+{
+  "setId": "S-096",
+  "invoice": {
+    "number": "CLP-8790",
+    "vendor": "CEDAR LANE PACKAGING",
+    "date": "2026-10-25",
+    "poReference": "PO-3618",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 105,
+        "unitPrice": "7.35",
+        "lineTotal": "771.75"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 120,
+        "unitPrice": "35.79",
+        "lineTotal": "4294.80"
+      },
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 47,
+        "unitPrice": "7.53",
+        "lineTotal": "353.91"
+      }
+    ],
+    "subtotal": "5420.46",
+    "tax": "325.23",
+    "freight": "0.00",
+    "total": "5745.69"
+  },
+  "po": {
+    "number": "PO-3618",
+    "vendor": "Cedar Lane Packaging",
+    "date": "2026-10-16",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 105,
+        "unitPrice": "7.35"
+      },
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 120,
+        "unitPrice": "35.79"
+      },
+      {
+        "sku": "BKR-252",
+        "description": "Glass beaker, 500 ml",
+        "quantity": 47,
+        "unitPrice": "7.53"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-910",
+    "poNumber": "PO-3618",
+    "date": "2026-10-21",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 105
+      },
+      {
+        "sku": "DRL-114",
+        "quantityReceived": 120
+      },
+      {
+        "sku": "BKR-252",
+        "quantityReceived": 47
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "setId": "S-085",
+  "invoice": {
+    "number": "HPS-8060",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-28",
+    "poReference": "PO-4510",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 500,
+        "unitPrice": "50.10",
+        "lineTotal": "25050.00"
+      }
+    ],
+    "subtotal": "25050.00",
+    "tax": "1503.00",
+    "freight": "8.50",
+    "total": "26561.50"
+  },
+  "po": {
+    "number": "PO-4510",
+    "vendor": "Harbor Point Supply Co.",
+    "date": "2026-10-19",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 500,
+        "unitPrice": "50.00"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-694",
+    "poNumber": "PO-4510",
+    "date": "2026-10-24",
+    "lines": [
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 500
+      }
+    ]
+  }
+}

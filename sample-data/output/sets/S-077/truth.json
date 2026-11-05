@@ -1,0 +1,46 @@
+{
+  "setId": "S-077",
+  "invoice": {
+    "number": "CFT-8113",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-30",
+    "poReference": "PO-6645",
+    "lines": [
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 92,
+        "unitPrice": "25.16",
+        "lineTotal": "2314.72"
+      }
+    ],
+    "subtotal": "2314.72",
+    "tax": "138.88",
+    "freight": "0.00",
+    "total": "2453.60"
+  },
+  "po": {
+    "number": "PO-6645",
+    "vendor": "Copperfield Tools Inc.",
+    "date": "2026-10-20",
+    "lines": [
+      {
+        "sku": "DRL-114",
+        "description": "Cordless drill bit set",
+        "quantity": 92,
+        "unitPrice": "25.16"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-705",
+    "poNumber": "PO-6645",
+    "date": "2026-10-28",
+    "lines": [
+      {
+        "sku": "DRL-114",
+        "quantityReceived": 92
+      }
+    ]
+  }
+}

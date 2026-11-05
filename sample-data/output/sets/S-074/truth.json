@@ -1,0 +1,63 @@
+{
+  "setId": "S-074",
+  "invoice": {
+    "number": "MVJ-9786",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-26",
+    "poReference": "PO-3198",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 83,
+        "unitPrice": "21.33",
+        "lineTotal": "1770.39"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 86,
+        "unitPrice": "84.19",
+        "lineTotal": "7240.34"
+      }
+    ],
+    "subtotal": "9010.73",
+    "tax": "540.64",
+    "freight": "15.00",
+    "total": "9566.37"
+  },
+  "po": {
+    "number": "PO-3198",
+    "vendor": "Maple & Vine Janitorial",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "description": "Pipettes, pack of 200",
+        "quantity": 83,
+        "unitPrice": "21.33"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 86,
+        "unitPrice": "84.19"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-414",
+    "poNumber": "PO-3198",
+    "date": "2026-10-22",
+    "lines": [
+      {
+        "sku": "PIP-245",
+        "quantityReceived": 71
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 86
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "setId": "S-052",
+  "invoice": {
+    "number": "NOP-9599",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-21",
+    "poReference": "PO-7560",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 83,
+        "unitPrice": "10.36",
+        "lineTotal": "859.88"
+      },
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 58,
+        "unitPrice": "2.08",
+        "lineTotal": "120.64"
+      }
+    ],
+    "subtotal": "980.52",
+    "tax": "58.83",
+    "freight": "15.00",
+    "total": "1054.35"
+  },
+  "po": {
+    "number": "PO-7560",
+    "vendor": "Northgate Office Products",
+    "date": "2026-10-11",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "description": "Wood screws, box of 200",
+        "quantity": 83,
+        "unitPrice": "10.36"
+      },
+      {
+        "sku": "BOX-415",
+        "description": "Shipping carton, 12x12x12",
+        "quantity": 58,
+        "unitPrice": "2.08"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-498",
+    "poNumber": "PO-7560",
+    "date": "2026-10-14",
+    "lines": [
+      {
+        "sku": "SCR-502",
+        "quantityReceived": 83
+      },
+      {
+        "sku": "BOX-415",
+        "quantityReceived": 58
+      }
+    ]
+  }
+}

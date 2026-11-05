@@ -1,0 +1,80 @@
+{
+  "setId": "S-068",
+  "invoice": {
+    "number": "ISS-6393",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-16",
+    "poReference": "PO-6120",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 66,
+        "unitPrice": "7.38",
+        "lineTotal": "487.08"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 117,
+        "unitPrice": "18.19",
+        "lineTotal": "2128.23"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 66,
+        "unitPrice": "61.67",
+        "lineTotal": "4070.22"
+      }
+    ],
+    "subtotal": "6685.53",
+    "tax": "401.13",
+    "freight": "15.00",
+    "total": "7101.66"
+  },
+  "po": {
+    "number": "PO-6120",
+    "vendor": "Ironwood Safety Supply",
+    "date": "2026-10-05",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "description": "Ballpoint pens, box of 50",
+        "quantity": 66,
+        "unitPrice": "7.38"
+      },
+      {
+        "sku": "BLB-371",
+        "description": "LED bulb, pack of 12",
+        "quantity": 117,
+        "unitPrice": "17.80"
+      },
+      {
+        "sku": "TON-310",
+        "description": "Toner cartridge, black",
+        "quantity": 66,
+        "unitPrice": "61.67"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-288",
+    "poNumber": "PO-6120",
+    "date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "PEN-220",
+        "quantityReceived": 66
+      },
+      {
+        "sku": "BLB-371",
+        "quantityReceived": 117
+      },
+      {
+        "sku": "TON-310",
+        "quantityReceived": 66
+      }
+    ]
+  }
+}

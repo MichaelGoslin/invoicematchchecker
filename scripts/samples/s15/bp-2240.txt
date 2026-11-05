@@ -1,0 +1,15 @@
+BRIGHTLINE PAPER                                 INVOICE BP-2240
+Bill to: Harbor Street Clinics, Accounts Payable
+Your PO: PO-1077
+Invoice date: 2026-11-04       Terms: Net 30
+
+Line  Item     Description                    Qty   Unit Price   Amount
+1     BP-CS10  Copy paper, case of 10 reams    12      18.00     216.00
+2     BP-TN04  Thermal label rolls, 4"          4       9.98      39.92
+3     BP-EN50  Envelopes #10, box of 500       [scan damaged: digit unreadable, 6 or 8]   3.?0   1?.00
+
+                                         Subtotal              273.92
+                                         Sales tax              24.31
+                                         TOTAL DUE             298.23
+
+SYNTHETIC SAMPLE. Not a real company or order.

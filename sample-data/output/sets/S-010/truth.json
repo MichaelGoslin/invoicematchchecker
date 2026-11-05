@@ -1,0 +1,80 @@
+{
+  "setId": "S-010",
+  "invoice": {
+    "number": "WFW-6178",
+    "vendor": "Willowbrook Foods Wholesale",
+    "date": "2026-10-18",
+    "poReference": "PO-7926",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 92,
+        "unitPrice": "13.47",
+        "lineTotal": "1239.24"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 72,
+        "unitPrice": "9.29",
+        "lineTotal": "668.88"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 106,
+        "unitPrice": "32.43",
+        "lineTotal": "3437.58"
+      }
+    ],
+    "subtotal": "5345.70",
+    "tax": "320.74",
+    "freight": "0.00",
+    "total": "5666.44"
+  },
+  "po": {
+    "number": "PO-7926",
+    "vendor": "Willowbrook Foods Wholesale",
+    "date": "2026-10-06",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "description": "Hex bolts, 1/2 in, box of 100",
+        "quantity": 92,
+        "unitPrice": "13.47"
+      },
+      {
+        "sku": "LBL-518",
+        "description": "Shipping labels, roll of 500",
+        "quantity": 72,
+        "unitPrice": "9.20"
+      },
+      {
+        "sku": "PPR-101",
+        "description": "Copy paper, case of 10 reams",
+        "quantity": 106,
+        "unitPrice": "32.43"
+      }
+    ]
+  },
+  "receiving": {
+    "number": "RR-801",
+    "poNumber": "PO-7926",
+    "date": "2026-10-10",
+    "lines": [
+      {
+        "sku": "BLT-903",
+        "quantityReceived": 92
+      },
+      {
+        "sku": "LBL-518",
+        "quantityReceived": 72
+      },
+      {
+        "sku": "PPR-101",
+        "quantityReceived": 106
+      }
+    ]
+  }
+}
