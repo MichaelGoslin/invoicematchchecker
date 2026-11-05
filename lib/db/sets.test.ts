@@ -11,6 +11,7 @@ import {
   matchAndSave,
   ReasonRequiredError,
   recordDecision,
+  saveExplanation,
   SetAlreadyDecidedError,
   SetNotFoundError,
 } from "./sets";
@@ -168,5 +169,22 @@ describe("row-level security", () => {
       { relname: "processed_invoices", relrowsecurity: true },
       { relname: "schema_migrations", relrowsecurity: true },
     ]);
+  });
+});
+
+describe("explanations", () => {
+  const e = (text: string) => ({ text, source: "claude" as const, model: "claude-opus-5-5", promptVersion: "1", createdAt: "2026-11-05T18:00:00Z" });
+
+  it("stores the first explanation and keeps it, without touching the decision", async () => {
+    await save(db, "S-001");
+    expect(await saveExplanation(db, "S-001", e("first"))).toMatchObject({ text: "first" });
+    expect(await saveExplanation(db, "S-001", e("second"))).toMatchObject({ text: "first" });
+    const { set } = (await getSet(db, "S-001"))!;
+    expect(set.explanation).toMatchObject({ text: "first", source: "claude" });
+    expect(set).toMatchObject({ status: "pending", decision: expect.objectContaining({ recommendation: "review" }) });
+  });
+
+  it("refuses a set that doesn't exist", async () => {
+    await expect(saveExplanation(db, "S-404", e("x"))).rejects.toBeInstanceOf(SetNotFoundError);
   });
 });

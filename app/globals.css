@@ -78,3 +78,5 @@ button:disabled { opacity: 0.6; cursor: progress; }
 button.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
 .bulk { display: grid; gap: 8px; margin: 16px 0; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; }
 .bulk input { font: inherit; padding: 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); max-width: 320px; }
+.explanation { margin-top: 10px; padding: 10px 12px; border-left: 3px solid var(--accent); background: var(--bg); border-radius: 4px; }
+.explanation p { margin: 0 0 4px; }
