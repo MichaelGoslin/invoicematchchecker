@@ -6,7 +6,8 @@ export default function TryPage() {
     <main>
       <nav>
         <Link href="/">Review queue</Link>
-        <strong>Check a set</strong>
+        <Link href="/batch">Upload a batch</Link>
+        <strong>Check one set</strong>
       </nav>
       <h1>Check one invoice set</h1>
       <p className="muted">

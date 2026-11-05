@@ -2,7 +2,7 @@
  * Turns one invoice set's traces into a single recommendation. Code decides;
  * Claude only explains. A person approves every payment.
  */
-import { PO_EXISTS_RULE, RECEIVING_EXISTS_RULE } from "./documents";
+import { CITED_PO_RULE, PO_EXISTS_RULE, RECEIVING_EXISTS_RULE } from "./documents";
 import { DUPLICATE_RULE } from "./duplicate";
 import { PO_NUMBER_RULE, VENDOR_RULE } from "./identity";
 import { INVOICE_TOTAL_RULE } from "./totals";
@@ -45,7 +45,7 @@ export interface SetDecision {
 export const REJECT_RULES: readonly string[] = [DUPLICATE_RULE, VENDOR_RULE, PO_EXISTS_RULE];
 
 /** Failing only these makes a set incomplete rather than an exception: something is missing, not wrong. */
-export const INCOMPLETE_RULES: readonly string[] = [RECEIVING_EXISTS_RULE];
+export const INCOMPLETE_RULES: readonly string[] = [RECEIVING_EXISTS_RULE, CITED_PO_RULE];
 
 /** A set can't be approved unless each of these ran at least once. */
 export const REQUIRED_RULES: readonly string[] = [

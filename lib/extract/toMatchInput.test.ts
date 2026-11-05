@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { runSet } from "../match/runSet";
-import { doc, line, n, result, s15 } from "./testDocs";
+import { doc, line, n, result, s15, t } from "./testDocs";
 import { SetAssemblyError, toMatchInput } from "./toMatchInput";
 
 const rulesWith = (traces: { rule: string; result: string }[], r: string) =>
@@ -55,11 +55,30 @@ describe("extracted documents to a decision", () => {
     expect(traces.some((x) => x.rule === "receiving_exists")).toBe(false);
   });
 
-  it("recommends rejection when no PO was uploaded", () => {
-    const { decision, traces } = runSet(toMatchInput("S-x", { receivingReport: s15.receivingReport, invoice: s15.invoice }, []));
-    expect(decision.recommendation).not.toBe("approve");
-    expect(traces.find((x) => x.rule === "po_exists")).toMatchObject({ result: "fail" });
+  it("marks a set incomplete when the invoice clearly cites a PO that wasn't uploaded", () => {
+    const clean = result(
+      "bp.pdf",
+      doc({ ...s15.invoice.document, lines: [line(1, 10, 18, 180), line(2, 4, 9.5, 38), line(3, 6, 3, 18)], tax: n(20.94), total: n(256.94) }),
+    );
+    const { decision, traces } = runSet(toMatchInput("S-x", { receivingReport: s15.receivingReport, invoice: clean }, []));
+    expect(decision).toMatchObject({ recommendation: "review", reason: "incomplete" });
+    expect(traces.find((x) => x.rule === "cited_po_on_file")).toMatchObject({ result: "fail" });
+    expect(traces.find((x) => x.rule === "cited_po_on_file")!.reason).toContain("The invoice cites PO-1077");
     expect(traces.some((x) => x.rule === "unit_price_within_tolerance")).toBe(false);
+  });
+
+  it("recommends rejection when the invoice cites no PO and none was uploaded", () => {
+    const noRef = result("bp.pdf", doc({ ...s15.invoice.document, po_reference: t(null) }));
+    const { decision, traces } = runSet(toMatchInput("S-x", { receivingReport: s15.receivingReport, invoice: noRef }, []));
+    expect(traces.find((x) => x.rule === "po_exists")).toMatchObject({ result: "fail" });
+    expect(decision.recommendation).not.toBe("approve");
+  });
+
+  it("gates the set when the PO reference was read uncertainly and no PO matched", () => {
+    const shaky = result("bp.pdf", doc({ ...s15.invoice.document, po_reference: t("PO-1O77", 0.55) }));
+    const { decision, traces } = runSet(toMatchInput("S-x", { receivingReport: s15.receivingReport, invoice: shaky }, []));
+    expect(traces.find((x) => x.rule === "po_exists")).toMatchObject({ result: "needs_review" });
+    expect(decision.reason).toBe("gated");
   });
 
   it("sends an invoice line with no matching PO line to a person", () => {

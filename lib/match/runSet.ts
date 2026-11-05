@@ -4,7 +4,7 @@
  * the same for fixtures, extracted documents or hand-entered data.
  */
 import { decideSet, type SetDecision } from "./decision";
-import { checkPoExists, checkReceivingExists } from "./documents";
+import { checkPoOnFile, checkReceivingExists } from "./documents";
 import { checkDuplicate, type PriorInvoice } from "./duplicate";
 import { checkPoNumber, checkVendor } from "./identity";
 import { checkQuantityOrdered, checkQuantityReceived } from "./quantity";
@@ -56,7 +56,7 @@ export function runSetChecks(input: MatchSetInput): TraceEntry[] {
   const threeWay = (input.matchType ?? "3-way") === "3-way";
 
   const header = [
-    checkPoExists(po ? po.number.value || "(number unreadable)" : null),
+    checkPoOnFile(po ? po.number.value || "(number unreadable)" : null, input.invoicePoRef),
     ...(po ? [checkVendor(po.vendor, input.invoiceVendor), checkPoNumber(po.number, input.invoicePoRef)] : []),
     checkDuplicate(input.invoiceVendor, input.invoiceNumber, input.priors),
     ...(threeWay ? [checkReceivingExists(rr ? rr.number.value || "(number unreadable)" : null)] : []),

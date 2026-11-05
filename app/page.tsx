@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { countReadyToExport, listCleanPending } from "@/lib/db/approvals";
 import { getDb } from "@/lib/db/client";
 import { listQueue, type StoredSet } from "@/lib/db/sets";
 import { compareForQueue } from "@/lib/match/decision";
 import { sampleSets } from "@/lib/match/fixtures";
+import { BulkActions } from "./components/BulkActions";
 import { DecisionActions } from "./components/DecisionActions";
 import { DecisionRow } from "./components/DecisionRow";
 
@@ -12,13 +14,14 @@ export const dynamic = "force-dynamic";
 const statusText = (s: StoredSet) =>
   s.status === "pending"
     ? undefined
-    : `${s.status === "approved" ? "Approved" : "Rejected"} by ${s.decidedBy}${s.overridden ? " (override)" : ""}`;
+    : `${s.status === "approved" ? "Approved" : "Rejected"} by ${s.decidedBy}${s.overridden ? " (override)" : ""}${s.exportedAt ? " · exported" : ""}`;
 
 function Nav() {
   return (
     <nav>
       <strong>Invoice Match Checker</strong>
-      <Link href="/try">Check a set</Link>
+      <Link href="/batch">Upload a batch</Link>
+      <Link href="/try">Check one set</Link>
     </nav>
   );
 }
@@ -42,7 +45,7 @@ export default async function QueuePage() {
     );
   }
 
-  const sets = await listQueue(db);
+  const [sets, clean, exportCount] = await Promise.all([listQueue(db), listCleanPending(db), countReadyToExport(db)]);
   const pending = sets.filter((s) => s.status === "pending");
   const decided = sets.filter((s) => s.status !== "pending");
   const row = (s: StoredSet) => (
@@ -69,7 +72,8 @@ export default async function QueuePage() {
         {pending.length} waiting · rejects first, then sets with uncertain readings, then other exceptions, then clean sets.
         The tool recommends; a person approves every payment.
       </p>
-      {sets.length === 0 ? <p>No sets yet. <Link href="/try">Check a set</Link> to add one.</p> : null}
+      {sets.length === 0 ? <p>No sets yet. <Link href="/batch">Upload a batch</Link> to add some.</p> : null}
+      {sets.length > 0 ? <BulkActions cleanCount={clean.length} exportCount={exportCount} /> : null}
       <ul className="queue">{pending.map(row)}</ul>
       {decided.length > 0 ? (
         <>

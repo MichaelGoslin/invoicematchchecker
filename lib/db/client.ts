@@ -24,7 +24,9 @@ export function getDb(env: Record<string, string | undefined> = process.env): Db
   if (!env.POSTGRES_URL) return null;
   if (!globalForDb.__imcDb) {
     // Supabase's pooler (port 6543) runs in transaction mode, which can't hold prepared statements.
-    const sql = postgres(env.POSTGRES_URL, { prepare: false, max: 5, idle_timeout: 20, onnotice: () => {} });
+    // POSTGRES_POOL_MAX: optional; 1 suits single-session test servers such as PGlite.
+    const max = Number(env.POSTGRES_POOL_MAX) || 5;
+    const sql = postgres(env.POSTGRES_URL, { prepare: false, max, idle_timeout: 20, onnotice: () => {} });
     globalForDb.__imcDb = wrap(sql);
   }
   return globalForDb.__imcDb;

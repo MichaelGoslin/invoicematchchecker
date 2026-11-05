@@ -27,6 +27,10 @@ export interface StoredSet {
   decidedBy: string | null;
   overridden: boolean;
   overrideReason: string | null;
+  invoiceDate: string | null;
+  poNumber: string | null;
+  batchId: string | null;
+  exportedAt: Date | null;
 }
 
 export interface AuditEntry {
@@ -61,6 +65,12 @@ export interface SaveSetInput {
   invoiceNumber: string | null;
   invoiceTotal: number | null;
   documents: unknown;
+  /** For export: the invoice date and PO number as read. */
+  invoiceDate?: string | null;
+  poNumber?: string | null;
+  /** When the set came from a batch upload: the batch and the stored documents it was built from. */
+  batchId?: string;
+  documentIds?: string[];
 }
 
 /**
@@ -81,8 +91,8 @@ export async function matchAndSave(db: Db, input: SaveSetInput): Promise<{ decis
 
     await tx.query(
       `insert into invoice_sets (id, match_type, invoice_vendor, invoice_number, invoice_total, recommendation,
-         decision_reason, decision_version, decision, traces, documents)
-       values ($1, $2, $3, $4, $5, $6, $7, $8, $9::jsonb, $10::jsonb, $11::jsonb)`,
+         decision_reason, decision_version, decision, traces, documents, invoice_date, po_number, batch_id)
+       values ($1, $2, $3, $4, $5, $6, $7, $8, $9::jsonb, $10::jsonb, $11::jsonb, $12, $13, $14)`,
       [
         matchInput.setId,
         matchInput.matchType ?? "3-way",
@@ -95,8 +105,14 @@ export async function matchAndSave(db: Db, input: SaveSetInput): Promise<{ decis
         decision,
         traces,
         input.documents ?? null,
+        input.invoiceDate ?? null,
+        input.poNumber ?? null,
+        input.batchId ?? null,
       ],
     );
+    for (const documentId of input.documentIds ?? []) {
+      await tx.query("insert into set_documents (set_id, document_id) values ($1, $2)", [matchInput.setId, documentId]);
+    }
     if (vendorKey && numberKey) {
       await tx.query(
         `insert into processed_invoices (set_id, vendor, invoice_number, vendor_key, invoice_number_key, status)
@@ -132,6 +148,10 @@ interface SetRow {
   decided_by: string | null;
   overridden: boolean;
   override_reason: string | null;
+  invoice_date: string | null;
+  po_number: string | null;
+  batch_id: string | null;
+  exported_at: Date | null;
 }
 
 const json = <T>(v: T | string): T => (typeof v === "string" ? (JSON.parse(v) as T) : v);
@@ -151,6 +171,10 @@ const toStored = (r: SetRow): StoredSet => ({
   decidedBy: r.decided_by,
   overridden: r.overridden,
   overrideReason: r.override_reason,
+  invoiceDate: r.invoice_date ?? null,
+  poNumber: r.po_number ?? null,
+  batchId: r.batch_id ?? null,
+  exportedAt: r.exported_at ? new Date(r.exported_at) : null,
 });
 
 /** Pending sets in queue order (rejects, gated, exceptions, incomplete, clean), then decided sets, newest first. */
@@ -180,7 +204,7 @@ export const isOverride = (action: HumanAction, recommendation: Recommendation) 
 
 export async function recordDecision(
   db: Db,
-  args: { setId: string; action: HumanAction; actor: string; reason?: string | null },
+  args: { setId: string; action: HumanAction; actor: string; reason?: string | null; bulk?: boolean },
 ): Promise<StoredSet> {
   const actor = args.actor.trim();
   const reason = args.reason?.trim() || null;
@@ -210,7 +234,7 @@ export async function recordDecision(
       args.setId,
       actor,
       status,
-      { recommendation, overridden, reason },
+      { recommendation, overridden, reason, ...(args.bulk ? { bulk: true } : {}) },
     ]);
     return toStored(updated!);
   });
