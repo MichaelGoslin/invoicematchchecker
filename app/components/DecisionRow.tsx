@@ -1,9 +1,10 @@
 import type { SetDecision } from "@/lib/match/decision";
 import type { TraceEntry } from "@/lib/match/types";
+import { TraceTable } from "./TraceTable";
 
 const LABEL = { approve: "Recommend approve", review: "Needs review", reject: "Recommend reject" } as const;
 
-/** One queue row: the recommendation, its summary, and the checks that drove it. Placeholder for Joan's design. */
+/** One queue row: the recommendation and summary up front, the side-by-side checks when opened. */
 export function DecisionRow({
   decision,
   traces,
@@ -19,7 +20,6 @@ export function DecisionRow({
   /** Actions or extra detail, shown below the checks. */
   children?: React.ReactNode;
 }) {
-  const shown = traces.filter((t) => t.result !== "pass");
   return (
     <li>
       <details className="row">
@@ -34,15 +34,7 @@ export function DecisionRow({
           <p className="muted">
             {decision.counts.pass} passed · {decision.counts.fail} flagged · {decision.counts.needs_review} need review
           </p>
-          {shown.map((t, i) => (
-            <p className="check" key={i}>
-              <span className={`badge ${t.result === "fail" ? "reject" : "review"}`}>
-                {t.result === "fail" ? "Flagged" : "Needs review"}
-              </span>{" "}
-              {t.scope === "line" ? `Line ${t.lineIndex! + 1}: ` : ""}
-              {t.reason} <code>{t.rule}</code>
-            </p>
-          ))}
+          <TraceTable traces={traces} />
           {children}
         </div>
       </details>
