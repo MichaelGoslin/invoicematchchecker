@@ -75,6 +75,7 @@ npm run demo:rules  # runs every rule over four sample invoice sets, then shows 
 npm run demo:price  # unit-price cases only
 npm run db:migrate    # apply db/migrations to the database in POSTGRES_URL
 npm run score:truth   # rules engine vs the sample-data answer key (printed values, no API calls)
+npm run score:extraction -- --fake   # free dry run of the end-to-end score; add --yes instead of --fake for the real run (about $11)
 npm run demo:extract  # live: Claude reads the S-15 sample documents, then the rules decide (needs ANTHROPIC_API_KEY, a few cents per run)
 ```
 
