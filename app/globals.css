@@ -94,6 +94,8 @@ table.trace th { text-align: left; font-weight: 600; color: var(--muted); paddin
 table.trace td { padding: 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
 table.trace td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 table.trace .small { font-size: 12px; white-space: normal; }
+.limit.over { color: var(--reject); }
+.limit.within { color: var(--muted); }
 details.passed { margin-top: 8px; }
 details.passed summary { cursor: pointer; font-size: 13px; color: var(--muted); }
 

@@ -1,0 +1,18 @@
+.tiles { list-style: none; padding: 0; margin: 8px 0 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.tile { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); padding: 8px 14px; display: grid; min-width: 120px; }
+.tile strong { font-size: 22px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.tile span { font-size: 12px; color: var(--muted); }
+.approve strong { color: var(--approve); }
+.review strong { color: var(--review); }
+.reject strong { color: var(--reject); }
+
+.tableWrap { overflow-x: auto; margin: 8px 0 16px; }
+.table { width: 100%; max-width: 560px; border-collapse: collapse; font-size: 14px; }
+.table th { text-align: left; font-weight: 600; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--border); }
+.table td { padding: 8px; border-bottom: 1px solid var(--border); }
+.table td.num { font-variant-numeric: tabular-nums; text-align: right; width: 90px; }
+.table th.num { text-align: right; }
+
+@media (max-width: 600px) {
+  .tile { min-width: 100px; }
+}

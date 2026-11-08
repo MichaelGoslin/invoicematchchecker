@@ -28,3 +28,6 @@ __pycache__/
 *.log
 .DS_Store
 Thumbs.db
+
+# Extraction evaluation runs (readings and reports, can be large)
+eval-results/

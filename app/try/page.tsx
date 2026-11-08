@@ -1,14 +1,10 @@
-import Link from "next/link";
+import { Nav } from "../components/Nav";
 import { TryForm } from "./TryForm";
 
 export default function TryPage() {
   return (
     <main>
-      <nav>
-        <Link href="/">Review queue</Link>
-        <Link href="/batch">Upload a batch</Link>
-        <strong>Check one set</strong>
-      </nav>
+      <Nav current="/try" />
       <h1>Check one invoice set</h1>
       <p className="muted">
         Upload a purchase order, an optional receiving report and an invoice. Claude reads them; fixed rules decide.
