@@ -1,14 +1,10 @@
-import Link from "next/link";
+import { Nav } from "../components/Nav";
 import { BatchUpload } from "./BatchUpload";
 
 export default function BatchPage() {
   return (
     <main>
-      <nav>
-        <Link href="/">Review queue</Link>
-        <strong>Upload a batch</strong>
-        <Link href="/try">Check one set</Link>
-      </nav>
+      <Nav current="/batch" />
       <h1>Upload the morning batch</h1>
       <p className="muted">
         Drop in every PO, receiving report and invoice at once. Claude reads each file, the app joins each invoice to its

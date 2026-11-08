@@ -1,16 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { reasonLabel, summarize, type SummarySet } from "./summarize";
+import { NO_REASON, NOTE_ONLY, reasonLabel, summarize, type SummarySet } from "./summarize";
 
 const set = (over: Partial<SummarySet> = {}): SummarySet => ({
   status: "pending",
-  decision: { recommendation: "approve" },
+  recommendation: "approve",
   decidedBy: null,
   overridden: false,
   overrideReason: null,
-  exportedAt: null,
+  exported: false,
   invoiceTotal: 100,
+  cameIn: true,
+  decidedToday: false,
+  exportedToday: false,
   ...over,
 });
+const decided = (over: Partial<SummarySet>) => set({ status: "approved", decidedBy: "Joan", decidedToday: true, ...over });
 
 describe("summarize", () => {
   it("handles an empty day", () => {
@@ -21,13 +25,13 @@ describe("summarize", () => {
     expect(s.byPerson).toEqual([]);
   });
 
-  it("counts recommendations, statuses and exports", () => {
+  it("counts what came in, what was decided and what is still open", () => {
     const s = summarize([
       set(),
-      set({ decision: { recommendation: "review" } }),
-      set({ decision: { recommendation: "reject" }, status: "rejected", decidedBy: "Joan" }),
-      set({ status: "approved", decidedBy: "Joan", exportedAt: new Date() }),
-      set({ status: "approved", decidedBy: "Michael" }),
+      set({ recommendation: "review" }),
+      decided({ recommendation: "reject", status: "rejected" }),
+      decided({ exported: true, exportedToday: true }),
+      decided({ decidedBy: "Michael" }),
     ]);
     expect(s.total).toBe(5);
     expect(s.recommended).toEqual({ approve: 3, review: 1, reject: 1 });
@@ -36,27 +40,46 @@ describe("summarize", () => {
     expect(s.overrideRate).toBe(0);
   });
 
-  it("separates decisions that followed the engine from overrides, and ranks the reasons", () => {
+  it("keeps earlier days out of today's numbers but counts their open work", () => {
     const s = summarize([
-      set({ status: "approved", decidedBy: "Joan" }),
-      set({ status: "approved", decidedBy: "Joan", decision: { recommendation: "review" }, overridden: true, overrideReason: "Price change agreed with the buyer: emailed 11/3" }),
-      set({ status: "approved", decidedBy: "Joan", decision: { recommendation: "review" }, overridden: true, overrideReason: "Price change agreed with the buyer" }),
-      set({ status: "rejected", decidedBy: "Michael", overridden: true, overrideReason: "checked by phone" }),
+      // Came in and was approved yesterday, exported today.
+      set({ status: "approved", cameIn: false, exported: true, exportedToday: true, invoiceTotal: 999 }),
+      // Came in yesterday, decided today.
+      decided({ cameIn: false, invoiceTotal: 50 }),
+      // Came in yesterday, still waiting.
+      set({ cameIn: false, invoiceTotal: 20 }),
+      // Approved yesterday, not yet exported.
+      set({ status: "approved", cameIn: false, decidedBy: "Joan", invoiceTotal: 999 }),
+    ]);
+    expect(s.total).toBe(0);
+    expect([s.approved, s.rejected, s.pending]).toEqual([1, 0, 1]);
+    expect([s.exported, s.readyToExport]).toEqual([1, 2]);
+    expect(s.byPerson).toEqual([{ person: "Joan", approved: 1, rejected: 0 }]);
+    expect(s.dollars).toEqual({ approved: 50, rejected: 0, pending: 20 });
+  });
+
+  it("separates decisions that followed the engine from overrides, and ranks the reasons by code", () => {
+    const s = summarize([
+      decided({}),
+      decided({ recommendation: "review", overridden: true, overrideReason: "Price change agreed with the buyer: emailed 11/3 at 10:30" }),
+      decided({ recommendation: "review", overridden: true, overrideReason: "Price change agreed with the buyer" }),
+      decided({ status: "rejected", decidedBy: "Michael", overridden: true, overrideReason: "checked by phone" }),
+      decided({ status: "rejected", decidedBy: "Michael", overridden: true, overrideReason: "called them: wrong PO" }),
     ]);
     expect(s.followed).toBe(1);
-    expect(s.overridden).toBe(3);
-    expect(s.overrideRate).toBe(0.75);
+    expect(s.overridden).toBe(4);
+    expect(s.overrideRate).toBe(0.8);
     expect(s.overrideReasons).toEqual([
+      { reason: NOTE_ONLY, count: 2 },
       { reason: "Price change agreed with the buyer", count: 2 },
-      { reason: "checked by phone", count: 1 },
     ]);
   });
 
   it("adds dollars in cents so floats cannot drift, and counts unreadable totals separately", () => {
     const s = summarize([
-      set({ status: "approved", invoiceTotal: 0.1 }),
-      set({ status: "approved", invoiceTotal: 0.2 }),
-      set({ status: "rejected", invoiceTotal: 2300 }),
+      decided({ invoiceTotal: 0.1 }),
+      decided({ invoiceTotal: 0.2 }),
+      decided({ status: "rejected", invoiceTotal: 2300 }),
       set({ invoiceTotal: 41.5 }),
       set({ invoiceTotal: null }),
     ]);
@@ -64,12 +87,12 @@ describe("summarize", () => {
     expect(s.totalUnreadable).toBe(1);
   });
 
-  it("counts decisions per person, most active first", () => {
+  it("counts the day's decisions per person, most active first", () => {
     const s = summarize([
-      set({ status: "approved", decidedBy: "Michael" }),
-      set({ status: "approved", decidedBy: "Joan" }),
-      set({ status: "rejected", decidedBy: "Joan" }),
-      set({ status: "approved", decidedBy: null }),
+      decided({ decidedBy: "Michael" }),
+      decided({}),
+      decided({ status: "rejected" }),
+      decided({ decidedBy: null }),
     ]);
     expect(s.byPerson).toEqual([
       { person: "Joan", approved: 1, rejected: 1 },
@@ -80,12 +103,16 @@ describe("summarize", () => {
 });
 
 describe("reasonLabel", () => {
-  it("uses the text before the first colon", () => {
+  it("uses the reason code picked in the queue, whatever the note says", () => {
     expect(reasonLabel("Not a duplicate (checked history): same number, other vendor")).toBe("Not a duplicate (checked history)");
+    expect(reasonLabel("Other (explain in the note): see email")).toBe("Other (explain in the note)");
   });
-  it("handles blanks and very long notes", () => {
-    expect(reasonLabel(null)).toBe("No reason given");
-    expect(reasonLabel("   ")).toBe("No reason given");
-    expect(reasonLabel("x".repeat(200))).toBe("Other");
+  it("groups free-text notes together instead of one row per wording", () => {
+    expect(reasonLabel("checked by phone")).toBe(NOTE_ONLY);
+    expect(reasonLabel("Called at 10:30, fine")).toBe(NOTE_ONLY);
+  });
+  it("handles blanks", () => {
+    expect(reasonLabel(null)).toBe(NO_REASON);
+    expect(reasonLabel("   ")).toBe(NO_REASON);
   });
 });

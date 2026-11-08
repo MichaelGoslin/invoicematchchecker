@@ -1,75 +1,105 @@
 /**
- * The end-of-day numbers for an AP specialist or their manager: what came in,
- * what the engine recommended, what people decided, where they went against the
- * engine and why, and what has been handed on. Pure, so it is easy to test.
+ * The end-of-day numbers for an AP specialist or their manager: what came in
+ * today, what people decided today, where they went against the engine and why,
+ * and what is still waiting. Pure, so it is easy to test; the query decides which
+ * day each set's events fall on (see lib/db/summary.ts).
  */
+import { OVERRIDE_REASONS } from "../queue/overrideReasons";
 
 export interface SummarySet {
   status: "pending" | "approved" | "rejected";
-  decision: { recommendation: "approve" | "review" | "reject" };
+  recommendation: "approve" | "review" | "reject";
   decidedBy: string | null;
   overridden: boolean;
   overrideReason: string | null;
-  exportedAt: Date | null;
+  /** Approved and handed to the ERP export (on any day). */
+  exported: boolean;
   invoiceTotal: number | null;
+  /** The set was checked on the summary day. */
+  cameIn: boolean;
+  /** A person approved or rejected it on the summary day. */
+  decidedToday: boolean;
+  /** It was exported on the summary day. */
+  exportedToday: boolean;
 }
 
 export interface Summary {
+  /** Sets checked on the day, by the engine's recommendation. */
   total: number;
   recommended: { approve: number; review: number; reject: number };
-  pending: number;
+  /** Decisions made on the day. */
   approved: number;
   rejected: number;
-  /** Approved sets already handed to the ERP export. */
+  /** Sets still waiting for a person, whichever day they came in. */
+  pending: number;
+  /** Sets exported on the day. */
   exported: number;
-  /** Approved sets not yet exported. */
+  /** Approved sets not yet exported, whichever day they were approved. */
   readyToExport: number;
-  /** Decisions that followed the engine's recommendation. */
+  /** The day's decisions that followed the engine's recommendation. */
   followed: number;
-  /** Decisions that went against it. */
+  /** The day's decisions that went against it. */
   overridden: number;
-  /** Share of decisions that were overrides, 0 to 1. Null before any decision. */
+  /** Share of the day's decisions that were overrides, 0 to 1. Null before any decision. */
   overrideRate: number | null;
   /** Why people overrode, most common first. */
   overrideReasons: { reason: string; count: number }[];
-  /** Invoice totals in dollars. Sets whose total could not be read are left out and counted in totalUnreadable. */
+  /**
+   * Invoice totals in dollars: approved and rejected on the day, and everything
+   * still waiting. Sets whose total could not be read are left out and counted in totalUnreadable.
+   */
   dollars: { approved: number; rejected: number; pending: number };
   totalUnreadable: number;
-  /** Decisions per person, most active first. */
+  /** The day's decisions per person, most active first. */
   byPerson: { person: string; approved: number; rejected: number }[];
 }
 
-/** The reason code is the text before the first colon; a note-only reason is grouped under its own words. */
+export const NO_REASON = "No reason given";
+export const NOTE_ONLY = "Note only (no reason picked)";
+
+/**
+ * Groups an override by the reason code picked in the queue (stored as "<label>: <note>").
+ * A reason without a known code is grouped as note-only, so free-text wording
+ * doesn't split the table into one row per note.
+ */
 export function reasonLabel(reason: string | null): string {
   const text = (reason ?? "").trim();
-  if (!text) return "No reason given";
-  const head = text.split(":")[0]!.trim();
-  return head.length > 0 && head.length <= 80 ? head : "Other";
+  if (!text) return NO_REASON;
+  const known = OVERRIDE_REASONS.find((r) => text === r.label || text.startsWith(`${r.label}:`));
+  return known ? known.label : NOTE_ONLY;
 }
 
 const cents = (n: number) => Math.round(n * 100);
 
 export function summarize(sets: SummarySet[]): Summary {
   const recommended = { approve: 0, review: 0, reject: 0 };
-  let pending = 0, approved = 0, rejected = 0, exported = 0, readyToExport = 0, overridden = 0, unreadable = 0;
+  let total = 0, pending = 0, approved = 0, rejected = 0, exported = 0, readyToExport = 0, overridden = 0, unreadable = 0;
   const dollarCents = { approved: 0, rejected: 0, pending: 0 };
   const reasons = new Map<string, number>();
   const people = new Map<string, { approved: number; rejected: number }>();
 
   for (const s of sets) {
-    recommended[s.decision.recommendation]++;
-    if (s.invoiceTotal === null || !Number.isFinite(s.invoiceTotal)) unreadable++;
-    else dollarCents[s.status] += cents(s.invoiceTotal);
+    if (s.cameIn) {
+      total++;
+      recommended[s.recommendation]++;
+    }
+    if (s.exportedToday) exported++;
+    if (s.status === "approved" && !s.exported) readyToExport++;
+
+    const inDollars = s.status === "pending" || s.decidedToday;
+    if (inDollars) {
+      if (s.invoiceTotal === null || !Number.isFinite(s.invoiceTotal)) unreadable++;
+      else dollarCents[s.status] += cents(s.invoiceTotal);
+    }
 
     if (s.status === "pending") {
       pending++;
       continue;
     }
-    if (s.status === "approved") {
-      approved++;
-      if (s.exportedAt) exported++;
-      else readyToExport++;
-    } else rejected++;
+    if (!s.decidedToday) continue;
+
+    if (s.status === "approved") approved++;
+    else rejected++;
 
     if (s.overridden) {
       overridden++;
@@ -84,11 +114,11 @@ export function summarize(sets: SummarySet[]): Summary {
 
   const decided = approved + rejected;
   return {
-    total: sets.length,
+    total,
     recommended,
-    pending,
     approved,
     rejected,
+    pending,
     exported,
     readyToExport,
     followed: decided - overridden,
