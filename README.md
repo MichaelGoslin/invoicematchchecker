@@ -60,6 +60,7 @@ Set these in Vercel (for both Production and Preview) and in a local `.env.local
 | `POSTGRES_URL` | Postgres connection string. The Supabase integration sets it on Vercel. Without it, nothing is saved and the duplicate check returns Needs review. |
 | `APP_PASSCODE` | Shared passcode for the deployed app. A production deploy without it returns 503; locally, leaving it empty skips the sign-in page. |
 | `POSTGRES_POOL_MAX` | Optional. Database connections per server instance (default 5). |
+| `SUMMARY_TIME_ZONE` | Optional. IANA time zone that decides which day the daily summary covers (default `America/New_York`). |
 
 `BLOB_READ_WRITE_TOKEN` (Vercel Blob) isn't used yet: only what Claude reads from each file is stored, not the file itself.
 

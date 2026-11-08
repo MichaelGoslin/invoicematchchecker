@@ -224,6 +224,7 @@ export const sampleSets = [
     id: set.id,
     label,
     invoice: set.invoiceNumber,
+    total: set.total,
     answerKey: { fail: expectFail, needs_review: expectReview, recommendation: expectRecommendation as Recommendation },
     traces,
     decision: decideSet(set.id, traces),

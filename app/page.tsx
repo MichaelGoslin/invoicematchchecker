@@ -8,6 +8,7 @@ import { BulkActions } from "./components/BulkActions";
 import { DecisionActions } from "./components/DecisionActions";
 import { ExplainButton } from "./components/ExplainButton";
 import { DecisionRow } from "./components/DecisionRow";
+import { Nav } from "./components/Nav";
 
 // The queue reads live data on every request.
 export const dynamic = "force-dynamic";
@@ -17,15 +18,6 @@ const statusText = (s: StoredSet) =>
     ? undefined
     : `${s.status === "approved" ? "Approved" : "Rejected"} by ${s.decidedBy}${s.overridden ? " (override)" : ""}${s.exportedAt ? " · exported" : ""}`;
 
-function Nav() {
-  return (
-    <nav>
-      <strong>Invoice Match Checker</strong>
-      <Link href="/batch">Upload a batch</Link>
-      <Link href="/try">Check one set</Link>
-    </nav>
-  );
-}
 
 function Summary({ groups, decided }: { groups: { reason: string; title: string; count: number }[]; decided?: number }) {
   return (
@@ -53,7 +45,7 @@ export default async function QueuePage() {
     const groups = groupByReason(sampleSets);
     return (
       <main>
-        <Nav />
+        <Nav current="/" />
         <h1>Review queue</h1>
         <p className="muted">
           No database is configured, so this shows sample data. The tool recommends; a person approves every payment.
@@ -99,7 +91,7 @@ export default async function QueuePage() {
 
   return (
     <main>
-      <Nav />
+      <Nav current="/" />
       <h1>Review queue</h1>
       <p className="muted">
         {pending.length} waiting. Work from the top: rejects, then uncertain readings, then exceptions, then clean sets.
