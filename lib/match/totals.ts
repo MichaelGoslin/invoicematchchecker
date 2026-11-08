@@ -55,13 +55,14 @@ function compareTotal(
 
   const compared = `Stated ${label} ${formatPrice(stated.value)} (${stated.source}) vs calculated ${formatPrice(calculated.value)} (${calculated.source})`;
   if (diffCents === 0) {
-    return { ...base, variancePct: 0, result: "pass", reason: `${compared}: exact match.` };
+    return { ...base, variancePct: 0, exceeded: [], result: "pass", reason: `${compared}: exact match.` };
   }
   const within = Math.abs(diffCents) <= toCents(toleranceAbs);
   const off = formatPrice(Math.abs(diffCents) / 100);
   return {
     ...base,
     variancePct,
+    exceeded: within ? [] : ["abs"],
     result: within ? "pass" : "fail",
     reason: within
       ? `${compared}: ${off} apart, within the ${formatPrice(toleranceAbs)} rounding tolerance.`

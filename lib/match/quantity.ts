@@ -56,12 +56,13 @@ function checkNotOver(
   const against = `${limit.value} ${noun} (${limit.source})`;
 
   if (diffUnits === 0) {
-    return { ...base, variancePct: 0, result: "pass", reason: `${billed} matches the ${against}.` };
+    return { ...base, variancePct: 0, exceeded: [], result: "pass", reason: `${billed} matches the ${against}.` };
   }
   if (diffUnits < 0) {
     return {
       ...base,
       variancePct,
+      exceeded: [],
       result: "pass",
       reason: `${billed} is less than the ${against}: a partial invoice, not an overbill.`,
     };
@@ -70,11 +71,12 @@ function checkNotOver(
   const within = limitUnits > 0 && diffUnits * 100 <= tolerancePct * limitUnits;
   const extra = Math.round(diffUnits) / 10_000;
   if (limitUnits === 0) {
-    return { ...base, variancePct, result: "fail", reason: `${billed}, but 0 ${noun} (${limit.source}).` };
+    return { ...base, variancePct, exceeded: ["pct"], result: "fail", reason: `${billed}, but 0 ${noun} (${limit.source}).` };
   }
   return {
     ...base,
     variancePct,
+    exceeded: within ? [] : ["pct"],
     result: within ? "pass" : "fail",
     reason: within
       ? `${billed} is ${extra} more than the ${against} (${formatPct(variancePct!)}), within the ${tolerancePct}% tolerance.`

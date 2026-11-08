@@ -93,6 +93,7 @@ export function checkUnitPrice(
       ...base,
       ...extended,
       variancePct: 0,
+      exceeded: [],
       result: "pass",
       reason: `Unit price ${formatPrice(actual.value)} matches the PO exactly.`,
     };
@@ -122,6 +123,7 @@ export function checkUnitPrice(
     ...base,
     ...extended,
     variancePct,
+    exceeded: [...(withinPct ? [] : ["pct" as const]), ...(withinCap ? [] : ["cap" as const])],
     result: withinPct && withinCap ? "pass" : "fail",
     reason,
   };

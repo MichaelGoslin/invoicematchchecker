@@ -50,6 +50,13 @@ export interface TraceEntry {
   extendedDiff?: number;
   /** Unit price only: the most the extended difference may be, in dollars. */
   extendedCap?: number;
+  /**
+   * Which limits the trusted values went past, worked out by the rule itself with
+   * exact math: "pct" for tolerancePct, "cap" for extendedCap, "abs" for toleranceAbs.
+   * Set on pass and fail only; absent on needs_review (the values aren't trusted)
+   * and on traces stored before this field existed.
+   */
+  exceeded?: ("pct" | "cap" | "abs")[];
   /** The confidence floor that was applied to every value read. */
   minConfidence: number;
   result: CheckResult;

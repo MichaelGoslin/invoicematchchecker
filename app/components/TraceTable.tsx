@@ -1,5 +1,6 @@
 import type { TraceEntry } from "@/lib/match/types";
-import { checkWhere, describeTolerance, describeVariance, formatValue, resultLabel, ruleName } from "@/lib/queue/traceFormat";
+import { limitStatuses } from "@/lib/queue/limits";
+import { checkWhere, describeVariance, formatValue, resultLabel, ruleName } from "@/lib/queue/traceFormat";
 
 function Table({ traces }: { traces: TraceEntry[] }) {
   return (
@@ -36,7 +37,14 @@ function Table({ traces }: { traces: TraceEntry[] }) {
                 </div>
               </td>
               <td className="num">{describeVariance(t)}</td>
-              <td>{describeTolerance(t)}</td>
+              <td>
+                {limitStatuses(t).map((l) => (
+                  <div key={l.label} className={`limit ${l.status}`}>
+                    {l.label}
+                    {l.status === "over" && l.detail ? <strong> · {l.detail}</strong> : null}
+                  </div>
+                ))}
+              </td>
               <td>
                 <span className={`badge ${t.result === "pass" ? "approve" : t.result === "fail" ? "reject" : "review"}`}>
                   {resultLabel[t.result]}
