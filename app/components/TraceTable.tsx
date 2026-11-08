@@ -41,7 +41,7 @@ function Table({ traces }: { traces: TraceEntry[] }) {
                 {limitStatuses(t).map((l) => (
                   <div key={l.label} className={`limit ${l.status}`}>
                     {l.label}
-                    {l.status === "over" ? <strong> · {l.detail}</strong> : null}
+                    {l.status === "over" && l.detail ? <strong> · {l.detail}</strong> : null}
                   </div>
                 ))}
               </td>
