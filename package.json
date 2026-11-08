@@ -14,7 +14,8 @@
     "build": "next build",
     "start": "next start",
     "score:truth": "tsx scripts/score-truth.ts",
-    "db:migrate": "node --env-file-if-exists=.env.local --env-file-if-exists=.env.development.local --import tsx scripts/migrate.ts"
+    "db:migrate": "node --env-file-if-exists=.env.local --env-file-if-exists=.env.development.local --import tsx scripts/migrate.ts",
+    "score:extraction": "node --env-file-if-exists=.env.local --env-file-if-exists=.env.development.local --import tsx scripts/score-extraction.ts"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.15",

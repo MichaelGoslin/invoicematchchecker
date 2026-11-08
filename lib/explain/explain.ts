@@ -72,8 +72,10 @@ export const numbersIn = (s: string) =>
  */
 export function unsupportedNumbers(text: string, input: ReturnType<typeof explanationInput>): number[] {
   const allowed = numbersIn(JSON.stringify(input));
-  // Small counts ("two findings", "line 3") are fine when they match the number of findings or lines.
-  allowed.push(input.findings.length);
+  // Counts of checks are facts, not calculations: the number of findings, every check
+  // run ("18 checks"), and checks that didn't pass. Any other derived number is still refused.
+  const { pass, fail, needs_review } = input.counts;
+  allowed.push(input.findings.length, pass + fail + needs_review, fail + needs_review);
   return numbersIn(text).filter((n) => !allowed.some((a) => Math.abs(a - n) < 0.005));
 }
 

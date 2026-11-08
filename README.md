@@ -52,14 +52,18 @@ Nobody pushes directly to `main` or `dev`.
 
 ## Environment variables
 
-Set these in Vercel and in a local `.env.local` file. Never commit them. To start, copy `.env.example` to `.env.local` and fill in your own values; git ignores `.env.local`.
+Set these in Vercel (for both Production and Preview) and in a local `.env.local` file. Never commit them. To start, copy `.env.example` to `.env.local` and fill in your own values; git ignores `.env.local`. A changed variable only reaches a deployment after it is redeployed.
 
 | Variable | Purpose |
 | --- | --- |
-| `ANTHROPIC_API_KEY` | Claude API access (server-side only) |
-| `DATABASE_URL` | Postgres connection string |
-| `BLOB_READ_WRITE_TOKEN` | Vercel Blob storage |
-| `APP_PASSCODE` | Shared passcode for the deployed app |
+| `ANTHROPIC_API_KEY` | Claude API access (server-side only). Without it, every document read fails. |
+| `POSTGRES_URL` | Postgres connection string. The Supabase integration sets it on Vercel. Without it, nothing is saved and the duplicate check returns Needs review. |
+| `APP_PASSCODE` | Shared passcode for the deployed app. A production deploy without it returns 503; locally, leaving it empty skips the sign-in page. |
+| `POSTGRES_POOL_MAX` | Optional. Database connections per server instance (default 5). |
+
+`BLOB_READ_WRITE_TOKEN` (Vercel Blob) isn't used yet: only what Claude reads from each file is stored, not the file itself.
+
+Note that `npm run dev` loads `.env.development.local`, so if that file holds the shared `POSTGRES_URL`, local uploads land in the shared queue.
 
 ## Running locally
 
@@ -71,12 +75,13 @@ npm run demo:rules  # runs every rule over four sample invoice sets, then shows 
 npm run demo:price  # unit-price cases only
 npm run db:migrate    # apply db/migrations to the database in POSTGRES_URL
 npm run score:truth   # rules engine vs the sample-data answer key (printed values, no API calls)
+npm run score:extraction -- --fake   # free dry run of the end-to-end score; add --yes instead of --fake for the real run (about $11)
 npm run demo:extract  # live: Claude reads the S-15 sample documents, then the rules decide (needs ANTHROPIC_API_KEY, a few cents per run)
 ```
 
 ## Status
 
-App (Next.js 16): `/` is the review queue over the sample sets, and `/try` uploads one set (PO, optional receiving report, invoice) to `POST /api/match`, which reads the documents with Claude, runs the rules and returns the traces and decision. `proxy.ts` gates every page and API route behind `APP_PASSCODE`; a production deploy without it returns 503. With `POSTGRES_URL` set, every set, its recommendation and the engine snapshot are saved to Postgres, and the queue lets a named reviewer approve or reject each set. Going against the recommendation is an override and needs a written reason. Every recommendation and decision goes into an append-only `audit_log`, and stored invoices feed the duplicate check. Without a database, nothing is saved and the duplicate check returns Needs review. Both pages are placeholders for the experience Joan owns.
+App (Next.js 16): `/` is the review queue (sample sets when no database is set), and `/try` uploads one set (PO, optional receiving report, invoice) to `POST /api/match`, which reads the documents with Claude, runs the rules and returns the traces and decision. `proxy.ts` gates every page and API route behind `APP_PASSCODE`; a production deploy without it returns 503. With `POSTGRES_URL` set, every set, its recommendation and the engine snapshot are saved to Postgres, and the queue lets a named reviewer approve or reject each set. Going against the recommendation is an override and needs a written reason. Every recommendation and decision goes into an append-only `audit_log`, and stored invoices feed the duplicate check. Without a database, nothing is saved and the duplicate check returns Needs review. The queue groups pending sets by why the engine placed them, shows each check side by side, and takes a reason code for overrides. `/try` and `/batch` are still simple placeholder pages.
 
 Batch (stories 1 and 5): `/batch` takes the morning batch of POs, receiving reports and invoices in any order. Each file is read on its own request (four at a time), then `POST /api/batches/:id/match` joins each invoice to the PO and receiving report that share its PO number and runs every set. Documents it can't place, such as unknown types, uncertain or shared PO numbers, or a PO no invoice cites, are set aside with a reason, never guessed. An invoice that clearly cites a PO that isn't on file is incomplete, not rejected; an uncertain PO reference gates the set. On the queue, "Approve all clean" approves only sets the engine recommended with no uncertain reads, and "Export approved" downloads a CSV for the ERP. Each set is exported once and logged, and cells are protected against spreadsheet formula injection.
 
