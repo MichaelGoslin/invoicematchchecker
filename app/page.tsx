@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { countReadyToExport, listCleanPending } from "@/lib/db/approvals";
 import { getDb } from "@/lib/db/client";
-import { listQueue, type StoredSet } from "@/lib/db/sets";
+import { listQueue, listSetDocuments, type StoredSet } from "@/lib/db/sets";
 import { sampleSets } from "@/lib/match/fixtures";
+import { documentLinks, type SetDocument } from "@/lib/queue/documentLinks";
 import { groupByReason } from "@/lib/queue/groups";
 import { BulkActions } from "./components/BulkActions";
 import { ReviewerNameField, ReviewerProvider } from "./components/ReviewerName";
@@ -19,6 +20,20 @@ const statusText = (s: StoredSet) =>
     ? undefined
     : `${s.status === "approved" ? "Approved" : "Rejected"} by ${s.decidedBy}${s.overridden ? " (override)" : ""}${s.exportedAt ? " · exported" : ""}`;
 
+
+function DocumentLinks({ documents }: { documents: SetDocument[] }) {
+  const links = documentLinks(documents);
+  if (links.length === 0) return null;
+  return (
+    <p className="doc-links">
+      {links.map((l) => (
+        <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+          {l.label}
+        </a>
+      ))}
+    </p>
+  );
+}
 
 function Summary({ groups, decided }: { groups: { reason: string; title: string; count: number }[]; decided?: number }) {
   return (
@@ -70,6 +85,7 @@ export default async function QueuePage() {
   }
 
   const [sets, clean, exportCount] = await Promise.all([listQueue(db), listCleanPending(db), countReadyToExport(db)]);
+  const docsBySet = await listSetDocuments(db, sets.map((s) => s.id));
   const pending = sets.filter((s) => s.status === "pending");
   const decided = sets.filter((s) => s.status !== "pending");
   const groups = groupByReason(pending);
@@ -81,6 +97,7 @@ export default async function QueuePage() {
       title={[s.invoiceNumber, s.invoiceVendor].filter(Boolean).join(" · ") || "invoice details unreadable"}
       status={statusText(s)}
     >
+      <DocumentLinks documents={docsBySet.get(s.id) ?? []} />
       {s.decision.reason !== "clean" ? <ExplainButton setId={s.id} initial={s.explanation} /> : null}
       {s.status === "pending" ? (
         <DecisionActions setId={s.id} recommendation={s.decision.recommendation} />
