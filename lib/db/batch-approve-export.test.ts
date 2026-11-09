@@ -112,11 +112,14 @@ describe("export", () => {
     expect(await countReadyToExport(db)).toBe(2);
 
     const rows = await exportApproved(db, "Michael");
-    expect(rows.map((r) => [r.setId, r.approvedBy, r.overridden])).toEqual([
-      ["S-002", "Michael", false],
+    // Rows come out by decision time, then id. Both decisions can land in the same
+    // clock tick, so compare by set id rather than assume which was stamped first.
+    const bySetId = [...rows].sort((a, b) => a.setId.localeCompare(b.setId));
+    expect(bySetId.map((r) => [r.setId, r.approvedBy, r.overridden])).toEqual([
       ["S-001", "Joan", true],
+      ["S-002", "Michael", false],
     ]);
-    expect(rows[0]).toMatchObject({ invoiceNumber: truth("S-002").invoice.number, invoiceTotal: truth("S-002").invoice.total, poNumber: truth("S-002").po!.number });
+    expect(rows.find((r) => r.setId === "S-002")).toMatchObject({ invoiceNumber: truth("S-002").invoice.number, invoiceTotal: truth("S-002").invoice.total, poNumber: truth("S-002").po!.number });
     expect(await countReadyToExport(db)).toBe(0);
     expect(await exportApproved(db, "Michael")).toEqual([]);
     const { audit, set } = (await getSet(db, "S-002"))!;
