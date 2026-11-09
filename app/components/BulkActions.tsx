@@ -1,10 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
+import { useReviewer } from "./ReviewerName";
 import { approveBlockedReason, approvedMessage, approveLabel, exportBlockedReason, exportLabel, readyLine } from "@/lib/queue/bulkHints";
-
-const NAME_KEY = "imc-reviewer-name";
 
 /**
  * Story 5: approve every clean set in one confirmed click, then export approved
@@ -13,21 +12,10 @@ const NAME_KEY = "imc-reviewer-name";
 export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; exportCount: number }) {
   const router = useRouter();
   const nameId = useId();
-  const [actor, setActor] = useState("");
+  const { name: actor } = useReviewer();
   const [busy, setBusy] = useState(false);
   const [confirming, setConfirming] = useState(false);
   const [message, setMessage] = useState<{ text: string; ok: boolean } | null>(null);
-
-  useEffect(() => {
-    try {
-      setActor(localStorage.getItem(NAME_KEY) ?? "");
-    } catch {}
-  }, []);
-  const remember = () => {
-    try {
-      localStorage.setItem(NAME_KEY, actor);
-    } catch {}
-  };
 
   const approveBlocked = approveBlockedReason(cleanCount, actor);
   const exportBlocked = exportBlockedReason(exportCount, actor);
@@ -35,7 +23,6 @@ export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; e
   async function approveClean() {
     setBusy(true);
     setMessage(null);
-    remember();
     try {
       const res = await fetch("/api/sets/approve-clean", {
         method: "POST",
@@ -56,7 +43,6 @@ export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; e
   async function exportCsv() {
     setBusy(true);
     setMessage(null);
-    remember();
     try {
       const res = await fetch("/api/export", {
         method: "POST",
@@ -84,10 +70,6 @@ export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; e
   return (
     <section className="bulk" aria-label="Bulk actions">
       <p className="bulk-ready">{readyLine(cleanCount, exportCount)}</p>
-      <label htmlFor={nameId}>
-        Your name
-        <input id={nameId} value={actor} onChange={(e) => setActor(e.target.value)} maxLength={100} autoComplete="name" />
-      </label>
 
       {confirming ? (
         <div className="buttons" role="group" aria-label="Confirm approving all clean sets">
