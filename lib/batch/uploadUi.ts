@@ -12,6 +12,8 @@ export const MAX_BYTES = 20 * 1024 * 1024;
 export interface PickedFile {
   name: string;
   size: number;
+  /** When the file was last changed. Different sets can hold files with the same name and size. */
+  lastModified?: number;
 }
 
 export interface Rejected {
@@ -29,6 +31,8 @@ export function formatSize(bytes: number): string {
  * Adds newly picked files to those already chosen. Files the server would
  * refuse (wrong type, empty, over 20 MB) and exact repeats are turned away here
  * with a reason, so nobody waits for an upload that was never going to work.
+ * A repeat means the same name, size and last-changed time: the sample sets each
+ * hold a po.pdf, so name and size alone would turn real files away.
  */
 export function addFiles<T extends PickedFile>(existing: T[], incoming: T[]): { files: T[]; rejected: Rejected[] } {
   const files = [...existing];
@@ -38,7 +42,7 @@ export function addFiles<T extends PickedFile>(existing: T[], incoming: T[]): { 
     if (!EXTENSIONS.includes(ext)) rejected.push({ name: f.name, reason: "Use a PDF, PNG, JPEG or .txt file." });
     else if (f.size === 0) rejected.push({ name: f.name, reason: "The file is empty." });
     else if (f.size > MAX_BYTES) rejected.push({ name: f.name, reason: `Over 20 MB (${formatSize(f.size)}).` });
-    else if (files.some((x) => x.name === f.name && x.size === f.size)) rejected.push({ name: f.name, reason: "Already added." });
+    else if (files.some((x) => x.name === f.name && x.size === f.size && x.lastModified === f.lastModified)) rejected.push({ name: f.name, reason: "Already added." });
     else files.push(f);
   }
   return { files, rejected };

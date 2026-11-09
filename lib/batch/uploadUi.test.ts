@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { addFiles, documentTypeLabel, formatSize, MAX_BYTES, progress, tally } from "./uploadUi";
 
-const f = (name: string, size = 1000) => ({ name, size });
+const f = (name: string, size = 1000, lastModified = 1) => ({ name, size, lastModified });
 
 describe("addFiles", () => {
   it("accepts PDFs, images and text files", () => {
@@ -20,6 +20,12 @@ describe("addFiles", () => {
 
   it("accepts a file of exactly 20 MB", () => {
     expect(addFiles([], [f("edge.pdf", MAX_BYTES)]).files).toHaveLength(1);
+  });
+
+  it("accepts files from different sets that share a name and size", () => {
+    const r = addFiles([], [f("po.pdf", 2200, 100), f("po.pdf", 2200, 200), f("po.pdf", 2200, 100)]);
+    expect(r.files).toHaveLength(2);
+    expect(r.rejected).toEqual([{ name: "po.pdf", reason: "Already added." }]);
   });
 
   it("keeps earlier files and refuses an exact repeat but not a same-named different file", () => {
