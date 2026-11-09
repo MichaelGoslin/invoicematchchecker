@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useId, useState } from "react";
 import type { Recommendation } from "@/lib/match/decision";
-import { isAgainstRecommendation, OVERRIDE_REASONS, overrideReasonText } from "@/lib/queue/overrideReasons";
+import { decisionBlockedReason } from "@/lib/queue/bulkHints";
+import { OVERRIDE_REASONS, overrideReasonText } from "@/lib/queue/overrideReasons";
 import { useReviewer } from "./ReviewerName";
 
 /** Approve or reject one stored set. Going against the recommendation needs a reason code or a note. */
@@ -15,9 +16,12 @@ export function DecisionActions({ setId, recommendation }: { setId: string; reco
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const hintId = useId();
   const reason = overrideReasonText(code, note);
-  const needsReason = (action: "approve" | "reject") => isAgainstRecommendation(action, recommendation) && !reason;
-  const blocked = (action: "approve" | "reject") => busy || !actor.trim() || needsReason(action);
+  const approveOff = decisionBlockedReason("approve", recommendation, actor, reason);
+  const rejectOff = decisionBlockedReason("reject", recommendation, actor, reason);
+  // Both off for the same reason (no name yet): say it once.
+  const hints = [...new Set([approveOff, rejectOff].filter((h): h is string => h !== null))];
 
   async function decide(action: "approve" | "reject") {
     setBusy(true);
@@ -55,13 +59,18 @@ export function DecisionActions({ setId, recommendation }: { setId: string; reco
         <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} maxLength={1900} />
       </label>
       <div className="buttons">
-        <button type="button" disabled={blocked("approve")} onClick={() => decide("approve")}>
+        <button type="button" disabled={busy || approveOff !== null} aria-describedby={approveOff ? hintId : undefined} onClick={() => decide("approve")}>
           Approve
         </button>
-        <button type="button" className="secondary" disabled={blocked("reject")} onClick={() => decide("reject")}>
+        <button type="button" className="secondary" disabled={busy || rejectOff !== null} aria-describedby={rejectOff ? hintId : undefined} onClick={() => decide("reject")}>
           Reject
         </button>
       </div>
+      {hints.length > 0 ? (
+        <p id={hintId} className="hint">
+          {hints.join(" ")}
+        </p>
+      ) : null}
       {error ? (
         <p className="error" role="alert">
           {error}

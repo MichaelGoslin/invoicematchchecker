@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { approveBlockedReason, approvedMessage, approveLabel, exportBlockedReason, exportLabel, readyLine } from "./bulkHints";
+import { approveBlockedReason, approvedMessage, approveLabel, decisionBlockedReason, exportBlockedReason, exportLabel, readyLine } from "./bulkHints";
 
 describe("bulk action labels", () => {
   it("shows the count when there is something to do", () => {
@@ -36,5 +36,23 @@ describe("messages", () => {
     expect(approvedMessage(1)).toBe("Approved 1 clean set.");
     expect(approvedMessage(3, 1)).toBe("Approved 3 clean sets. 1 set had already been decided by someone else and was left alone.");
     expect(approvedMessage(2, 2)).toMatch(/2 sets had already been decided .* were left alone/);
+  });
+});
+
+describe("why a row's button is off", () => {
+  it("asks for the name first, from the top of the queue", () => {
+    expect(decisionBlockedReason("approve", "approve", "  ", "")).toMatch(/top of the queue/);
+    expect(decisionBlockedReason("reject", "reject", "", "")).toMatch(/top of the queue/);
+  });
+  it("asks for a reason only when going against the recommendation", () => {
+    expect(decisionBlockedReason("approve", "review", "Joan", "")).toBe(
+      "The engine recommended review, so choose a reason code or write a note to approve it.",
+    );
+    expect(decisionBlockedReason("reject", "approve", "Joan", "")).toMatch(/recommended approve.*to reject it/);
+    expect(decisionBlockedReason("approve", "approve", "Joan", "")).toBeNull();
+    expect(decisionBlockedReason("reject", "review", "Joan", "")).toBeNull();
+  });
+  it("is satisfied by a reason", () => {
+    expect(decisionBlockedReason("approve", "reject", "Joan", "Not a duplicate (checked history)")).toBeNull();
   });
 });
