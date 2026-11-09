@@ -79,6 +79,13 @@ describe("number guard", () => {
     expect(unsupportedNumbers("1 of 10 checks failed.", s17)).toEqual([]);
   });
 
+  it("accepts the difference between the two values, which the rules now state", () => {
+    // $9.98 vs $9.50 is $0.48 a unit over; 12 billed vs 10 received is 2 over.
+    expect(unsupportedNumbers("The price is $0.48 a unit over the PO and 2 more units were billed than received.", input)).toEqual([]);
+    const priceFinding = input.findings.find((f) => f.expected.value === 9.5 && f.actual.value === 9.98);
+    expect(priceFinding).toMatchObject({ difference: 0.48 });
+  });
+
   it("still refuses other sums of counts", () => {
     // 11 passed + 2 failed = 13 is not a count anyone reported.
     expect(unsupportedNumbers("13 checks were conclusive.", input)).toEqual([13]);
