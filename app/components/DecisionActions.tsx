@@ -3,7 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { Recommendation } from "@/lib/match/decision";
-import { isAgainstRecommendation, OVERRIDE_REASONS, overrideReasonText } from "@/lib/queue/overrideReasons";
+import { decisionBlockedReason } from "@/lib/queue/decisionHints";
+import { OVERRIDE_REASONS, overrideReasonText } from "@/lib/queue/overrideReasons";
 import { useReviewer } from "./ReviewerName";
 
 /** Approve or reject one stored set. Going against the recommendation needs a reason code or a note. */
@@ -16,8 +17,11 @@ export function DecisionActions({ setId, recommendation }: { setId: string; reco
   const [error, setError] = useState<string | null>(null);
 
   const reason = overrideReasonText(code, note);
-  const needsReason = (action: "approve" | "reject") => isAgainstRecommendation(action, recommendation) && !reason;
-  const blocked = (action: "approve" | "reject") => busy || !actor.trim() || needsReason(action);
+  const why = (action: "approve" | "reject") => decisionBlockedReason(action, recommendation, actor, reason);
+  const blocked = (action: "approve" | "reject") => busy || why(action) !== null;
+  const nameMissing = !actor.trim();
+  const approveWhy = why("approve");
+  const rejectWhy = why("reject");
 
   async function decide(action: "approve" | "reject") {
     setBusy(true);
@@ -62,6 +66,27 @@ export function DecisionActions({ setId, recommendation }: { setId: string; reco
           Reject
         </button>
       </div>
+      {nameMissing ? (
+        <p className="muted hint" role="status">
+          <a
+            href="#reviewer-name"
+            onClick={(e) => {
+              e.preventDefault();
+              const field = document.getElementById("reviewer-name");
+              field?.scrollIntoView({ block: "center" });
+              field?.focus();
+            }}
+          >
+            Enter your name at the top of the queue
+          </a>{" "}
+          to approve or reject. It is saved with every decision.
+        </p>
+      ) : approveWhy || rejectWhy ? (
+        <ul className="notes hint">
+          {approveWhy ? <li>Approve: {approveWhy}</li> : null}
+          {rejectWhy ? <li>Reject: {rejectWhy}</li> : null}
+        </ul>
+      ) : null}
       {error ? (
         <p className="error" role="alert">
           {error}
