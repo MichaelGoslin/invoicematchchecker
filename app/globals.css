@@ -55,7 +55,8 @@ button {
   font: inherit; font-weight: 600; padding: 9px 16px; border: 0; border-radius: 6px;
   background: var(--accent); color: var(--bg); cursor: pointer; justify-self: start;
 }
-button:disabled { opacity: 0.6; cursor: progress; }
+/* not-allowed, not progress: on a Mac "progress" is the spinning busy cursor, which reads as "the page is stuck". */
+button:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .queue { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .row { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
