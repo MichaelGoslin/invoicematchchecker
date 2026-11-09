@@ -29,7 +29,8 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     const input = await readUpload(form.get("file"), "file");
     if (!input) return jsonError("A file is required.", 400);
     const extraction = await extractDocument(input);
-    const documentId = await saveDocument(db, batchId, extraction);
+    // Keep the file itself too, so a reviewer can open it from the queue.
+    const documentId = await saveDocument(db, batchId, extraction, undefined, input);
     const d = extraction.document;
     return Response.json(
       {
