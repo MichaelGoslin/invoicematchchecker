@@ -1,16 +1,22 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
+import { approveBlockedReason, approvedMessage, approveLabel, exportBlockedReason, exportLabel, readyLine } from "@/lib/queue/bulkHints";
 
 const NAME_KEY = "imc-reviewer-name";
 
-/** Story 5: approve every clean set in one click, then export approved sets for the ERP. Placeholder for Joan's design. */
+/**
+ * Story 5: approve every clean set in one confirmed click, then export approved
+ * sets for the ERP. Each button says what it will do, and why it is off when it is.
+ */
 export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; exportCount: number }) {
   const router = useRouter();
+  const nameId = useId();
   const [actor, setActor] = useState("");
   const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
+  const [confirming, setConfirming] = useState(false);
+  const [message, setMessage] = useState<{ text: string; ok: boolean } | null>(null);
 
   useEffect(() => {
     try {
@@ -23,6 +29,9 @@ export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; e
     } catch {}
   };
 
+  const approveBlocked = approveBlockedReason(cleanCount, actor);
+  const exportBlocked = exportBlockedReason(exportCount, actor);
+
   async function approveClean() {
     setBusy(true);
     setMessage(null);
@@ -34,12 +43,13 @@ export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; e
         body: JSON.stringify({ actor }),
       });
       const json = await res.json();
-      setMessage(res.ok ? `Approved ${json.approved.length} clean set${json.approved.length === 1 ? "" : "s"}.` : json.error);
+      setMessage(res.ok ? { text: approvedMessage(json.approved.length, json.skipped?.length ?? 0), ok: true } : { text: json.error, ok: false });
       router.refresh();
     } catch {
-      setMessage("Could not reach the server.");
+      setMessage({ text: "Could not reach the server.", ok: false });
     } finally {
       setBusy(false);
+      setConfirming(false);
     }
   }
 
@@ -54,7 +64,7 @@ export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; e
         body: JSON.stringify({ actor }),
       });
       if (!res.ok) {
-        setMessage((await res.json()).error);
+        setMessage({ text: (await res.json()).error, ok: false });
         return;
       }
       const name = res.headers.get("content-disposition")?.match(/filename="([^"]+)"/)?.[1] ?? "approved-invoices.csv";
@@ -62,30 +72,57 @@ export function BulkActions({ cleanCount, exportCount }: { cleanCount: number; e
       const a = Object.assign(document.createElement("a"), { href: url, download: name });
       a.click();
       URL.revokeObjectURL(url);
-      setMessage(`Exported ${res.headers.get("x-export-count")} approved set(s) to ${name}.`);
+      setMessage({ text: `Exported ${res.headers.get("x-export-count")} approved set(s) to ${name}.`, ok: true });
       router.refresh();
     } catch {
-      setMessage("Could not reach the server.");
+      setMessage({ text: "Could not reach the server.", ok: false });
     } finally {
       setBusy(false);
     }
   }
 
   return (
-    <div className="bulk">
-      <label>
+    <section className="bulk" aria-label="Bulk actions">
+      <p className="bulk-ready">{readyLine(cleanCount, exportCount)}</p>
+      <label htmlFor={nameId}>
         Your name
-        <input value={actor} onChange={(e) => setActor(e.target.value)} maxLength={100} />
+        <input id={nameId} value={actor} onChange={(e) => setActor(e.target.value)} maxLength={100} autoComplete="name" />
       </label>
-      <div className="buttons">
-        <button type="button" disabled={busy || !actor.trim() || cleanCount === 0} onClick={approveClean}>
-          Approve all {cleanCount} clean
-        </button>
-        <button type="button" className="secondary" disabled={busy || !actor.trim() || exportCount === 0} onClick={exportCsv}>
-          Export {exportCount} approved
-        </button>
-      </div>
-      {message ? <p className="muted" role="status">{message}</p> : null}
-    </div>
+
+      {confirming ? (
+        <div className="buttons" role="group" aria-label="Confirm approving all clean sets">
+          <span>
+            Approve {cleanCount} clean set{cleanCount === 1 ? "" : "s"} as <strong>{actor.trim()}</strong>?
+          </span>
+          <button type="button" disabled={busy} onClick={approveClean}>
+            {busy ? "Approving…" : "Yes, approve all"}
+          </button>
+          <button type="button" className="secondary" disabled={busy} onClick={() => setConfirming(false)}>
+            Cancel
+          </button>
+        </div>
+      ) : (
+        <div className="buttons">
+          <button type="button" disabled={busy || approveBlocked !== null} aria-describedby={approveBlocked ? `${nameId}-approve` : undefined} onClick={() => setConfirming(true)}>
+            {approveLabel(cleanCount)}
+          </button>
+          <button type="button" className="secondary" disabled={busy || exportBlocked !== null} aria-describedby={exportBlocked ? `${nameId}-export` : undefined} onClick={exportCsv}>
+            {exportLabel(exportCount)}
+          </button>
+        </div>
+      )}
+
+      {!confirming && (approveBlocked || exportBlocked) ? (
+        <ul className="notes">
+          {approveBlocked ? <li id={`${nameId}-approve`}>Approve all: {approveBlocked}</li> : null}
+          {exportBlocked ? <li id={`${nameId}-export`}>Export: {exportBlocked}</li> : null}
+        </ul>
+      ) : null}
+      {message ? (
+        <p className={message.ok ? "bulk-ok" : "error"} role="status">
+          {message.text}
+        </p>
+      ) : null}
+    </section>
   );
 }
