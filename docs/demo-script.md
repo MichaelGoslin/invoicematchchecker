@@ -27,7 +27,7 @@ cp sample-data/output/sets/S-087/invoice.jpg ~/Desktop/demo-batch/S-087-invoice.
 | S-002 | None | Recommend approve (clean) |
 | S-013 | 400 units at $30.00 billed $30.20: 0.67% (inside 2%) but $80.00 extended (over the $50 cap) | Needs review, exception. The cap is marked in red. |
 | S-001 | Billed for 60 units, only 56 received | Needs review, exception (quantity vs received) |
-| S-087 | The one mildly degraded scan, otherwise clean | Needs review (uncertain readings) **if** the extractor reads a field below 0.9. If it reads everything confidently and correctly, approve is acceptable. Say which happened. |
+| S-087 | The one mildly degraded scan, otherwise clean | **Michael's real extraction run approved it**, because the tool read the scan correctly and confidently. The answer key had expected a person to review it, so the confidence gate did not trigger on this scan. Do not claim the gate caught it: say the scan was too mild to test the gate, and that it is a limit of our test. |
 | S-001 invoice again | Same vendor and invoice number as a set already in the app | Recommend reject (possible duplicate) |
 
 Other planted cases exist in the answer key (missing PO, missing receiving report, wrong PO number, vendor mismatch, totals that don't add up) if there is time or a question. A missing PO may be **set aside** by the batch screen instead of rejected; check before promising it.
@@ -46,8 +46,9 @@ Other planted cases exist in the answer key (missing PO, missing receiving repor
 
 **4:15 What we did not prove (45 seconds). Say all of this out loud.**
 - All the data is synthetic. This shows the logic works, not that it would work on real invoices.
-- Against my 100 synthetic sets, the rules agree with the answer key on 99 of 100 when given the printed values. The one gap is the scan, which depends on how well extraction reads it.
-- Extraction accuracy: [fill in from `npm run score:extraction` once Michael has run it. Do not quote a number that hasn't been run.]
+- Given the printed values, the rules agree with my answer key on 99 of 100 sets. The one gap is the scan, which depends on extraction.
+- Extraction, from Michael's real run on the 100 sets: 97 of 100 match the answer key, with 0 false approvals and 0 confident misreads. These figures are Michael's, reported to me; re-run `npm run score:extraction` before quoting them, and ask him what the 3 mismatches were.
+- The confidence gate is proven by tests on uncertain values, but not by the scan: our one mild scan was read correctly, so the gate was never triggered by real extraction. Say that plainly.
 - The 2% tolerance and the $50 cap come from one job posting and our own judgment. They are settings, and an AP specialist should confirm them.
 - There is no ERP connection. The export is a CSV.
 
