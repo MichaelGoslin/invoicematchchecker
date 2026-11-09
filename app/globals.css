@@ -1,4 +1,4 @@
-/* Placeholder styles for the app shell. Joan owns the real review-queue design. */
+/* Styles for the app shell, review queue, batch upload and summary. */
 :root {
   --bg: #ffffff;
   --surface: #f6f7f9;
@@ -109,3 +109,22 @@ select { font: inherit; padding: 8px; border: 1px solid var(--border); border-ra
 .bulk input { font: inherit; padding: 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); max-width: 320px; }
 .explanation { margin-top: 10px; padding: 10px 12px; border-left: 3px solid var(--accent); background: var(--bg); border-radius: 4px; }
 .explanation p { margin: 0 0 4px; }
+
+/* Batch upload: drop zone, file list, progress. */
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.drop { display: grid; gap: 6px; justify-items: center; text-align: center; padding: 32px 16px; border: 2px dashed var(--border); border-radius: 10px; background: var(--surface); cursor: pointer; font-weight: 400; }
+.drop strong { font-size: 16px; }
+.drop:hover, .drop.dragging, .drop:focus-within { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.turned-away { border: 1px solid var(--reject); border-radius: 8px; padding: 10px 14px; font-size: 14px; }
+.turned-away strong { color: var(--reject); }
+.files { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 4px; }
+.files li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 12px; align-items: center; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); font-size: 14px; }
+.file-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.files .detail { text-align: right; max-width: 22em; }
+.chip { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+.chip.reading { color: var(--accent); border-color: var(--accent); }
+.chip.read { color: var(--approve); border-color: var(--approve); }
+.chip.failed { color: var(--reject); border-color: var(--reject); }
+button.link { background: none; color: var(--accent); padding: 0; font-weight: 500; text-decoration: underline; justify-self: end; }
+progress { width: 100%; height: 10px; accent-color: var(--accent); }
+a.button { display: inline-block; font-weight: 600; padding: 9px 16px; border-radius: 6px; background: var(--accent); color: var(--bg); text-decoration: none; }
