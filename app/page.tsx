@@ -5,6 +5,7 @@ import { listQueue, type StoredSet } from "@/lib/db/sets";
 import { sampleSets } from "@/lib/match/fixtures";
 import { groupByReason } from "@/lib/queue/groups";
 import { BulkActions } from "./components/BulkActions";
+import { ReviewerNameField, ReviewerProvider } from "./components/ReviewerName";
 import { DecisionActions } from "./components/DecisionActions";
 import { ExplainButton } from "./components/ExplainButton";
 import { DecisionRow } from "./components/DecisionRow";
@@ -90,6 +91,7 @@ export default async function QueuePage() {
   );
 
   return (
+    <ReviewerProvider>
     <main>
       <Nav current="/" />
       <h1>Review queue</h1>
@@ -107,6 +109,7 @@ export default async function QueuePage() {
             groups={groups.map((g) => ({ reason: g.reason, title: g.title, count: g.items.length }))}
             decided={decided.length}
           />
+          <ReviewerNameField />
           <BulkActions cleanCount={clean.length} exportCount={exportCount} />
         </>
       )}
@@ -128,5 +131,6 @@ export default async function QueuePage() {
         </section>
       ) : null}
     </main>
+    </ReviewerProvider>
   );
 }

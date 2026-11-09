@@ -1,26 +1,19 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { Recommendation } from "@/lib/match/decision";
 import { isAgainstRecommendation, OVERRIDE_REASONS, overrideReasonText } from "@/lib/queue/overrideReasons";
-
-const NAME_KEY = "imc-reviewer-name";
+import { useReviewer } from "./ReviewerName";
 
 /** Approve or reject one stored set. Going against the recommendation needs a reason code or a note. */
 export function DecisionActions({ setId, recommendation }: { setId: string; recommendation: Recommendation }) {
   const router = useRouter();
-  const [actor, setActor] = useState("");
+  const { name: actor } = useReviewer();
   const [code, setCode] = useState("");
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    try {
-      setActor(localStorage.getItem(NAME_KEY) ?? "");
-    } catch {}
-  }, []);
 
   const reason = overrideReasonText(code, note);
   const needsReason = (action: "approve" | "reject") => isAgainstRecommendation(action, recommendation) && !reason;
@@ -30,9 +23,6 @@ export function DecisionActions({ setId, recommendation }: { setId: string; reco
     setBusy(true);
     setError(null);
     try {
-      try {
-        localStorage.setItem(NAME_KEY, actor);
-      } catch {}
       const res = await fetch(`/api/sets/${encodeURIComponent(setId)}/decision`, {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -49,10 +39,6 @@ export function DecisionActions({ setId, recommendation }: { setId: string; reco
 
   return (
     <div className="actions">
-      <label>
-        Your name
-        <input value={actor} onChange={(e) => setActor(e.target.value)} maxLength={100} />
-      </label>
       <label>
         Reason code <span className="muted">(needed to {recommendation === "approve" ? "reject" : "approve"} this set)</span>
         <select value={code} onChange={(e) => setCode(e.target.value)}>
