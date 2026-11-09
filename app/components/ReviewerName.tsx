@@ -53,9 +53,9 @@ export function ReviewerNameField() {
   const { name, setName } = useReviewer();
   return (
     <div className="reviewer">
-      <label htmlFor={id}>
+      <label htmlFor="reviewer-name">
         Your name
-        <input id={id} value={name} onChange={(e) => setName(e.target.value)} maxLength={100} autoComplete="name" aria-describedby={`${id}-hint`} />
+        <input id="reviewer-name" value={name} onChange={(e) => setName(e.target.value)} maxLength={100} autoComplete="name" aria-describedby={`${id}-hint`} />
       </label>
       <span id={`${id}-hint`} className="muted">
         Saved with every decision you make and in the audit log. Remembered in this browser.
