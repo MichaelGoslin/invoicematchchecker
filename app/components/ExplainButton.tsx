@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Explanation } from "@/lib/explain/explain";
 
-/** Shows a set's plain-English explanation, asking for one on first click. Placeholder for Joan's design. */
+/** Shows a set's plain-English explanation, asking for one on first click. The checks above remain the decision. */
 export function ExplainButton({ setId, initial }: { setId: string; initial: Explanation | null }) {
   const [explanation, setExplanation] = useState(initial);
   const [busy, setBusy] = useState(false);
@@ -25,15 +25,19 @@ export function ExplainButton({ setId, initial }: { setId: string; initial: Expl
   }
 
   if (explanation) {
+    const byClaude = explanation.source === "claude";
     return (
-      <div className="explanation">
+      <aside className="explanation" aria-label="Plain-English explanation">
+        <h3>
+          In plain English <span className={`source ${byClaude ? "claude" : "rules"}`}>{byClaude ? "written by Claude" : "from the rules"}</span>
+        </h3>
         <p>{explanation.text}</p>
         <p className="muted">
-          {explanation.source === "claude"
-            ? "Plain-English summary by Claude. The checks above are the decision."
-            : `The rules' own summary.${explanation.fallbackReason ? ` (${explanation.fallbackReason})` : ""}`}
+          {byClaude
+            ? "This only restates the checks above. It can't change the recommendation."
+            : `Claude's text wasn't used, so this is the rules' own summary.${explanation.fallbackReason ? ` (${explanation.fallbackReason})` : ""}`}
         </p>
-      </div>
+      </aside>
     );
   }
   return (
@@ -41,7 +45,11 @@ export function ExplainButton({ setId, initial }: { setId: string; initial: Expl
       <button type="button" className="secondary" disabled={busy} onClick={load}>
         {busy ? "Explaining…" : "Explain in plain English"}
       </button>
-      {error ? <p className="error" role="alert">{error}</p> : null}
+      {error ? (
+        <p className="error" role="alert">
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }
