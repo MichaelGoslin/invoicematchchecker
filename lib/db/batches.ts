@@ -4,7 +4,7 @@
  */
 import { randomUUID } from "node:crypto";
 import { type BatchDocument, groupBatch, type SetAside } from "../batch/group";
-import type { ExtractionResult } from "../extract/extract";
+import type { DocumentInput, DocumentMediaType, ExtractionResult } from "../extract/extract";
 import { toMatchInput } from "../extract/toMatchInput";
 import type { SetDecision } from "../match/decision";
 import type { Db } from "./db";
@@ -28,13 +28,42 @@ async function openBatch(db: Db, batchId: string) {
   if (batch.matched_at) throw new BatchAlreadyMatchedError(`Batch ${batchId} was already matched; start a new batch.`);
 }
 
-export async function saveDocument(db: Db, batchId: string, extraction: ExtractionResult, id = newDocumentId()): Promise<string> {
+/**
+ * Stores what Claude read from a document and, when given, the uploaded file
+ * itself, so a reviewer can open it later. Text files are stored as UTF-8 bytes.
+ */
+export async function saveDocument(
+  db: Db,
+  batchId: string,
+  extraction: ExtractionResult,
+  id = newDocumentId(),
+  file?: DocumentInput,
+): Promise<string> {
   await openBatch(db, batchId);
+  const content = file ? (typeof file.data === "string" ? Buffer.from(file.data, "utf8") : file.data) : null;
   await db.query(
-    "insert into documents (id, batch_id, file_name, document_type, extraction) values ($1, $2, $3, $4, $5::jsonb)",
-    [id, batchId, extraction.name, extraction.document.document_type, extraction],
+    `insert into documents (id, batch_id, file_name, document_type, extraction, content, media_type)
+     values ($1, $2, $3, $4, $5::jsonb, $6, $7)`,
+    [id, batchId, extraction.name, extraction.document.document_type, extraction, content, file?.mediaType ?? null],
   );
   return id;
+}
+
+export interface StoredFile {
+  fileName: string;
+  mediaType: DocumentMediaType;
+  data: Buffer;
+}
+
+/** The uploaded file behind a document, or null when there is no such document or it was stored without one. */
+export async function getDocumentFile(db: Db, id: string): Promise<StoredFile | null> {
+  const [row] = await db.query<{ file_name: string; media_type: DocumentMediaType | null; content: Uint8Array | null }>(
+    "select file_name, media_type, content from documents where id = $1",
+    [id],
+  );
+  if (!row?.content || !row.media_type) return null;
+  // Production's driver returns a Buffer and PGlite a Uint8Array; callers always get a Buffer.
+  return { fileName: row.file_name, mediaType: row.media_type, data: Buffer.from(row.content) };
 }
 
 export interface MatchedBatchSet {

@@ -7,6 +7,7 @@ import {
   getSet,
   isOverride,
   listQueue,
+  listSetDocuments,
   loadPriors,
   matchAndSave,
   ReasonRequiredError,
@@ -15,6 +16,8 @@ import {
   SetAlreadyDecidedError,
   SetNotFoundError,
 } from "./sets";
+import { createBatch, saveDocument } from "./batches";
+import { s15 } from "../extract/testDocs";
 import { createTestDb } from "./testDb";
 
 const truth = (id: string) => JSON.parse(readFileSync(`sample-data/output/sets/${id}/truth.json`, "utf8")) as Truth;
@@ -186,5 +189,27 @@ describe("explanations", () => {
 
   it("refuses a set that doesn't exist", async () => {
     await expect(saveExplanation(db, "S-404", e("x"))).rejects.toBeInstanceOf(SetNotFoundError);
+  });
+});
+
+describe("listSetDocuments", () => {
+  it("says which documents of a set have a stored file", async () => {
+    const batchId = await createBatch(db);
+    const withFile = await saveDocument(db, batchId, s15.invoice, "D-withfile", { name: "inv.pdf", mediaType: "application/pdf", data: Buffer.from("%PDF-1.4") });
+    const noFile = await saveDocument(db, batchId, s15.invoice, "D-nofile");
+    const t = truth("S-002");
+    await matchAndSave(db, {
+      build: (priors) => truthToMatchInput(t, priors),
+      invoiceVendor: t.invoice.vendor,
+      invoiceNumber: t.invoice.number,
+      invoiceTotal: Number(t.invoice.total),
+      documents: { source: "truth.json" },
+      batchId,
+      documentIds: [withFile, noFile],
+    });
+    const map = await listSetDocuments(db, ["S-002", "S-404"]);
+    expect(map.get("S-002")?.map((d) => `${d.id}:${d.hasFile}`).sort()).toEqual(["D-nofile:false", "D-withfile:true"]);
+    expect(map.has("S-404")).toBe(false);
+    expect((await listSetDocuments(db, [])).size).toBe(0);
   });
 });

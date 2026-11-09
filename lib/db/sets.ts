@@ -189,6 +189,24 @@ export async function listQueue(db: Db, limit = 200): Promise<StoredSet[]> {
   return [...pending, ...sets.filter((s) => s.status !== "pending")];
 }
 
+/** The documents behind each set, with whether a file is stored for them (older uploads have none). */
+export async function listSetDocuments(db: Db, setIds: string[]): Promise<Map<string, { id: string; type: string; hasFile: boolean }[]>> {
+  const out = new Map<string, { id: string; type: string; hasFile: boolean }[]>();
+  if (setIds.length === 0) return out;
+  const rows = await db.query<{ set_id: string; id: string; document_type: string; has_file: boolean }>(
+    `select sd.set_id, d.id, d.document_type, (d.content is not null and d.media_type is not null) as has_file
+     from set_documents sd join documents d on d.id = sd.document_id
+     where sd.set_id = any($1::text[]) order by d.created_at, d.id`,
+    [setIds],
+  );
+  for (const r of rows) {
+    const list = out.get(r.set_id) ?? [];
+    list.push({ id: r.id, type: r.document_type, hasFile: r.has_file });
+    out.set(r.set_id, list);
+  }
+  return out;
+}
+
 export async function getSet(db: Db, id: string): Promise<{ set: StoredSet; audit: AuditEntry[] } | null> {
   const [row] = await db.query<SetRow>("select * from invoice_sets where id = $1", [id]);
   if (!row) return null;

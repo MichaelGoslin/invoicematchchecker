@@ -1,6 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { gateMode, isValidSession, SESSION_COOKIE } from "./lib/auth/session";
 
+/** The only page anyone can open signed out. Compared exactly, so /loginx or /login/anything stay gated. */
+export const PUBLIC_PATHS = new Set(["/login"]);
+
 /** Gates every page and API route behind the shared passcode (APP_PASSCODE). */
 export async function proxy(request: NextRequest) {
   const mode = gateMode();
@@ -8,6 +11,7 @@ export async function proxy(request: NextRequest) {
   if (mode === "misconfigured") {
     return new NextResponse("APP_PASSCODE is not set for this deployment.", { status: 503 });
   }
+  if (PUBLIC_PATHS.has(request.nextUrl.pathname)) return NextResponse.next();
 
   const ok = await isValidSession(request.cookies.get(SESSION_COOKIE)?.value, process.env.APP_PASSCODE!);
   if (ok) return NextResponse.next();
@@ -21,6 +25,8 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Everything except the login page and Next's own static files.
-  matcher: ["/((?!login|_next/static|_next/image|favicon.ico).*)"],
+  // Everything except Next's own static files and the favicon. The login page is let
+  // through above by exact path, not here: a prefix in this pattern would also skip
+  // any path that starts with the same letters.
+  matcher: ["/((?!_next/static/|_next/image$|_next/image/|favicon\\.ico$).*)"],
 };
