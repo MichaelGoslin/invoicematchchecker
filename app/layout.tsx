@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Invoice Match Checker",
+  title: "AP Verify",
   description: "Checks vendor invoices against purchase orders and receiving reports. The tool recommends; a person approves every payment.",
 };
 
