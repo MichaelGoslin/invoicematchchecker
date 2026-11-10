@@ -1,8 +1,48 @@
 # Invoice Match Checker
 
-A review tool for accounts payable specialists. It checks each vendor invoice against its purchase order and receiving report, then sorts every set into **Recommend approve**, **Needs review** or **Recommend reject**, with a traceable reason. The tool recommends; a person approves every payment.
+**Catches the wrong payment before an accounts payable specialist approves it.**
 
-Built as a 7-day L2 final project, based on a high-volume AP Specialist role that processes about 180 invoices a day with 2-way and 3-way PO matching.
+[Live app](https://invoicematchchecker.vercel.app) (passcode-protected, synthetic data only) · Built in 7 days by Michael Goslin and Joan Albayrak
+
+## The problem
+
+A high-volume accounts payable (AP) specialist checks about **180 vendor invoices a day**. Before any invoice is paid, it has to match its purchase order and its receiving report: the same vendor, no more units than were ordered and received, and prices within a **2% tolerance**. This is the three-way match, and it's done by hand, one set at a time.
+
+It is slow, repetitive work, and the mistakes that slip through cost real money:
+
+- **A percentage rule hides dollars.** 1,000 units billed 1.9% over passes a 2% rule, yet that's **$1,900 overpaid**.
+- **A misread number gets paid.** One digit read wrong from a scanned invoice can be approved as if it were right.
+- **Duplicates get paid twice.** The same invoice resubmitted looks like new work.
+
+## The solution
+
+Invoice Match Checker takes the whole morning batch of POs, receiving reports and invoices. Claude reads every document; plain, tested code does the matching. Each invoice set is sorted into **Recommend approve**, **Needs review** or **Recommend reject**, with the exact values behind the decision. **The tool recommends; a person approves every payment.**
+
+![A flagged invoice set on the live app: the unit price is $101.90 against the PO's $100.00, 1.90% over and inside the 2% tolerance, but $1,900 extended over 1,000 units, past the $50 cap, so it is flagged for review](docs/screenshots/trace.jpg)
+
+*The $1,900 case on the live app: the price is only 1.90% over, inside the 2% tolerance, but over 1,000 units that's $1,900, past the $50 cap. The set goes to a person, with the PO and invoice values side by side.*
+
+## Key features
+
+- **Batch upload:** drop in the morning's documents in any order. Each invoice is joined to its PO and receiving report automatically, and anything that can't be placed is set aside with a reason, never guessed.
+- **Uncertainty protection:** any field Claude reads with low confidence sends the set to a person. A misread number can never be recommended for approval.
+- **Traceable reasons:** every flag shows the expected and actual values, the variance and the limit it broke, so you can decide fast and defend the decision.
+- **Dollar cap as well as a percentage:** a price within 2% is still flagged when it costs more than $50 on the line, so small percentages can't hide real money.
+- **Original documents one click away:** open the invoice, PO or receiving report behind any set, straight from the queue.
+- **Human override with an audit trail:** go against a recommendation with a reason code. Every recommendation, decision and override is written to an append-only audit log.
+- **One-click approve and export:** approve every clean set at once, then export approved sets as a CSV for the ERP, each set once.
+
+## Results
+
+We generated 100 synthetic invoice sets with planted problems and an answer key, then ran real Claude extraction over all of them:
+
+| Measure | Result |
+| --- | --- |
+| False approvals (a set approved that should have been held) | **0** |
+| Confident misreads (a value read wrong with high confidence) | **0** |
+| Sets whose final decision matches the answer key | **97 of 100** |
+
+**What this doesn't prove:** the invoices are synthetic, and our one mildly degraded scan was read correctly, so real extraction never triggered the confidence gate (it's covered by tests instead). The 2% tolerance and $50 cap are settings that an AP specialist should confirm.
 
 ## User stories
 
@@ -22,13 +62,34 @@ Built as a 7-day L2 final project, based on a high-volume AP Specialist role tha
 
 Every recommendation, human action and override is written to an audit log. Only synthetic invoices are used.
 
-## Stack
+![The review queue: 3 sets waiting, counted as 2 exceptions, 1 clean and 6 decided, with the reviewer's name and the Approve all clean and Export approved buttons](docs/screenshots/queue.jpg)
 
-- Next.js (App Router) and TypeScript, deployed on Vercel
-- Anthropic TypeScript SDK for extraction and explanations
-- Vitest for the match rules
-- Hosted Postgres (Neon or Supabase) and Vercel Blob
-- Offline Python script (reportlab) for generating sample invoice sets
+*The review queue: sets are worked from the top (rejects, then uncertain readings, then exceptions, then clean sets), every decision carries the reviewer's name, and clean sets approve in one click.*
+
+## Tech stack
+
+- **Next.js 16 (App Router) + TypeScript**, deployed on **Vercel**
+- **Anthropic TypeScript SDK** with **Claude Opus 5.5** (`claude-opus-5-5`): structured-output extraction of every field with a confidence score and quoted evidence, plus plain-English explanations that are checked against the findings
+- **Supabase Postgres** for sets, decisions, the append-only audit log and the uploaded files
+- **Vitest** for 244 tests: every match rule, the confidence gate, the database layer and the file route, run in **GitHub Actions** on every pull request
+- **Python + reportlab** (offline) to generate the 100 synthetic invoice sets and their answer key
+
+## Project structure
+
+| Folder | What's in it |
+| --- | --- |
+| `app/` | The pages (review queue, batch upload, daily summary, sign-in) and the API routes |
+| `lib/match/` | The match rules, the decision trace and the set-level decision: plain code, no AI |
+| `lib/extract/` | Claude extraction, the evidence check and the mapping into the rules' input |
+| `lib/explain/` | Plain-English explanations, with a guard that discards any number the checks don't contain |
+| `lib/db/` | Postgres access: sets, batches, decisions, the audit log and stored files |
+| `lib/batch/`, `lib/queue/`, `lib/summary/`, `lib/export/` | Grouping a batch into sets, queue order and button hints, the daily summary, and the CSV export |
+| `lib/eval/` | The end-to-end score against the answer key |
+| `lib/documents/`, `proxy.ts` | Serving stored files safely, and the passcode gate on every page and API route |
+| `db/migrations/` | The database schema, applied in order by `npm run db:migrate` |
+| `sample-data/` | The Python generator, 100 synthetic invoice sets and their answer key |
+| `scripts/` | Demo runs, the database migrator and the scoring scripts behind the Results table |
+| `docs/` | The demo video script |
 
 ## Team
 
@@ -62,7 +123,7 @@ Set these in Vercel (for both Production and Preview) and in a local `.env.local
 | `POSTGRES_POOL_MAX` | Optional. Database connections per server instance (default 5). |
 | `SUMMARY_TIME_ZONE` | Optional. IANA time zone that decides which day the daily summary covers (default `America/New_York`). |
 
-`BLOB_READ_WRITE_TOKEN` (Vercel Blob) isn't used yet: only what Claude reads from each file is stored, not the file itself.
+Uploaded files are stored in Postgres next to what Claude read from them (migration `004_document_files.sql`), so no separate file storage is needed.
 
 Note that `npm run dev` loads `.env.development.local`, so if that file holds the shared `POSTGRES_URL`, local uploads land in the shared queue.
 
@@ -88,4 +149,6 @@ Batch (stories 1 and 5): `/batch` takes the morning batch of POs, receiving repo
 
 Extraction: `extractDocument` in `lib/extract` reads a PDF, image or text document with Claude (`claude-opus-5-5`, structured output) into fields that each carry a value, confidence, quoted evidence and page. Code then checks each value against its quoted text and lowers confidence when they disagree; it never raises it. `toMatchInput` maps a PO, an optional receiving report and an invoice into the engine's input, and `runSet` runs every rule and decides. Tests use a fake client and make no API calls.
 
-Engine: all match rules return a decision trace and share the confidence fail-safe (tested): PO on file (none recommends reject), receiving report on file (none makes a 3-way match incomplete; 2-way only when chosen), vendor, PO number, duplicate, quantity vs ordered and received, unit price (2% and a $50 extended-cost cap), line total and invoice total. `decideSet` turns a set's traces into Recommend approve / Needs review / Recommend reject, and `compareForQueue` sorts the review queue. Tests run in GitHub Actions on every PR, including a score against the 100-set answer key in `sample-data/output` (99 of 100 agree on printed values; the scan, S-087, depends on extraction). The UI contract is `TraceEntry` and `SetDecision` in `lib/match`; sample sets with answer keys are in `lib/match/fixtures.ts`. Explanations (step 5): on any set with findings, "Explain in plain English" asks Claude to restate the decision and its findings in two to four sentences. Claude sees only the decision and the findings, is told to treat document text as data, and can't change the outcome. If its text cites any number the findings don't contain, it is discarded and the rules' own summary is shown instead. Each set is explained once and the result is stored. Next: storing uploaded files in Blob. The full requirements are in the team PRD.
+Engine: all match rules return a decision trace and share the confidence fail-safe (tested): PO on file (none recommends reject), receiving report on file (none makes a 3-way match incomplete; 2-way only when chosen), vendor, PO number, duplicate, quantity vs ordered and received, unit price (2% and a $50 extended-cost cap), line total and invoice total. `decideSet` turns a set's traces into Recommend approve / Needs review / Recommend reject, and `compareForQueue` sorts the review queue. Tests run in GitHub Actions on every PR, including a score against the 100-set answer key in `sample-data/output` (99 of 100 agree on printed values; the scan, S-087, depends on extraction). The UI contract is `TraceEntry` and `SetDecision` in `lib/match`; sample sets with answer keys are in `lib/match/fixtures.ts`. Explanations (step 5): on any set with findings, "Explain in plain English" asks Claude to restate the decision and its findings in two to four sentences. Claude sees only the decision and the findings, is told to treat document text as data, and can't change the outcome. If its text cites any number the findings don't contain, it is discarded and the rules' own summary is shown instead. Each set is explained once and the result is stored. The full requirements are in the team PRD.
+
+Documents: each upload is stored with what was read from it, and the queue links to the invoice, PO and receiving report behind a set. `GET /api/documents/:id` checks the passcode itself before any lookup, looks up only ids shaped like the ones the app makes, serves exactly the stored type with `X-Content-Type-Options: nosniff` and `Cache-Control: private, no-store`, encodes the file name, and sandboxes text files. `proxy.ts` lets only `/login` itself through signed out. A path that merely starts with "login" is gated.
