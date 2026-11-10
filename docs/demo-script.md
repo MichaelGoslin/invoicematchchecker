@@ -46,11 +46,11 @@ Times are for the finished video. **Trim the upload wait in editing:** reading 9
 **1:10 A person decides (30s).** Enter your name in the reviewer field.
 - On **S-065**, click **Reject**. "A $1,900 overcharge goes back to the vendor."
 - On **S-001**, click **Approve**. Because that goes against the recommendation, the app asks for a reason. Choose *Quantity confirmed with receiving*, type "4 more arrived today", and confirm. "Going against the recommendation needs a reason, saved with who and when."
-- Click **Approve all clean** and confirm. "Clean sets go through in one click."
+- Click **Approve all 1 clean**, then **Yes, approve all**. "Clean sets go through in one click."
 
 **1:40 The duplicate (20s).** Open *Upload a batch* and drag in `demo-duplicate`. *Cut the wait.* Back on the queue, the new S-001 set says **Recommend reject: possible duplicate**. "Same vendor, same invoice number as one we already approved. It's caught before it's paid twice."
 
-**2:00 Summary and export (20s).** Open *Daily summary*: what came in, what was decided, the override and its reason. Back on the queue, click **Export approved** and show the CSV. "Only approved sets are exported, once each, and every step is in an append-only audit log."
+**2:00 Summary and export (20s).** Open *Daily summary*: what came in, what was decided, the override and its reason. Back on the queue, click **Export 2 approved** and show the CSV. "Only approved sets are exported, once each, and every step is in an append-only audit log."
 
 **2:20 Close (10s).** "Claude reads, code decides, and a person approves every payment."
 
