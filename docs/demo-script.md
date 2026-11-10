@@ -7,7 +7,7 @@ Written by Joan, cut to 2.5 minutes by Michael. Read it once, rehearse once, the
 ## Before recording
 
 1. **Ask Michael to reset the live queue.** It still holds rehearsal sets, including S-001 (HPS-9126) and S-002 (NOP-8446), already approved. If they stay, both come back as duplicate rejects on the first upload. Nobody deletes data without Michael's say-so.
-2. **Record in Chrome.** Viewing a PDF from the queue has been checked in Chrome. Safari is still being tested.
+2. **Record in Chrome.** Viewing a PDF from the queue has been checked in Chrome and Safari.
 3. **Sign in** with the team passcode before you start recording. Never show it, and never put it on a slide or in this repo.
 4. **Set up the screen.** Close other tabs, hide the bookmarks bar, set browser zoom to 110–125% so the text reads on video, and record at 1080p.
 5. **Build two demo folders with unique file names.** Every set has files called `po.pdf`, `invoice.pdf` and `receiving.pdf`, which look identical in a list. From the repo root:
@@ -22,7 +22,7 @@ The duplicate folder needs **all three** S-001 files. An invoice on its own has 
 
 ## What each set should show
 
-All three matched the answer key in Michael's real extraction run.
+All three matched the answer key in Michael's real extraction run (run 2026-11-09, re-scored from its saved readings on 2026-11-10 with `npm run score:extraction -- --reuse eval-results/2026-11-09T16-34-08`).
 
 | Set | Invoice | Planted problem | Expected on the queue |
 | --- | --- | --- | --- |
@@ -45,8 +45,10 @@ Times are for the finished video. **Trim the upload wait in editing:** reading 9
 
 **1:10 A person decides (30s).** Enter your name in the reviewer field.
 - On **S-065**, click **Reject**. "A $1,900 overcharge goes back to the vendor."
-- On **S-001**, click **Approve**. Because that goes against the recommendation, the app asks for a reason. Choose *Quantity confirmed with receiving*, type "4 more arrived today", and confirm. "Going against the recommendation needs a reason, saved with who and when."
+- On **S-001**, click **Approve**. Because that goes against the recommendation, the app asks for a reason. Choose *Quantity confirmed with receiving*, type "4 more arrived today" (a demo reason, not a real event), and confirm. "Going against the recommendation needs a reason, saved with who and when."
 - Click **Approve all 1 clean**, then **Yes, approve all**. "Clean sets go through in one click."
+
+This is the tightest segment: rehearse it once with a timer. If it runs past 30 seconds, move *Approve all 1 clean* to the start of the 2:00 summary segment, before opening *Daily summary*.
 
 **1:40 The duplicate (20s).** Open *Upload a batch* and drag in `demo-duplicate`. *Cut the wait.* Back on the queue, the new S-001 set says **Recommend reject: possible duplicate**. "Same vendor, same invoice number as one we already approved. It's caught before it's paid twice."
 
@@ -64,7 +66,7 @@ Times are for the finished video. **Trim the upload wait in editing:** reading 9
 
 - *Why not let the AI approve?* A false approval means a wrong payment. The AI reads and explains; fixed rules decide; a person approves.
 - *What if the AI misreads a number?* Any field read below 0.9 confidence sends the set to a person. It can never be recommended for approval.
-- *How accurate is the reading?* On Michael's real run over 100 synthetic sets: 97 of 100 matched the answer key, with 0 false approvals and 0 confident misreads. Of the 3 that didn't match, the mild scan S-087 is one: it was read correctly and approved, where the answer key expected a person to review it.
+- *How accurate is the reading?* On Michael's real run over 100 synthetic sets: 97 of 100 matched the answer key, with 0 false approvals and 0 confident misreads. Of the 3 that didn't match, two (S-032 and S-081) still went to a person, flagged for an uncertain reading instead of as an exception. The third is the mild scan S-087: it was read correctly and approved, where the answer key expected a person to review it. Confirmed on 2026-11-10 by re-scoring the saved readings from the 2026-11-09 run.
 - *Did the confidence gate ever trigger on a real document?* No. It's proven by tests on uncertain values, but our one mild scan was read correctly, so real extraction never triggered it. Say that plainly.
 - *Why $50?* A placeholder, set in config, chosen so a small percentage on a large quantity can't hide a real dollar loss. An AP specialist should confirm it, along with the 2% tolerance.
 - *How often do overpayments really happen?* We don't know. We have no baseline. We would measure it by auditing a real invoice sample before quoting a number.
