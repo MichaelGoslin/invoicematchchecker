@@ -31,3 +31,7 @@ Thumbs.db
 
 # Extraction evaluation runs (readings and reports, can be large)
 eval-results/
+
+# Local tool files: editor and agent settings, and the AGENTS.md that `next dev` writes
+.claude/
+AGENTS.md
