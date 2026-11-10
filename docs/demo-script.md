@@ -1,4 +1,4 @@
-# Demo video script: Invoice Match Checker
+# Demo video script: AP Verify
 
 A **2.5-minute recorded video** of the live app at https://invoicematchchecker.vercel.app, submitted with the 2.5-minute slide deck by **Wed 11 Nov, 12:00pm**. The deck covers the job, the problem, the architecture and what we haven't proven, so the video only shows the app working.
 
@@ -35,7 +35,7 @@ All three matched the answer key in Michael's real extraction run (run 2026-11-0
 
 Times are for the finished video. **Trim the upload wait in editing:** reading 9 files takes about a minute, and the video should show only its start and end.
 
-**0:00 Open (10s).** On the empty review queue. "This is Invoice Match Checker. An AP specialist uploads the morning batch, and the app sorts every invoice by what needs a person."
+**0:00 Open (10s).** On the empty review queue. "This is AP Verify. An AP specialist uploads the morning batch, and the app sorts every invoice by what needs a person."
 
 **0:10 Upload (25s).** Open *Upload a batch* and drag in `demo-batch`. "Claude reads each document, with a confidence score for every field. Plain code, not AI, then checks them." Show the status chips, *cut the wait*, then point at the tiles: 1 recommend approve, 2 need review.
 

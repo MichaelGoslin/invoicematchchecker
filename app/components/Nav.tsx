@@ -11,7 +11,7 @@ const PAGES = [
 export function Nav({ current }: { current: (typeof PAGES)[number]["href"] }) {
   return (
     <nav>
-      <strong>Invoice Match Checker</strong>
+      <strong>AP Verify</strong>
       {PAGES.map((p) =>
         p.href === current ? (
           <span key={p.href} aria-current="page">

@@ -1,4 +1,4 @@
-# Invoice Match Checker
+# AP Verify
 
 **Catches the wrong payment before an accounts payable specialist approves it.**
 
@@ -16,7 +16,7 @@ It is slow, repetitive work, and the mistakes that slip through cost real money:
 
 ## The solution
 
-Invoice Match Checker takes the whole morning batch of POs, receiving reports and invoices. Claude reads every document; plain, tested code does the matching. Each invoice set is sorted into **Recommend approve**, **Needs review** or **Recommend reject**, with the exact values behind the decision. **The tool recommends; a person approves every payment.**
+AP Verify takes the whole morning batch of POs, receiving reports and invoices. Claude reads every document; plain, tested code does the matching. Each invoice set is sorted into **Recommend approve**, **Needs review** or **Recommend reject**, with the exact values behind the decision. **The tool recommends; a person approves every payment.**
 
 ![A flagged invoice set on the live app: the unit price is $101.90 against the PO's $100.00, 1.90% over and inside the 2% tolerance, but $1,900 extended over 1,000 units, past the $50 cap, so it is flagged for review](docs/screenshots/trace.jpg)
 
