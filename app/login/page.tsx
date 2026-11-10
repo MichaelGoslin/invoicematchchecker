@@ -35,7 +35,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
 
   return (
     <main className="narrow">
-      <h1>Invoice Match Checker</h1>
+      <h1>AP Verify</h1>
       <p className="muted">Enter the team passcode to continue.</p>
       <form action={signIn} className="stack">
         <input type="hidden" name="next" value={safeNextPath(next)} />
