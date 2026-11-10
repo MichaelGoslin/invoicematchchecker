@@ -1,66 +1,73 @@
-# Demo script: Invoice Match Checker
+# Demo video script: Invoice Match Checker
 
-About 5 minutes, live on https://invoicematchchecker.vercel.app. Written by Joan; Michael to read before it is used.
+A **2.5-minute recorded video** of the live app at https://invoicematchchecker.vercel.app, submitted with the 2.5-minute slide deck by **Wed 11 Nov, 12:00pm**. The deck covers the job, the problem, the architecture and what we haven't proven, so the video only shows the app working.
 
-**What is and isn't verified.** The queue, the side-by-side check table and the daily summary were seen working on the live app. The upload, the override, "Approve all clean", the export and the Explain button were **not** run live when this was written, and the expected results below come from the answer key and the README. Rehearse once and correct this file with what really happens.
+Written by Joan, cut to 2.5 minutes by Michael. Read it once, rehearse once, then record.
 
-## Before the audience arrives
+## Before recording
 
-1. **Clear the test data.** The live queue holds sets from earlier test uploads (the same invoice appears three times). Ask Michael to reset it so the demo starts empty. Nobody should delete data without his say-so.
-2. **Sign in** with the shared passcode (ask Michael; never put it on a slide or in this repo).
-3. **Build a demo folder with unique file names.** Every set has files called `po.pdf`, `invoice.pdf`, `receiving.pdf`, which look identical in a list. From the repo root:
+1. **Ask Michael to reset the live queue.** It still holds rehearsal sets, including S-001 (HPS-9126) and S-002 (NOP-8446), already approved. If they stay, both come back as duplicate rejects on the first upload. Nobody deletes data without Michael's say-so.
+2. **Record in Chrome.** Viewing a PDF from the queue has been checked in Chrome and Safari.
+3. **Sign in** with the team passcode before you start recording. Never show it, and never put it on a slide or in this repo.
+4. **Set up the screen.** Close other tabs, hide the bookmarks bar, set browser zoom to 110–125% so the text reads on video, and record at 1080p.
+5. **Build two demo folders with unique file names.** Every set has files called `po.pdf`, `invoice.pdf` and `receiving.pdf`, which look identical in a list. From the repo root:
 
 ```bash
-mkdir -p ~/Desktop/demo-batch
-for s in S-001 S-013 S-002; do for f in po receiving invoice; do cp sample-data/output/sets/$s/$f.pdf ~/Desktop/demo-batch/$s-$f.pdf; done; done
-cp sample-data/output/sets/S-087/po.pdf ~/Desktop/demo-batch/S-087-po.pdf
-cp sample-data/output/sets/S-087/receiving.pdf ~/Desktop/demo-batch/S-087-receiving.pdf
-cp sample-data/output/sets/S-087/invoice.jpg ~/Desktop/demo-batch/S-087-invoice.jpg
+mkdir -p ~/Desktop/demo-batch ~/Desktop/demo-duplicate
+for s in S-002 S-065 S-001; do for f in po receiving invoice; do cp sample-data/output/sets/$s/$f.pdf ~/Desktop/demo-batch/$s-$f.pdf; done; done
+for f in po receiving invoice; do cp sample-data/output/sets/S-001/$f.pdf ~/Desktop/demo-duplicate/S-001-$f.pdf; done
 ```
 
-4. Keep a second batch ready for the duplicate: just `S-001-invoice.pdf` again (the same set as before).
+The duplicate folder needs **all three** S-001 files. An invoice on its own has no PO in its batch, so it gets set aside before the duplicate check ever runs.
 
 ## What each set should show
 
-| Set | Planted problem | Expected on the queue |
-| --- | --- | --- |
-| S-002 | None | Recommend approve (clean) |
-| S-013 | 400 units at $30.00 billed $30.20: 0.67% (inside 2%) but $80.00 extended (over the $50 cap) | Needs review, exception. The cap is marked in red. |
-| S-001 | Billed for 60 units, only 56 received | Needs review, exception (quantity vs received) |
-| S-087 | The one mildly degraded scan, otherwise clean | **Michael's real extraction run approved it**, because the tool read the scan correctly and confidently. The answer key had expected a person to review it, so the confidence gate did not trigger on this scan. Do not claim the gate caught it: say the scan was too mild to test the gate, and that it is a limit of our test. |
-| S-001 invoice again | Same vendor and invoice number as a set already in the app | Recommend reject (possible duplicate) |
+All three matched the answer key in Michael's real extraction run (run 2026-11-09, re-scored from its saved readings on 2026-11-10 with `npm run score:extraction -- --reuse eval-results/2026-11-09T16-34-08`).
 
-Other planted cases exist in the answer key (missing PO, missing receiving report, wrong PO number, vendor mismatch, totals that don't add up) if there is time or a question. A missing PO may be **set aside** by the batch screen instead of rejected; check before promising it.
+| Set | Invoice | Planted problem | Expected on the queue |
+| --- | --- | --- | --- |
+| S-002 | NOP-8446, Northgate Office Products | None | Recommend approve (clean) |
+| S-065 | TPG-7009, Tidewater Paper Group | 1,000 units at $100.00 billed $101.90: 1.9% (inside 2%) but $1,900.00 extended (over the $50 cap) | Needs review, exception. The cap is marked in red. This is the "$1,900 hidden" example from the deck. |
+| S-001 | HPS-9126, Harbor Point Supply Co. | Billed for 60 units, only 56 received | Needs review, exception (quantity vs received) |
+| S-001 again | HPS-9126 | Same vendor and invoice number as a set already in the app | Recommend reject (possible duplicate) |
 
-## The script
+## The script (2:30)
 
-**0:00 The problem (30 seconds).** "An accounts payable specialist can match about 180 invoices a day by hand: invoice against purchase order against receiving report. A missed mismatch means a wrong payment. And a percentage rule hides big dollar amounts: 1,000 units at 1.9% over passes a 2% rule, but it is $1,900 overpaid."
+Times are for the finished video. **Trim the upload wait in editing:** reading 9 files takes about a minute, and the video should show only its start and end.
 
-**0:30 Upload (60 seconds).** Open *Upload a batch*. Drag in the demo folder. Say: "Claude reads each document into structured data, with a confidence score for every field. Plain code, not AI, then checks them." Point at the status chips and the progress bar. When it finishes, point at the tiles: how many approve, review, reject, and anything set aside.
+**0:00 Open (10s).** On the empty review queue. "This is Invoice Match Checker. An AP specialist uploads the morning batch, and the app sorts every invoice by what needs a person."
 
-**1:30 The queue (60 seconds).** Open *Review queue*. "It is sorted by what needs a person first: rejects, then uncertain readings, then exceptions, then clean sets." Open **S-013**. "The price is only 0.67% off, inside our 2% tolerance, so a percentage-only rule would approve it. But 400 units at 20 cents is $80, over our $50 cap. The table marks the limit that was broken." Open **S-001**: "Billed for 60, only 56 arrived." Show the expected and actual values side by side.
+**0:10 Upload (25s).** Open *Upload a batch* and drag in `demo-batch`. "Claude reads each document, with a confidence score for every field. Plain code, not AI, then checks them." Show the status chips, *cut the wait*, then point at the tiles: 1 recommend approve, 2 need review.
 
-**2:30 A person decides (60 seconds).** On S-013, enter your name, choose a reason code, and approve it. "Going against the recommendation needs a reason. It is saved with who and when." Then, on the clean group, click *Approve all clean*, read the confirmation, and confirm. Optional: click *Explain in plain English* on S-001 and say "it can only restate the checks; it can't change the outcome."
+**0:35 Why a set was flagged (25s).** Open *Review queue*, then **S-065**. "The price is only 1.9% over, inside the 2% tolerance, so a percentage rule would pass it. But on 1,000 units that's $1,900, over our $50 cap. The table shows expected, actual and the limit it broke." Then **S-001**: "Billed for 60, only 56 arrived."
 
-**3:30 Summary and export (45 seconds).** Open *Daily summary*: what came in, what was decided, the override and its reason, the dollars held back. Then, on the queue, click *Export approved* and show the CSV. "Only approved sets are exported, once each, and every step is in an append-only audit log."
+**1:00 The original document (10s).** On S-065, click **View PO**. The PDF opens in a new tab. "The original is one click away, so the specialist can always check the source." Close the tab.
 
-**4:15 What we did not prove (45 seconds). Say all of this out loud.**
-- All the data is synthetic. This shows the logic works, not that it would work on real invoices.
-- Given the printed values, the rules agree with my answer key on 99 of 100 sets. The one gap is the scan, which depends on extraction.
-- Extraction, from Michael's real run on the 100 sets: 97 of 100 match the answer key, with 0 false approvals and 0 confident misreads. These figures are Michael's, reported to me; re-run `npm run score:extraction` before quoting them, and ask him what the 3 mismatches were.
-- The confidence gate is proven by tests on uncertain values, but not by the scan: our one mild scan was read correctly, so the gate was never triggered by real extraction. Say that plainly.
-- The 2% tolerance and the $50 cap come from one job posting and our own judgment. They are settings, and an AP specialist should confirm them.
-- There is no ERP connection. The export is a CSV.
+**1:10 A person decides (30s).** Enter your name in the reviewer field.
+- On **S-065**, click **Reject**. "A $1,900 overcharge goes back to the vendor."
+- On **S-001**, click **Approve**. Because that goes against the recommendation, the app asks for a reason. Choose *Quantity confirmed with receiving*, type "4 more arrived today" (a demo reason, not a real event), and confirm. "Going against the recommendation needs a reason, saved with who and when."
+- Click **Approve all 1 clean**, then **Yes, approve all**. "Clean sets go through in one click."
 
-## If something breaks
+This is the tightest segment: rehearse it once with a timer. If it runs past 30 seconds, move *Approve all 1 clean* to the start of the 2:00 summary segment, before opening *Daily summary*.
 
-- **Upload fails or is slow:** each file is one Claude call, so a big batch takes time. Use fewer files, or go straight to the queue with sets that are already loaded.
-- **The queue is empty:** the batch didn't match. Use *Check one set* with a single set's three files.
-- **Nothing works:** show the queue screenshots from rehearsal, and say plainly what was tested and what wasn't.
+**1:40 The duplicate (20s).** Open *Upload a batch* and drag in `demo-duplicate`. *Cut the wait.* Back on the queue, the new S-001 set says **Recommend reject: possible duplicate**. "Same vendor, same invoice number as one we already approved. It's caught before it's paid twice."
 
-## Questions to expect
+**2:00 Summary and export (20s).** Open *Daily summary*: what came in, what was decided, the override and its reason. Back on the queue, click **Export 2 approved** and show the CSV. "Only approved sets are exported, once each, and every step is in an append-only audit log."
+
+**2:20 Close (10s).** "Claude reads, code decides, and a person approves every payment."
+
+## If something breaks while recording
+
+- **Upload fails or is slow:** each file is one Claude call. Re-record that step, or upload fewer files.
+- **A set isn't where the script expects:** stop, ask Michael, and don't edit around it. The video must show what the app really does.
+- **View PO doesn't open the file:** skip that step (0:10 to spare) and tell Michael.
+
+## Questions to expect on Thursday
 
 - *Why not let the AI approve?* A false approval means a wrong payment. The AI reads and explains; fixed rules decide; a person approves.
 - *What if the AI misreads a number?* Any field read below 0.9 confidence sends the set to a person. It can never be recommended for approval.
-- *Why $50?* A placeholder, set in config, chosen so a small percentage on a large quantity can't hide a real dollar loss. It should be confirmed with an AP specialist.
-- *How often do overpayments really happen?* We don't know. We have no baseline, and we would measure it with an audit of a real invoice sample before quoting a number.
+- *How accurate is the reading?* On Michael's real run over 100 synthetic sets: 97 of 100 matched the answer key, with 0 false approvals and 0 confident misreads. Of the 3 that didn't match, two (S-032 and S-081) still went to a person, flagged for an uncertain reading instead of as an exception. The third is the mild scan S-087: it was read correctly and approved, where the answer key expected a person to review it. Confirmed on 2026-11-10 by re-scoring the saved readings from the 2026-11-09 run.
+- *Did the confidence gate ever trigger on a real document?* No. It's proven by tests on uncertain values, but our one mild scan was read correctly, so real extraction never triggered it. Say that plainly.
+- *Why $50?* A placeholder, set in config, chosen so a small percentage on a large quantity can't hide a real dollar loss. An AP specialist should confirm it, along with the 2% tolerance.
+- *How often do overpayments really happen?* We don't know. We have no baseline. We would measure it by auditing a real invoice sample before quoting a number.
+- *Is it connected to an ERP?* No. The export is a CSV.
