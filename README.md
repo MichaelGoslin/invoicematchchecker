@@ -2,11 +2,13 @@
 
 **Catches the wrong payment before an accounts payable specialist approves it.**
 
-[Live app](https://invoicematchchecker.vercel.app) (passcode-protected, synthetic data only) · Built in 7 days by Michael Goslin and Joan Albayrak
+**Try it:** [Watch the 2.5-minute demo](https://drive.google.com/file/d/1RwD-Mhd2kSrrDS9boCYB3icpDhwIRLA_/view?usp=sharing) · or run it locally with no setup (see [Running locally](#running-locally), step 2). The [live app](https://invoicematchchecker.vercel.app) is passcode-protected and uses synthetic data only.
+
+Built in 7 days by Michael Goslin and Joan Albayrak.
 
 ## The problem
 
-A high-volume accounts payable (AP) specialist checks about **180 vendor invoices a day**. Before any invoice is paid, it has to match its purchase order and its receiving report: the same vendor, no more units than were ordered and received, and prices that agree. This is the three-way match, and it's done by hand, one set at a time. Prices are rarely exact, so teams allow a small difference, called a tolerance, before a person has to check. AP Verify uses **2%**, a setting we chose, not one from the job posting.
+A high-volume accounts payable (AP) specialist checks about **180 vendor invoices a day**. Before any invoice is paid, it has to match its purchase order (PO, what was ordered) and its receiving report (what actually arrived): the same vendor, no more units than were ordered and received, and prices that agree. Checking those three documents against each other is called the three-way match, and it's done by hand, one set at a time. Prices are rarely exact, so teams allow a small difference, called a tolerance, before a person has to check. AP Verify uses **2%**, a setting we chose, not one from the job posting.
 
 It is slow, repetitive work, and the mistakes that slip through cost real money:
 
@@ -18,7 +20,7 @@ It is slow, repetitive work, and the mistakes that slip through cost real money:
 
 AP Verify takes the whole morning batch of POs, receiving reports and invoices. Claude reads every document; plain, tested code does the matching. Each invoice set is sorted into **Recommend approve**, **Needs review** or **Recommend reject**, with the exact values behind the decision. **The tool recommends; a person approves every payment.**
 
-![A flagged invoice set on the live app: the unit price is $101.90 against the PO's $100.00, 1.90% over and inside the 2% tolerance, but $1,900 extended over 1,000 units, past the $50 cap, so it is flagged for review](docs/screenshots/trace.jpg)
+![A flagged invoice set on the live app: the unit price is $101.90 against the PO's $100.00, 1.90% over and inside the 2% tolerance, but $1,900 in total over 1,000 units, past the $50 cap, so it is flagged for review](docs/screenshots/trace.jpg)
 
 *The $1,900 case on the live app: the price is only 1.90% over, inside the 2% tolerance, but over 1,000 units that's $1,900, past the $50 cap. The set goes to a person, with the PO and invoice values side by side.*
 
@@ -30,7 +32,7 @@ AP Verify takes the whole morning batch of POs, receiving reports and invoices. 
 - **Dollar cap as well as a percentage:** a price within 2% is still flagged when it costs more than $50 on the line, so small percentages can't hide real money.
 - **Original documents one click away:** open the invoice, PO or receiving report behind any set, straight from the queue.
 - **Human override with an audit trail:** go against a recommendation with a reason code. Every recommendation, decision and override is written to an append-only audit log.
-- **One-click approve and export:** approve every clean set at once, then export approved sets as a CSV for the ERP, each set once.
+- **One-click approve and export:** approve every clean set at once, then export approved sets as a CSV for the ERP (the company's accounting system), each set once.
 
 ## Results
 
@@ -42,7 +44,7 @@ We generated 100 synthetic invoice sets with planted problems and an answer key,
 | Confident misreads (a value read wrong with high confidence) | **0** |
 | Sets whose final decision matches the answer key | **97 of 100** |
 
-**What this doesn't prove:** the invoices are synthetic, and our one mildly degraded scan was read correctly, so real extraction never triggered the confidence gate (it's covered by tests instead). The 2% tolerance and $50 cap are settings that an AP specialist should confirm.
+**What this doesn't prove:** the invoices are synthetic, and our one mildly degraded scan was read correctly, so real extraction never triggered the confidence gate, the rule that sends any low-confidence reading to a person. That rule is covered by tests instead. The 2% tolerance and $50 cap are settings that an AP specialist should confirm.
 
 ## User stories
 
