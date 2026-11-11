@@ -6,7 +6,7 @@
 
 ## The problem
 
-A high-volume accounts payable (AP) specialist checks about **180 vendor invoices a day**. Before any invoice is paid, it has to match its purchase order and its receiving report: the same vendor, no more units than were ordered and received, and prices within a **2% tolerance**. This is the three-way match, and it's done by hand, one set at a time.
+A high-volume accounts payable (AP) specialist checks about **180 vendor invoices a day**. Before any invoice is paid, it has to match its purchase order and its receiving report: the same vendor, no more units than were ordered and received, and prices that agree. This is the three-way match, and it's done by hand, one set at a time. Prices are rarely exact, so teams allow a small difference, called a tolerance, before a person has to check. AP Verify uses **2%**, a setting we chose, not one from the job posting.
 
 It is slow, repetitive work, and the mistakes that slip through cost real money:
 
