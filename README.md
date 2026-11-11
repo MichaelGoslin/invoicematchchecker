@@ -70,7 +70,7 @@ Every recommendation, human action and override is written to an audit log. Only
 
 - **Next.js 16 (App Router) + TypeScript**, deployed on **Vercel**
 - **Anthropic TypeScript SDK** with **Claude Opus 5.5** (`claude-opus-5-5`): structured-output extraction of every field with a confidence score and quoted evidence, plus plain-English explanations that are checked against the findings
-- **Supabase Postgres** for sets, decisions, the append-only audit log and the uploaded files
+- **Postgres** for sets, decisions, the append-only audit log and the uploaded files, through the `postgres` driver and one `POSTGRES_URL`. Production runs on **Supabase**, but any Postgres works. Tests use **PGlite**, an in-memory Postgres, so they need no database
 - **Vitest** for 244 tests: every match rule, the confidence gate, the database layer and the file route, run in **GitHub Actions** on every pull request
 - **Python + reportlab** (offline) to generate the 100 synthetic invoice sets and their answer key
 
@@ -89,7 +89,7 @@ Every recommendation, human action and override is written to an audit log. Only
 | `db/migrations/` | The database schema, applied in order by `npm run db:migrate` |
 | `sample-data/` | The Python generator, 100 synthetic invoice sets and their answer key |
 | `scripts/` | Demo runs, the database migrator and the scoring scripts behind the Results table |
-| `docs/` | The demo video script |
+| `docs/` | The demo video script and the screenshots in this README |
 
 ## Team
 
@@ -129,13 +129,30 @@ Note that `npm run dev` loads `.env.development.local`, so if that file holds th
 
 ## Running locally
 
+**Prerequisites:** Node.js 22.9 or later (CI uses Node 24) and git. To upload your own documents you also need an Anthropic API key. To save sets between runs you need a Postgres database; a free Supabase project works.
+
+1. Clone and install:
+
+   ```bash
+   git clone https://github.com/MichaelGoslin/invoicematchchecker.git
+   cd invoicematchchecker
+   npm install
+   ```
+
+2. Try it with no setup: run `npm run dev` and open http://localhost:3000. Without a `.env.local`, the review queue shows four built-in sample sets, there is no sign-in page, and nothing is saved.
+3. To read real documents, run `cp .env.example .env.local` and fill in:
+   - `ANTHROPIC_API_KEY`: required for any upload. Each set read is billed to your key, about 11 cents per set.
+   - `POSTGRES_URL`: optional. The connection string from your Supabase project's **Connect** panel, or any Postgres. Without it, uploads are checked but not saved.
+   - Leave `APP_PASSCODE` empty so you can skip the sign-in page locally.
+4. If you set `POSTGRES_URL`, create the tables with `npm run db:migrate`. It applies each file in `db/migrations` once, so running it again is safe.
+5. Restart `npm run dev`. Open **Upload a batch** (`/batch`) or **Check one set** (`/try`) and upload the sample files in `sample-data/output/sets/`. Each folder, `S-001` to `S-100`, holds one set: usually `po.pdf`, `receiving.pdf` and `invoice.pdf`. A few sets are missing a document on purpose, and S-087's invoice is a scanned `invoice.jpg`. `sample-data/output/answer_key.csv` says what each set should get; for example, S-001 should come back Needs review because 60 units were billed but only 56 arrived.
+6. Run `npm test` to run the 244 tests. They need no API key or database.
+
+Other scripts:
+
 ```bash
-npm install
-npm run dev         # app at http://localhost:3000 (no passcode needed locally unless APP_PASSCODE is set)
-npm test            # match-rule tests, including sample sets checked against their answer key
 npm run demo:rules  # runs every rule over four sample invoice sets, then shows each decision and the queue order
 npm run demo:price  # unit-price cases only
-npm run db:migrate    # apply db/migrations to the database in POSTGRES_URL
 npm run score:truth   # rules engine vs the sample-data answer key (printed values, no API calls)
 npm run score:extraction -- --fake   # free dry run of the end-to-end score; add --yes instead of --fake for the real run (about $11)
 npm run demo:extract  # live: Claude reads the S-15 sample documents, then the rules decide (needs ANTHROPIC_API_KEY, a few cents per run)
