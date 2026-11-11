@@ -2,7 +2,7 @@
 
 **Catches the wrong payment before an accounts payable specialist approves it.**
 
-**Try it:** [Watch the 2.5-minute demo](https://drive.google.com/file/d/1RwD-Mhd2kSrrDS9boCYB3icpDhwIRLA_/view?usp=sharing) · or run it locally with no setup (see [Running locally](#running-locally), step 2). The [live app](https://invoicematchchecker.vercel.app) is passcode-protected and uses synthetic data only.
+**Try it:** [Watch the 2.5-minute demo](https://drive.google.com/file/d/1RwD-Mhd2kSrrDS9boCYB3icpDhwIRLA_/view?usp=sharing) · or run it locally with no setup (see [Running locally](#running-locally), step 2, "Try it with no setup"). The [live app](https://invoicematchchecker.vercel.app) is passcode-protected and uses synthetic (made-up) data only.
 
 Built in 7 days by Michael Goslin and Joan Albayrak.
 
@@ -28,10 +28,10 @@ AP Verify takes the whole morning batch of POs, receiving reports and invoices. 
 
 - **Batch upload:** drop in the morning's documents in any order. Each invoice is joined to its PO and receiving report automatically, and anything that can't be placed is set aside with a reason, never guessed.
 - **Uncertainty protection:** any field Claude reads with low confidence sends the set to a person. A misread number can never be recommended for approval.
-- **Traceable reasons:** every flag shows the expected and actual values, the variance and the limit it broke, so you can decide fast and defend the decision.
-- **Dollar cap as well as a percentage:** a price within 2% is still flagged when it costs more than $50 on the line, so small percentages can't hide real money.
+- **Traceable reasons:** every flag shows the expected and actual values, the variance (how far apart they are) and the limit it broke, so you can decide fast and defend the decision.
+- **Dollar cap as well as a percentage:** a price within 2% is still flagged when the extra cost on the line (units × the price difference) is more than $50, so small percentages can't hide real money.
 - **Original documents one click away:** open the invoice, PO or receiving report behind any set, straight from the queue.
-- **Human override with an audit trail:** go against a recommendation with a reason code. Every recommendation, decision and override is written to an append-only audit log.
+- **Human override with an audit trail:** a reviewer can override a recommendation, deciding against it, by giving a reason code. Every recommendation, decision and override is written to an append-only audit log: entries are only ever added, never edited or deleted.
 - **One-click approve and export:** approve every clean set at once, then export approved sets as a CSV for the ERP (the company's accounting system), each set once.
 
 ## Results
@@ -43,6 +43,8 @@ We generated 100 synthetic invoice sets with planted problems and an answer key,
 | False approvals (a set approved that should have been held) | **0** |
 | Confident misreads (a value read wrong with high confidence) | **0** |
 | Sets whose final decision matches the answer key | **97 of 100** |
+
+**Why 97 here and 99 in the tests:** the tests run the rules on the values printed on each document, with no reading step, and match 99 of 100. This table includes Claude reading the documents. Of the three sets that differ, S-032 and S-081 still went to a person, but because a reading was uncertain rather than for the problem the key names. S-087, a scanned invoice, was read correctly and approved, where the key expected a person to check it. It is also the one set the tests can't match, because its result depends on the reading.
 
 **What this doesn't prove:** the invoices are synthetic, and our one mildly degraded scan was read correctly, so real extraction never triggered the confidence gate, the rule that sends any low-confidence reading to a person. That rule is covered by tests instead. The 2% tolerance and $50 cap are settings that an AP specialist should confirm.
 
@@ -91,7 +93,7 @@ Every recommendation, human action and override is written to an audit log. Only
 | `db/migrations/` | The database schema, applied in order by `npm run db:migrate` |
 | `sample-data/` | The Python generator, 100 synthetic invoice sets and their answer key |
 | `scripts/` | Demo runs, the database migrator and the scoring scripts behind the Results table |
-| `docs/` | The demo video script and the screenshots in this README |
+| `docs/` | Technical notes, the demo video script and the screenshots in this README |
 
 ## Team
 
@@ -127,13 +129,11 @@ Set these in Vercel (for both Production and Preview) and in a local `.env.local
 
 Uploaded files are stored in Postgres next to what Claude read from them (migration `004_document_files.sql`), so no separate file storage is needed.
 
-Note that `npm run dev` loads `.env.development.local`, so if that file holds the shared `POSTGRES_URL`, local uploads land in the shared queue.
-
 ## Running locally
 
 **Prerequisites:** Node.js 22.9 or later (CI uses Node 24) and git. To upload your own documents you also need an Anthropic API key. To save sets between runs you need a Postgres database; a free Supabase project works.
 
-1. Clone and install:
+1. **Clone and install:**
 
    ```bash
    git clone https://github.com/MichaelGoslin/invoicematchchecker.git
@@ -141,14 +141,14 @@ Note that `npm run dev` loads `.env.development.local`, so if that file holds th
    npm install
    ```
 
-2. Try it with no setup: run `npm run dev` and open http://localhost:3000. Without a `.env.local`, the review queue shows four built-in sample sets, there is no sign-in page, and nothing is saved.
-3. To read real documents, run `cp .env.example .env.local` and fill in:
+2. **Try it with no setup:** run `npm run dev` and open http://localhost:3000. Without a `.env.local`, the review queue shows four built-in sample sets, there is no sign-in page, and nothing is saved.
+3. **Add your keys:** to read real documents, run `cp .env.example .env.local` and fill in:
    - `ANTHROPIC_API_KEY`: required for any upload. Each set read is billed to your key, about 11 cents per set.
    - `POSTGRES_URL`: optional. The connection string from your Supabase project's **Connect** panel, or any Postgres. Without it, uploads are checked but not saved.
    - Leave `APP_PASSCODE` empty so you can skip the sign-in page locally.
-4. If you set `POSTGRES_URL`, create the tables with `npm run db:migrate`. It applies each file in `db/migrations` once, so running it again is safe.
-5. Restart `npm run dev`. Open **Upload a batch** (`/batch`) or **Check one set** (`/try`) and upload the sample files in `sample-data/output/sets/`. Each folder, `S-001` to `S-100`, holds one set: usually `po.pdf`, `receiving.pdf` and `invoice.pdf`. A few sets are missing a document on purpose, and S-087's invoice is a scanned `invoice.jpg`. `sample-data/output/answer_key.csv` says what each set should get; for example, S-001 should come back Needs review because 60 units were billed but only 56 arrived.
-6. Run `npm test` to run the 244 tests. They need no API key or database.
+4. **Create the tables:** if you set `POSTGRES_URL`, create the tables with `npm run db:migrate`. It applies each file in `db/migrations` once, so running it again is safe.
+5. **Upload a sample set:** restart `npm run dev`, open **Upload a batch** (`/batch`) or **Check one set** (`/try`) and upload the sample files in `sample-data/output/sets/`. Each folder, `S-001` to `S-100`, holds one set: usually `po.pdf`, `receiving.pdf` and `invoice.pdf`. A few sets are missing a document on purpose, and S-087's invoice is a scanned `invoice.jpg`. `sample-data/output/answer_key.csv` says what each set should get; for example, S-001 should come back Needs review because 60 units were billed but only 56 arrived.
+6. **Run the tests:** `npm test` runs the 244 tests. They need no API key or database.
 
 Other scripts:
 
@@ -160,14 +160,6 @@ npm run score:extraction -- --fake   # free dry run of the end-to-end score; add
 npm run demo:extract  # live: Claude reads the S-15 sample documents, then the rules decide (needs ANTHROPIC_API_KEY, a few cents per run)
 ```
 
-## Status
+## Technical notes
 
-App (Next.js 16): `/` is the review queue (sample sets when no database is set), and `/try` uploads one set (PO, optional receiving report, invoice) to `POST /api/match`, which reads the documents with Claude, runs the rules and returns the traces and decision. `proxy.ts` gates every page and API route behind `APP_PASSCODE`; a production deploy without it returns 503. With `POSTGRES_URL` set, every set, its recommendation and the engine snapshot are saved to Postgres, and the queue lets a named reviewer approve or reject each set. Going against the recommendation is an override and needs a written reason. Every recommendation and decision goes into an append-only `audit_log`, and every stored invoice that wasn't rejected feeds the duplicate check, including ones still pending, so a resubmission is caught before the first copy is decided. Without a database, nothing is saved and the duplicate check returns Needs review. The queue groups pending sets by why the engine placed them, shows each check side by side, and takes a reason code for overrides.
-
-Batch (stories 1 and 5): `/batch` takes the morning batch of POs, receiving reports and invoices in any order. Each file is read on its own request (four at a time), then `POST /api/batches/:id/match` joins each invoice to the PO and receiving report that share its PO number and runs every set. Documents it can't place, such as unknown types, uncertain or shared PO numbers, or a PO no invoice cites, are set aside with a reason, never guessed. An invoice that clearly cites a PO that isn't on file is incomplete, not rejected; an uncertain PO reference gates the set. On the queue, "Approve all clean" approves only sets the engine recommended with no uncertain reads, and "Export approved" downloads a CSV for the ERP. Each set is exported once and logged, and cells are protected against spreadsheet formula injection.
-
-Extraction: `extractDocument` in `lib/extract` reads a PDF, image or text document with Claude (`claude-opus-5-5`, structured output) into fields that each carry a value, confidence, quoted evidence and page. Code then checks each value against its quoted text and lowers confidence when they disagree; it never raises it. `toMatchInput` maps a PO, an optional receiving report and an invoice into the engine's input, and `runSet` runs every rule and decides. Tests use a fake client and make no API calls.
-
-Engine: all match rules return a decision trace and share the confidence fail-safe (tested): PO on file (none recommends reject), receiving report on file (none makes a 3-way match incomplete; 2-way only when chosen), vendor, PO number, duplicate, quantity vs ordered and received, unit price (2% and a $50 extended-cost cap), line total and invoice total. `decideSet` turns a set's traces into Recommend approve / Needs review / Recommend reject, and `compareForQueue` sorts the review queue. Tests run in GitHub Actions on every PR, including a score against the 100-set answer key in `sample-data/output` (99 of 100 agree on printed values; the scan, S-087, depends on extraction). The UI contract is `TraceEntry` and `SetDecision` in `lib/match`; sample sets with answer keys are in `lib/match/fixtures.ts`. Explanations (step 5): on any set with findings, "Explain in plain English" asks Claude to restate the decision and its findings in two to four sentences. Claude sees only the decision and the findings, is told to treat document text as data, and can't change the outcome. If its text cites any number the findings don't contain, it is discarded and the rules' own summary is shown instead. Each set is explained once and the result is stored. The full requirements are in the team PRD.
-
-Documents: each upload is stored with what was read from it, and the queue links to the invoice, PO and receiving report behind a set. `GET /api/documents/:id` checks the passcode itself before any lookup, looks up only ids shaped like the ones the app makes, serves exactly the stored type with `X-Content-Type-Options: nosniff` and `Cache-Control: private, no-store`, encodes the file name, and sandboxes text files. `proxy.ts` lets only `/login` itself through signed out. A path that merely starts with "login" is gated.
+Routes, the passcode gate, how batches are joined, the extraction checks, every match rule and how stored files are served are described in [docs/technical-notes.md](docs/technical-notes.md).
